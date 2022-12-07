@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 layout: post
-categories: [How-To, Markdown]
+categories: [How-To, Markdown] 
 image: /assets/img/airplane.jpg
 #gif: mygif
 description: "Let's get this theme to work!"
@@ -10,7 +10,8 @@ customexcerpt: "Learn how to write a post in YAMT."
 
 ### Front Matter
 Example of a full Front Matter:
-{% highlight yaml %}
+<!-- 아래 문법을 사용하면 하이라이터 작동한다.. 뭐 그런 거 -->
+{% highlight yaml %} 
 title: Hello World   
 layout: post
 categories: [Hello, World]

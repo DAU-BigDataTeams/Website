@@ -1,7 +1,7 @@
 ---
 title: Test # 포스트 제목
 layout: post # 작성형식
-categories: [Typography, Markdown, Tips] # 카테고리
+categories: [Typography, Markdown, Tips, Test] # 카테고리(이게 게시글 아래에 적힘)
 image: /assets/img/logo.jpg # 이미지 
 description: "Test description" # 설명
 ---
