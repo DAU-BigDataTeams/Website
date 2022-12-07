@@ -3,5 +3,5 @@ layout: default
 title: About
 ---
 
-# [YAMT - Yet Another Minimal Theme](https://yamt.netlify.app/)
-See [Github](https://github.com/PandaSekh/Jekyll-YAMT).
+# [DAU BigDataTema](https://pandasekh.github.io/Jekyll-YAMT//)
+See [Github](https://github.com/DAU-BigDataTeams).

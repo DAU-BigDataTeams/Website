@@ -3,9 +3,8 @@
 
 
 social:
-  - {icon: 'github', type: "brand", link: 'https://www.github.com/pandasekh'}
-  - {icon: 'twitter', type: "brand", link: 'https://twitter.com/PandaSekh'}
-  - {icon: 'linkedin', type: "brand", link: 'https://www.linkedin.com/in/alessio-franceschi/'}
-  
-  - {icon: 'envelope', type: "solid", link: 'mailto:alessiofranceschi2@gmail.com'}
-  - {icon: 'rss', type: "solid", link: "/feed.xml"}
+  - {icon: 'github', type: "brand", link: 'https://github.com/DAU-BigDataTeams'}
+  # - {icon: 'twitter', type: "brand", link: 'https://twitter.com/PandaSekh'}
+  #- {icon: 'linkedin', type: "brand", link: 'https://www.linkedin.com/in/alessio-franceschi/'}
+  - {icon: 'envelope', type: "solid", link: 'jhparkinglot@gmail.com'}
+  #- {icon: 'rss', type: "solid", link: "/feed.xml"}

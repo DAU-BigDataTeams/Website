@@ -1,5 +1,9 @@
 pages:
   - {name: 'About', url: 'about.html'}
-  - {name: 'Contact', url: 'contact.html'}
+  # 깃 허브 주소 달아주기
+  - {name: 'Member', url: 'contact.html'}
+  # 멤버 명단 적기
   - {name: 'Archive', url: 'archive.html'}
-  - {name: 'Get YAMT', url: 'https://github.com/PandaSekh/Jekyll-YAMT'}
+  # kaggle 활동이나 기타 활동 작성
+  - {name: 'TeamLead', url: 'https://jhpark.org/'}
+  # 팀리더 홈페이지 
