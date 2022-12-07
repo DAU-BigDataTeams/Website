@@ -1,7 +1,7 @@
 pages:
   - {name: 'About', url: 'about.html'}
   # 깃 허브 주소 달아주기
-  - {name: 'Member', url: 'contact.html'}
+  - {name: 'Member', url: 'member.html'}
   # 멤버 명단 적기
   - {name: 'Archive', url: 'archive.html'}
   # kaggle 활동이나 기타 활동 작성
