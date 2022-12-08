@@ -1,17 +1,17 @@
- ---
-layout: default
-title: memberHome
 ---
-{% for member in paginator.posts %}
+layout: default
+title: Home
+---
+{% for post in paginator.posts %}
 
-<div class="member">
-    <h2 id = "member-title"><a href="{{ member.url  | relative_url }}">{{ member.title }}</a></h2>
+<div class="post">
+    <h2 id = "post-title"><a href="{{ post.url  | relative_url }}">{{ post.title }}</a></h2>
 
     {% if site.data.settings.date-under-post.active %} 
-    <div class = "member-info">
+    <div class = "post-info">
         <span>
             <i class="far fa-calendar" aria-hidden="true"></i>
-            <time datetime="{{ member.date | date_to_xmlschema }}" class="by-line">{{ member.date | date_to_string }}</time> - <i class="far fa-clock"></i> 
+            <time datetime="{{ post.date | date_to_xmlschema }}" class="by-line">{{ post.date | date_to_string }}</time> - <i class="far fa-clock"></i> 
             {% include reading_time.html %}
         </span>
     </div>
@@ -19,22 +19,22 @@ title: memberHome
 
     {% if site.data.settings.featured-img.active %}
     <div class = "featured-img-container">
-    {% if member.image %}
-        <a href="{{ member.url | relative_url }}"><img src="{{ member.image | relative_url }}"/></a>
+    {% if post.image %}
+        <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}"/></a>
     {% endif %}
-    {% if member.gif %}
-        <a href="{{ member.url | relative_url }}">{% include gif.html file = member.gif %}</a>
+    {% if post.gif %}
+        <a href="{{ post.url | relative_url }}">{% include gif.html file = post.gif %}</a>
     {% endif %}
     </div>
     {% endif %}
 
     <p>
-        {% if mpost.customexcerpt %}
-            {{mpost.customexcerpt | strip_html | truncatewords:50}}
+        {% if post.customexcerpt %}
+            {{post.customexcerpt | strip_html | truncatewords:50}}
         {% else %}
-            {{ mpost.content | strip_html | truncatewords:50 }}
+            {{ post.content | strip_html | truncatewords:50 }}
         {% endif %}
-        <span class = "continue-reading"><a href="{{ member.url | relative_url }}">Continue reading...</a></span>
+        <span class = "continue-reading"><a href="{{ post.url | relative_url }}">Continue reading...</a></span>
     </p> 
 </div>
 {% endfor %}
