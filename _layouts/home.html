@@ -2,16 +2,16 @@
 layout: default
 title: Home
 ---
-{% for post in paginator.posts %}
+
 
 <div class="post">
-    <h2 id = "post-title"><a href="{{ post.url  | relative_url }}">{{ post.title }}</a></h2>
+    <h2 id = "post-title"><a href="{{ member.url  | relative_url }}">{{ member.title }}</a></h2>
 
     {% if site.data.settings.date-under-post.active %} 
     <div class = "post-info">
         <span>
             <i class="far fa-calendar" aria-hidden="true"></i>
-            <time datetime="{{ post.date | date_to_xmlschema }}" class="by-line">{{ post.date | date_to_string }}</time> - <i class="far fa-clock"></i> 
+            <time datetime="{{ member.date | date_to_xmlschema }}" class="by-line">{{ member.date | date_to_string }}</time> - <i class="far fa-clock"></i> 
             {% include reading_time.html %}
         </span>
     </div>
@@ -19,11 +19,11 @@ title: Home
 
     {% if site.data.settings.featured-img.active %}
     <div class = "featured-img-container">
-    {% if post.image %}
-        <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}"/></a>
+    {% if member.image %}
+        <a href="{{ member.url | relative_url }}"><img src="{{ member.image | relative_url }}"/></a>
     {% endif %}
-    {% if post.gif %}
-        <a href="{{ post.url | relative_url }}">{% include gif.html file = post.gif %}</a>
+    {% if member.gif %}
+        <a href="{{ member.url | relative_url }}">{% include gif.html file = member.gif %}</a>
     {% endif %}
     </div>
     {% endif %}
@@ -34,19 +34,6 @@ title: Home
         {% else %}
             {{ post.content | strip_html | truncatewords:50 }}
         {% endif %}
-        <span class = "continue-reading"><a href="{{ post.url | relative_url }}">Continue reading...</a></span>
+        <span class = "continue-reading"><a href="{{ member.url | relative_url }}">Continue reading...</a></span>
     </p> 
-</div>
-{% endfor %}
-
-<!-- Pagination links -->
-<div class = "paginator">
-    {% if paginator.total_pages > 1 %}
-    {% if paginator.next_page %}
-      <a class = "older paginate-button" href="{{ paginator.next_page_path | relative_url }}">Older Posts</a>
-    {% endif %}
-    {% if paginator.previous_page %}
-    <a class = "newer paginate-button" href="{{ paginator.previous_page_path | relative_url }}">Newer Posts</a>
-  {% endif %}
-  {% endif %}
 </div>
