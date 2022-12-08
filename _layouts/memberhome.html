@@ -4,7 +4,7 @@ title: MemberHome
 ---
 {% for mpost in paginator.posts %}
 <div class="post">
-    <h2 id = "post-title"><a href="{{ mpost.url  | relative_url }}">{{ mpost.title }}</a></h2>
+    <h2 id = "mpost-title"><a href="{{ mpost.url  | relative_url }}">{{ mpost.title }}</a></h2>
 
     {% if site.data.settings.date-under-post.active %} 
     <div class = "post-info">
