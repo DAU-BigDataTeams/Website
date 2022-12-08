@@ -29,11 +29,6 @@ title: MemberInfo
   {% endif %}
 
   <p>
-      {% if post.customexcerpt %}
-          {{post.customexcerpt | strip_html | truncatewords:50}}
-      {% else %}
-          {{ post.content | strip_html | truncatewords:50 }}
-      {% endif %}
       <span class = "continue-reading"><a href="{{ post.url | relative_url }}">Continue reading...</a></span>
   </p> 
 </div>
