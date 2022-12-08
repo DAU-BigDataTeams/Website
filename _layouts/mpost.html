@@ -1,8 +1,3 @@
----
-layout: default
-title: Members
----
-
 <!doctype html>
 <html>
   <head>
@@ -14,14 +9,14 @@ title: Members
   <div class="container">
     {% include header.html %}
 
-    <div class="mpost-container">
-      <article id = "member">
-        <h2 id = "member-title">{{ member.title }}</h2>
+    <div class="post-container">
+      <article id = "post">
+        <h2 id = "post-title">{{ page.title }}</h2>
 
   {% if site.data.settings.date-under-post.active %}
-  <div class = "member-info">
+  <div class = "post-info">
     <span>
-        <i class="far fa-calendar" aria-hidden="true"></i> <span>{{ member.date | date_to_string }}</span> - <i class="far fa-clock"></i> {% include reading_time.html %}
+        <i class="far fa-calendar" aria-hidden="true"></i> <span>{{ page.date | date_to_string }}</span> - <i class="far fa-clock"></i> {% include reading_time.html %}
     </span>
   </div>
   {% endif %}
