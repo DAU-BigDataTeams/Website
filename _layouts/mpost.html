@@ -1,21 +1,51 @@
-<div class="post-container">
-  <article id="post">
-    <h2 id="post-title">{{ page.title }}</h2>
+---
+layout: default
+title: MemberInfo
+---
 
-    {% if site.data.settings.date-under-post.active %}
-    <div class="post-info">
+<div class="post">
+  <h2 id = "post-title"><a href="{{ post.url  | relative_url }}">{{ post.title }}</a></h2>
+
+  {% if site.data.settings.date-under-post.active %} 
+  <div class = "post-info">
       <span>
-        <i class="far fa-calendar" aria-hidden="true"></i> <span>{{ page.date | date_to_string }}</span> - <i
-          class="far fa-clock"></i> {% include reading_time.html %}
+          <i class="far fa-calendar" aria-hidden="true"></i>
+          <time datetime="{{ post.date | date_to_xmlschema }}" class="by-line">{{ post.date | date_to_string }}</time> - <i class="far fa-clock"></i> 
+          {% include reading_time.html %}
       </span>
-    </div>
-    {% endif %}
-    {{ content }}
-  </article>
+  </div>
+  {% endif %}
+
+  {% if site.data.settings.featured-img.active %}
+  <div class = "featured-img-container">
+  {% if post.image %}
+      <a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}"/></a>
+  {% endif %}
+  {% if post.gif %}
+      <a href="{{ post.url | relative_url }}">{% include gif.html file = post.gif %}</a>
+  {% endif %}
+  </div>
+  {% endif %}
+
+  <p>
+      {% if post.customexcerpt %}
+          {{post.customexcerpt | strip_html | truncatewords:50}}
+      {% else %}
+          {{ post.content | strip_html | truncatewords:50 }}
+      {% endif %}
+      <span class = "continue-reading"><a href="{{ post.url | relative_url }}">Continue reading...</a></span>
+  </p> 
 </div>
+{% endfor %}
 
-{%- include footer.html -%}
-
-{% if site.data.settings.mathjax.active %}
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Pagination links -->
+<div class = "paginator">
+  {% if paginator.total_pages > 1 %}
+  {% if paginator.next_page %}
+    <a class = "older paginate-button" href="{{ paginator.next_page_path | relative_url }}">Older Posts</a>
+  {% endif %}
+  {% if paginator.previous_page %}
+  <a class = "newer paginate-button" href="{{ paginator.previous_page_path | relative_url }}">Newer Posts</a>
 {% endif %}
+{% endif %}
+</div>
