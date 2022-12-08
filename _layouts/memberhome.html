@@ -1,17 +1,17 @@
----
+ ---
 layout: default
 title: memberHome
 ---
-{% for post in paginator.posts %}
+{% for member in paginator.posts %}
 
 <div class="mpost">
-    <h2 id = "mpost-title"><a href="{{ mpost.url  | relative_url }}">{{ mpost.title }}</a></h2>
+    <h2 id = "mpost-title"><a href="{{ member.url  | relative_url }}">{{ member.title }}</a></h2>
 
     {% if site.data.settings.date-under-post.active %} 
     <div class = "mpost-info">
         <span>
             <i class="far fa-calendar" aria-hidden="true"></i>
-            <time datetime="{{ mpost.date | date_to_xmlschema }}" class="by-line">{{ mpost.date | date_to_string }}</time> - <i class="far fa-clock"></i> 
+            <time datetime="{{ member.date | date_to_xmlschema }}" class="by-line">{{ member.date | date_to_string }}</time> - <i class="far fa-clock"></i> 
             {% include reading_time.html %}
         </span>
     </div>
@@ -19,11 +19,11 @@ title: memberHome
 
     {% if site.data.settings.featured-img.active %}
     <div class = "featured-img-container">
-    {% if mpost.image %}
-        <a href="{{ mpost.url | relative_url }}"><img src="{{ mpost.image | relative_url }}"/></a>
+    {% if member.image %}
+        <a href="{{ mpomemberst.url | relative_url }}"><img src="{{ member.image | relative_url }}"/></a>
     {% endif %}
-    {% if mpost.gif %}
-        <a href="{{ mpost.url | relative_url }}">{% include gif.html file = mpost.gif %}</a>
+    {% if member.gif %}
+        <a href="{{ member.url | relative_url }}">{% include gif.html file = member.gif %}</a>
     {% endif %}
     </div>
     {% endif %}
@@ -34,7 +34,7 @@ title: memberHome
         {% else %}
             {{ mpost.content | strip_html | truncatewords:50 }}
         {% endif %}
-        <span class = "continue-reading"><a href="{{ mpost.url | relative_url }}">Continue reading...</a></span>
+        <span class = "continue-reading"><a href="{{ member.url | relative_url }}">Continue reading...</a></span>
     </p> 
 </div>
 {% endfor %}
