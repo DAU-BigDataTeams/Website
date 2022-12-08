@@ -2,7 +2,7 @@
 layout: default
 title: MemberInfo
 ---
-{% for post in paginator.posts %}
+{% for post in paginator.mposts %}
 <h1>좀 성공해라 ㅅㅂ;;</h1>
 <div class="post">
     <h2 id = "post-title"><a href="{{ post.url  | relative_url }}">{{ post.title }}</a></h2>
@@ -27,7 +27,6 @@ title: MemberInfo
     {% endif %}
     </div>
     {% endif %}
-
   <p>
       <span class = "continue-reading"><a href="{{ mpost.url | relative_url }}">Continue reading...</a></span>
   </p> 
