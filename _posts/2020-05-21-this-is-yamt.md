@@ -4,6 +4,7 @@ layout: post # 작성형식
 categories: [Typography, Markdown, Tips, Test] # 카테고리(이게 게시글 아래에 적힘)
 image: /assets/img/logo.jpg # 이미지 
 description: "Test description" # 설명
+customexcerpt: "Welcome to YAMT" # 미리보기 글 
 ---
 
 Welcome to YAMT - Yet Another Minimal Theme. YAMT is a minimal Jekyll theme focused on simplicity and ease-of-use. It has great modularity, allowing you to easily decide what you actually want on your website.
