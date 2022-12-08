@@ -3,7 +3,6 @@ layout: default
 title: MemberInfo
 ---
 {% for post in paginator.mposts %}
-<h1>좀 성공해라 ㅅㅂ;;</h1>
 <div class="post">
     <h2 id = "post-title"><a href="{{ post.url  | relative_url }}">{{ post.title }}</a></h2>
 
@@ -32,3 +31,15 @@ title: MemberInfo
   </p> 
 </div>
 {% endfor %}
+
+<!-- Pagination links -->
+<div class = "paginator">
+    {% if paginator.total_pages > 1 %}
+    {% if paginator.next_page %}
+      <a class = "older paginate-button" href="{{ paginator.next_page_path | relative_url }}">Older Posts</a>
+    {% endif %}
+    {% if paginator.previous_page %}
+    <a class = "newer paginate-button" href="{{ paginator.previous_page_path | relative_url }}">Newer Posts</a>
+  {% endif %}
+  {% endif %}
+</div>
