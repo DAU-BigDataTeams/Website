@@ -1,4 +1,4 @@
 ---
-layout: mpost
+layout: memberhome
 title: MemberInfo
 ---

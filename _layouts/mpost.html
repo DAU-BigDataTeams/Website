@@ -23,19 +23,8 @@
         {{ content }}
       </article>
     </div>
-    {% if site.data.settings.categories.active %}
-      {% include categories.html %}
-    {% endif %}
-
-    {% if site.data.settings.related-posts.active %}
-      {% include related-posts.html %}
-    {% endif %}
-
-    {% if site.data.settings.comments %}
-      {% include comments.html %}
-    {% endif %}
   </div>
-
+  
 {%- include footer.html -%}
 
 {% if site.data.settings.mathjax.active %}

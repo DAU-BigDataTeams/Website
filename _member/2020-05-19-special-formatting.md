@@ -1,6 +1,6 @@
 ---
 title: Special Formatting
-layout: post
+layout: mpost
 categories: [Tips, Markdown, Typography]
 image: /assets/img/forest-snow.jpg
 description: "A bunch of tips on how to format your text."

@@ -1,6 +1,6 @@
 ---
 title: Lorem Ipsum
-layout: post
+layout: mpost
 categories: [Tips, Markdown]
 image: /assets/img/oranges.jpg
 description: "Lorem Ipsum"
