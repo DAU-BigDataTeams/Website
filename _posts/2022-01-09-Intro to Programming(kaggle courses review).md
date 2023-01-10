@@ -6,9 +6,8 @@ description: "kaggle courese - Intro to Programming"
 customexcerpt: "케글 교육과정 중 Intro to Programming을 수료하다!" # 미리보기 글 
 ---
 
-## Intro to Programming 
+# Intro to Programming 
 
----
 
 ### 1. Arthmetic and Variables
 _Python is one of the most popular programming languages for data science, and it's the language you'll learn in this course._
