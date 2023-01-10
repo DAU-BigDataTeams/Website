@@ -827,5 +827,3 @@ _<span style="background-color:blue">Not just Integer List, Float List also poss
 
 ___
 
-
-![이수원-수료증](/assets/img/이수원-수료증.png)
