@@ -1,5 +1,5 @@
 ---
-title: 2022-01-09 Intro to Programming(kaggle courses review)
+title: Intro to Programming(kaggle courses review)
 layout: post
 image : /assets/img/이수원-수료증.png
 categories : Programming, Intro, kaggle
