@@ -34,13 +34,13 @@ customexcerpt: Geopandas를 이용해 간단한 지도 시각화
 
 ## Reading Data
 ----
-`GeoPandas`라이브러리를 활용해서 데이터를 읽어보자
+**GeoPandas**라이브러리를 활용해서 데이터를 읽어보자
 ~~~py
 import geopandas as gpd
 ~~~
 
 지리공간 파일형식은 다양하다 (ex. shapefile, GeoJSON 등..) 하지만 지리공간 분석 교육과정에서 다루지는 않습니다🤣  
-다만, shapefile은 지리공간 분석을 진행한다면 자주 접할 것이며, 이런 파일형식들은 `gpd.read_file()`이라는 메서드로 수행된다.
+다만, shapefile은 지리공간 분석을 진행한다면 자주 접할 것이며, 이런 파일형식들은 **gpd.read_file()**이라는 메서드로 수행된다.
 
 아래 코드는 kaggle에서 제공하는 데이터(숲, 황무지 및 기타 토지에 대한 데이터)를 shapefile로 load함
 
@@ -197,11 +197,11 @@ full_data.head() # pandas 와 동일한 메서드(상위 5개 출력)
 참고로 GeoPandas의 모든 메서드는 Pandas와 동일하다.  
 > DataFrame의 모든 기능이 있는 GeoDataFrame 개체에 로드되어서 그럼
 
-당연히 Type을 출력하면 `geopandas`객체 형태로 나올 것이다.
+당연히 Type을 출력하면 **geopandas**객체 형태로 나올 것이다.
 ~~~py
 type(full_data)
 ~~~
-out : ```geopandas.geodataframe.GeoDataFrame```  
+out : ******geopandas.geodataframe.GeoDataFrame******  
 
 당연히 일부 Column을 추출하는 것도 가능하다.
 
@@ -209,7 +209,7 @@ out : ```geopandas.geodataframe.GeoDataFrame```
 data = full_data.loc[:, ["CLASS", "COUNTY", "geometry"]].copy() # copy()는 경고 방지
 ~~~
 
-`value_counts()`메서드를 통해서 토지 유형과 수를 관측할 수 있다.
+**value_counts()**메서드를 통해서 토지 유형과 수를 관측할 수 있다.
 ~~~py
 data.CLASS.value_counts() # CLASS 열에 대해 적용
 ~~~
@@ -286,12 +286,12 @@ wild_lands.plot() # 앞서 만들어둔 객체
 ![결과](https://www.kaggleusercontent.com/kf/79128018/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..8ev4_DtKy5SdtfzaiZErZQ.Vu1uZ6Q4xLd8f0DFRXovHcJsZFIxk9EvhEf1dHzO2bOyvJ3Aht-eWv6ipIUQar-XZEeo47FejdK7rONAVO7b6i5oOYaFV2SZXUHG1TtV5QxbmX6Yc6M4_ZEx3tNehda8UhX2ZS1-_cwghacpPcNgDRRsQgTtYSaPTgqO8uLeUU2owtt3WoETTk-IBjzQZ1zFijr02G1cBNdO_RewFm00UU68l8tH72rO0J6ZJlUCzmnvFM9XbYzotIF1_cG9awVgZb9TxNarA5jyNQapWh0O9zQLPUqV-OelkPF_9Y44VBqBPLqJuBw54k3v-16VQ3nGRhZinVXi8m50crIbHWU_rsl3HNtkakOrHZikwDgGAU4AyI57ychKXy9T_kk4K5z1lQH6TbAF6ObaiACWONBEHlHPIXqmPtpnt-LNMtwqwdXAPTDizyMexD-GxGGguuwsiedW7xk716nWhxCSiULwMUnwSgtrbu0hKfD50Gnr1FK8hVs9CL86u2-e90g5XThwjSyhlDONNeIR9YT9GHm1-eBI-EaD0A-zryriuz81bMlEwjMKWx5YC48yS0mKTsuC1-p5C2-cGKrwNCcj0xX-299K2-lVO_YaC_xfRyW0u7jz2J7Ooa8H_7TbyfMUG0rVxsJBrCAPaeA0CfJ-oPbBjfyWXQZeRAaZ0KTzWuvuddY.jkO4q_TZgO6GB2fCWNm1zg/__results___files/__results___13_1.png)
 
 
-> **이게 가능한 이유? 모든 GeoPandas의 DataFrame에는 `geometry`라는 컬럼이 포함되어있는데 이것은 `plot()`메서드를 호출했을 때 표시되는 지도 객체를 포함함**  
-> 다르게 말하면 `geometry`가 없으면 `plot()`메서드로 지도 시각화는 못 함.  
+> **이게 가능한 이유? 모든 GeoPandas의 DataFrame에는 **geometry**라는 컬럼이 포함되어있는데 이것은 **plot()**메서드를 호출했을 때 표시되는 지도 객체를 포함함**  
+> 다르게 말하면 **geometry**가 없으면 **plot()**메서드로 지도 시각화는 못 함.  
 
 
 
-**`geometry`열에는 보통 `Point`, `LineString`, `Polygon` 형태다. 아래 그림으로 대충 이해하자**
+****geometry**열에는 보통 **Point**, **LineString**, **Polygon** 형태다. 아래 그림으로 대충 이해하자**
 ![geomety데이터 형태](https://i.imgur.com/N1llefr.png)
 
 ~~~py
