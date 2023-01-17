@@ -4,7 +4,7 @@ layout: post
 categories : paper, reivew, research
 image : /assets/img/O2O 논문 썸네일.png
 description: 온라인 - 오프라인 매장을 위해 적합한 매장 위치 추천 모델에 대한 논문
-customexcerpt: O2O(Online-to-Offline) 모델은 최근 몇 년 동안 점점 더 중요한 비즈니스 모델입니다. 일반적으로, 기존 오프라인 매장이나 신규 매장은 대규모 고객과 함계 O2O 플랫폼에 먼저 가입한 후 플랫폼에서 온라인 구매를 위해 고객을 안내한다. 
+customexcerpt: O2O 모델에서 점주들의 필연적인 문제는 가게 위치를 선택하는 것 즉, 가게 위치 추천 문제다.
 ---
 
 > [논문 원본](https://ieeexplore.ieee.org/document/9835449)  
@@ -13,14 +13,11 @@ customexcerpt: O2O(Online-to-Offline) 모델은 최근 몇 년 동안 점점 더
 title : Multi-graph Attention Networks를 통한 O2O 모델의 상점 위치 추천
 
 [목차]
-
-- [O2-SiteRec: Store Site Recommendation under the O2O Model via Multi-graph Attention Networks](#o2-siterec-store-site-recommendation-under-the-o2o-model-via-multi-graph-attention-networks)
-  - [Abstract](#abstract)
 - [Introduction](#introduction)
-- [Motivation](#motivation)
-- [Design of O2-siteRec](#design-of-o2-siterec)
-- [Evaluation](#evaluation)
-- [Discission](#discission)
+<!-- - [Motivation](#motivation) -->
+<!-- - [Design of O2-siteRec](#design-of-o2-siterec)-->
+<!-- - [Evaluation](#evaluation)-->
+<!-- - [Discission](#discission)-->
 
 ## Abstract
 ----

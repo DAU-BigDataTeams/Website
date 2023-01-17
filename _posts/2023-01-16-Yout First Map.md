@@ -2,7 +2,7 @@
 title: 지리공간 분석 part1.  
 layout: post   
 categories : Geospatial, analysis, data, map
-image : https://www.kaggleusercontent.com/kf/79128018/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..8ev4_DtKy5SdtfzaiZErZQ.Vu1uZ6Q4xLd8f0DFRXovHcJsZFIxk9EvhEf1dHzO2bOyvJ3Aht-eWv6ipIUQar-XZEeo47FejdK7rONAVO7b6i5oOYaFV2SZXUHG1TtV5QxbmX6Yc6M4_ZEx3tNehda8UhX2ZS1-_cwghacpPcNgDRRsQgTtYSaPTgqO8uLeUU2owtt3WoETTk-IBjzQZ1zFijr02G1cBNdO_RewFm00UU68l8tH72rO0J6ZJlUCzmnvFM9XbYzotIF1_cG9awVgZb9TxNarA5jyNQapWh0O9zQLPUqV-OelkPF_9Y44VBqBPLqJuBw54k3v-16VQ3nGRhZinVXi8m50crIbHWU_rsl3HNtkakOrHZikwDgGAU4AyI57ychKXy9T_kk4K5z1lQH6TbAF6ObaiACWONBEHlHPIXqmPtpnt-LNMtwqwdXAPTDizyMexD-GxGGguuwsiedW7xk716nWhxCSiULwMUnwSgtrbu0hKfD50Gnr1FK8hVs9CL86u2-e90g5XThwjSyhlDONNeIR9YT9GHm1-eBI-EaD0A-zryriuz81bMlEwjMKWx5YC48yS0mKTsuC1-p5C2-cGKrwNCcj0xX-299K2-lVO_YaC_xfRyW0u7jz2J7Ooa8H_7TbyfMUG0rVxsJBrCAPaeA0CfJ-oPbBjfyWXQZeRAaZ0KTzWuvuddY.jkO4q_TZgO6GB2fCWNm1zg/__results___files/__results___19_1.png
+image : /assets/img/지리공간part2-1.png
 description: 지리 공간 데이터 또는 지리적 위치가 있는 데이터를 랭글링 및 시각화하는 다양한 방법 소개 
 customexcerpt: Geopandas를 이용해 간단한 지도 시각화
 ---
@@ -283,7 +283,7 @@ GeoPandas를 사용해서 빠르게 지도를 시각화 해보자.
 ~~~py
 wild_lands.plot() # 앞서 만들어둔 객체
 ~~~
-![결과](https://www.kaggleusercontent.com/kf/79128018/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..8ev4_DtKy5SdtfzaiZErZQ.Vu1uZ6Q4xLd8f0DFRXovHcJsZFIxk9EvhEf1dHzO2bOyvJ3Aht-eWv6ipIUQar-XZEeo47FejdK7rONAVO7b6i5oOYaFV2SZXUHG1TtV5QxbmX6Yc6M4_ZEx3tNehda8UhX2ZS1-_cwghacpPcNgDRRsQgTtYSaPTgqO8uLeUU2owtt3WoETTk-IBjzQZ1zFijr02G1cBNdO_RewFm00UU68l8tH72rO0J6ZJlUCzmnvFM9XbYzotIF1_cG9awVgZb9TxNarA5jyNQapWh0O9zQLPUqV-OelkPF_9Y44VBqBPLqJuBw54k3v-16VQ3nGRhZinVXi8m50crIbHWU_rsl3HNtkakOrHZikwDgGAU4AyI57ychKXy9T_kk4K5z1lQH6TbAF6ObaiACWONBEHlHPIXqmPtpnt-LNMtwqwdXAPTDizyMexD-GxGGguuwsiedW7xk716nWhxCSiULwMUnwSgtrbu0hKfD50Gnr1FK8hVs9CL86u2-e90g5XThwjSyhlDONNeIR9YT9GHm1-eBI-EaD0A-zryriuz81bMlEwjMKWx5YC48yS0mKTsuC1-p5C2-cGKrwNCcj0xX-299K2-lVO_YaC_xfRyW0u7jz2J7Ooa8H_7TbyfMUG0rVxsJBrCAPaeA0CfJ-oPbBjfyWXQZeRAaZ0KTzWuvuddY.jkO4q_TZgO6GB2fCWNm1zg/__results___files/__results___13_1.png)
+![결과](/assets/img/%EC%A7%80%EB%A6%AC%EA%B3%B5%EA%B0%84part1-1.png)
 
 
 > **이게 가능한 이유? 모든 GeoPandas의 DataFrame에는 **geometry**라는 컬럼이 포함되어있는데 이것은 **plot()** 메서드를 호출했을 때 표시되는 지도 객체를 포함함**  
@@ -318,7 +318,7 @@ wild_lands.plot(color='lightgreen', ax=ax)
 campsites.plot(color='maroon', markersize=2, ax=ax)
 trails.plot(color='black', markersize=1, ax=ax)
 ~~~
-![완성된-지도](https://www.kaggleusercontent.com/kf/79128018/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..8ev4_DtKy5SdtfzaiZErZQ.Vu1uZ6Q4xLd8f0DFRXovHcJsZFIxk9EvhEf1dHzO2bOyvJ3Aht-eWv6ipIUQar-XZEeo47FejdK7rONAVO7b6i5oOYaFV2SZXUHG1TtV5QxbmX6Yc6M4_ZEx3tNehda8UhX2ZS1-_cwghacpPcNgDRRsQgTtYSaPTgqO8uLeUU2owtt3WoETTk-IBjzQZ1zFijr02G1cBNdO_RewFm00UU68l8tH72rO0J6ZJlUCzmnvFM9XbYzotIF1_cG9awVgZb9TxNarA5jyNQapWh0O9zQLPUqV-OelkPF_9Y44VBqBPLqJuBw54k3v-16VQ3nGRhZinVXi8m50crIbHWU_rsl3HNtkakOrHZikwDgGAU4AyI57ychKXy9T_kk4K5z1lQH6TbAF6ObaiACWONBEHlHPIXqmPtpnt-LNMtwqwdXAPTDizyMexD-GxGGguuwsiedW7xk716nWhxCSiULwMUnwSgtrbu0hKfD50Gnr1FK8hVs9CL86u2-e90g5XThwjSyhlDONNeIR9YT9GHm1-eBI-EaD0A-zryriuz81bMlEwjMKWx5YC48yS0mKTsuC1-p5C2-cGKrwNCcj0xX-299K2-lVO_YaC_xfRyW0u7jz2J7Ooa8H_7TbyfMUG0rVxsJBrCAPaeA0CfJ-oPbBjfyWXQZeRAaZ0KTzWuvuddY.jkO4q_TZgO6GB2fCWNm1zg/__results___files/__results___19_1.png)
+![완성된-지도](/assets/img/%EC%A7%80%EB%A6%AC%EA%B3%B5%EA%B0%84part1-2.png)
 
 **이때 중요한 것은 ax라는 값을 통해서 동일한 지도에 표시하게 하는 점**
 
