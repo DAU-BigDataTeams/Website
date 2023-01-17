@@ -49,8 +49,8 @@ facilities_df = pd.read_csv("../input/geospatial-learn-course-data/ghana/ghana/h
 facilities = gpd.GeoDataFrame(facilities_df, geometry=gpd.points_from_xy(facilities_df.Longitude, facilities_df.Latitude))
 
 # Set the coordinate reference system (CRS) to EPSG 4326
-facilities.crs = {'init': 'epsg:4326'}
-
+facilities.crs = {'init': 'epsg:4326'} # 여기 괜히 'epsg : 4326' 이렇게 넣으면 에러뜸;;
+ 
 # View the first five rows of the GeoDataFrame
 facilities.head()
 ~~~
@@ -180,3 +180,4 @@ facilities.geometry.head().x # geometry 유형은 Point임.
 > OSMNX가 이런식으로 값을 가져오나..?
 
 참고로 맨앞에서 말 했듯, 약간의 왜곡은 발생하지만 실제값과 그리 큰차이는 아니라 사용 목적에 따라 사용할 수 있다.
+
