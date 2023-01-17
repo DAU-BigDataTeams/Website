@@ -1,5 +1,5 @@
 ---
-title: 지리공간 분석 part1.  
+title: 지리공간 분석 part1 - Your First Map.  
 layout: post   
 categories : Geospatial, analysis, data, map
 image : /assets/img/geopart2.png
@@ -9,12 +9,7 @@ customexcerpt: Geopandas를 이용해 간단한 지도 시각화
 
 
 # Geospatial Analysis (지리공간 분석)
-[Content]
-1. [Your First Map](#your-first-map)  
-<!--2. [Coordinate Reference Systems(좌표계)](#Coordinate Reference Systems(좌표계))-->
-<!--3. Interactive Maps(상호작용하는 지도)-->
-<!--4. Manipulating Geospatial Data(지리 공간 데이터 조작)-->
-<!--5. Proximity Analysis(근접도 분석)-->
+지리공간 분석이라고 딱 들으면 QGIS가 가장먼저 떠오르겠지만 GeoPandas를 활용해 shp파일(shapfile)을 활용해보기~
 
 # Your First Map
 해당 챕터는 지리 공간 데이터 또는 지리적 위치가 있는 데이터를 랭글링하고 시각화하는 다양한 방법에 대해 알려준다.  
