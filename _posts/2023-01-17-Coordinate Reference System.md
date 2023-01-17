@@ -3,8 +3,8 @@ title: 지리공간 분석 part2 - Coordinate Reference System(CRS).
 layout: post   
 categories : Geospatial, analysis, data, map
 image : /assets/img/geopart3.png
-description:  
-customexcerpt: 
+description: GeoPandas와 좌표계에 대한 설명
+customexcerpt: 지구를 2차원으로 표현해서 지도를 생성하지만, 사실 지구는 삼차원인 것을 알고있습니다. 그래서 우리는 map projection 이라 불리는 방법을 사용해서 평면에 투영시킵니다.  
 ---
 
 # Coordinate Reference System(CRS)
