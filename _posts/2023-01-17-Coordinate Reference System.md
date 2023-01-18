@@ -164,7 +164,7 @@ regions.to_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs").head()
 ## Attribute of geometric objects
 ----
 
-[Your First Map](2023-01-16-Yout%20First%20Map.md)에서 배운 것 처럼 GeoDataFrame의 경우 geometry column은 표시하려는 항목에 따라 달라진다.(3가지 유형이 있었음)
+[Your First Map](/_posts/2023-01-16-Yout%20First%20Map.md)에서 배운 것 처럼 GeoDataFrame의 경우 geometry column은 표시하려는 항목에 따라 달라진다.(3가지 유형이 있었음)
 
 1. 지진의 진원지점 -> Point
 2. 거리에 대한 유도선 -> LineString
