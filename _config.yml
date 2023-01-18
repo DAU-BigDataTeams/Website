@@ -46,7 +46,7 @@ kramdown:
   syntax_highlighter_opts:
     css_class: 'highlight'
     span:
-      line_numbers: True
+      line_numbers: False
     block:
       line_numbers: True
       start_line: 1
