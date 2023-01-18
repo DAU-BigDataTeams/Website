@@ -11,7 +11,7 @@ customexcerpt: Geopandas를 이용해 간단한 지도 시각화
 # Geospatial Analysis (지리공간 분석)
 지리공간 분석이라고 딱 들으면 QGIS가 가장먼저 떠오르겠지만 GeoPandas를 활용해 shp파일(shapfile)을 활용해보기~
 
-# Your First Map
+## Your First Map
 해당 챕터는 지리 공간 데이터 또는 지리적 위치가 있는 데이터를 랭글링하고 시각화하는 다양한 방법에 대해 알려준다.  
 > 데이터 랭글링? 원천 데이터를 시각화 OR Input으로 활용하기 위해 사전 준비 과정을 말함. 데이터 랭글링에 6단계가 있다는데 스스로 찾아보자.  
 
