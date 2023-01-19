@@ -2,7 +2,7 @@
 title: Feature Engineering 
 layout: post   
 categories : Data processing, Machine Learning
-image : /assets/img/Daero Kim - Feature Engineering.PNG
+image : /assets/img/Daero Kim - Feature Engineering.png
 description: 포스트 설명 ex. 1기 멤버 소개  
 customexcerpt: "Feature Engineering"
 ---
