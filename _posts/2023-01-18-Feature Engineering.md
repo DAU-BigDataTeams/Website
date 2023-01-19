@@ -2,7 +2,7 @@
 title: Feature Engineering 
 layout: post   
 categories : Data processing, Machine Learning
-image : /assets/img/Daero Kim - Feature Engineering.png
+image : /assets/img/Daero Kim - Feature Engineering.PNG
 description: 포스트 설명 ex. 1기 멤버 소개  
 customexcerpt: "Feature Engineering"
 ---
@@ -56,7 +56,7 @@ Feature와 Target간 관계의 유용성을 찾아내기 위해서는 두 값의
 불확실성의 측정은 변수의 엔트로피 측정을 통해 이루어진다.   
 (Entropy 측정: 얼마나 많이 변수의 발생을 설명할 수 있는가 없는가)
 
-![image](/assets/img/MI_figure_1.png)
+![image](/assets/img/MI_figure_1.PNG)
 
 위의 그림에서 ExterQual 값을 알게 된다면, SalePrice에 대해 더 확실하게 알 수 있다.  
 ExterQual의 각 범주는 판매가격을 특정 범위 내로 좁혀준다.   
@@ -70,7 +70,7 @@ ExterQual의 각 범주는 판매가격을 특정 범위 내로 좁혀준다.
 
 다음은 그림은 Feature 변수와 Target 변수간 관계에 대해 MI 점수를 구한 그래프이다.
 <br/><br/>
-![image](/assets/img/MI_figure_2.png)
+![image](/assets/img/MI_figure_2.PNG)
 
 오른쪽 그래프를 통해서 Feature와 Target 변수 사이의 연관성을 알아낼 수 있다.
 <br/><br/>
@@ -107,7 +107,7 @@ MI는 Target값을 예측하기 위해 Feature의 영향력을 이해하는데 �
 데이터를 시각화할 때, 데이터가 매우 큰 이상치가 존재하거나 왜곡되어있는 경우 알아보기 힘들 정도로 값이 몰려있는 경우가 발생할 수 있다.  
 이때, 아래와 같이 로그 정규화같은 수학적인 변형을 통해 시각화 문제를 해결할 수 있다. 
 
-![image](/assets/img/log-normalization.png)
+![image](/assets/img/log-normalization.PNG)
 <br/><br/>
 
 ## Counts
@@ -120,7 +120,7 @@ MI는 Target값을 예측하기 위해 Feature의 영향력을 이해하는데 �
 ---
 종종 아래와 같이 복잡한 문자열들로 이루어진 데이터를 다루는 경우가 있다.
 
-![image](/assets/img/string-data.png)
+![image](/assets/img/string-data.PNG)
 
 전화번호의 경우, 앞의 지역번호를 문자열 추출하여 그대로 사용하거나 Encoding을 거쳐 지역정보를 가지는 새로운 피처를 생성할 수 있다.
 
@@ -157,7 +157,7 @@ Cluster 군집에 Lable을 부여하면 머신러닝 모델이 공간 근접성�
 단일 피처를 클러스터링하면 Binning 또는 discretization 변환과 같은 역할을 하게된다. 
 다중 피처의 클러스터링은 Multi-dimensional binning이라 부르는 벡터 양자화이다.
 
-![image](/assets/img/single,multi_dimensional_clustering.png)
+![image](/assets/img/single,multi_dimensional_clustering.PNG)
 
 클러스터링을 진행하면 결과는 범주형이다.
 
@@ -165,7 +165,7 @@ Cluster 군집에 Lable을 부여하면 머신러닝 모델이 공간 근접성�
 
 하지만 군집의 각각은 선형적인 형태를 띄기 때문에, 모델학습에 도움이 된다.
 
-![image](/assets/img/clustering_chunks.png)
+![image](/assets/img/clustering_chunks.PNG)
 <br/><br/>
 
 ## Clustering With Clustering
@@ -179,7 +179,7 @@ K-means clustering은 유클리드 거리를 사용하여 유사성을 측정한
 
 각 중심점들과 가까운 점들은 해당 군집이 되며, 두 중심점과 거리가 같아지는 지점에 군집의 경계선이 형성되며, 이 선을 Vornoi tessallation이라고 한다.  
 
-![image](/assets/img/vornoi_tessallation.png)
+![image](/assets/img/vornoi_tessallation.PNG)
 
 k-means 알고리즘의 단계는 다음과 같다.
 
@@ -206,7 +206,7 @@ PCA는 데이터에서 중요한 관계를 찾는 데 도움이 되며, 더 많�
 
 해당 전복 데이터는 전복으로부터 얻은 물리적 측정값들이 존재하며, Height(높이)와 Diameter(직경)이 해당된다.
 
-![image](/assets/img/abalones.png)
+![image](/assets/img/abalones.PNG)
 
 위의 그림에서 Height와 Diameter 외에도 다른 축이 존재한다고 가정할 수 있다.
 
@@ -223,7 +223,7 @@ PCA는 고유벡터와 고유값을 추출하여 축을 변환하는 것이기 �
 기존 축들은 고유벡터에 해당되며, 새로운 축을 만들기 위해 기존축에 곱하는 값은 고유값이라고 하며, loadings이라고 부르기도 한다.  
 <br/>
 
-![image](/assets/img/explaining_rate.png) 
+![image](/assets/img/explaining_rate.PNG) 
 위 사진은 PCA를 통해 생성한 피처인 Size와 Shape이 원래 데이터의 정보를 얼마나 잘 표현하고 있는 지를 보여준다.
 <br/><br/>
 
@@ -256,7 +256,7 @@ Encoding은 범주로 이루어진 피처를 통해 수치형으로 변환하는
 ---
 Target Encoding은 일종의 피처의 범주를 Target과 관련된 값으로 대체하는 것이다.
 
-![image](/assets/img/target_encoding.png)
+![image](/assets/img/target_encoding.PNG)
 
 위의 예시에서 make속성이 alfa-romero에 해당하는 데이터들의 price값이 Target이고, alfa-romero인 값들이 모두 Target의 평균값으로 Encoding 된 모습을 볼 수 있다.
 <br/><br/>
@@ -294,4 +294,4 @@ An easy way to determine the value for weight is to compute an m-estimate:
 <br/><br/>
 
 # Feature Engineering 교육과정 수료
-![image](/assets/img/Daero%20Kim%20-%20Feature%20Engineering.png)
+![image](/assets/img/Daero%20Kim%20-%20Feature%20Engineering.PNG)
