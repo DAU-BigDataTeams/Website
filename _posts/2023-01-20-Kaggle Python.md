@@ -42,6 +42,7 @@ num에 할당하는 값은 이전 값에 대한 간단한 산술을 포함.  Pyt
 |a % b|Modulus|Integer remainder after division of a by b
 |a ** b|Exponentiation|a raised to the power of b
 |-a|Negation|The negative of a
+
 <hr>
 
 ### Order of operations
@@ -135,6 +136,7 @@ print(
 # Booleans and Conditionals
 bool : True /False
 ### 비교연산자
+
 |Operator|Description|Operator|Description|
 |------|---|---|---|
 |a == b	|a equal to b		|a != b	|a not equal to b
