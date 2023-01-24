@@ -1,7 +1,7 @@
 ---
 title: 지리공간 분석 마지막 - Proximity Analysis.  
 layout: post   
-categories : Geospatial, analysis, data, map
+categories : Geospatial, analysis, data, map, kaggle
 image : /assets/img/geopart12.png
 image : /assets/img/박정현-지리공간 수료증.png
 description: 거리를 측정하고 지도에서 주변 지점을 탐색하기

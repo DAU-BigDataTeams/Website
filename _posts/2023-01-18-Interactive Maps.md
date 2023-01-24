@@ -1,7 +1,7 @@
 ---
 title: 지리공간 분석 part3 - 상호작용하는 지도 만들기(Interactive Map).
 layout: post   
-categories : Geospatial, analysis, data, map
+categories : Geospatial, analysis, data, map, kaggle
 image : /assets/img/geopart10.png
 description: plot()메서드가 아닌 folium 라이브러리를 이용해서 상호작용이 가능한 지도를 그려보자
 customexcerpt: plot()메서드가 아닌 folium 라이브러리를 이용해서 상호작용이 가능한 지도를 그려보자

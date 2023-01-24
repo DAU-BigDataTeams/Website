@@ -1,7 +1,7 @@
 ---
 title: 지리공간 분석 part4 - Manipulating Geospatial Data.  
 layout: post   
-categories : Geospatial, analysis, data, map
+categories : Geospatial, analysis, data, map, kaggle
 image : /assets/img/geopart11.png
 description: 지리 공간 데이터 조작에 대한 설명
 customexcerpt: 지리 공간 데이터에 대한 두 가지 일반적인 조작으로 지오코딩 및 테이블 조인에 대해 알아봤다.
