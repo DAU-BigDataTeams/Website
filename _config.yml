@@ -40,7 +40,7 @@ lang: en_US
 
 #Highlighter
 kramdown:
-  input:          GFM
+  input:          CommonMark
   syntax_highlighter: rouge
 
   syntax_highlighter_opts:
