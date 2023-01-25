@@ -41,7 +41,7 @@ lang: en_US
 #Highlighter
 kramdown:
   input:          CommonMark
-  syntax_highlighter: rouge
+  syntax_highlighter: rouge 
 
   syntax_highlighter_opts:
     css_class: 'highlight'
