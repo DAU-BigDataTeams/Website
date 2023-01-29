@@ -1,7 +1,7 @@
 ---
 title: 지리공간 분석 part1 - Your First Map.  
 layout: post   
-categories : Geospatial, analysis, data, map, kaggle
+categories : Geospatial, analysis, Data ,map, kaggle
 image : /assets/img/geopart/geopart2.png
 description: 지리 공간 데이터 또는 지리적 위치가 있는 데이터를 랭글링 및 시각화하는 다양한 방법 소개 
 customexcerpt: Geopandas를 이용해 간단한 지도 시각화
