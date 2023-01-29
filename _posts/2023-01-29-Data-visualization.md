@@ -2,7 +2,7 @@
 title: Data Visualization
 layout: post   
 categories : Data Visualization, seaborn, kaggle
-image : ![alt text](/assert/img/김종호-)
+image : ![alt text](/assets/img/김종호-)
 description: kaggle의 Data Visualization 정리
 customexcerpt: Data Visualization
 ---
@@ -13,7 +13,7 @@ customexcerpt: Data Visualization
 ### Matplotlib 기반의  **통계 데이터 시각화 라이브러리**이다. 
 - 통계 정보 : 구성, 분포, 관계 등
   
-![alt text](/assert/img/Data-visualization/1.%20seaborn.png)  <br><br>
+![alt text](/assets/img/Data-visualization/1.%20seaborn.png)  <br><br>
 
 # 1. Line Charts
 ## 특정 기간의 추세를 보여주는 데 가장 적합하며(시계열 데이터 시각화), 여러 선을 사용하여 둘 이상의 그룹의 추세를 보여줄 수 있다.
@@ -34,7 +34,7 @@ plt.title("Daily Global Streams of Popular Songs in 2017-2018")
 # Line chart showing daily global streams of each song 
 sns.lineplot(data=spotify_data)
 ```
-![alt text](/assert/img/Data-visualization/2.%20seaborn.png) 
+![alt text](/assets/img/Data-visualization/2.%20seaborn.png) 
 - import seaborn as sns : sns은 seaborn package를 의미하며 차트를 만드는 데 사용하는 모든 명령은 sns로 시작한다.
 <br><br>
 
@@ -54,7 +54,7 @@ sns.barplot(x=flight_data.index, y=flight_data['NK'])
 # Add label for vertical axis
 plt.ylabel("Arrival delay (in minutes)")
 ```
-![alt text](/assert/img/Data-visualization/3.%20seaborn.png) 
+![alt text](/assets/img/Data-visualization/3.%20seaborn.png) 
 - x=flight_data.index : x축에서 사용할 항목 결정  (이 경우는 '날짜'가 들어있는 열 선택)
 - y=fight_data['NK'] : y축에서 사용할 항목 결정 
 <br><br>
@@ -74,12 +74,12 @@ sns.heatmap(data=flight_data, annot=True)
 # Add label for horizontal axis
 plt.xlabel("Airline")
 ```
-![alt text](/assert/img/Data-visualization/4.%20seaborn.png)
+![alt text](/assets/img/Data-visualization/4.%20seaborn.png)
 - annot=True : 각 셀에 숫자를 입력(annotate each cell with numeric value)
 <br><br>
 ## Heatmaps 해석
 
-![alt text](/assert/img/Data-visualization/5.%20seaborn.png))<br>
+![alt text](/assets/img/Data-visualization/5.%20seaborn.png))<br>
 - 위 사진은 platform과 Genre의 평균 평점에 관한 히트맵이다.
 - PlayStaion 4의 Simulation이 가장 높은 평균 평점(9.2)을 받은 것 확인할 수 있다. 
 - 그에 반해 Game Boy Color의 Fighting, Shooter은 가장 낮은 평균 평점(4.5)을 받았다.
@@ -93,7 +93,7 @@ plt.xlabel("Airline")
 sns.scatterplot(x=candy_data['sugarpercent'],y=candy_data['winpercent'])
 ```
 
-![alt text](/assert/img/Data-visualization/6.%20seaborn.png)<br>
+![alt text](/assets/img/Data-visualization/6.%20seaborn.png)<br>
 ##### sugarpercent : 설탕 함량 
 ##### winpercent : 설문 조사 결과 
 
@@ -107,7 +107,7 @@ sns.scatterplot(x=candy_data['sugarpercent'],y=candy_data['winpercent'])
 
 sns.regplot(x=candy_data['sugarpercent'], y=candy_data['winpercent'])
 ```
-![alt text](/assert/img/Data-visualization/7.%20seaborn.png)<br>
+![alt text](/assets/img/Data-visualization/7.%20seaborn.png)<br>
 - 회귀선의 기울기가 양수이므로 사람들은 상대적으로 더 많은 설탕을 함유한 사탕을 선호한다는 것을 알 수 있다.<br><br>
 
 ## Swarmplot
@@ -117,7 +117,7 @@ sns.regplot(x=candy_data['sugarpercent'], y=candy_data['winpercent'])
 sns.swarmplot(x=insurance_data['smoker'],
               y=insurance_data['charges'])
 ```
-![alt text](/assert/img/Data-visualization/8.%20seaborn.png)<br>
+![alt text](/assets/img/Data-visualization/8.%20seaborn.png)<br>
 - 평균적으로 비흡연자들이 흡연자들보다 보험료를 적게 지불한다.
 <br><br>
 # 5. Histograms
@@ -129,17 +129,17 @@ sns.histplot(data = cancer_data,x=cancer_data['Area (mean)'],hue='Diagnosis')
 - 양성 종양(B)과 악성 종양(M) 평균 면적값의 분포를 보여주는 히스토그램이다.
 - 악성 종양이 평균적으로 평균 면적이 더 높다.
  
-![alt text](/assert/img/Data-visualization/9.%20seaborn.png)
+![alt text](/assets/img/Data-visualization/9.%20seaborn.png)
 <br><br>
 ## KDE plot
 - 커널 밀도 추정(KDE: KDE: Kernel Density Estimator)은 히스토그램과 방식이 비슷하다.
 - 하지만 히스토그램 방식은 구간의 경계에서 불연속성이 나타나거나, 구간의 크기 및 시작 위치에 따라 히스토그램이 달라진다.
 - KDE는 이 문제점을 개선해서 각 데이터마다 그 데이터를 중심으로 하는 특정모양의 확률곡선을 그려서 분포를 파악하기 편하다.
   
-![alt text](/assert/img/Data-visualization/10.%20seaborn.png)
+![alt text](/assets/img/Data-visualization/10.%20seaborn.png)
 
 ## 2D KDE plots
-![alt text](/assert/img/Data-visualization/11.%20seaborn.png)
+![alt text](/assets/img/Data-visualization/11.%20seaborn.png)
 <br><br>
 # 6. Parameter and Custom Styles
 
@@ -152,7 +152,7 @@ sns.set_style("dark")
 plt.figure(figsize=(12,6))
 sns.lineplot(data=spotify_data)
 ```
-![alt text](/assert/img/Data-visualization/12.%20seaborn.png)
+![alt text](/assets/img/Data-visualization/12.%20seaborn.png)
 - seaborn은 (1)"darkgrid", (2)"whitegrid", (3)"dark", (4)"white", and (5)"ticks"의 다섯 가지 테마가 있다.
 <br><br>
 ## hue & shade
@@ -170,4 +170,4 @@ plt.title("Distribution of Petal Lengths, by Species")
 - shade : 곡선 아래 영역을 색칠한다.
 
 <br><br>
-![alt text](/assert/img/Data-visualization/14.%20seaborn.png)
+![alt text](/assets/img/김종호-데이터시각화수료증.png)

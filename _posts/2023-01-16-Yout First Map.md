@@ -2,7 +2,7 @@
 title: 지리공간 분석 part1 - Your First Map.  
 layout: post   
 categories : Geospatial, analysis, data, map, kaggle
-image : /assets/img/geopart2.png
+image : /assets/img/geopart/geopart2.png
 description: 지리 공간 데이터 또는 지리적 위치가 있는 데이터를 랭글링 및 시각화하는 다양한 방법 소개 
 customexcerpt: Geopandas를 이용해 간단한 지도 시각화
 ---
@@ -278,7 +278,7 @@ GeoPandas를 사용해서 빠르게 지도를 시각화 해보자.
 ~~~py
 wild_lands.plot() # 앞서 만들어둔 객체
 ~~~
-![결과](/assets/img/geopart1.png)
+![결과](/assets/img/geopart/geopart1.png)
 
 
 > **이게 가능한 이유? 모든 GeoPandas의 DataFrame에는 **geometry**라는 컬럼이 포함되어있는데 이것은 **plot()** 메서드를 호출했을 때 표시되는 지도 객체를 포함함**  
@@ -313,7 +313,7 @@ wild_lands.plot(color='lightgreen', ax=ax)
 campsites.plot(color='maroon', markersize=2, ax=ax)
 trails.plot(color='black', markersize=1, ax=ax)
 ~~~
-![완성된-지도](/assets/img/geopart2.png)
+![완성된-지도](/assets/img/geopart/geopart2.png)
 
 **이때 중요한 것은 ax라는 값을 통해서 동일한 지도에 표시하게 하는 점**
 

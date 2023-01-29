@@ -2,7 +2,7 @@
 title: 지리공간 분석 part2 - Coordinate Reference System(CRS).  
 layout: post   
 categories : Geospatial, analysis, data, map, kaggle
-image : /assets/img/geopart3.png
+image : /assets/img/geopart/geopartgeopart3.png
 description: GeoPandas와 좌표계에 대한 설명
 customexcerpt: 지구를 2차원으로 표현해서 지도를 생성하지만, 사실 지구는 삼차원인 것을 알고있습니다. 그래서 우리는 map projection 이라 불리는 방법을 사용해서 평면에 투영시킵니다.  
 ---
@@ -16,7 +16,7 @@ Map projection은 100% 정확하지 않습니다. 각 프로젝션(projection)�
 1. 등면적 투영법 - 면적을 보존하는 특징이있음 때문에 국가, 도시 면적을 계산하는 경우 유용함.
 2. 긍거리 투영법 - 방위각 등거리 투영이라고도 부르고 거리를 유지하기때문에 항공, 해양 등 운행거리를 계산하는 것에 유용한 방법이다.
 
-![예시](/assets/img/geopart3.png)
+![예시](/assets/img/geopart/geopart3.png)
 
 좌표 참조 시스템(CRS)를 사용해서 투영된 점이 지구상의 실제 위치와 어떻게 일치하는지 보여준다. 뭐 여튼 지금 배우는 것은 GeoPandas를 이용해서 CRS를 사용하는 방법에 대해 알아보는 것이 목표다.
 
@@ -152,7 +152,7 @@ ax = regions.plot(figsize=(8,8), color='whitesmoke', linestyle=':', edgecolor='b
 facilities.to_crs(epsg=32630).plot(markersize=1, ax=ax) # to_crs()주목
 # epsg = 32630으로 적용
 ~~~
-![to_crs](/assets/img/geopart4.png)
+![to_crs](/assets/img/geopart/geopart4.png)
 
 참고로 ```to_crs()```메서드는 geometry column만 수정하고 다른 column은 건들지 않는다!  
 

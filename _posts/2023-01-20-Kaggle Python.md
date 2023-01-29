@@ -2,7 +2,7 @@
 title: kaggle Python corues 
 layout: post   
 categories : Python, Programming, kaggle
-image : /assets/img/김아영-파이썬-수료증.png
+image : /assets/img/수료증/김아영-파이썬-수료증.png
 description: kaggle-python-review
 customexcerpt: kaggle의 Python 과정을 수료하며 작성한 리뷰!
 ---
@@ -432,4 +432,4 @@ df[(df['population'] > 10**6) & (df['continent'] == 'South America')]
 ~~~
 <hr>
 
-![python](/assets/img/김아영-파이썬-수료증.png)
+![python](/assets/img/수료증/김아영-파이썬-수료증.png)
