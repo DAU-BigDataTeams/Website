@@ -170,8 +170,6 @@ plt.title("Distribution of Petal Lengths, by Species")
 - shade : 곡선 아래 영역을 색칠한다.
 
 <br><br>
-<<<<<<< HEAD
-![alt text](/assets/img/김종호-데이터시각화수료증.png)
-=======
-![alt text](/assert/img/14.%20seaborn.png)
->>>>>>> 54b89b12bf9a20a9576a4636a9ef0013e9446775
+
+![alt text](/assets/img/수료증/김종호-데이터시각화수료증.png)
+
