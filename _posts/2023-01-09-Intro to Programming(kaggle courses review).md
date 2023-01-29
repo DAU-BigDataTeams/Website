@@ -1,7 +1,7 @@
 ---
 title: Intro to Programming(kaggle courses review)
 layout: post
-image : /assets/img/이수원-수료증.png
+image : /assets/img/수료증/이수원-수료증.png
 categories : Programming, Intro, kaggle
 description: "kaggle courese - Intro to Programming"
 customexcerpt: "케글 교육과정 중 Intro to Programming을 수료하다!" # 미리보기 글 
@@ -827,4 +827,4 @@ _<span style="background-color:blue">Not just Integer List, Float List also poss
 
 ___
 
-![이수원-수료증](/assets/img/이수원-수료증.png)
+![이수원-수료증](/assets/img/수료증/이수원-수료증.png)

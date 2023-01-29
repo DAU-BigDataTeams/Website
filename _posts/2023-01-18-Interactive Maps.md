@@ -2,7 +2,7 @@
 title: 지리공간 분석 part3 - 상호작용하는 지도 만들기(Interactive Map).
 layout: post   
 categories : Geospatial, analysis, data, map, kaggle
-image : /assets/img/geopart10.png
+image : /assets/img/geopart/geopart10.png
 description: plot()메서드가 아닌 folium 라이브러리를 이용해서 상호작용이 가능한 지도를 그려보자
 customexcerpt: plot()메서드가 아닌 folium 라이브러리를 이용해서 상호작용이 가능한 지도를 그려보자
 ---
@@ -24,7 +24,7 @@ from folium.plugins import HeatMap, MarkerCluster
 m_1 = folium.Map(location=[42.32,-71.0589], tiles='openstreetmap', zoom_start=10) 
 m_1 # 지도 출력
 ~~~
-![geopart5](/assets/img/geopart5.png)
+![geopart5](/assets/img/geopart/geopart5.png)
 
 ```folium.Map()```에 적용한 파라미터를 살펴보면
 - location = 대상 위치의 위도, 경로를 의미함
@@ -55,7 +55,7 @@ for idx, row in daytime_robberies.iterrows():
 # Display the map
 m_2
 ~~~
-![geopart6](/assets/img/geopart6.png)
+![geopart6](/assets/img/geopart/geopart6.png)
 
 ### folium.plugin.MarkerCluster
 ----
@@ -113,7 +113,7 @@ for i in range(0,len(daytime_robberies)):
 # Display the map
 m_4
 ~~~
-![geopart8](/assets/img/geopart8.png)
+![geopart8](/assets/img/geopart/geopart8.png)
 
 파라미터 설명
 - location : 위/경도 리스트
@@ -134,7 +134,7 @@ HeatMap(data=crimes[['Lat', 'Long']], radius=10).add_to(m_5)
 # Display the map
 m_5
 ~~~
-![geopart9](/assets/img/geopart9.png)
+![geopart9](/assets/img/geopart/geopart9.png)
 
 파라미터 설명
 - data : 나타래려는 위치를 포함하는 DataFrame

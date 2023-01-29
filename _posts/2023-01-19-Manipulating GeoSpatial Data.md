@@ -2,7 +2,7 @@
 title: 지리공간 분석 part4 - Manipulating Geospatial Data.  
 layout: post   
 categories : Geospatial, analysis, data, map, kaggle
-image : /assets/img/geopart11.png
+image : /assets/img/geopart/geopart/geopart11.png
 description: 지리 공간 데이터 조작에 대한 설명
 customexcerpt: 지리 공간 데이터에 대한 두 가지 일반적인 조작으로 지오코딩 및 테이블 조인에 대해 알아봤다.
 ---
@@ -14,7 +14,7 @@ customexcerpt: 지리 공간 데이터에 대한 두 가지 일반적인 조작�
 ----
 우선 지오코딩이란 장소 이름, 주소를 지도의 위치로 변환하는 과정을 말한다. 예를 들어 Google지도, Bing 지도 등을 사용해서 랜드마크 설명을 기반으로 지리적 위치를 조회한 적이 있다면 지오코더를 사용 해본 것이다.
 
-![geopart12](/assets/img/geopart12.jfif)
+![geopart12](/assets/img/geopart/geopart12.jfif)
 
 이제 Python의 `geopy`를 이용해서 지오코딩을 해보자
 ~~~py
