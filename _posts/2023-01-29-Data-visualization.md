@@ -2,7 +2,7 @@
 title: Data Visualization
 layout: post   
 categories : Data Visualization, seaborn, kaggle
-image : ![alt text](/assets/img/김종호-)
+image : /assets/img/수료증/김종호
 description: kaggle의 Data Visualization 정리
 customexcerpt: Data Visualization
 ---
