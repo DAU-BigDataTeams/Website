@@ -294,4 +294,4 @@ An easy way to determine the value for weight is to compute an m-estimate:
 <br/><br/>
 
 # Feature Engineering 교육과정 수료
-![image](/assets/img/수료증/Daero%20Kim%20-%20Feature%20Engineering.PNG)
+![image](/assets/img/수료증/Daero%20Kim%20-%20Feature%20Engineering.png)
