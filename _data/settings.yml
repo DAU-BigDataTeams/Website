@@ -27,12 +27,12 @@ date-under-post:
 
 #Use MathJAX
 mathjax:
-  active: false
+  active: true
 
 #Show related posts based on categories
 related-posts:
   active: true
-  title: 
+  title: "다른 Post도 있어요!"
 
 #Comments
 comments: true
