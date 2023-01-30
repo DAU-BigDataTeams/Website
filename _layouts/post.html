@@ -25,6 +25,10 @@
         {{ content }}
       </article>
     </div>
+    {% if site.data.settings.comments %}
+    {% include comments.html %}
+    {% endif %}
+    
     {% if site.data.settings.categories.active %}
     {% include categories.html %}
     {% endif %}
@@ -33,9 +37,7 @@
     {% include related-posts.html %}
     {% endif %}
 
-    {% if site.data.settings.comments %}
-    {% include comments.html %}
-    {% endif %}
+
   </div>
 
   {%- include footer.html -%}

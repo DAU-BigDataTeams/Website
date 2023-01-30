@@ -32,7 +32,7 @@ mathjax:
 #Show related posts based on categories
 related-posts:
   active: true
-  title: "다른 Post도 있어요!"
+  title: "비슷한 주제의 다양한 Post도 있어요!"
 
 #Comments
 comments: true
