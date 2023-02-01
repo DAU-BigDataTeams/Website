@@ -1,5 +1,5 @@
 ---
-title: Intermediate Machine Learning
+title: 모델의 성능 개선을 위한 여러가지 전처리 방법
 layout: post   
 categories : ML, kaggle
 image : /assets/img/수료증/박정현-IntermediateML.png
