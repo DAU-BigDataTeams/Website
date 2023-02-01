@@ -809,7 +809,7 @@ from xgboost import XGBRegressor
 my_model = XGBRegressor()
 my_model.fit(X_train, y_train)
 ~~~
-~~~
+<pre>
 XGBRegressor(base_score=0.5, booster='gbtree', colsample_bylevel=1,
              colsample_bynode=1, colsample_bytree=1, enable_categorical=False,
              gamma=0, gpu_id=-1, importance_type=None,
@@ -819,7 +819,7 @@ XGBRegressor(base_score=0.5, booster='gbtree', colsample_bylevel=1,
              num_parallel_tree=1, predictor='auto', random_state=0, reg_alpha=0,
              reg_lambda=1, scale_pos_weight=1, subsample=1, tree_method='exact',
              validate_parameters=1, verbosity=None)
-~~~
+</pre>
             
 ~~~py
 from sklearn.metrics import mean_absolute_error
