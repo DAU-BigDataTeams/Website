@@ -106,8 +106,7 @@ Model 5 MAE: 23706
 
 ### 누락 값 처리 예시
 -----
-<details>
-<summary>코드 보기</summary>
+
 
 ~~~py
 import pandas as pd
@@ -214,7 +213,6 @@ MAE from Approach 3 (An Extension to Imputation):
 
 실험 결과를 보니까 접근법 3 보다 접근법 2가 성능이 약간 높았다. 
 
-</details>
 
 <p></p>
 <p></p>
@@ -294,9 +292,6 @@ Ordinal Encoding은 각 고유 값을 다른 정수에 할당한다.
 
 원-핫 인코딩은 일반적으로 범주형 변수가 많은 수의 값을 취하는 경우 잘 수행되지 않는다.  
 > 보통 15개 정도가 Bound라고 함.
-
-<details>
-<summary>코드 보기</summary>
 
 ~~~py
 import pandas as pd
@@ -449,7 +444,6 @@ print(object_cols)
 Categorical variables:
 ['Type', 'Method', 'Regionname']
 </pre>
-</details>
 
 ## 각 접근법의 품질을 측정하는 기능 정의
 ---
@@ -577,9 +571,8 @@ train_data로부터 학습된 mean값과 variance값을 test data에 적용하�
 
 ## 예시
 ----
-데이터를 불러오고 훈련, 학습 데이터로 나누는 것은 생략한다.
-<details>
-<summary>더보기</summary>
+데이터를 불러오고 훈련, 학습 데이터로 나누는 것은 생략한다(라고 할뻔).
+
 
 ~~~py
 import pandas as pd
@@ -610,7 +603,6 @@ X_train = X_train_full[my_cols].copy()
 X_valid = X_valid_full[my_cols].copy()
 ~~~
 
-</details>
 
 ### 1단계 파이프라인 단계 정의
 `ColumnTransformer` 클래스를 사용해서 서로 다른 전처리 단계를 함께 묶는다.
