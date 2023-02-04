@@ -49,7 +49,7 @@ kramdown:
     span:
       line_numbers: False
     block:
-      line_numbers: True
+      line_numbers: False
       start_line: 1
 
 #Sass
@@ -63,4 +63,4 @@ analytics:
                           # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          : "G-Z438CCPYGJ "
-    anonymize_ip         : # true, false (default)
+    anonymize_ip         : false 
