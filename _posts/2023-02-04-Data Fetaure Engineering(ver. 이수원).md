@@ -1,7 +1,7 @@
 ---
 title: 훌륭한 기계 학습 모델 구축을 위한 Feature Engineering 학습하다.
 layout: post   
-categories : python, Kaggle, ML, Data, Data-processing
+categories : py, Kaggle, ML, Data, Data-processing
 image : /assets/img/수료증/이수원-DataFeature수료증.png
 description: Kaggle의 교육 과정 중 Feature Engineering을 학습하며, 정리하고 번역한 글입니다. 
 customexcerpt: 형상이 유용하려면 모형이 학습할 수 있는 대상과 관계가 있어야 한다. 예를 들어, 선형 모델은 선형 관계만 학습할 수 있다. 따라서 선형 모형을 사용할 때, 목표는 형상과 대상의 관계를 선형으로 만들기 위해 형상을 변환하는 것이다.
@@ -107,10 +107,10 @@ PCA가 구성하는 새로운 기능은 사실 원래 기능의 선형 조합(�
 
 
 
-```python
+~~~py
 df["Size"] = 0.707 * X["Height"] + 0.707 * X["Diameter"]
 df["Shape"] = 0.707 * X["Height"] - 0.707 * X["Diameter"]
-```
+~~~
 
 
 
@@ -202,12 +202,12 @@ Boost any categorical feature with this powerful technique.
 
 
 
-```python
+~~~py
 # 해당 csv 파일은 Kaggle에 있음을 알립니다.
 import pandas as pd
 
 autos = pd.read_csv("../input/fe-course-data/autos.csv")
-```
+~~~
 
 
 ### ****Target Encoding****
@@ -221,11 +221,11 @@ A **target encoding**is any kind of encoding that replaces a feature's categori
 자동차 데이터 세트를 사용하여 각 차량의 평균 가격을 계산해보자.
 
 
-```python
+~~~py
 autos["make_encoded"] = autos.groupby("make")["price"].transform("mean")
 
 autos[["make", "price", "make_encoded"]].head(10)
-```
+~~~
 
 
 이러한 종류의 대상 인코딩을 **mean encoding(평균 인코딩)**이라고도 한다. 
@@ -263,9 +263,9 @@ autos[["make", "price", "make_encoded"]].head(10)
 이 방법은 **범주 내 평균과 전체 평균을 혼합하는 것** 이다. 희귀한 범주는 범주 평균에 대한 가중치가 적은 반면, 누락된 범주는 전체 평균만 가져오게 된다. 
 
 
-```python
+~~~py
 encoding = weight * in_category + (1 - weight) * overall
-```
+~~~
 
 
 여기서 weight는 범주 빈도에서 계산된 0과 1 사이의 값이다.
@@ -275,9 +275,9 @@ encoding = weight * in_category + (1 - weight) * overall
 무게 값을 쉽게 확인할 수 있는 방법은 **m-추정치** 를 계산하는 것이다.
 
 
-```python
+~~~py
 weight = n / (n + m)
-```
+~~~
 
 
 여기서 **n은 데이터에서 해당 범주가 발생하는 총 횟수** 이다.
@@ -289,9 +289,9 @@ weight = n / (n + m)
 *자동차 데이터 세트에는 쉐보레를 만드는 세 대의 자동차가 있다. m=2.0을 선택한 경우 쉐보레 범주는 평균 쉐보레 가격의 60%에 전체 평균 가격의 40%를 더한 값으로 인코딩다.*
 
 
-```python
+~~~py
 chevrolet = 0.6 * 6000.00 + 0.4 * 13285.03
-```
+~~~
 
 
 <aside>
@@ -322,7 +322,9 @@ chevrolet = 0.6 * 6000.00 + 0.4 * 13285.03
 # 해당 POST는 Kaggle 강의 중 'Feature Engineering' 과정의 해석본과 다름 없습니다. 
 
 
-### 정확한 자료와 실습을 위하여, Kaggle의 해당 강의를 수강하는 것을 추천합니다. https://www.kaggle.com/learn/feature-engineering
-### 작성자의 Notion에 강의 자료와 실습 풀이 내용이 정리되어 있습니다. https://www.notion.so/Feature-Engineering-376e30e93d2e460d859f84e2d9714c53
+### 정확한 자료와 실습을 위하여, Kaggle의 해당 강의를 수강하는 것을 추천합니다.   
+[Kaggle](https://www.kaggle.com/learn/feature-engineering)
+### 작성자의 Notion에 강의 자료와 실습 풀이 내용이 정리되어 있습니다.   
+[작성자 Notion](ttps://www.notion.so/Feature-Engineering-376e30e93d2e460d859f84e2d9714c53)
 
 ![1](/assets/img/수료증/이수원-DataFeature수료증.png)
