@@ -2,7 +2,7 @@
 title: 머신러닝 기초 알아보기(트리 기반 모델 중심)
 layout: post   
 categories : ML, kaggle
-image : assert/img/박민서-Intro_to_ML_수료증.png
+image : /assets/img/수료증/박민서-Intro_to_ML_수료증.png
 description: kaggle의 Intro to Machine Learning 코스 정리
 customexcerpt: Decision Tree(의사결정 트리)는 기계 학습 모델들의 기본이 되는 모델이라 할 수 있으며, 다른 모델에 비해 이해하기 쉽다.      
 ---
@@ -452,4 +452,4 @@ print(mean_absolute_error(val_y, melb_preds))
 -----
 추가적으로 개선이 가능해보이지만, 위는 **최선의 의사결정 트리의 MAE인 250,000에 비하면 훨씬 더 좋은 성능을 보이고 있다.** 단일 의사 결정 트리의 최대 깊이를 변경한 것처럼, 랜덤 포레스트의 성능을 조정할 수 있는 매개 변수가 있다. 그러나 랜덤 포레스트 모델의 가장 좋은 특징 중 하나는 따로 튜닝을 하지 않아도 대부분 합리적으로 작동한다는 것이다.
 
-![introML](assert/img/박민서-Intro_to_ML_수료증.png)
+![introML](/assets/img/수료증/박민서-Intro_to_ML_수료증.png)
