@@ -38,7 +38,6 @@ customexcerpt: Decision Tree(의사결정 트리)는 기계 학습 모델들의 
 # 2. Basic Data Exploration
 
 ## Using Pandas to Get Familiar With Your Data
-
 -----
 
 Pandas 라이브러리는 data scientist들이 데이터를 탐색하고 조작하기 위해 주로 사용하는 툴이다. 대부분의 사람들은 코드에서 Pandas를 pd로 줄여서 부른다.
