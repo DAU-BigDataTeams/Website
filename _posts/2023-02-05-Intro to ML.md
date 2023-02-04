@@ -30,7 +30,7 @@ customexcerpt: kaggle의 Intro to Machine Learning 코스 수료
 -----
  모델을 fitting 시킨 이후에는 그 모델을 통해 새로운 주택들의 가격을 예측할 수 있다. 그러나 이는 다른 요소들을 고려하지 못한다는 단점이 있다.
  **더 많은 "분할(splits)"이 있는 트리를 사용**하여 **다양한 요인에 따라 세부적으로 예측이 가능**하다.  
- ![h_1_2_ddt](https://i.imgur.com/R3ywQsR.png)
+ ![h_1_2_ddt](https://i.imgur.com/R3ywQsR.png)  
  많은 분할이 있는 트리를 우리는 **"deep"한 tree**라고 말한다.  
    
  이에 따라서 집의 예상 가격은 트리의 가장 아래부분에서 확인할 수 있다. 즉, 모델로부터 나오는 예측 결과는 가장 아래쪽 리프라고 불리는 곳에서 확인할 수 있다.
@@ -43,7 +43,7 @@ customexcerpt: kaggle의 Intro to Machine Learning 코스 수료
 
 Pandas 라이브러리는 data scientist들이 데이터를 탐색하고 조작하기 위해 주로 사용하는 툴이다. 대부분의 사람들은 코드에서 Pandas를 pd로 줄여서 부른다.
 
-~~~
+~~~py
 import pandas as pd
 ~~~
 
@@ -54,7 +54,7 @@ Pandas는 데이터 프레임으로 수행하고자 하는 대부분의 작업 �
 
 데이터를 로드할 때에는 밑의 메서드를 사용한다.
 
-~~~
+~~~py
 # save filepath to variable for easier access
 melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv'
 # read the data and store data in DataFrame titled melbourne_data
@@ -90,7 +90,7 @@ describe()의 결과인 위의 표는 원래 데이터셋의 각 열에 대한 8
 -----
 DataFrame의 Column을 뽑아내는 방법
 
-~~~
+~~~py
 import pandas as pd
 
 melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv'
@@ -101,7 +101,7 @@ melbourne_data.columns
 * 결측값 : 데이터셋 내에 누락된 값
 * dropna() : 데이터셋의 결측값을 삭제할 때 사용하는 메서드
 
-~~~
+~~~py
 melbourne_data.dropna(axis=0) # 결측값이 포함된 row를 삭제한다.
 # axis = 1인 경우 결측값이 포함된 column을 삭제한다.
 ~~~
@@ -118,7 +118,7 @@ melbourne_data.dropna(axis=0) # 결측값이 포함된 row를 삭제한다.
 
 **도트 표기법을 사용하여 예측하기 위해 선택한 열**을 **예측 대상**이라고 한다. 이 예측 대상을 *y* 라고 하자.  
 
-~~~
+~~~py
 y = melbourne_data.Price
 # Price 열을 선택
 ~~~
@@ -132,19 +132,19 @@ y = melbourne_data.Price
 가끔 예측 대상을 제외한 모든 열을 "Feature"로써 사용하는 경우도 있다.
 **리스트 내에 열 이름을 적어서 여러 Feature들을 선택**한다. 이 때, **각 항목(열 이름)들은 따옴표가 있는 문자열**이어야 한다.
 
-~~~
+~~~py
 melbourne_features = ['Rooms', 'Bathroom', 'Landsize', 'Lattitude', 'Longtitude']
 ~~~
 
 이 feature들로 뽑아낸 data를 X라고 하자.
 
-~~~
+~~~py
 X = melbourne_data[melbourne_features]
 ~~~
 
 집값을 예측하기 위해 사용할 데이터를 빠르게 리뷰하기 위한 **describe()**, **head()** 메소드
 
-~~~
+~~~py
 X.descirbe()
 ~~~
 
@@ -161,7 +161,7 @@ describe() 의 결과
 |75%|4.000000|2.000000|628.000000|-37.758200|145.052700|
 |max|8.000000|8.000000|37000.000000|-37.457090|145.526350|
 
-~~~
+~~~py
 X.head()
 ~~~
 
@@ -195,7 +195,7 @@ Scikit-learn 라이브러리를 사용하여 모델을 구축할 수 있다. Sci
 
 아래의 코드는 scikit-learn을 사용하여 의사결정 트리 모델을 정의하고 이를 feature 및 타겟 변수에 fitting 시키는 예이다.
 
-~~~
+~~~py
 from sklearn.tree import DecisionTreeRegressor
 
 # Define model. Specify a number for random_state to ensure same results each run
@@ -211,7 +211,7 @@ random_state라는 변수에 숫자를 지정하면, 매 실행마다 동일한 
   
 이제는 시장에 나올 새로운 주택에 대한 예측을 하고싶을 것이다. 그 전에 우리는 모델이 어떻게 작동하는지 보기 위해서, training data의 처음 몇 행에 대한 예측을 할 것이다.  
 
-~~~
+~~~py
 print("Making predictions for the following 5 houses:")
 print(X.head())
 print("The predictions are")
@@ -252,7 +252,7 @@ The predictions are
 MAE 지표를 사용하여 각 오류의 절대값을 구하게 되면, 오류들이 양수로 변환된다. 양수로 변환된 오류들로 절대 오차 ( |오차| ) 의 평균을 구하게 되면 그것이 바로 모델 품질을 측정하는 척도가 된다.  
 이를 통해 우리의 예측이 X 정도 빗나갔다~ 라고 말할 수 있다.
 
-~~~
+~~~py
 # Data Loading Code Hidden Here
 import pandas as pd
 
@@ -273,20 +273,20 @@ melbourne_model = DecisionTreeRegressor()
 # Fit model
 melbourne_model.fit(X, y)
 ~~~
-~~~
+~~~py
 DecisionTreeRegressor()
 ~~~
 
 MAE를 구하는 방법은 아래 코드와 같다.
 
-~~~
+~~~py
 from sklearn.metrics import mean_absolute_error
 
 predicted_home_prices = melbourne_model.predict(X)
 mean_absolute_error(y, predicted_home_prices)
 ~~~
 
-~~~
+~~~py
 434.71594577146544 # MAE의 결과
 ~~~
 
@@ -307,7 +307,7 @@ Sample" 점수라고 할 수 있다. 모델을 구축하고 평가하기 위해 
 
 scikit-learn 라이브러리는 데이터를 두 조각으로 나누는 **train_test_split** 함수를 가지고 있다. 이 함수를 사용하여 데이터 중 일부는 training data로 사용하고, 나머지 데이터를 validation data로 사용하여 **mean_absolute_error (MAE)** 를 계산한다.
 
-~~~
+~~~py
 from sklearn.model_selection import train_test_split
 
 # split data into training and validation data, for both features and target
@@ -325,7 +325,7 @@ val_predictions = melbourne_model.predict(val_X)
 print(mean_absolute_error(val_y, val_predictions))
 ~~~
 
-~~~
+~~~py
 258930.03550677857 # 결과
 ~~~
 
@@ -377,7 +377,7 @@ Scikit-learn의 [문서](https://scikit-learn.org/stable/modules/generated/sklea
   
 utility 함수를 사용해서 max_leaf_nodes에 대한 MAE 점수들을 비교할 수 있다.
 
-~~~
+~~~py
 from sklearn.metrics import mean_absolute_error # MAE를 위해 import 해준다
 from sklearn.tree import DecisionTreeRegressor
 
@@ -391,14 +391,14 @@ def get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y):
 
 for-loop를 사용하여 max_leaf_nodes에 대해 다른 값으로 구축된 모델의 정확도를 비교할 수 있다.
 
-~~~
+~~~py
 # compare MAE with differing values of max_leaf_nodes
 for max_leaf_nodes in [5, 50, 500, 5000]:
     my_mae = get_mae(max_leaf_nodes, train_X, val_X, train_y, val_y)
     print("Max leaf nodes: %d  \t\t Mean Absolute Error:  %d" %(max_leaf_nodes, my_mae))
 ~~~
 
-~~~
+~~~py
 # 결과
 Max leaf nodes: 5  		 Mean Absolute Error:  347380
 Max leaf nodes: 50  		 Mean Absolute Error:  258171
@@ -434,7 +434,7 @@ Max leaf nodes: 5000  		 Mean Absolute Error:  254983
   
 우리는 Scikit-learn에서 의사결정 트리를 구축한 방법과 유사하게 랜덤 포레스트 모델을 구축한다. 이번에는 DecisionTreeRegressor 대신에, **RandomForestRegressor** 클래스를 이용한다.
 
-~~~
+~~~py
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 
@@ -443,7 +443,7 @@ forest_model.fit(train_X, train_y)
 melb_preds = forest_model.predict(val_X)
 print(mean_absolute_error(val_y, melb_preds))
 ~~~
-~~~
+~~~py
 # 결과
 191669.7536453626
 ~~~
