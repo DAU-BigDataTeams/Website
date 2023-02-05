@@ -32,10 +32,7 @@ customexcerpt: 팀원 일부가 2022년 동아대학교 컴퓨터AI공학부 Dev
 
 보다 자세한 내용은 [Github](https://github.com/DAU-BigDataTeams/Location-Analysis-of-Busan-Senior-Park)를 참고해 주세요
 
-<iframe src="https://ai.wizice.com:12443/bigdatateam" width="710" height="800">
-    <embed src="https://ai.wizice.com:12443/bigdatateam" width="710" height="800">
-</iframe>
-
+개발한 대시보드 체험판은 [여기](https://ai.wizice.com:12443/bigdatateam)에서 확인 할 수 있습니다.
 
 <iframe src="/assets/project/Location Analysis of Busan Senior Park.pdf" width="710" height="800">
     <embed src="/assets/project/Location Analysis of Busan Senior Park.pdf" width="710" height="800">
