@@ -325,6 +325,6 @@ chevrolet = 0.6 * 6000.00 + 0.4 * 13285.03
 ### 정확한 자료와 실습을 위하여, Kaggle의 해당 강의를 수강하는 것을 추천합니다.   
 [Kaggle](https://www.kaggle.com/learn/feature-engineering)
 ### 작성자의 Notion에 강의 자료와 실습 풀이 내용이 정리되어 있습니다.   
-[작성자 Notion](ttps://www.notion.so/Feature-Engineering-376e30e93d2e460d859f84e2d9714c53)
+[작성자 Notion](https://www.notion.so/Feature-Engineering-376e30e93d2e460d859f84e2d9714c53)
 
 ![1](/assets/img/수료증/이수원-DataFeature수료증.png)
