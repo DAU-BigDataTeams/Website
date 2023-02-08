@@ -2,7 +2,7 @@
 title: Linear Regression / Regulation / Logistic regression 세미나 진행
 layout: post   
 categories : Data, analytics, seminar, ML
-image : /assets/img/23-02-07-세미나.png
+image : /assets/img/세미나/23-02-07-세미나.jpg
 description: 23-02-07 세미나
 customexcerpt: 선형회귀(Linear Regression)과 여러 Regression에 대해 살펴보았으며 범주형 데이터를 분류하는 실습을 통해 Logistic regression과 Linear Regression의 성능 차이를 비교하였다. 그 결과 Lopgistic regression의 성능이 우수했다.
 ---
