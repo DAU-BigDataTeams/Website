@@ -26,7 +26,7 @@ customexcerpt: "비가오는 방학임에도 세미나를 듣기위해 참석해
 ----
 1기 멤버 전원(1기 멤버를 알고싶다면? [Click](https://dau-bigdatateams.github.io/2022/12/08/1st-Member.html))
 
-![23-01-13 세미나](/assets/img/23-01-13-세미나.jpg)  
+![23-01-13 세미나](/assets/img/세미나/23-01-13-세미나.jpg)  
 
 ----
 
