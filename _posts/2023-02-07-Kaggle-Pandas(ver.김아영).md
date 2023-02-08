@@ -1,7 +1,7 @@
 ---
 title: pandas  
 layout: post   
-categories : kaggle pandas python_library
+categories : kaggle pandas python-library
 image : /assets/img/수료증/zerotoA - Pandas.png
 description: Kaggle의 Pandas과정 정리  
 customexcerpt: 데이터 분석에 가장 인기 있는 파이썬 라이브러리인 Pandas를 정리해보았다.
