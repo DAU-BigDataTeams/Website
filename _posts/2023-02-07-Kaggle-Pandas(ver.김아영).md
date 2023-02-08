@@ -7,7 +7,7 @@ description: Kaggle의 Pandas과정 정리
 customexcerpt: 데이터 분석에 가장 인기 있는 파이썬 라이브러리인 Pandas를 정리해보았다.
 ---
 # Creating, Reading and Writing
-데이터 분석에 가장 인기 있는 파이썬 라이브러리인 pandas에 대해 배움<p>
+데이터 분석에 가장 인기 있는 파이썬 라이브러리인 pandas에 대해 배움<p></p>
 DataFrame: 테이블. 각 항목이 특정 값을 갖는 개별 항목의 배열이 포함. 각 항목은 행(또는 레코드)과 열에 해당
 ~~~python
 import pandas as pd
@@ -75,7 +75,7 @@ reviews['index_backwards']
 # Summary Functions and Maps
 데이터 표현에서 올바른 데이터를 추출하는 것이 작업을 완료하는 데 매우 중요함. but, 데이터가 항상 원하는 형식으로 메모리에서 나오는것은 아님. 그러기에 우리가 원하는 데이터로 포맷하기위해 더 많은 작업을 해주어야함.
 ### Summary functions
-pandas는 데이터를 유용한 방식으로 재구성하는 많은 간단한 <span style ="color:red">**"summary functions"**</span>을 제공함.<p>
+pandas는 데이터를 유용한 방식으로 재구성하는 많은 간단한 <span style ="color:red">**"summary functions"**</span>을 제공함.<p></p>
 describe() : 지정된 열의 속성에 대한 높은 수준의 요약을 생성. 이것은 'type-aware'로 입력의 데이터 유형에 따라 출력이 변경된다는 것을 의미. 이 출력은 숫자 데이터에 대해서만 의미가 있으며 , 문자열 데이터에 대해서는 아래의 두번째와 같다.
 ```python
 reviews.points.describe()
@@ -88,13 +88,13 @@ reviews.taster_name.unique()
 reviews.taster_name.value_counts()
 ~~~
 ### maps
-map() : 수학에서 빌려온 용어로 , 한 집합의 값을 다른 집합으로 "매핑"하는 함수. **데이터 과학에서 종종 기존 데이터로부터 새로운 표현을 만들거나, 데이터를 현재의 형식에서 나중에 원하는 형식으로 변환할 필요가 있음** ***map은 이 작업을 처리하는 역할을 하므로 학업을 완료하는데 매우 중요***<p>
+map() : 수학에서 빌려온 용어로 , 한 집합의 값을 다른 집합으로 "매핑"하는 함수. **데이터 과학에서 종종 기존 데이터로부터 새로운 표현을 만들거나, 데이터를 현재의 형식에서 나중에 원하는 형식으로 변환할 필요가 있음** ***map은 이 작업을 처리하는 역할을 하므로 학업을 완료하는데 매우 중요***<p></p>
 ~~~python
 review_points_mean = reviews.points.mean()
 reviews.points.map(lambda p: p - review_points_mean)
 ~~~
-map()에 전달하는 함수는 Series에서 단일값을 기대하고 해당 값의 변환된 버전을 반환.<p>
-apply() : 각 행에서 사용자 지정 메서드를 호출해 전체 DataFrame을 변환하려는 경우에 해당하는 메서드<p>
+map()에 전달하는 함수는 Series에서 단일값을 기대하고 해당 값의 변환된 버전을 반환.<p></p>
+apply() : 각 행에서 사용자 지정 메서드를 호출해 전체 DataFrame을 변환하려는 경우에 해당하는 메서드<p></p>
 만약 우리가 axis='index'를 가진 reviews.dll을 호출했다면, 각 행을 변환하는 함수를 전달하는 대신, 우리는 각 열을 변환하는 함수를 제공해야함. <br>map()과 apply()는 각각 새로운 변환된 Series와 DataFrames을 반환. 요청된 원본 데이터는 수정X. 첫 번째 줄 리뷰를 보면 여전히 원래의 포인트 가치가 있음을 알 수 있음.
 <p>(pandas는 빌트인으로 많은 일반적인 매핑 operation을 제공)
 # Grouping and Sorting
@@ -128,7 +128,7 @@ countries_reviewed
 mi = countries_reviewed.index
 type(mi)
 ~~~
-다중 지수는 단일 수준 지수에는 없는 계층 구조를 처리하기 위한 몇 가지 방법이 있음. 또한 값을 검색하려면 두 가지 수준의 레이블이 필요. 다중 인덱스 출력을 처리하는 것은 pandas를 처음 사용하는 사용자에게 일반적인 gotcha임.<p>
+다중 지수는 단일 수준 지수에는 없는 계층 구조를 처리하기 위한 몇 가지 방법이 있음. 또한 값을 검색하려면 두 가지 수준의 레이블이 필요. 다중 인덱스 출력을 처리하는 것은 pandas를 처음 사용하는 사용자에게 일반적인 gotcha임.<p></p>
 reset_index() : 일반적으로 가장 자주 사용하는 다중 인덱스 방법
 ### Sorting
 countries_reviewed 를 보면 값 순서가 아닌 인덱스 순서로 데이터를 반환. *즉, 그룹의 결과를 출력할 땐 행 순서는 데이터가 아닌 **인덱스의 값**에 따라 달라짐* <p>
@@ -150,28 +150,32 @@ dtypes : 데이터 프레임 또는 시리즈의 열에 대한 데이터 유형.
 ```python
 reviews.dtypes
 ```
-문자열로 구성된 열은 <span style ="color:red">**object**</span>유형 가짐
+문자열로 구성된 열은  <span style ="color:red"> **object** </span> 유형 가짐
 astype() : 하나의 타입의 열을 다른 타입으로 변환시켜줌
 ```python
 reviews.points.astype('float64')
 reviews.index.dtype
 ```
 ### Missing data
-누락된 항목이 있는 경우엔 Not a number 의 줄임말인 **NaN**(기술적인 이유로 항상 float64 dtype)<p></p>
-판다스는 누락된 데이터에 몇개의 특정한 메서드를 제공. NaN을 선택하기 위해선 *pd.isnull()*사용<p></p>
-결측값을 바꾸는것은 일반적인 작업. 판다스는 이 문제들을 해결하기위한 메서드를 제공 : *fillna()*
+누락된 항목이 있는 경우엔 Not a number 의 줄임말인 **NaN**(기술적인 이유로 항상 float64 dtype)<p></p>  
+판다스는 누락된 데이터에 몇개의 특정한 메서드를 제공. NaN을 선택하기 위해선 *pd.isnull()*사용<p></p>  
+결측값을 바꾸는것은 일반적인 작업. 판다스는 이 문제들을 해결하기위한 메서드를 제공 : *fillna()*  
 replace(a,b): null이 아닌 값 a를 b로 바꿈
+
 ~~~python
 reviews[pd.isnull(reviews.country)]
 reviews.region_2.fillna("Unknown")
 reviews.taster_twitter_handle.replace("@kerinokeefe", "@kerino")
 ~~~
+
 # Rename and Combining
-데이터는 우리가 만족하지않는 열 이름, 인덱스 이름 또는 다른 명명 규칙과 함께 나타남. 이 경우, 판다스의 기능을 사용해 문제가 되는 항목의 이름을 더 나은 항목으로 변경하는 방법 배움 . 또한 여러 데이터 프레임 및 시리즈의 데이터를 결합하는 방법에 대해서도 알아봄.
+데이터는 우리가 만족하지않는 열 이름, 인덱스 이름 또는 다른 명명 규칙과 함께 나타남. 이 경우, 판다스의 기능을 사용해 문제가 되는 항목의 이름을 더 나은 항목으로 변경하는 방법 배움 . 또한 여러 데이터 프레임 및 시리즈의 데이터를 결합하는 방법에 대해서도 알아봄.  
+
 ### Renaming 
-rename(): 인덱스 이름 &/or 열 이름 변경 가능. 다양한 입력 형식을 지원하지만 파이썬의 딕셔너리가 가장 편함<br>
-**df.rename(columns={'기존이름' : '새로운 이름'}, index={'기존이름' : '새로운 이름'})**<p></p>
-set_index() : 열 이름은 자주 변경죄미나 인덱스 값 이름은 거의 변경되지 않음. 그러기에 set_index()가 더 편리함
+rename(): 인덱스 이름 &/or 열 이름 변경 가능. 다양한 입력 형식을 지원하지만 파이썬의 딕셔너리가 가장 편함  
+**df.rename(columns={'기존이름' : '새로운 이름'}, index={'기존이름' : '새로운 이름'})**<p></p>  
+set_index() : 열 이름은 자주 변경죄미나 인덱스 값 이름은 거의 변경되지 않음. 그러기에 set_index()가 더 편리함  
+  
 ```python
 reviews.rename(columns={'points': 'score'})
 ```
@@ -186,6 +190,7 @@ british_youtube = pd.read_csv("../input/youtube-new/GBvideos.csv")
 pd.concat([canadian_youtube, british_youtube])
 ~~~
 join() : 공통 인덱스를 가진 다양한 DataFrame개체 결합 가능
+
 ~~~python
 # 캐나다와 영국에서 같은 날 유행하는 비디오 제거
 left = canadian_youtube.set_index(['title', 'trending_date'])
