@@ -1,5 +1,5 @@
 ---
-title: pandas  
+title: kaggle의 과정중 pandas를 수료한 후 정리하였다.
 layout: post   
 categories : kaggle pandas python-library
 image : /assets/img/수료증/zerotoA - Pandas.png
