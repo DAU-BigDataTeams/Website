@@ -4,22 +4,23 @@ layout: post
 categories : python, SQL, Bigdata, Database, kaggle
 image : /assets/img/수료증/이수원-IntroSQL수료증.png
 description: 구조화된 질의어(SQL)는 데이터베이스와 함께 사용되는 프로그래밍 언어이며 모든 데이터 과학자에게 중요한 기술이다. 
-customexcerpt: 
+customexcerpt: 구조화된 질의어(SQL)는 데이터베이스와 함께 사용되는 프로그래밍 언어이며 모든 데이터 과학자에게 중요한 기술이다. 
 ---
 
+
+
+# Intro to SQL
+
 > 작성자 : 이수원
-
-# ****Intro to SQL****
-
 Kaggle의 Intro to SQL 과정을 학습하면서, 실습과 강의 자료를 정리한 POST 입니다. 
 
 [여기](https://www.kaggle.com/learn/intro-to-sql)를 참고하세요.
 
-## 1) ****Getting Started With SQL and BigQuery****
+## 1) Getting Started With SQL and BigQuery
 
 Learn the workflow for handling big datasets with BigQuery and SQL
 
-### ****Introduction****
+### Introduction
 
 구조화된 질의어(SQL)는 데이터베이스와 함께 사용되는 프로그래밍 언어이며 모든 데이터 과학자에게 중요한 기술이다. 
 
@@ -39,7 +40,7 @@ Learn the workflow for handling big datasets with BigQuery and SQL
 </aside>
 
 
-### ****Your first BigQuery commands****
+### Your first BigQuery commands
 
 BigQuery를 사용하려면 아래 py 패키지를 가져와야 한다. 아래 코드를 참고하자.
 
@@ -49,7 +50,7 @@ from google.cloud import bigquery
 ~~~
 
 
-작업 단계의 ****첫 번째 단계는 클라이언트 개체를 만드는 것이다. 
+작업 단계의 첫 번째 단계는 클라이언트 개체를 만드는 것이다. 
 
 곧 알게 되겠지만, 이 클라이언트 개체는 BigQuery 데이터 셋에서 정보를 검색하는 데 핵심적인 역할을 할 것이다.
 
@@ -119,7 +120,7 @@ table = client.get_table(table_ref)
 ~~~
 
 
-## ****Table schema****
+## Table schema
 
 테이블의 구조를 스키마라고 한다. 우리가 원하는 데이터를 효과적으로 끌어내기 위해서는 테이블의 스키마를 이해해야 한다.
 
@@ -197,18 +198,18 @@ client.list_rows(table, selected_fields=table.schema[:1], max_results=5).to_data
 
 `/opt/conda/lib/py3.7/site-packages/ipykernel_launcher.py:2: UserWarning: Cannot use bqstorage_client if max_results is set, reverting to fetching data with the tabledata.list endpoint.`
 
-## 2) ****Select, From & Where****
+## 2) Select, From & Where
 
 The foundational compontents for all SQL queries.
 
-### ****Introduction****
+### Introduction
 
 이제 데이터 셋에 액세스하고 데이터 셋을 검사하는 방법을 알았으므로 첫 번째 SQL 쿼리를 작성할 준비가 되었다. 곧 배우게 될 것이지만, SQL 쿼리문을 사용하면 대규모 데이터 세트를 정렬하여 필요한 정보만 검색할 수 있다. 
 
 먼저 **SELECT, FROM** 및 **WHERE** 키워드를 사용하여, 지정한 조건에 따라 특정 열에서 데이터를 가져올 것이다. *명확성을 위해 우리는 pets라고 불리는 하나의 테이블만 포함하는 작은 예시 데이터 셋인 pet_records로 작업한다.* 
 
 ![2-1](/assets/img/Intro-to-SQL/2-1.png)  
-### ****SELECT ... FROM****
+### SELECT ... FROM
 
 가장 기본적인 SQL 조회는 단일 테이블에서 단일 열을 선택하는 것이다. 
 
@@ -220,7 +221,7 @@ The foundational compontents for all SQL queries.
 
 *SQL Query문을 작성할 때, FROM에 전달하는 인수는 단일 또는 이중 따옴표(’ 또는 “)가 아니다. 백틱(`)임을 주의하자.* 
 
-### ****WHERE ...****
+### WHERE ...
 
 BigQuery 데이터 셋은 크기가 크기 때문에 일반적으로 특정 조건을 충족하는 행만 반환힌다. WHERE 절을 사용하여 해당 작업을 편하게 진행할 수 있다. 
 
@@ -230,17 +231,17 @@ BigQuery 데이터 셋은 크기가 크기 때문에 일반적으로 특정 조�
 
 [여기](https://www.kaggle.com/code/dansbecker/select-from-where)를 눌러 들어가면 더 자세한 예시와 쿼리문이 있으니 참조하자. 
 
-## 3) ****Group By, Having & Count****
+## 3) Group By, Having & Count
 
 Get more interesting insights directly from your SQL queries.
 
-### ****Introduction****
+### Introduction
 
 이제 가공되지 않은 데이터를 선택할 수 있을 것이다. 지금부터는 데이터를 그룹화 하고 해당 그룹 내에서 항목을 계산하는 방법을 배울 것이다. 
 
 예를 들어, ‘과일 가게는 과일 종류 별로 몇개씩 팔았는가?’, ‘수의사 사무실에서 치료한 동물의 종류는 몇 종인가?. 이러한 질문에 대한 결과를 도출하기 위해서는 **GROUP BY, HAVING** 및 **COUNT()**의 세 가지 새로운 기술을 알아야 한다. 2번 과정에서 사용했던 애완동물에 대한 구성된 표를 다시 사용하여 설명을 진행한다. 
 
-### ****COUNT()****
+### COUNT()
 
 COUNT()는 이름에서부터 어떤 메소드인지 알 수 있다. COUNT() 메소드는 여러 가지를 반환한다0. 열 이름을 전달하면 해당 열의 항목 수가 반환된다.
 
@@ -250,7 +251,7 @@ COUNT()는 이름에서부터 어떤 메소드인지 알 수 있다. COUNT() 메
 
 COUNT()는 많은 값을 가져와서 하나를 반환하는 집계 함수의 예다. *(다른 집계 함수의 예로는 SUM(), AVG(), MIN(), MAX() 등이 있다. 위 그림에서 알 수 있듯이 집계 함수는 테이블 내용과 관련없는 이상한 열 이름(예: f0_)을 도입한다. 해당 강의의 뒷 부분에서 이름에 관해서 더 설명적인 것으로 진행한다. )*
 
-### ****GROUP BY ... HAVING****
+### GROUP BY ... HAVING
 
 HAVING은 GROUP BY와 함께 특정 기준을 충족하지 않는 그룹을 무시하는 데 사용된다.
 
@@ -262,7 +263,7 @@ HAVING은 GROUP BY와 함께 특정 기준을 충족하지 않는 그룹을 무�
 
 *더 자세한 예시와 설명은 [여기](https://www.kaggle.com/code/dansbecker/group-by-having-count)을 참고하자.* 
 
-### ****Note on using GROUP BY****
+### Note on using GROUP BY
 
 COUNT()와 같은 집계 함수를 적용하는 방법을 SQL에 알려주기 때문에 집계 함수 없이 GROUP BY를 사용하는 것은 의미가 없다. 마찬가지로, GROUP BY 절이 있으면 모든 변수가 다음 중 하나로 전달되어야 한다.
 
@@ -300,13 +301,13 @@ query_bad = """
 
 이런 경우, 해당 부분에 SELECT list expression references 열(열 이름) 오류 메시지가 표시된다.
 
-## 4) ****Order By****
+## 4) Order By
 
 Order your results to focus on the most important data for your use case.
 
 가장 중요한 데이터에 초점을 맞추도록 결과를 정렬한다.
 
-### ****Introduction****
+### Introduction
 
 지금까지 여러 SQL문을 사용하는 방법을 배웠다. SELECT문을 사용해서 특정 열을 가져오는 방법과 지정된 기준을 충족하는 행을 가져오는 WHERE문 등이 있다. 또한 COUNT()와 같은 집계 함수를 GROUP BY()와 함께 사용하여 여러 행을 단일 그룹으로 처리 하는 방법도 알았다. 
 
@@ -315,7 +316,7 @@ Order your results to focus on the most important data for your use case.
 예로는 날씨에 순서를 적용하여 일반적인 활용 사례를 알아볼 것이다. 또 이번 강의에서는 학습할 내용을 설명하기 위해, 앞서 설명했던 애완동물 테이블을 약간 수정된 버전을 사용할 것이다. 
 
 ![4-1](/assets/img/Intro-to-SQL/4-1.png)  
-### ****ORDER BY****
+### ORDER BY
 
 ORDER BY()는 일반적으로 쿼리의 마지막 절에 작성되며, 쿼리의 나머지 부분에서 반환 된 결과를 정렬한다.
 
@@ -364,13 +365,13 @@ SQL은 날짜에 대해 매우 영리하며, 단순히 셀의 일부를 추출�
 
 더 자세한 예제와 설명은 [여기](https://www.kaggle.com/code/dansbecker/order-by)을 참고하세요.
 
-## 5) ****As & With****
+## 5) As & With
 
 Organize your query for better readability. This becomes especially important for complex queries.
 
 읽기 쉽도록 쿼리문을 조직한다. 이는 복잡한 쿼리문의 경우에 더욱 중요하다.
 
-### ****Introduction****
+### Introduction
 
 지금까지 배운 Query문으로 인해, SQL Query문이 길어지고 복잡해지고 있다는 것을 깨달았을 것이다. 때문에 SQL Query를 이해하기 어려울 수도 있다. 
 
@@ -378,7 +379,7 @@ AS와 WITH를 사용하면 Query를 정리하고 읽기 쉽게 만들 수 있다
 
 ![5-1](/assets/img/Intro-to-SQL/5-1.png)  
 
-### ****AS****
+### AS
 
 이전 강의에서 AS를 사용해 Query에 의해 생성된 열의 이름을 바꾸는 방법에 대해 배웠었다. 이를 별칭 또는 별명이라고도 부른다. Pandas에서 pandas를 pd로, seaborn을 sns로 호출하는 방식과 동일하다.
 
@@ -392,7 +393,7 @@ SQL에서 AS를 사용하려면, 선택한 열 바로 뒤에 AS를 삽입해야 
 
 이러한 쿼리는 동일한 정보를 반환하지만, 두 번째 쿼리에서 COUNT() 함수가 반환하는 열은 기본 이름인 f0__가 아닌 Number라고 지정한 것이다.
 
-### ****WITH ... AS****
+### WITH ... AS
 
 AS는 자체적으로 Query에서 반환 된 데이터를 정리하는 편리한 방법이다. 이는 “common table expression(공통 테이블 표현식)”이라고 하는 WITH와 결합했을 때 더욱 강력한 기능이 된다. 
 
@@ -417,13 +418,13 @@ CTE 없이도 해당 작업을 수행할 수는 있다. 하지만 이 작업이 
 
 *더 자세한 예제와 설명은 [여기](https://www.kaggle.com/code/dansbecker/as-with)를 참고해주세요.*
 
-## 6) ****Joining Data****
+## 6) Joining Data
 
 Combine data sources. Critical for almost all real-world data problems
 
 데이터 소스를 결합한다. 거의 모든 실제 데이터 문제에서 결합은 중요하다.
 
-### ****Introduction****
+### Introduction
 
 원하는 형식으로 단일 테이블에서 데이터를 가져올 수 있는 도구가 있다. 하지만 원하는 데이터가 여러 테이블에 분산 되어 있다면 어떻게 하시겠는가?
 
@@ -462,7 +463,7 @@ Fortunately, we don't have to do this by hand to figure out which owner goes wit
 
 다행히도, 우리는 어떤 주인이 어떤 애완동물과 함께 가는지 알아내기 위해 일일이 손으로 할 필요가 없다는 것이다. 다음 과정에서 JOIN을 사용하여 애완동물 및 소유자 테이블의 정보를 결합한 새 테이블을 만드는 방법에 대해 알아볼 것이다. 
 
-### ****JOIN****
+### JOIN
 
 Using **JOIN**, we can write a query to create a table with just two columns: the name of the pet and the name of the owner.
 
