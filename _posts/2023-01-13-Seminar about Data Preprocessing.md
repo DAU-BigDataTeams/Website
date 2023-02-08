@@ -2,7 +2,7 @@
 title: 데이터 전처리에 대한 세미나 진행
 layout: post   
 categories : Data, analytics, seminar, Data-Preprocessing
-image : /assets/img/23-01-13-세미나.jpg
+image : /assets/img/세미나/23-01-13-세미나.jpg
 description: 파이썬의 Pandas를 활용해 데이터 전처리에 대한 세미나를 진행하였음.
 customexcerpt: "비가오는 방학임에도 세미나를 듣기위해 참석해준 1기 멤버들"
 ---
@@ -26,7 +26,7 @@ customexcerpt: "비가오는 방학임에도 세미나를 듣기위해 참석해
 ----
 1기 멤버 전원(1기 멤버를 알고싶다면? [Click](https://dau-bigdatateams.github.io/2022/12/08/1st-Member.html))
 
-![23-01-13 세미나](/assets/img/23-01-13-세미나.jpg)  
+![23-01-13 세미나](/assets/img/세미나/23-01-13-세미나.jpg)  
 
 ----
 
