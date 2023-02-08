@@ -157,8 +157,8 @@ reviews.points.astype('float64')
 reviews.index.dtype
 ```
 ### Missing data
-누락된 항목이 있는 경우엔 Not a number 의 줄임말인 **NaN**(기술적인 이유로 항상 float64 dtype)<p>
-판다스는 누락된 데이터에 몇개의 특정한 메서드를 제공. NaN을 선택하기 위해선 *pd.isnull()*사용<p>
+누락된 항목이 있는 경우엔 Not a number 의 줄임말인 **NaN**(기술적인 이유로 항상 float64 dtype)<p></p>
+판다스는 누락된 데이터에 몇개의 특정한 메서드를 제공. NaN을 선택하기 위해선 *pd.isnull()*사용<p></p>
 결측값을 바꾸는것은 일반적인 작업. 판다스는 이 문제들을 해결하기위한 메서드를 제공 : *fillna()*
 replace(a,b): null이 아닌 값 a를 b로 바꿈
 ~~~python
@@ -170,7 +170,7 @@ reviews.taster_twitter_handle.replace("@kerinokeefe", "@kerino")
 데이터는 우리가 만족하지않는 열 이름, 인덱스 이름 또는 다른 명명 규칙과 함께 나타남. 이 경우, 판다스의 기능을 사용해 문제가 되는 항목의 이름을 더 나은 항목으로 변경하는 방법 배움 . 또한 여러 데이터 프레임 및 시리즈의 데이터를 결합하는 방법에 대해서도 알아봄.
 ### Renaming 
 rename(): 인덱스 이름 &/or 열 이름 변경 가능. 다양한 입력 형식을 지원하지만 파이썬의 딕셔너리가 가장 편함<br>
-**df.rename(columns={'기존이름' : '새로운 이름'}, index={'기존이름' : '새로운 이름'})**<p>
+**df.rename(columns={'기존이름' : '새로운 이름'}, index={'기존이름' : '새로운 이름'})**<p></p>
 set_index() : 열 이름은 자주 변경죄미나 인덱스 값 이름은 거의 변경되지 않음. 그러기에 set_index()가 더 편리함
 ```python
 reviews.rename(columns={'points': 'score'})
