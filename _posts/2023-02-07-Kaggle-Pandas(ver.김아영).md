@@ -7,7 +7,9 @@ description: Kaggle의 Pandas과정 정리
 customexcerpt: 데이터 분석에 가장 인기 있는 파이썬 라이브러리인 Pandas를 정리해보았다.
 ---
 # Creating, Reading and Writing
-데이터 분석에 가장 인기 있는 파이썬 라이브러리인 pandas에 대해 배움<p>
+데이터 분석에 가장 인기 있는 파이썬 라이브러리인 pandas에 대해 배움
+**<p></p>**
+
 DataFrame: 테이블. 각 항목이 특정 값을 갖는 개별 항목의 배열이 포함. 각 항목은 행(또는 레코드)과 열에 해당
 ~~~python
 import pandas as pd
@@ -25,20 +27,21 @@ pd.DataFrame({'Bob': ['I liked it.', 'It was awful.'],
 # Indexing,Selecting & Assigning
 작업할 판다스 데이터프레임 또는 시리즈의 특정 값을 선택하는 것은 실행할 거의 모든 데이터 작업에서 암시적인 단계이기에 Python에서 데이터를 사용할 때 가장 먼저 배워야 할 것 중 하나는 *자신과 관련된 데이터 포인트를 빠르고 효과적으로 선택하는것*
 ### Native accerssors
-python에서 속성으로 접근함으로 객체의 속성에 접근할 수 있음<br> python 딕셔너리를 배웠다면, [] 연산자를 사용해 값에 접근할수있음
+python에서 속성으로 접근함으로 객체의 속성에 접근할 수 있음  
+python 딕셔너리를 배웠다면, [] 연산자를 사용해 값에 접근할수있음
 ~~~python
 reviews['country']
 reviews['country'][0]
 ~~~
 ### indexing in pandas
-인덱싱 연산자와 속성 선택은 great. 왜 ?! 파이썬 생태계의 나머지 부분과 동일하게 작동하기에<br>
+인덱싱 연산자와 속성 선택은 great. 왜 ?! 파이썬 생태계의 나머지 부분과 동일하게 작동하기에  
 판다스는 **loc**와 **iloc** 라는 그들만의 접근자 조작자를 가짐.
 iloc : 파이썬 인덱스 사용 
 ~~~python
 reviews.iloc[0] # 데이터 프레임에서 첫 번쨰 데이터 행 선택
 reviews.iloc[:, 0]  # 첫번째 열선택
 ~~~
-**loc** 와 **iloc** -> loc[행 ,열].python이랑 다름 즉, 행 검색이 더 쉽고 열 검색이 더 어려움<br>
+**loc** 와 **iloc** -> loc[행 ,열].python이랑 다름 즉, 행 검색이 더 쉽고 열 검색이 더 어려움  
 레이블 기반 선택 : 속성 선택을 위한 두번째 패러다임 loc연산자중 하나임. 이 패러다임에서 중요한 것 : 데이터 인덱스 값, 위치X
 ~~~python
 reviews.loc[0, 'country']
