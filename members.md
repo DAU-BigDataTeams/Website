@@ -1,4 +1,4 @@
 ---
-layout: members
-title: Members
+layout: memberhome
+title: MemberInfo
 ---
