@@ -7,7 +7,10 @@ description: 웹 페이지의 데이터를 수집해보자 !
 customexcerpt: "request, Beautifulsoup, openpyxl 모듈을 사용한 데이터 수집" 
 ---
 
-
+### 작성자 : 윤수빈 
+<br>
+<br>
+<br>
 
 # 웹크롤링 ( Web Scraping ) 이란 ?
  웹사이트의 방대한 정보를 기계적으로 다운로드해 **원하는 정보를 수집, 분석, 추출**하는 기술 
