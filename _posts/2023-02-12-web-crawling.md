@@ -1,5 +1,5 @@
 ---
-title: 웹 크롤링
+title: Web에 있는 방대한 정보를 손쉽게 수집하는 방법인 웹 크롤링!
 layout: post   
 categories : Data, Web Scraping, Data Collection, Excel 
 image : /assets/img/crawling/1.png
