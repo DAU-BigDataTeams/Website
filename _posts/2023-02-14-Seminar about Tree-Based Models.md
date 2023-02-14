@@ -95,7 +95,7 @@ Ensemble이란 약한 분류기들을 결합해서 강한 분류기로 만드는
 3. Stacking
 
 Boostrap이라는 단어는 어디서 많이 들어봤을 것이다.  
-하지만 지금은 **Train Data 에서여러번복원추출하는Random Sampling 기법** 이라고 이해하자. 이론적으로 36.8&의 샘플이 뽑히지 않는다고 하며 이것을 Out-Of-Bag(OBB) 샘플이라고 한다.
+하지만 지금은 **Train Data 에서여러번복원추출하는Random Sampling 기법** 이라고 이해하자. 이론적으로 36.8%의 샘플이 뽑히지 않는다고 하며 이것을 Out-Of-Bag(OBB) 샘플이라고 한다.
 OBB를 이용해서 CV의 fold로 사용할 수 있다고 한다.  
 
 ![8](/assets/img/세미나/트리기반8.png)   
