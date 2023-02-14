@@ -8,7 +8,7 @@ customexcerpt: 트리기반 머신러닝 모델(Decision Tree, Random Forest)에
 ---
 ### 작성자 : 박정현
 
-** 잠깐!! 트리 기반 모델에 대해 조금 더 알고싶으면 이전의 포스트 [Decision Tree](https://dau-bigdatateams.github.io/2023/02/04/Intro-to-ML(ver.-박민서).html), [Random Forest](https://dau-bigdatateams.github.io/2023/02/01/Intermediate-Machine-Learning.html)를 보고오자**  
+**잠깐!! 트리 기반 모델에 대해 조금 더 알고싶으면 이전의 포스트 [Decision Tree](https://dau-bigdatateams.github.io/2023/02/04/Intro-to-ML(ver.-박민서).html), [Random Forest](https://dau-bigdatateams.github.io/2023/02/01/Intermediate-Machine-Learning.html)를 보고오자**  
 
 # Decision Tree(의사결정나무)
 
