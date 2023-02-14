@@ -1,5 +1,5 @@
 ---
-title: 모델의 성능 개선을 위한 여러가지 전처리 방법
+title: 트리 기반 모델의 성능 개선을 위한 여러가지 전처리 방법(ML 중급)
 layout: post   
 categories : ML, kaggle
 image : /assets/img/수료증/박정현-IntermediateML.png
