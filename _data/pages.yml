@@ -7,5 +7,5 @@ pages:
   # kaggle 활동이나 기타 활동 작성
   - {name: 'Join us', url: 'https://dau-bigdatateams.github.io/2023/02/14/Join-Team.html'} #https://jhpark.org/
   # 팀리더 홈페이지 
-  - {name: 'Test', url: 'test.html'} 
-  # 테스트 카테고리
+  # - {name: 'Test', url: 'test.html'} 
+  # # 테스트 카테고리

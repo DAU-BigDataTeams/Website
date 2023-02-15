@@ -64,9 +64,3 @@ analytics:
   google:
     tracking_id          : "G-Z438CCPYGJ "
     anonymize_ip         : false 
-
-
-collections:
-  new_posts:
-    output: true
-    permalink: /:path/
