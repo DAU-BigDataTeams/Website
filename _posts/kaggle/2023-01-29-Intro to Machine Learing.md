@@ -1,7 +1,7 @@
 ---
 title: Intro to Machine Learning
 layout: post   
-categories : ML, kaggle
+categories : ML kaggle
 image : /assets/img/수료증/박정현-IntroML수료증.png
 description: kaggle의 Intro to Machine Learning과정 정리
 customexcerpt: kaggle의 Intro to Machine Learning를 수료하다!

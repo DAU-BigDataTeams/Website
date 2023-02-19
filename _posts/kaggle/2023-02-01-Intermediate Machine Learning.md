@@ -1,7 +1,7 @@
 ---
 title: 트리 기반 모델의 성능 개선을 위한 여러가지 전처리 방법(ML 중급)
 layout: post   
-categories : ML, kaggle
+categories : ML kaggle
 image : /assets/img/수료증/박정현-IntermediateML.png
 description: 머신러닝 중급
 customexcerpt: 모델의 품질을 빠르게 개선하는 방법을 학습해보자!

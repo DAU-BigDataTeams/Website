@@ -1,7 +1,7 @@
 ---
 title: Store Site Recommendation under the O2O Model via Multi-graph Attention Networks Paper reivew 작성중..
 layout: post   
-categories : paper, reivew, research
+categories : paper reivew research
 image : /assets/img/paperview/o2o/O2O 논문 썸네일.png
 description: 온라인 - 오프라인 매장을 위해 적합한 매장 위치 추천 모델에 대한 논문
 customexcerpt: O2O 모델에서 점주들의 필연적인 문제는 가게 위치를 선택하는 것 즉, 가게 위치 추천 문제다.

@@ -1,10 +1,11 @@
 ---
-layout : default
-title : Awards
+layout: default
+title: Awards
 ---
+
 {% for category in site.categories %}
   {% if category[0] == "award" %}
-    <h2>DAU-BigDataTeam Members info</h2>
+    <h2>DAU-BigDataTeam award info</h2>
     <ul>
     {% for post in category[1] %}
       <div class="post">

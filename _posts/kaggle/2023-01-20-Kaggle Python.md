@@ -1,7 +1,7 @@
 ---
 title: kaggle Python corues 
 layout: post   
-categories : Python, Programming, kaggle
+categories : Python Programming kaggle
 image : /assets/img/수료증/김아영-파이썬-수료증.png
 description: kaggle-python-review
 customexcerpt: kaggle의 Python 과정을 수료하며 작성한 리뷰!

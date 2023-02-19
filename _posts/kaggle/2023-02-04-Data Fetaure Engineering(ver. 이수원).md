@@ -1,7 +1,7 @@
 ---
 title: 훌륭한 기계 학습 모델 구축을 위한 Feature Engineering 학습하다.
 layout: post   
-categories : py, kaggle, ML, Data, Data-processing
+categories : py kaggle ML Data Data-processing
 image : /assets/img/수료증/이수원-DataFeature수료증.png
 description: Kaggle의 교육 과정 중 Feature Engineering을 학습하며, 정리하고 번역한 글입니다. 
 customexcerpt: 형상이 유용하려면 모형이 학습할 수 있는 대상과 관계가 있어야 한다. 예를 들어, 선형 모델은 선형 관계만 학습할 수 있다. 따라서 선형 모형을 사용할 때, 목표는 형상과 대상의 관계를 선형으로 만들기 위해 형상을 변환하는 것이다.

@@ -1,7 +1,7 @@
 ---
 title: 머신러닝 기초 알아보기(트리 기반 모델 중심)
 layout: post   
-categories : ML, kaggle
+categories : ML kaggle
 image : /assets/img/수료증/박민서-Intro_to_ML_수료증.png
 description: kaggle의 Intro to Machine Learning 코스 정리
 customexcerpt: Decision Tree(의사결정 트리)는 기계 학습 모델들의 기본이 되는 모델이라 할 수 있으며, 다른 모델에 비해 이해하기 쉽다.      

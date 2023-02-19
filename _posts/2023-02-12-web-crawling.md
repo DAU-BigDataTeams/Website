@@ -1,7 +1,7 @@
 ---
 title: Web에 있는 방대한 정보를 손쉽게 수집하는 방법인 웹 크롤링!
 layout: post   
-categories : Data, Web Scraping, Data Collection, Excel 
+categories : Data Web-Scraping Data-Collection Excel 
 image : /assets/img/crawling/1.png
 description: 웹 페이지의 데이터를 수집해보자 !
 customexcerpt: "request, Beautifulsoup, openpyxl 모듈을 사용한 데이터 수집" 
