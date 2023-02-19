@@ -64,3 +64,8 @@ analytics:
   google:
     tracking_id          : "G-Z438CCPYGJ "
     anonymize_ip         : false 
+
+# 페이지 추가
+include:
+  - _posts
+  - _members
