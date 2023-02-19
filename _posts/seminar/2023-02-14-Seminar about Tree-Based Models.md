@@ -1,7 +1,7 @@
 ---
 title: Tree Based ML Models에 대한 세미나 진행
 layout: post   
-categories : Data, analytics, seminar, ML
+categories : [Data, analytics, seminar, ML]
 image : /assets/img/세미나/23-02-14-세미나.jpg
 description: 23-02-14 세미나
 customexcerpt: 트리기반 머신러닝 모델(Decision Tree, Random Forest)에 대해 학습하였다. 두 모델에 대해 장/단점을 비교하고 데이터에 따라 적합한 모델을 선택해 최적의 결과를 만드는 틀에 대해 알아봄

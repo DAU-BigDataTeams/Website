@@ -1,7 +1,7 @@
 \---  
 title: 포스트 제목을 작성해주세요(이왕이면 흥미있는 제목 선택)  
 layout: post  (건들지 말아주세요)   
-categories : paper, reivew, research (포스트에 대한 키워드입니다 HashTag라고 생각하면 좋아요 띄어쓰기는 불가하니 '-'를 통해 이어주세요 ex. big-data 또한 대소문자 구별이 필요합니다.)  
+categories : [paper, reivew, research] (포스트에 대한 키워드입니다 HashTag라고 생각하면 좋아요 띄어쓰기는 불가하니 '-'를 통해 이어주세요 ex. big-data 또한 대소문자 구별이 필요합니다.)  
 image : /assets/img/paperview/o2o/O2O 논문 썸네일.png (썸네일 사진 경로입니다. 잘 모르면 저에게 사진만 주세요)  
 description: 온라인 - 오프라인 매장을 위해 적합한 매장 위치 추천 모델에 대한 논문 (글 설명인데 제목과 동일하게 하면 됩니다.)  
 customexcerpt: O2O 모델에서 점주들의 필연적인 문제는 가게 위치를 선택하는 것 즉, 가게 위치 추천 문제다. (포스트 썸네일 아래 짧게 적히는 글입니다. 흥미롭게 작성하거나 글 첫 서론 1~2문장을 적어주면 됩니다.)  
