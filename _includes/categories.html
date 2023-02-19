@@ -2,7 +2,7 @@
     <span><p>Categories:</p>
     {% assign categories = page.categories %}
     {% for category in categories %}
-      <a href="{% capture url %}/categories/#{{ category | slugify }}{% endcapture %}
+      <a href="{% capture url %}/categories/#{{ category | downcase | slugify }}{% endcapture %}
       {{ url | relative_url }}">{{category}}</a>
       {% unless forloop.last %}&nbsp;{% endunless %} 
     {% endfor %}
