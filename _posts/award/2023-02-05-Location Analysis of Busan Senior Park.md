@@ -1,7 +1,7 @@
 ---
 title: 2022년 동아대학교 컴퓨터AI공학부 DevDay(프로그래밍 경진대회) 최우수상 작품 소개(부산광역시 어르신 놀이터 입지 분석 프로젝트)
 layout: post   
-categories : Geospatial, analysis, Data, map, project, awards
+categories : Geospatial, analysis, Data, map, project, award
 image : /assets/project/img/수상사진%20(1).jpg
 description: 2022년 동아대학교 컴퓨터AI공학부 DevDay(프로그래밍 경진대회) 최우수상 작품 소개
 customexcerpt: 팀원 일부가 2022년 동아대학교 컴퓨터AI공학부 DevDay(프로그래밍 경진대회)에서 최우수상을 수상했으며 작품에 대한 자세한 내용이 궁금하다면 클릭하기! 

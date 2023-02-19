@@ -1,11 +1,14 @@
 pages:
+# 깃 허브 주소 달아주기
   - {name: 'About', url: 'about.html'}
-  # 깃 허브 주소 달아주기
+# 멤버 명단 적기
   - {name: 'Members', url: 'memberhome.html'}
-  # 멤버 명단 적기
+# kaggle 관련 포스트
   - {name: 'Kaggle-Study', url: 'archive.html'}
-  # kaggle 활동이나 기타 활동 작성
-  - {name: 'Join us', url: 'https://dau-bigdatateams.github.io/2023/02/14/Join-Team.html'} #https://jhpark.org/
-  # 팀리더 홈페이지 
-  # - {name: 'Test', url: 'test.html'} 
-  # # 테스트 카테고리
+# 수상 관련 포스트
+  - {name: 'Awards', url: 'awards.html' } 
+# 세미나 관련 포스트
+  - {name: 'Seminar', url: 'seminar.html'} 
+# 기타 공부 내용 포스트 
+  #- {name: 'seminar', url: 'test.html'} 
+  
