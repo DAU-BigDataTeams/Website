@@ -13,7 +13,7 @@ permalink: /:year/:month/:day/:title:output_ext
 plugins: [jekyll-paginate, jekyll-feed, jekyll-seo-tag, jekyll-sitemap]
 
 #Pagination
-paginate: 15
+paginate: 5
 paginate_path: "/page:num/"
 
 #SEO
@@ -64,8 +64,3 @@ analytics:
   google:
     tracking_id          : "G-Z438CCPYGJ "
     anonymize_ip         : false 
-
-# 페이지 추가
-include:
-  - _posts
-  - _members
