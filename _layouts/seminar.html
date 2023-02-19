@@ -5,7 +5,7 @@ title: seminar
 <h2>DAU-BigDataTeam Seminar recodes📖 </h2>
 {% for category in site.categories %}
   {% if category[0] == "seminar" %}
-    <ul>
+    <ul> 
     {% for post in category[1] %}
       <div class="post">
         <h2 id="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
