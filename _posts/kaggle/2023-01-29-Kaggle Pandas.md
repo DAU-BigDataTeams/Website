@@ -1,7 +1,7 @@
 ---
 title: Pandas - 데이터분석을 위한 라이브러리(Kaggle)
 layout: post   
-categories : Programming kaggle Data Python
+categories : [Programming, kaggle, Data, Python]
 image : /assets/img/수료증/정소영-판다스수료증.png
 description: 데이터분석에 필수적인 판다스
 customexcerpt: Pandas - 데이터분석을 위한 라이브러리에 대해 살펴보자

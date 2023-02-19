@@ -1,7 +1,7 @@
 ---
 title: 복잡한 데이터를 정리하기 위한 효율적인 방법인 Data Cleaning(Kaggle)
 layout: post   
-categories : Data-Cleaning Data Data-Preprocessing kaggle
+categories : [kaggle, Data-Cleaning, Data, Data-Preprocessing]
 image : /assets/img/수료증/김지은-데이터클리어링수료증.png
 description: 복잡한 데이터를 정리하기 위한 효율적인 방법, Data Cleaning
 customexcerpt: Kaggle의 Data Cleaning과정을 정리해보았다.  

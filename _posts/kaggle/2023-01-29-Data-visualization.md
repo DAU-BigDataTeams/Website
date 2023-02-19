@@ -1,7 +1,7 @@
 ---
 title: Data Visualization
 layout: post   
-categories : Data-Visualization seaborn kaggle
+categories : [Data-Visualization, seaborn, kaggle]
 image : /assets/img/수료증/김종호-데이터시각화수료증.png
 description: kaggle의 Data Visualization 정리
 customexcerpt: kaggle의 Data Visualization 정리를 해보았다!!

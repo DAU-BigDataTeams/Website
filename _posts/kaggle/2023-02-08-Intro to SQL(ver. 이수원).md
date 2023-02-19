@@ -1,7 +1,7 @@
 ---
 title: Kaggle로 시작하는 SQL 기초
 layout: post   
-categories : python SQL Bigdata Database kaggle
+categories : [python, SQL, Bigdata, Database, kaggle]
 image : /assets/img/수료증/이수원-IntroSQL수료증.png
 description: 구조화된 질의어(SQL)는 데이터베이스와 함께 사용되는 프로그래밍 언어이며 모든 데이터 과학자에게 중요한 기술이다. 
 customexcerpt: 구조화된 질의어(SQL)는 데이터베이스와 함께 사용되는 프로그래밍 언어이며 모든 데이터 과학자에게 중요한 기술이다. 
