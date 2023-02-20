@@ -1,6 +1,6 @@
 pages:
 # 깃 허브 주소 달아주기
-  - {name: 'About', url: 'about.html'}
+  #- {name: 'About', url: 'about.html'}
 # 멤버 명단 적기
   - {name: 'Members', url: 'memberhome.html'}
 # kaggle 관련 포스트
