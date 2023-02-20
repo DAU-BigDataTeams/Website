@@ -1,4 +1,4 @@
 ---
 layout: seminar
-title: Seminar
+title: seminar
 ---
