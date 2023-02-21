@@ -9,6 +9,11 @@ pages:
   - {name: 'Awards', url: 'awards.html' } 
 # 세미나 관련 포스트
   - {name: 'Seminar', url: 'seminar.html'} 
-# 기타 공부 내용 포스트 
-  #- {name: 'seminar', url: 'test.html'} 
+# 세미나 관련 포스트
+  - {name: 'Seminar', url: 'seminar.html'} 
+# 세미나 관련 포스트
+  - {name: 'Seminar', url: 'seminar.html'} 
+# 세미나 관련 포스트
+  - {name: 'Seminar', url: 'seminar.html'} 
+
   
