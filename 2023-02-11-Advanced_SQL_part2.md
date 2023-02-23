@@ -2,7 +2,7 @@
 title: Kaggle과 함께하는 SQL 기술 향상시키기! - Lesson2. Analytic Functions
 layout: post   
 categories : SQL, Kaggle, Big-data, DAU-BigDataTeam
-image : ![Certificate](img\suyadiya - Advanced SQL.png)
+image : ![Certificate](assets/img/수료증/이수원-AdvancedSQL.png)
 description: SQL에 대해 더 깊이 알아보도록 하자.   
 customexcerpt: Kaggle의 Advanced SQL과정을 통해 SQL 실력을 더 향상시켜보자. 
 ---
