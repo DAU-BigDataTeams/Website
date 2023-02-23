@@ -2,18 +2,18 @@
 title: Kaggle과 함께하는 SQL 기술 향상시키기! - Lesson3. Nested and Repeated Data
 layout: post   
 categories : SQL, Kaggle, Big-data, DAU-BigDataTeam
-image : 
+image : ![Certificate](img\suyadiya - Advanced SQL.png)
 description: SQL에 대해 더 깊이 알아보도록 하자.   
 customexcerpt: Kaggle의 Advanced SQL과정을 통해 SQL 실력을 더 향상시켜보자. 
 ---
 
-# ****Advanced SQL****
+# Advanced SQL
 <br>
 
-## **Nested and Repeated Data**
+## Nested and Repeated Data
 > Learn to query complex datatypes in BigQuery.
 ---
-### ****Introduction****
+### Introduction
 지금까지 숫자 유형(정수, 부동 소수점 값), 문자열 및 DATETIME 유형을 포함한 많은 유형의 데이터를 사용했다.
 
 이번 강의에서는 중첩 및 반복 데이터를 query하는 방법을 배울 것이다.
@@ -22,7 +22,7 @@ customexcerpt: Kaggle의 Advanced SQL과정을 통해 SQL 실력을 더 향상�
 
 <br>
 
-### ****Nested data****
+### Nested data
 애완동물과 그들의 장난감에 대한 정보를 포함하는 가상의 데이터 세트를 가정해보자.
 
 우리는 이 정보를 두 개의 다른 테이블(애완동물 테이블과 장난감 테이블)로 구성할 수 있다. 
@@ -64,7 +64,7 @@ pets_and_toys 테이블의 "Toy" 열을 중첩 열이라고 하며, "Name" 및 "
 
 <br>
 
-### ****Repeated data****
+### Repeated data
 이제 각 애완동물이 여러 개의 장난감을 가질 수 있는 더 현실적인 경우를 생각해보자.
 
 해당 경우, 이 정보를 단일 테이블로 축소하려면 다른 데이터 유형을 활용해야 한다.
@@ -95,7 +95,7 @@ pets_and_toys 테이블의 "Toy" 열을 중첩 열이라고 하며, "Name" 및 "
 
 <br>
 
-### ****Nested and repeated data****
+### Nested and repeated data
 이제, 애완동물이 여러 개의 장난감을 가질 수 있고, 우리가 각 장난감의 이름과 종류를 모두 추적하고 싶다면 어떻게 해야 할까? 해당 경우 'toys'열을 중첩 및 반복으로 만들 수 있다.
 
 ![img3-8](https://i.imgur.com/psKtza2.png)
@@ -117,7 +117,7 @@ _더 자세한 예제와 설명은 https://www.kaggle.com/code/alexisbcook/neste
 <br>
 <br>
 
-## ****Exercises****
+## Exercises
 
 **1) Who had the most commits in 2016?**
 GitHub is the most popular place to collaborate on software projects. A GitHub repository (or repo) is a collection of files associated with a specific project, and a GitHub commit is a change that a user has made to a repository. We refer to the user as a committer.

@@ -2,18 +2,18 @@
 title: Kaggle과 함께하는 SQL 기술 향상시키기! - Lesson2. Analytic Functions
 layout: post   
 categories : SQL, Kaggle, Big-data, DAU-BigDataTeam
-image : ![]
+image : ![Certificate](img\suyadiya - Advanced SQL.png)
 description: SQL에 대해 더 깊이 알아보도록 하자.   
 customexcerpt: Kaggle의 Advanced SQL과정을 통해 SQL 실력을 더 향상시켜보자. 
 ---
 
-# ****Advanced SQL****
+# Advanced SQL
 <br>
 
-## **Lesson 2. Analytic Functions**
+## Lesson 2. Analytic Functions
 > Perform complex calculations on groups of rows.
 ---
-### ****Introduction****
+### Introduction
 Intro to SQL 과정에서는 행 집합을 기반으로 하여 계산을 수행하는 집계 함수를 사용하는 방법에 대해 배웠다. 
 
 이번 강의에서는 행 집합에서도 작동하는 분석 함수를 정의 하는 방법을 배울것이다. 
@@ -28,7 +28,7 @@ Intro to SQL 과정에서는 행 집합을 기반으로 하여 계산을 수행�
 
 <br>
 
-### ****Syntax****
+### Syntax
 분석 함수를 작성하는 방법을 이해하기 위해, 경주를 위해 훈련 중인 두 사람의 데이터가 포함된 작은 데이터를 사용하여 과정을 수행할 것이다. 
 
 ID 열은 각 주자를 식별하고, 날짜 열은 교육 세션의 하루를 포함하며, 시간은 주자가 교육에 전념한 시간(분)을 나타낸다. 
@@ -57,7 +57,7 @@ OVER문은 세 부분(선택 사항)으로 구성된다.
 
 <br>
 
-### ****(More on) window frame clauses****
+### (More on) window frame clauses
 There are many ways to write window frame clauses:
 
 - **ROWS BETWEEN 1 PRECEDING AND CURRENT ROW** : the previous row and the current row.
@@ -68,7 +68,7 @@ There are many ways to write window frame clauses:
 
 <br>
 
-### ****Three types of analytic functions****
+### Three types of analytic functions
 위의 예제에서는 여러 분석 함수 중 하나만 사용했다. 
 
 BigQuery는 다양한 분석 기능을 지원하며, 이번 part에서 살펴보고자 한다. 
@@ -111,7 +111,7 @@ _더 자세한 예제와 설명은 https://www.kaggle.com/code/alexisbcook/analy
 
 <br>
 
-## ****Exercises****
+## Exercises
 
 ~~~py
 #The following code cell fetches the taxi_trips table from the chicago_taxi_trips dataset. 
@@ -138,7 +138,7 @@ table = client.get_table(table_ref)
 client.list_rows(table, max_results=5).to_dataframe()
 ~~~
 
-### ****1) How can you predict the demand for taxis?****
+### 1) How can you predict the demand for taxis?
 Say you work for a taxi company, and you're interested in predicting the demand for taxis. Towards this goal, you'd like to create a plot that shows a rolling average of the daily number of taxi trips. Amend the (partial) query below to return a DataFrame with two columns.
 
 당신이 택시 회사에서 일을 하고 있고, 택시 수요를 예측하는데 관심있다고 가정해보자. 이 목표를 달성하기 위해 일일 택시 운행 횟수의 롤링 평균을 표시하는 그래프를 생성하려고 한다. 아래 query를 수정하여 두 개의 열이 있는 데이터 프레임을 반환하라. 
@@ -206,7 +206,7 @@ avg_num_trips_query = """
 </table>
 <br>
 
-### ****2) Can you separate and order trips by community area?****
+### 2) Can you separate and order trips by community area?
 The query below returns a DataFrame with three columns from the table: pickup_community_area, trip_start_timestamp, and trip_end_timestamp.
 
 Amend the query to return an additional column called trip_number which shows the order in which the trips were taken from their respective community areas. So, the first trip of the day originating from community area 1 should receive a value of 1; the second trip of the day from the same area should receive a value of 2. Likewise, the first trip of the day from community area 2 should receive a value of 1, and so on.
@@ -290,7 +290,7 @@ trip_number_result = client.query(trip_number_query).result().to_dataframe()
 <br>
 
 
-### ****3) How much time elapses between trips?****
+### 3) How much time elapses between trips?
 The (partial) query in the code cell below shows, for each trip in the selected time frame, the corresponding taxi_id, trip_start_timestamp, and trip_end_timestamp.
 
 Your task in this exercise is to edit the query to include an additional prev_break column that shows the length of the break (in minutes) that the driver had before each trip started (this corresponds to the time between trip_start_timestamp of the current trip and trip_end_timestamp of the previous trip). Partition the calculation by taxi_id, and order the results within each partition by trip_start_timestamp.

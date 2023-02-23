@@ -2,18 +2,18 @@
 title: Kaggle과 함께하는 SQL 기술 향상시키기! - Lesson1. JOINs and UNIONs
 layout: post   
 categories : SQL, Kaggle, Big-data, DAU-BigDataTeam
-image : ![]
+image : ![Certificate](img\suyadiya - Advanced SQL.png)
 description: SQL에 대해 더 깊이 알아보도록 하자.   
 customexcerpt: Kaggle의 Advanced SQL과정을 통해 SQL 실력을 더 향상시켜보자. 
 ---
 
-# ****Advanced SQL****
+# Advanced SQL
 <br>
 
-## **Lesson 1. JOINs and UNIONs**
+## Lesson 1. JOINs and UNIONs
 > Combine information from multiple tables.
 ---
-### **Introduction**
+### Introduction
 앞서, Intro to SQL 과정에서 INER JOIN을 사용하여 서로 다른 두 개의 테이블의 정보를 통합하는 방법을 배웠다.
 
 이제 UNION을 사용하여 여러 테이블에서 정보를 가져오는 방법과 함께 JOIN의 몇 가지 유형에 대해 더 알아보자. 
@@ -32,7 +32,7 @@ _(Pet_ID는 Pet 테이블의 애완동물 ID와 일치한다.)_
 <br>
 <br>
 
-### **JOINs**
+### JOINs
 INER JOIN을 사용하여 Pet_ID의 값이 있는 두 테이블에서 행을 가져올 수 있다. 
 
 owners 테이블의 ID열이 애완동물 테이블의 ID 열과 일치한다. 
@@ -62,7 +62,7 @@ owners 테이블의 ID열이 애완동물 테이블의 ID 열과 일치한다.
 <br>
 <br>
 
-### **UNIONs**
+### UNIONs
 앞서 살펴본 것처럼, JOIN은 여러 테이블의 결과를 수평으로 결합한다.
 
 대신 열을 수직으로 연결하기 위해서는 UNION을 사용해야 한다. 
@@ -91,7 +91,7 @@ _더 자세한 예제와 설명은 https://www.kaggle.com/code/alexisbcook/joins
 <br>
 <br>
 
-## **Exercise: JOINs and UNIONs**
+## Exercise: JOINs and UNIONs
 ~~~py
 # The code cell below fetches the posts_questions table from the stackoverflow dataset. 
 # We also preview the first five rows of the table.
@@ -130,7 +130,7 @@ table = client.get_table(table_ref)
 client.list_rows(table, max_results=5).to_dataframe()
 ~~~
 
-### **Exercises**
+### Exercises
 **1) How long does it take for questions to receive answers?**
 
 일반적으로 질문이 답변을 받는 데 걸리는 시간을 더 잘 이해하기 위해 데이터를 탐색하는데 중점을 둔다. 

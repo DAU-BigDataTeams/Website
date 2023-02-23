@@ -7,13 +7,13 @@ description: SQL에 대해 더 깊이 알아보도록 하자.
 customexcerpt: Kaggle의 Advanced SQL과정을 통해 SQL 실력을 더 향상시켜보자. 
 ---
 
-# ****Advanced SQL****
+# Advanced SQL
 <br>
 
-## **Writing Efficient Queries**
+## Writing Efficient Queries
 > Write queries to run faster and use less data.
 ---
-### ****Introduction****
+### Introduction
 Query가 효율적인지에 대한 여부가 중요하지 않은 경우도 있다. 
 
 예를 들어, 한 번만 실행할 것으로 예상되는 query를 작성하고 작은 데이터 집합에서 작동하는 것이 있다. 
@@ -30,7 +30,7 @@ Query가 효율적인지에 대한 여부가 중요하지 않은 경우도 있�
 
 <br>
 
-### ****Some useful functions****
+### Some useful functions
 두 가지 함수를 사용하여 서로 다른 query의 효율성을 비교할 수 있다.
 
 - `show_amount_of_data_scanned()` shows the amount of data the query uses.
@@ -38,7 +38,7 @@ Query가 효율적인지에 대한 여부가 중요하지 않은 경우도 있�
 
 <br>
 
-### ****Strategies****
+### Strategies
 **1) Only select the columns you want.**
 
 SELECT * FROM...을(를) 사용하여 QUERY를 작성하려고 한다.
@@ -177,7 +177,7 @@ Time to run: 4.293 seconds
 <br>
 <br>
 
-## ****Exercises****
+## Exercises
 **1) You work for Pet Costumes International.**
 
 당신은 오늘 오후에 세 가지 질문을 작성해야 한다.  
