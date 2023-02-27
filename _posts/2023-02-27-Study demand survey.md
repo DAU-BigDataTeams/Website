@@ -1,8 +1,8 @@
 ---
 title: 스터디 수요 조사 안내입니다.
 layout: post   
-categories :
-image : 
+categories : []
+image : /assets/img/1.png
 description: 
 customexcerpt: 클릭하여 자세히 보기.
 ---
