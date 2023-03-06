@@ -7,8 +7,6 @@ description: 추천 알고리즘 - Matrix Factorization
 customexcerpt: Collaborative Filtering 방법론 중 하나인 Matrix Factorization에 대해 소개를 해보려한다.  
 ---
 
-{: toc}
-
 벡터의 차원이 늘어나면 우리가 입력해야할 데이터의 크기가 늘어난다. 단, 문제는 우리가 세상의 모든 정보를 알 수 없는 것에 있다.  
 즉, 세상의 모든 정보를 모르니까 입력해야할 데이터의 크기가 늘어나도 정확하게 표현 할 수 없다.
 

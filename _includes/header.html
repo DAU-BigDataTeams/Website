@@ -1,6 +1,6 @@
 <header id="header">
-	<div id = site_title>
-		<a href="{{ "/" | absolute_url }}">
+	<div id=site_title>
+		<a href="{{ " /" | absolute_url }}">
 			<h1>{{site.title}}</h1>
 		</a>
 		{% if site.data.settings.subtitle.active %}
@@ -11,15 +11,27 @@
 	</div>
 
 	<div id="subheader">
-		{% if site.data.settings.nav.pages.active %}
+		<div class="submenu">
+			{% if site.data.settings.nav.dropdown.active %}
+			{% for category_type in site.data.dropdownCategories.dropdowncategories %}
+			<div class="dropdown">
+				<button class="dropbtn">{{ category_type.name }}</button>
+				{% include dropdown.html type=category_type.name %}
+			</div>
+			{% endfor %}
+			{% endif %}
+			{% if site.data.settings.nav.social.active %}
+			<nav class="social">
+				{% include social.html %}
+			</nav>
+			{% endif %}
+		</div>
+		<!-- {% if site.data.settings.nav.pages.active %}
 		<nav class="pages">
 			{%- include pages.html -%}
 		</nav>
-		{% endif %}
-		{% if site.data.settings.nav.social.active %}
-		<nav class="social">
-			{% include social.html %}
-		</nav>
-		{% endif %}
+		{% endif %} -->
+		
+		
 	</div>
 </header>

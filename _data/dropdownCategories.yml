@@ -1,0 +1,6 @@
+dropdowncategories:
+# 소문자로
+  - name : "Study"
+  - name : "Seminar"
+  - name : "Member"
+  - name : "Award"

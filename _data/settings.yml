@@ -12,7 +12,9 @@ nav:
     active: true
   social:
     active: true
-
+  dropdown:
+    active: true
+    
 #Featured images in homepage
 featured-img:
   active: true
