@@ -4,8 +4,15 @@ title: Archive
 ---
 
 {% for category in site.categories %}
-{% if category[0] == "python-Study" %}
-    <h2>DAU-BigDataTeam Python Study📖</h2>
+{% if category[0] == "python-study" %}
+<div>
+    <h2>DAU-BigDataTeam Python Study📖 {% for item in site.data.social.social %}
+        {% if item.type == "python-stduy"%}
+        <a href="{{ item.link }}" target="_blank" id="{{item.icon}}"><i class="fab fa-{{item.icon}}"
+                aria-hidden="true"></i></a>
+        {% endif %}
+        {% endfor %}</h2>
+</div>
     <ul>
     {% for post in category[1] %}
       <div class="post">
