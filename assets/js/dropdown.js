@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
     isDropdownVisible = true;
   });
 
-  // 마우스가 드롭다운 메뉴 위에 있을 때, 드롭다운 메뉴 보이기
+  // 마우스가 드롭다운 메뉴 위에 있을 때, 메뉴 숨기지 않기
   dropdownContent.addEventListener('mouseover', function() {
-    dropdownContent.classList.add('show');
     isDropdownVisible = true;
+    clearTimeout(timeoutId);
   });
 
-  // 마우스가 드롭다운 메뉴에서 벗어날 때, 드롭다운 메뉴 숨기기
+  // 마우스가 드롭다운 메뉴에서 벗어날 때, 일정 시간 후에 메뉴 숨기기
   dropdownContent.addEventListener('mouseleave', function() {
     isDropdownVisible = false;
     timeoutId = setTimeout(function() {
