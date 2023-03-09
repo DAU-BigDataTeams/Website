@@ -4,16 +4,16 @@ Member:
   url: 'memberhome.html'
 Study:
 # kaggle 관련 포스트
-  - name: 'Kaggle Study'
+  - name: 'Kaggle'
     url: 'archive.html'
 # 파이썬 스터디 관련 포스트
-  - name: 'Python Study'
+  - name: 'Python'
     url: 'Python.html'
 # 판다스 스터디 관련 포스트
-  - name: 'Pandas Study'
+  - name: 'Pandas'
     url: 'Pandas.html'
 # 딥러닝 스터디 관련 포스트
-  - name: 'AI-Study' 
+  - name: 'AI' 
     url: 'artificial-intelligence.html'
 Award:
 # 수상 관련 포스트
