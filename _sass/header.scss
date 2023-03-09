@@ -158,7 +158,8 @@ header {
             position: absolute;
             top: 80%;
             left: 0;
-            //width: 100%; /* 화면 사이즈 다른 경우 문자 짤리는 현상 생김 */
+            width: auto; /* 화면 사이즈 다른 경우 문자 짤리는 현상 생김 */
+            min-width: 100%; /* 최소 사이즈 보정 */
             transform: translateY(5px);
             z-index: 1;
             background-color: #f5f5f5;
@@ -176,6 +177,7 @@ header {
             color: #0077cc;
             padding: 12px 16px;
             text-decoration: none;
+            font-weight: bold;
             display: block;
         }
 
