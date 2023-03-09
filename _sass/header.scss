@@ -158,6 +158,7 @@ header {
             position: absolute;
             top: 80%;
             left: 0;
+            //width: 100%; /* 화면 사이즈 다른 경우 문자 짤리는 현상 생김 */
             transform: translateY(5px);
             z-index: 1;
             background-color: #f5f5f5;
