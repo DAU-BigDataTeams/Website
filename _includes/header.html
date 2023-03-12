@@ -15,8 +15,16 @@
 			{% if site.data.settings.nav.dropdown.active %}
 			{% for category_type in site.data.dropdownCategories.dropdowncategories %}
 			<div class="dropdown">
+				{% if category_type.count == 1 %}
+				<button class="dropbtn">
+					<a href = "{{ category_type.url | relative_url}}" >{{ category_type.name }}</a>
+				</button>
+				{% else %}
 				<button class="dropbtn">{{ category_type.name }}</button>
+				<div class="dropdown-content">
 				{% include dropdown.html type=category_type.name %}
+				</div>
+				{% endif %}
 			</div>
 			{% endfor %}
 			{% endif %}

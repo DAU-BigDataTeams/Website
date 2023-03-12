@@ -1,6 +1,13 @@
 dropdowncategories:
 # 소문자로
   - name : "Study"
+    count : 4
   - name : "Seminar"
+    count : 1
+    url: 'seminar.html' 
   - name : "Member"
+    count : 1
+    url: 'memberhome.html'
   - name : "Award"
+    count : 1
+    url: 'awards.html'  

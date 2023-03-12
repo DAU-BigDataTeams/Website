@@ -202,6 +202,20 @@ header {
                 opacity: 1;
             }
         }
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.05rem;
+            font-style: oblique;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
     }
 
 }

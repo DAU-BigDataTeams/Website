@@ -1,6 +1,4 @@
 pages:
-# naver
-  - {name: 'naver', url: 'www.naver.com'}
 # # kaggle 관련 포스트
 #   - {name: 'Kaggle-Study', url: 'archive.html'}
 # # 수상 관련 포스트
