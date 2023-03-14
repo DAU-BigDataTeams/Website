@@ -17,6 +17,7 @@ customexcerpt: 지리 공간 데이터에 대한 두 가지 일반적인 조작�
 ![geopart12](/assets/img/geopart/geopart12.jfif)
 
 이제 Python의 `geopy`를 이용해서 지오코딩을 해보자
+
 ~~~py
 from geopy.geocoders import Nominatim
 ~~~
@@ -35,9 +36,11 @@ print(location.address)
 29 58m 44.9758s N, 31 8m 3.17634s E
 هرم خوفو, شارع ابو الهول السياحي, نزلة البطران, الجيزة, محافظة الجيزة, 12556, مصر
 ~~~
+
 > 주소가 희안하게 나오는데 이건 쿠푸 피라미드를 지오코더 인자로 넘겼을 때 그 나라의 주소로 나와서 그런가 보다..
 
 point 속성의 값은 ```geopy.point.Point``` 객체이며 위도 및 경도 속성에서 각각 위도 및 경도를 가져올 수 있습니다.
+
 ~~~py
 point = location.point
 print("Latitude:", point.latitude)
@@ -50,6 +53,7 @@ Longitude: 31.134215650388754
 만약에 다양한 주소를 지오코딩으로 얻어야할 때 아래 코드의 lambda함수를 적용해서 DataFrame의 모든 행에 지오코더를 적용할 수 있다.
 **이때 지오코딩이 실패할 수 있으므로(등록X 주소, 생긴지 얼마안됨 등의 이유)반드시 예외처리 문장을 씌어야함**
 > 예외처리는(try/except)
+
 ~~~py
 universities = pd.read_csv("../input/geospatial-learn-course-data/top_universities.csv")
 universities.head()
@@ -73,6 +77,8 @@ universities = gpd.GeoDataFrame(
 universities.crs = {'init': 'epsg:4326'}
 universities.head()
 ~~~
+
+
 <table border="1">
   <thead>
     <tr style="text-align: right;">
@@ -124,6 +130,7 @@ universities.head()
 
 
 다음으로 지오코더에서 반환한 모든 위치를 시각화한다.
+
 ~~~py
 # Create a map
 m = folium.Map(location=[54, 15], tiles='openstreetmap', zoom_start=2)
@@ -151,7 +158,8 @@ m
 
 > 속성 조인(Attribute join)  
 > ```pd.DataFrame.join()```을 사용하여 여러 DataFrame의 정보를 공유 인덱스와 결합하는 방법을 이미 알고 있다.(Pandas 참고) GeoDataFrame과 Attribute join을 수항 할 때 ```gpd.GeoDataFrame.merge()```를 사용하는 것이 가장 좋다. 이를 설명하기 위해 유럽의 모든 국가에 대한 경계를 포함하는 GeoDataFrame europe_boundaries로 작업한다.   
-> 
+
+
 [europe_boundaries]
 <table border="1">
   <thead>
