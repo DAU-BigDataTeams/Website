@@ -10,3 +10,10 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 jump2python.pdf
+
+# Firebase
+.firebaserc
+firebase.json
+.firebase/
+/.firebase/
+/.github/
