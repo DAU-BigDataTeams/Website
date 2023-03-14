@@ -1,61 +1,61 @@
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-    {% if page.title == "Home" %}
-    {{ site.title }} | {{ site.description }}
-    {% else %}
-    {{ page.title }} | {{ site.title }}
-    {% endif %}
-</title>
-<meta name="description" content="
+    <title>
+        {% if page.title == "Home" %}
+            {{ site.title }} | {{ site.description }}
+        {% else %}
+            {{ page.title }} | {{ site.title }}
+      {% endif %}
+    </title>
+    <meta name="description" content="
      {% if page.description %}{{ page.description }}
      {% else %}{{ site.description }}
     {% endif %}">
 
-<!-- LINK TO ATOM FEED FOR SEO -->
-<link rel="alternate" type="application/atom+xml" href="{{ site.url }}/feed.xml" />
+    <!-- LINK TO ATOM FEED FOR SEO -->
+    <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/feed.xml" />
 
-<!-- FAVICON -->
-<link rel="icon" href="{{" assets/favicon/favicon.ico" | relative_url }}" type="image/x-icon">
-<link rel="shortcut icon" href="{{" assets/favicon/favicon.ico" | relative_url }}" type="image/x-icon">
-<link rel="apple-touch-icon" sizes="57x57" href="{{" assets/favicon/apple-icon-57x57.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="60x60" href="{{" assets/favicon/apple-icon-60x60.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="72x72" href="{{" assets/favicon/apple-icon-72x72.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="76x76" href="{{" assets/favicon/apple-icon-76x76.png" | relative_url }}">
-<link rel="apple-touch-icon" sizes="114x114" href="{{" assets/favicon/apple-icon-114x114.png" | relative_url }} ">
-<link rel=" apple-touch-icon" sizes="120x120" href="{{" assets/favicon/apple-icon-120x120.png" | relative_url }} ">
-<link rel=" apple-touch-icon" sizes="144x144" href="{{" assets/favicon/apple-icon-144x144.png" | relative_url }} ">
-<link rel=" apple-touch-icon" sizes="152x152" href="{{" assets/favicon/apple-icon-152x152.png" | relative_url }} ">
-<link rel=" apple-touch-icon" sizes="180x180" href="{{" assets/favicon/apple-icon-180x180.png" | relative_url }} ">
-<link rel=" icon" type="image/png" sizes="192x192" href="{{" assets/favicon/android-icon-192x192.png" | relative_url }} ">
-<link rel=" icon" type="image/png" sizes="32x32" href="{{" assets/favicon/favicon-32x32.png" | relative_url }} ">
-<link rel=" icon" type="image/png" sizes="96x96" href="{{" assets/favicon/favicon-96x96.png" | relative_url }} ">
-<link rel=" icon" type="image/png" sizes="16x16" href="{{" assets/favicon/favicon-16x16.png" | relative_url }} ">
-<link rel=" manifest" href="assets/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <!-- FAVICON -->
+    <link rel="icon" href="{{"assets/favicon/favicon.ico" | relative_url }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{"assets/favicon/favicon.ico" | relative_url }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{"assets/favicon/apple-icon-57x57.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{"assets/favicon/apple-icon-60x60.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{"assets/favicon/apple-icon-72x72.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{"assets/favicon/apple-icon-76x76.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{"assets/favicon/apple-icon-114x114.png" | relative_url }} ">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{"assets/favicon/apple-icon-120x120.png" | relative_url }} ">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{"assets/favicon/apple-icon-144x144.png" | relative_url }} ">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{"assets/favicon/apple-icon-152x152.png" | relative_url }} ">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{"assets/favicon/apple-icon-180x180.png" | relative_url }} ">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{"assets/favicon/android-icon-192x192.png" | relative_url }} ">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{"assets/favicon/favicon-32x32.png" | relative_url }} ">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{"assets/favicon/favicon-96x96.png" | relative_url }} ">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{"assets/favicon/favicon-16x16.png" | relative_url }} ">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/syntax.css" | relative_url }}">
 
-<!-- CSS -->
-<link rel="stylesheet" href="{{ " /assets/css/main.css" | relative_url }}">
-<link rel="stylesheet" href="{{ " /assets/css/syntax.css" | relative_url }}">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
-<!-- 광고 -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3514382222030581"crossorigin="anonymous"></script>
+    <!-- 광고 -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3514382222030581"crossorigin="anonymous"></script>
     -->
+    
+    <!-- SEO Plugin -->
+    {% seo %}
 
-<!-- SEO Plugin -->
-{% seo %}
-
-<!-- Google Analytics -->
-{% if site.data.settings.analytics-id%}
-{%- include analytics.html -%}
-{% endif %}
-<!-- End Google Analytics -->
-
-<script src="/assets/js/dropdown.js"></script>
+    <!-- Google Analytics -->
+    {% if site.data.settings.analytics-id%}
+        {%- include analytics.html -%}
+    {% endif %}
+    <!-- End Google Analytics -->
+    
+    <script src="/assets/js/dropdown.js"></script>
+    
