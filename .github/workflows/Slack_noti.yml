@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       # 추가된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added files
