@@ -1,5 +1,3 @@
-name: Slack Notification on Post Update
-
 on:
   workflow_run:
     workflows: ["Deploy to Firebase Hosting"]
@@ -12,6 +10,7 @@ on:
 jobs:
   notify_slack:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -35,4 +34,3 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{"text":"새로운 포스트가 작성되었습니다. 모두 댓글로 응원해주세요~😊\n<https://datadecetive.net/|새로운 글 바로 구경하기!>"}' $SLACK_WEBHOOK_URL
-
