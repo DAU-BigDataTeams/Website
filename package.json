@@ -1,0 +1,22 @@
+{
+  "name": "dau-bigdatateams.github.io",
+  "version": "1.0.0",
+  "description": "Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DAU-BigDataTeams/Website.git"
+  },
+  "keywords": [
+    "DAU-BigDataTeams/Website"
+  ],
+  "author": "jhparkland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DAU-BigDataTeams/Website/issues"
+  },
+  "homepage": "https://github.com/DAU-BigDataTeams/Website#readme"
+}
