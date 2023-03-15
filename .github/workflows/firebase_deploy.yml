@@ -25,6 +25,11 @@ jobs :
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
       - name: Setup Firebase CLI
         run: |
           curl -sL https://firebase.tools | bash
