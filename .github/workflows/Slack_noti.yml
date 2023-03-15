@@ -17,7 +17,7 @@ jobs:
         id: diff_check
         run: |
           git diff --name-status --diff-filter=AM HEAD~1 HEAD _posts/ | grep -q "." && echo "has_changes=yes" || echo "has_changes=no"
-          echo "has_changes=$(echo "has_changes=yes")" >> $GITHUB_ENV
+          echo "has_changes=$has_changes" >> $GITHUB_ENV
 
       - name: Send Slack notification
         if: env.has_changes == 'yes'
