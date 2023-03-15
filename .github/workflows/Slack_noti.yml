@@ -1,6 +1,10 @@
 name: Slack Notification on Post Update
 
 on:
+  workflow_run:
+    workflows: ["Deploy to Firebase Hosting"]
+    types:
+      - completed
   push:
     paths:
       - '_posts/**'
@@ -12,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # 히스토리 비교를 위해 0으로 설정
 
       # 추가된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added files
@@ -31,3 +35,4 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{"text":"새로운 포스트가 작성되었습니다. 한번 볼까요? 깃허브에서 확인해주세요 <https://datadecetive.net/|새로운 글 바로 구경하기!>"}' $SLACK_WEBHOOK_URL
+
