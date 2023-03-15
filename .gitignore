@@ -13,7 +13,6 @@ jump2python.pdf
 
 # Firebase
 .firebaserc
-firebase.json
-.firebase/
-/.firebase/
-firebase-debug.log
+# .firebase/
+# /.firebase/
+# firebase-debug.log
