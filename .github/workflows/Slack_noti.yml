@@ -1,0 +1,19 @@
+name: Slack Notification on Post Update
+
+on:
+  push:
+    paths:
+      - '_posts/**'
+
+jobs:
+  notify_slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Send Slack notification
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"새로운 파일이 post 디렉터리에 추가되었습니다. 깃허브에서 확인해주세요: '${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}'"}' $SLACK_WEBHOOK_URL
