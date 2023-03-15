@@ -11,16 +11,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        
-        # 삭제된 경우엔 처리하지 않음
+
+      # 추가 및 수정된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added or modified files
         id: diff_check
         run: |
           git diff --name-status --diff-filter=AM HEAD~1 HEAD _posts/ | grep -q "." && echo "has_changes=yes" || echo "has_changes=no"
-          echo "::set-output name=has_changes::$(echo "has_changes=yes")"
+          echo "has_changes=$(echo "has_changes=yes")" >> $GITHUB_ENV
 
       - name: Send Slack notification
-        if: steps.diff_check.outputs.has_changes == 'yes'
+        if: env.has_changes == 'yes'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
