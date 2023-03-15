@@ -35,4 +35,4 @@ jobs :
           curl -sL https://firebase.tools | bash
 
       - name: Deploy to Firebase
-        run: firebase deploy ${{ secrets.FIREBASE_TOKEN }}
+        run: firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
