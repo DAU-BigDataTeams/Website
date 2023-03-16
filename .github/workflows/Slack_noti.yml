@@ -1,3 +1,5 @@
+name : Slack noti
+
 on:
   workflow_run:
     workflows: ["Deploy to Firebase Hosting"]
