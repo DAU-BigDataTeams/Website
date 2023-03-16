@@ -1,4 +1,4 @@
-name : Slack noti
+name: Slack Notification on Post Update
 
 on:
   workflow_run:
@@ -12,7 +12,6 @@ on:
 jobs:
   notify_slack:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -29,7 +28,6 @@ jobs:
             has_changes="no"
           fi
           echo "has_changes=$has_changes" >> $GITHUB_ENV
-
       - name: Send Slack notification
         if: env.has_changes == 'yes'
         env:
