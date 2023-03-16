@@ -28,9 +28,12 @@ jobs:
             has_changes="no"
           fi
           echo "has_changes=$has_changes" >> $GITHUB_ENV
+
       - name: Send Slack notification
-        if: env.has_changes == 'yes' && github.event.workflow_run.event == 'completed' && github.event.workflow_run.name == 'Deploy to Firebase Hosting' # Deploy to Firebase Hosting 워크플로우가 완료된 경우에만 실행
+        if: env.has_changes == 'yes' 
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{"text":"새로운 포스트가 작성되었습니다. 모두 댓글로 응원해주세요~😊\n<https://datadecetive.net/|새로운 글 바로 구경하기!>\n만약 새로운 포스트가 안보이면 잠시후 새로고침 해주세요~"}' $SLACK_WEBHOOK_URL
+
+#  github.event.workflow_run.event == 'completed' && github.event.workflow_run.name == 'Deploy to Firebase Hosting' # Deploy to Firebase Hosting 워크플로우가 완료된 경우에만 실행
