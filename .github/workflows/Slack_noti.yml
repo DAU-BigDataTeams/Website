@@ -29,7 +29,7 @@ jobs:
           fi
           echo "has_changes=$has_changes" >> $GITHUB_ENV
       - name: Send Slack notification
-        if: env.has_changes == 'yes'
+        if: env.has_changes == 'yes' && github.event.workflow_run.event == 'completed' && github.event.workflow_run.name == 'Deploy to Firebase Hosting' # Deploy to Firebase Hosting 워크플로우가 완료된 경우에만 실행
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
