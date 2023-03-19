@@ -16,17 +16,17 @@ customexcerpt: "Kaggle의 Intro to Machine Learning 과정에 대해 알아보�
 
 ## 1. How Models Work
 **Decision Tree(의사 결정 트리)**  
-![DecisionTree](/assets/img/IntroML/a0Kim/Sample%20Decision%20Tree.png)  
+![DecisionTree](/assets/img/IntroML/a0Kim/Sample-Decision-Tree.png)  
 데이터에서 패턴을 캡처하는 이 단계를 fitting 또는 training이라고 함  
 training data : 모델을 fit시키는데 사용되는 데이터  
 
 Improving the Decision Tree  
-![Improve(1)](/assets/img/IntroML/a0Kim/Improving%20the%20Decision%20Tree(1).png)  
+![Improve(1)](/assets/img/IntroML/a0Kim/Improving-the-Decision-Tree(1).png)  
 1st Decision Tree는 침실이 더 많은 집이 더 적은 집보다 더 높은 가격에 팔리는 경향이 있다는 사실을 포함. 하지만 **단점**이 존재 : 욕실의 수 , 부지 크기, 위치 등과 같은 주택 가격에 영향을 미치는 대부분의 요소를 파악하지 못한다는 것  
 
 "더 깊은"트리 : 더 많은 "분할"이 존재하는 트리 사용해 더 많은 요인 캡쳐 가능  
 
-![Improve(2)](/assets/img/IntroML/a0Kim/Improving%20the%20Decesion%20Tree%20(2).png)  
+![Improve(2)](/assets/img/IntroML/a0Kim/Improving-the-Decesion-Tree-(2).png)  
 주택의 총 부지 크기도 고려하는 의사 결정 트리는 위와 같음  
 -> 의사 결정 트리를 사용해 주택 가격을 에측하고, 해당 주택의 특성에 해당하는 경로를 선택. 우리가 예측하는 가장 아래에 있는 곳을 "leaf"라고 부름. 분할과 "leaf"의 값은 데이터에 의해 결정됨.
 
@@ -534,7 +534,7 @@ print(mean_absolute_error(val_y, val_predictions))
 
 Scikit-learn의 문서에서 의사결정 트리 모델에는 많은 옵션이 있음을 알 수 있다. 가장 중요한 옵션은 *트리의 깊이를 결정*하는것이다. 첫번째 과정에서 **나무의 깊이는 예측에 도달하기 전에 얼마나 많은 분할을 하는지를 측정하는 것**임을 기억해라  
 
-![Experimenting With Different Models](/assets/img/IntroML/a0Kim/Underfitting%20and%20Overfitting(1).png)  
+![Experimenting With Different Models](/assets/img/IntroML/a0Kim/Underfitting-and-Overfitting(1).png)  
 
  실제로 트리가 top레벨과 leaf사이에 10개의 splits을 갖는것은 드문일이 아니다. 트리가 깊어질수록 dataset은 더 적은집이 있는 leaves으로 잘린다. 트리에 분할이 하나만 있는 경우 데이터를 두 그룹으로 나눈다. 각 레벨에서 분할을 더 추가하여 그룹수를 계속 두 배로 늘리면 210개가 된다. 우리가 10번째 레벨에 도착할때까지 1024 leaves다.  
  우리가 집들을 많은 leaves들로 나눌 때, 우리는 또한 각각의 leaves에 더 적은 집들을 가지고 있다. 집이 거의 없는 leave는 **집의 실제 값에 상당히 가까운 예측을 하지만 새로운 데이터에 대해 매우 신뢰할 수 없는 예측을 할 수 있다**.(->각각의 예측은 집 몇 채에만 기초하기 때문)  
@@ -544,7 +544,7 @@ Scikit-learn의 문서에서 의사결정 트리 모델에는 많은 옵션이 �
  Underfitting : 모델이 데이터에서 중요한 차이와 패턴을 포착하지 못해 훈련 데이터에서도 성능이 떨어지는 경우  
 
 검증 데이터에서 추정하는 새 데이터에 대한 정확성에 관심이 있기에 Underfitting 과 Overfitting 사이의 최적 지점을 찾고자 한다.  
-![MAE](/assets/img/IntroML/a0kim/Underfitting%20and%20Overfitting(2).png)  
+![MAE](/assets/img/IntroML/a0kim/Underfitting-and-Overfitting(2).png)  
 -> 위 그림에서 **유효성검사곡선(Validation)의 낮은점**을 원함
 ### Example
 트리 깊이를 제어하기 위한 몇 가지 대안이 있으며, 트리를 통과하는 일부 경로는 다른 경로보다 더 큰 깊이를 가질 수 있다.  
