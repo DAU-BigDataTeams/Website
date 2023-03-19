@@ -2,7 +2,7 @@
 title: 머신러닝 기초에 대한 정리 (wiht. 트리 기반 모델) !
 layout: post   
 categories : [kaggle]
-image : /assets/img/IntroML/a0Kim/zerotoA - Intro to Machine Learning.png
+image : /assets/img/IntroML/a0Kim/zerotoA-Intro-to-Machine-Learning.png
 description:  Kaggle의 Intro to Machine Learning 과정을 정리해보았다
 customexcerpt: "Kaggle의 Intro to Machine Learning 과정에 대해 알아보자 !!"
 ---
