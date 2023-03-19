@@ -2,7 +2,7 @@
 title: 머신러닝 기초에 대한 정리 (wiht. 트리 기반 모델) !
 layout: post   
 categories : [kaggle]
-image : /assets/img/IntroML/a0Kim/zerotoA-Intro-to-Machine-Learning.png
+image : /assets/img/IntroML/a0kim/zerotoA-Intro-to-Machine-Learning.png
 description:  Kaggle의 Intro to Machine Learning 과정을 정리해보았다
 customexcerpt: "Kaggle의 Intro to Machine Learning 과정에 대해 알아보자 !!"
 ---
@@ -646,3 +646,6 @@ print(mean_absolute_error(val_y, melb_preds))
 
 ### Conclusion
 추가적인 개선의 여지가 있을 것으로 보이지만, 이는 최선의 의사결정 트리 오류인 250,000에 비해 크게 개선된 것이다. 단일 의사 결정 트리의 최대 깊이를 변경한 것처럼 랜덤 포레스트의 성능을 변경할 수 있는 매개 변수가 있다. 그러나 랜덤 포레스트 모델의 가장 좋은 특징 중 하나는 이 튜닝이 없어도 일반적으로 합리적으로 작동한다는 것이다.
+
+
+![1](/assets/img/IntroML/a0kim/zerotoA-Intro-to-Machine-Learning.png)
