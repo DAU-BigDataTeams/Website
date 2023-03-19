@@ -5,7 +5,7 @@ Member:
 Study:
 # kaggle 관련 포스트
   - name: 'Kaggle'
-    url: 'archive.html'
+    url: 'kaggle.html'
 # 파이썬 스터디 관련 포스트
   - name: 'Python'
     url: 'Python.html'
