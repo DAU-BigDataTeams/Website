@@ -1,7 +1,7 @@
 ---
 title: 다양한 전처리 방법을 통해 머신러닝 모델의 성능을 높여보자!
 layout: post
-categories : [python-study,Kaggle,XGBoost]
+categories : [kaggle,XGBoost]
 image : /assets/img/Intermediate%20ML(jongho)/Jongho_ML.png
 description: 다양한 전처리 방법을 통해 머신러닝 모델의 성능을 높여보자!
 customexcerpt: kaggle의 Intermediate Machine Learning를 수료한 후 정리한 글! 
@@ -225,8 +225,8 @@ head() 메서드를 통해 학습데이터를 살펴보자
 X_train.head()
 ~~~
 
-<table border="1" >
-<thead >
+<table border="1">
+<thead>
   <tr>
     <th></th>
     <th>Type</th>
@@ -321,6 +321,7 @@ X_train.head()
   </tr>
 </tbody>
 </table>
+
 
 데이터타입(dtype)을 통해 범주형 변수인지 아닌지를 확인할 수 있다. 주로 데이터타입이 object인 것은 범주형 변수임을 의미한다.(아닌 경우도 종종 있다)
 ~~~ py
@@ -431,13 +432,103 @@ Pipelines은 다음과 같은 장점이 있다.
 ~~~ py
 X_train.head()
 ~~~
-| Type  | Method | Regionname | Rooms                 | Distance | Postcode | Bedroom2 | Bathroom | Car | Landsize | BuildingArea | YearBuilt | Lattitude | Longtitude | Propertycount |         |
-|-------|--------|------------|-----------------------|----------|----------|----------|----------|-----|----------|--------------|-----------|-----------|------------|---------------|---------|
-| 12167 | u      | S          | Southern Metropolitan | 1        | 5.0      | 3182.0   | 1.0      | 1.0 | 1.0      | 0.0          | NaN       | 1940.0    | -37.85984  | 144.9867      | 13240.0 |
-| 6524  | h      | SA         | Western Metropolitan  | 2        | 8.0      | 3016.0   | 2.0      | 2.0 | 1.0      | 193.0        | NaN       | NaN       | -37.85800  | 144.9005      | 6380.0  |
-| 8413  | h      | S          | Western Metropolitan  | 3        | 12.6     | 3020.0   | 3.0      | 1.0 | 1.0      | 555.0        | NaN       | NaN       | -37.79880  | 144.8220      | 3755.0  |
-| 2919  | u      | SP         | Northern Metropolitan | 3        | 13.0     | 3046.0   | 3.0      | 1.0 | 1.0      | 265.0        | NaN       | 1995.0    | -37.70830  | 144.9158      | 8870.0  |
-| 6043  | h      | S          | Western Metropolitan  | 3        | 13.3     | 3020.0   | 3.0      | 1.0 | 2.0      | 673.0        | 673.0     | 1970.0    | -37.76230  | 144.8272      | 4217.0  |
+
+<table border="1">
+<thead>
+  <tr>
+    <th></th>
+    <th>Type</th>
+    <th>Method</th>
+    <th>Regionname</th>
+    <th>Rooms</th>
+    <th>Distance</th>
+    <th>Postcode</th>
+    <th>Bedroom2</th>
+    <th>Bathroom</th>
+    <th>Landsize</th>
+    <th>Lattitude</th>
+    <th>Longtitude</th>
+    <th>Propertycount</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>12167</td>
+    <td>u</td>
+    <td>S</td>
+    <td>Southern Metropolitan</td>
+    <td>1</td>
+    <td>5.0</td>
+    <td>3182.0</td>
+    <td>1.0</td>
+    <td>1.0</td>
+    <td>0.0</td>
+    <td>-37.85984</td>
+    <td>144.9867</td>
+    <td>13240.0</td>
+  </tr>
+  <tr>
+    <td>6524</td>
+    <td>h</td>
+    <td>SA</td>
+    <td>Western Metropolitan</td>
+    <td>2</td>
+    <td>8.0</td>
+    <td>3016.0</td>
+    <td>2.0</td>
+    <td>2.0</td>
+    <td>193.0</td>
+    <td>-37.85800</td>
+    <td>144.9005</td>
+    <td>6380.0</td>
+  </tr>
+  <tr>
+    <td>8413</td>
+    <td>h</td>
+    <td>S</td>
+    <td>Western Metropolitan</td>
+    <td>3</td>
+    <td>12.6</td>
+    <td>3020.0</td>
+    <td>3.0</td>
+    <td>1.0</td>
+    <td>555.0</td>
+    <td>-37.79880</td>
+    <td>144.8220</td>
+    <td>3755.0</td>
+  </tr>
+  <tr>
+    <td>2919</td>
+    <td>u</td>
+    <td>SP</td>
+    <td>Northern Metropolitan</td>
+    <td>3</td>
+    <td>13.0</td>
+    <td>3046.0</td>
+    <td>3.0</td>
+    <td>1.0</td>
+    <td>265.0</td>
+    <td>-37.70830</td>
+    <td>144.9158</td>
+    <td>8870.0</td>
+  </tr>
+  <tr>
+    <td>6043</td>
+    <td>h</td>
+    <td>S</td>
+    <td>Western Metropolitan</td>
+    <td>3</td>
+    <td>13.3</td>
+    <td>3020.0</td>
+    <td>3.0</td>
+    <td>1.0</td>
+    <td>673.0</td>
+    <td>-37.76230</td>
+    <td>144.8272</td>
+    <td>4217.0</td>
+  </tr>
+</tbody>
+</table>
 
 head() 메서드로 학습데이터를 살펴본 결과, 범주형 데이터와 결측값이 있다는 것을 알 수 있다. 파이프라인을 이용한다면 두 가지 경우를 간단하게 처리할 수 있다.
 3단계로 나눠 파이프라인을 설계한다.<br>
