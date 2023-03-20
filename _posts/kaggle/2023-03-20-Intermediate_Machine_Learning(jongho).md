@@ -225,10 +225,9 @@ head() 메서드를 통해 학습데이터를 살펴보자
 X_train.head()
 ~~~
 
-<table border="1">
+<table border = "1">
 <thead>
   <tr>
-    <th></th>
     <th>Type</th>
     <th>Method</th>
     <th>Regionname</th>
@@ -237,10 +236,14 @@ X_train.head()
     <th>Postcode</th>
     <th>Bedroom2</th>
     <th>Bathroom</th>
+    <th>Car</th>
     <th>Landsize</th>
+    <th>BuildingArea</th>
+    <th>YearBuilt</th>
     <th>Lattitude</th>
     <th>Longtitude</th>
     <th>Propertycount</th>
+    <th></th>
   </tr>
 </thead>
 <tbody>
@@ -254,7 +257,10 @@ X_train.head()
     <td>3182.0</td>
     <td>1.0</td>
     <td>1.0</td>
+    <td>1.0</td>
     <td>0.0</td>
+    <td>NaN</td>
+    <td>1940.0</td>
     <td>-37.85984</td>
     <td>144.9867</td>
     <td>13240.0</td>
@@ -269,7 +275,10 @@ X_train.head()
     <td>3016.0</td>
     <td>2.0</td>
     <td>2.0</td>
+    <td>1.0</td>
     <td>193.0</td>
+    <td>NaN</td>
+    <td>NaN</td>
     <td>-37.85800</td>
     <td>144.9005</td>
     <td>6380.0</td>
@@ -284,7 +293,10 @@ X_train.head()
     <td>3020.0</td>
     <td>3.0</td>
     <td>1.0</td>
+    <td>1.0</td>
     <td>555.0</td>
+    <td>NaN</td>
+    <td>NaN</td>
     <td>-37.79880</td>
     <td>144.8220</td>
     <td>3755.0</td>
@@ -299,7 +311,10 @@ X_train.head()
     <td>3046.0</td>
     <td>3.0</td>
     <td>1.0</td>
+    <td>1.0</td>
     <td>265.0</td>
+    <td>NaN</td>
+    <td>1995.0</td>
     <td>-37.70830</td>
     <td>144.9158</td>
     <td>8870.0</td>
@@ -314,7 +329,10 @@ X_train.head()
     <td>3020.0</td>
     <td>3.0</td>
     <td>1.0</td>
+    <td>2.0</td>
     <td>673.0</td>
+    <td>673.0</td>
+    <td>1970.0</td>
     <td>-37.76230</td>
     <td>144.8272</td>
     <td>4217.0</td>
@@ -433,10 +451,9 @@ Pipelines은 다음과 같은 장점이 있다.
 X_train.head()
 ~~~
 
-<table border="1">
+<table border = "1">
 <thead>
   <tr>
-    <th></th>
     <th>Type</th>
     <th>Method</th>
     <th>Regionname</th>
@@ -445,10 +462,14 @@ X_train.head()
     <th>Postcode</th>
     <th>Bedroom2</th>
     <th>Bathroom</th>
+    <th>Car</th>
     <th>Landsize</th>
+    <th>BuildingArea</th>
+    <th>YearBuilt</th>
     <th>Lattitude</th>
     <th>Longtitude</th>
     <th>Propertycount</th>
+    <th></th>
   </tr>
 </thead>
 <tbody>
@@ -462,7 +483,10 @@ X_train.head()
     <td>3182.0</td>
     <td>1.0</td>
     <td>1.0</td>
+    <td>1.0</td>
     <td>0.0</td>
+    <td>NaN</td>
+    <td>1940.0</td>
     <td>-37.85984</td>
     <td>144.9867</td>
     <td>13240.0</td>
@@ -477,7 +501,10 @@ X_train.head()
     <td>3016.0</td>
     <td>2.0</td>
     <td>2.0</td>
+    <td>1.0</td>
     <td>193.0</td>
+    <td>NaN</td>
+    <td>NaN</td>
     <td>-37.85800</td>
     <td>144.9005</td>
     <td>6380.0</td>
@@ -492,7 +519,10 @@ X_train.head()
     <td>3020.0</td>
     <td>3.0</td>
     <td>1.0</td>
+    <td>1.0</td>
     <td>555.0</td>
+    <td>NaN</td>
+    <td>NaN</td>
     <td>-37.79880</td>
     <td>144.8220</td>
     <td>3755.0</td>
@@ -507,7 +537,10 @@ X_train.head()
     <td>3046.0</td>
     <td>3.0</td>
     <td>1.0</td>
+    <td>1.0</td>
     <td>265.0</td>
+    <td>NaN</td>
+    <td>1995.0</td>
     <td>-37.70830</td>
     <td>144.9158</td>
     <td>8870.0</td>
@@ -522,7 +555,10 @@ X_train.head()
     <td>3020.0</td>
     <td>3.0</td>
     <td>1.0</td>
+    <td>2.0</td>
     <td>673.0</td>
+    <td>673.0</td>
+    <td>1970.0</td>
     <td>-37.76230</td>
     <td>144.8272</td>
     <td>4217.0</td>
