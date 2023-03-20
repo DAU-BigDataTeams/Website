@@ -225,137 +225,99 @@ head() 메서드를 통해 학습데이터를 살펴보자
 X_train.head()
 ~~~
 
-
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-<table class="tg">
-<thead>
+<table border="1" >
+<thead >
   <tr>
-    <th class="tg-0lax"></th>
-    <th class="tg-0lax"></th>
-    <th class="tg-0lax">Type</th>
-    <th class="tg-0lax">Method</th>
-    <th class="tg-0lax">Regionname</th>
-    <th class="tg-0lax">Rooms</th>
-    <th class="tg-0lax">Distance</th>
-    <th class="tg-0lax">Postcode</th>
-    <th class="tg-0lax">Bedroom2</th>
-    <th class="tg-0lax">Bathroom</th>
-    <th class="tg-0lax">Landsize</th>
-    <th class="tg-0lax">Lattitude</th>
-    <th class="tg-0lax">Longtitude</th>
-    <th class="tg-0lax">Propertycount</th>
-    <th class="tg-0lax"></th>
+    <th></th>
+    <th>Type</th>
+    <th>Method</th>
+    <th>Regionname</th>
+    <th>Rooms</th>
+    <th>Distance</th>
+    <th>Postcode</th>
+    <th>Bedroom2</th>
+    <th>Bathroom</th>
+    <th>Landsize</th>
+    <th>Lattitude</th>
+    <th>Longtitude</th>
+    <th>Propertycount</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax">-------</td>
-    <td class="tg-0lax">------</td>
-    <td class="tg-0lax">--------</td>
-    <td class="tg-0lax">-----------------------</td>
-    <td class="tg-0lax">-------</td>
-    <td class="tg-0lax">----------</td>
-    <td class="tg-0lax">----------</td>
-    <td class="tg-0lax">----------</td>
-    <td class="tg-0lax">----------</td>
-    <td class="tg-0lax">----------</td>
-    <td class="tg-0lax">-----------</td>
-    <td class="tg-0lax">------------</td>
-    <td class="tg-0lax">---------------</td>
-    <td class="tg-0lax"></td>
+    <td>12167</td>
+    <td>u</td>
+    <td>S</td>
+    <td>Southern Metropolitan</td>
+    <td>1</td>
+    <td>5.0</td>
+    <td>3182.0</td>
+    <td>1.0</td>
+    <td>1.0</td>
+    <td>0.0</td>
+    <td>-37.85984</td>
+    <td>144.9867</td>
+    <td>13240.0</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax">12167</td>
-    <td class="tg-0lax">u</td>
-    <td class="tg-0lax">S</td>
-    <td class="tg-0lax">Southern Metropolitan</td>
-    <td class="tg-0lax">1</td>
-    <td class="tg-0lax">5.0</td>
-    <td class="tg-0lax">3182.0</td>
-    <td class="tg-0lax">1.0</td>
-    <td class="tg-0lax">1.0</td>
-    <td class="tg-0lax">0.0</td>
-    <td class="tg-0lax">-37.85984</td>
-    <td class="tg-0lax">144.9867</td>
-    <td class="tg-0lax">13240.0</td>
-    <td class="tg-0lax"></td>
+    <td>6524</td>
+    <td>h</td>
+    <td>SA</td>
+    <td>Western Metropolitan</td>
+    <td>2</td>
+    <td>8.0</td>
+    <td>3016.0</td>
+    <td>2.0</td>
+    <td>2.0</td>
+    <td>193.0</td>
+    <td>-37.85800</td>
+    <td>144.9005</td>
+    <td>6380.0</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax">6524</td>
-    <td class="tg-0lax">h</td>
-    <td class="tg-0lax">SA</td>
-    <td class="tg-0lax">Western Metropolitan</td>
-    <td class="tg-0lax">2</td>
-    <td class="tg-0lax">8.0</td>
-    <td class="tg-0lax">3016.0</td>
-    <td class="tg-0lax">2.0</td>
-    <td class="tg-0lax">2.0</td>
-    <td class="tg-0lax">193.0</td>
-    <td class="tg-0lax">-37.85800</td>
-    <td class="tg-0lax">144.9005</td>
-    <td class="tg-0lax">6380.0</td>
-    <td class="tg-0lax"></td>
+    <td>8413</td>
+    <td>h</td>
+    <td>S</td>
+    <td>Western Metropolitan</td>
+    <td>3</td>
+    <td>12.6</td>
+    <td>3020.0</td>
+    <td>3.0</td>
+    <td>1.0</td>
+    <td>555.0</td>
+    <td>-37.79880</td>
+    <td>144.8220</td>
+    <td>3755.0</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax">8413</td>
-    <td class="tg-0lax">h</td>
-    <td class="tg-0lax">S</td>
-    <td class="tg-0lax">Western Metropolitan</td>
-    <td class="tg-0lax">3</td>
-    <td class="tg-0lax">12.6</td>
-    <td class="tg-0lax">3020.0</td>
-    <td class="tg-0lax">3.0</td>
-    <td class="tg-0lax">1.0</td>
-    <td class="tg-0lax">555.0</td>
-    <td class="tg-0lax">-37.79880</td>
-    <td class="tg-0lax">144.8220</td>
-    <td class="tg-0lax">3755.0</td>
-    <td class="tg-0lax"></td>
+    <td>2919</td>
+    <td>u</td>
+    <td>SP</td>
+    <td>Northern Metropolitan</td>
+    <td>3</td>
+    <td>13.0</td>
+    <td>3046.0</td>
+    <td>3.0</td>
+    <td>1.0</td>
+    <td>265.0</td>
+    <td>-37.70830</td>
+    <td>144.9158</td>
+    <td>8870.0</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax">2919</td>
-    <td class="tg-0lax">u</td>
-    <td class="tg-0lax">SP</td>
-    <td class="tg-0lax">Northern Metropolitan</td>
-    <td class="tg-0lax">3</td>
-    <td class="tg-0lax">13.0</td>
-    <td class="tg-0lax">3046.0</td>
-    <td class="tg-0lax">3.0</td>
-    <td class="tg-0lax">1.0</td>
-    <td class="tg-0lax">265.0</td>
-    <td class="tg-0lax">-37.70830</td>
-    <td class="tg-0lax">144.9158</td>
-    <td class="tg-0lax">8870.0</td>
-    <td class="tg-0lax"></td>
-  </tr>
-  <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax">6043</td>
-    <td class="tg-0lax">h</td>
-    <td class="tg-0lax">S</td>
-    <td class="tg-0lax">Western Metropolitan</td>
-    <td class="tg-0lax">3</td>
-    <td class="tg-0lax">13.3</td>
-    <td class="tg-0lax">3020.0</td>
-    <td class="tg-0lax">3.0</td>
-    <td class="tg-0lax">1.0</td>
-    <td class="tg-0lax">673.0</td>
-    <td class="tg-0lax">-37.76230</td>
-    <td class="tg-0lax">144.8272</td>
-    <td class="tg-0lax">4217.0</td>
-    <td class="tg-0lax"></td>
+    <td>6043</td>
+    <td>h</td>
+    <td>S</td>
+    <td>Western Metropolitan</td>
+    <td>3</td>
+    <td>13.3</td>
+    <td>3020.0</td>
+    <td>3.0</td>
+    <td>1.0</td>
+    <td>673.0</td>
+    <td>-37.76230</td>
+    <td>144.8272</td>
+    <td>4217.0</td>
   </tr>
 </tbody>
 </table>
