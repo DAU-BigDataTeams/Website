@@ -1,7 +1,7 @@
 ---
 title: 다양한 전처리 방법을 통해 머신러닝 모델의 성능을 높여보자!
 layout: post
-categories : [python-study,Kaggle,XGBoost]
+categories : [kaggle,XGBoost]
 image : /assets/img/Intermediate%20ML(jongho)/Jongho_ML.png
 description: 다양한 전처리 방법을 통해 머신러닝 모델의 성능을 높여보자!
 customexcerpt: kaggle의 Intermediate Machine Learning를 수료한 후 정리한 글! 
