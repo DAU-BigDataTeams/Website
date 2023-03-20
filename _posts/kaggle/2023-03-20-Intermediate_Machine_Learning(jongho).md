@@ -2,8 +2,8 @@
 title: 다양한 전처리 방법을 통해 머신러닝 모델의 성능을 높여보자!
 layout: post
 categories : [python-study,Kaggle,XGBoost]
-image : (/assets/img/Intermediate ML(jongho)/Jongho_ML.png)
-description:  다양한 전처리 방법을 통해 머신러닝 모델의 성능을 높여보자!
+image : /assets/img/Intermediate%20ML(jongho)/Jongho_ML.png
+description: 다양한 전처리 방법을 통해 머신러닝 모델의 성능을 높여보자!
 customexcerpt: kaggle의 Intermediate Machine Learning를 수료한 후 정리한 글! 
 ---
 
@@ -38,15 +38,15 @@ customexcerpt: kaggle의 Intermediate Machine Learning를 수료한 후 정리�
 ### 2-2 결측값 처리 방법
 ---
 1. 결측값이 있는 열 삭제(Drop Columns with Missing Values) <br>
-![post1](/assets/img/Intermediate ML(jongho)/post1.png)
+![post1](/assets/img/Intermediate%20ML(jongho)/post1.png)
 - 말 그대로 결측값이 있는 column은 삭제하는 것이다. 
 - 가장 간단한 방법이다. 제거되는 column의 대부분의 값이 결측값이 아니라면 많은 정보를 잃어버리는 결과를 초래하게 된다. 예를 들어 10,000개의 행을 가진 데이터셋에서 하나의 중요한 column이 1개의 결측치를 갖고 있다면 이러한 방법으로는 column 전체를 제거하게 될 것이다.
 2. 대치법(Imputation)<br>
-![post2](/assets/img/Intermediate ML(jongho)/post2.png)
+![post2](/assets/img/Intermediate%20ML(jongho)/post2.png)
 - 대치법은 결측값을 다른 값으로 대체하는 방법이다. 예를 들어 각 column별 결측치에는 각 column별 평균값으로 대체할 수 있다.
 - 이렇게 채워진 값은 대부분의 경우 정확하지 않지만, 방법1보다는 더 정확한 모델을 만들 수 있다.
 3. 결측값 대체 후 데이터셋 확장(An Extension To Imputation)<br>
-![post3](/assets/img/Intermediate ML(jongho)/post3.png)
+![post3](/assets/img/Intermediate%20ML(jongho)/post3.png)
 - 이 접근법은 2번과 마찬가지로 결측치에 값을 채워넣는다. 그 후 원래 데이터셋에 결측치가 있던 컬럼에 대하여 어떤 값이 <strong>채워진 값</strong>인지를 나타내는 column을 새로 만든다.
 
 ### 2-3 예제
@@ -180,13 +180,13 @@ dtype: int64
 - 단순히 범주형 변수는 제거하는 방법이다.
 - 이 방법은 해당 변수에 중요한 정보가 없을 때만 효과가 있을 것이다.
 2. Ordinal Encoding <br>
-![post4](/assets/img/Intermediate ML(jongho)/post4.png)
+![post4](/assets/img/Intermediate%20ML(jongho)/post4.png)
 - 이 방법은 범주형 변수에 순서를 부여하는 것이다. (Never" (0) < "Rarely" (1) < "Most days" (2) < "Every day" (3))
 - 위 예시에서는 각 범주의 순서가 있다고 판단되기에 가정이 적절하다고 볼 수 있다.
 - 순서가 있는 범주형 변수를 순위변수(ordinal variable)라고 부른다.
 - Decision tree, Random Forest 등 트리 기반의 모델에서 ordinal Encoding이 잘 작동한다.
 3. 원-핫 인코딩(One-Hot Encoding) <br>
-![post5]/assets/img/Intermediate ML(jongho)/post5.png
+![post5](/assets/img/Intermediate%20ML(jongho)/post5.png)
 - 왼쪽 그림에 "Color"는 Red, Yellow, Green 3가지의 범주를 갖고 있는 변수형 변수이다. 각 범주마다 원-핫 인코딩된 컬럼을 가지고 있다. 만약 원래값이 "Red"일 경우 "Red" column에 1을 집어 넣는다.
 - 2번 방법과 달리 원-핫 인코딩은 범주의 순서를 매기지 않는다. 이러한 순서가 없는 데이터를 명목형 변수(nominal variable) 이라 부른다.
 - 원-핫 인코딩은 대체로 범주의 수가 15개 이하인 경우에 사용하면 좋은 결과를 얻을 수 있다.
@@ -424,7 +424,7 @@ pipeline은 code를 간결하게 하며 오류를 방지하거나 복잡한 데�
 ---
 교차 검증은 데이터의 다른 하위 집합에 대해 모델링 과정을 적용하여 여러번 모델의 성능을 측정하는 방법이다.
 예를 들어 전체 데이터 세트를 20%씩 5개로 분할할 수 있다. 이 경우 데이터를 5개의 "fold"로 나누었다고 말한다.
-![post6](/assets/img/Intermediate ML(jongho)/post6.png)
+![post6](/assets/img/Intermediate%20ML(jongho)/post6.png)
 - 실험 1에서는 첫 번째 fold를 검증 데이터셋으로 사용하고 나머지를 학습데이터셋으로 이용한다. 이러한 방법은 20% holdout 셋을 기반으로 모델 성능을 측정할 수 있다.
 - 실험2에서는 두 번째 fold를 제외한(holdout) 나머지를 학습 데이터셋으로 이용한다. 두 번째 데이터셋을 이용해서 모델 성능을 측정한다.
 
@@ -498,7 +498,7 @@ Cycle은
 - 이 과정을 반복한다!
 
 
-![post7](/assets/img/Intermediate ML(jongho)/post7.png)
+![post7](/assets/img/Intermediate%20ML(jongho)/post7.png)
 ### 6-3 예제
 ---
 먼저 학습 및 검증 데이터를 가져온다.
@@ -600,11 +600,12 @@ my_model.fit(X_train, y_train,
 
 ### 6-5 결론
 ---
-XGBoost는 일반적인 <strong>정형데이터(Pandas DataFrame에 저장되는 데이터)</strong>에 좋은 결과를 보인다. 적절한 매개변수를 통해 매우 정확한 모델을 구축할 수 있다.
+XGBoost는 일반적인 <strong>정형데이터(Pandas DataFrame에 저장되는 데이터)</strong>에 좋은 결과를 보인다. 또한 다양한 옵션을 제공해서 Customizing이 용이하다. 
+
 
 
 <br><br>
 
 
 
-![Jongho_Intermediate_ML](/assets/img/Intermediate ML(jongho)/Jongho_ML.png)
+![Jongho_Intermediate_ML](/assets/img/Intermediate%20ML(jongho)/Jongho_ML.png)
