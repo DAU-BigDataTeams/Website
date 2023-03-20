@@ -1,7 +1,7 @@
 ---
 title: 다양한 전처리 방법을 통해 머신러닝 모델의 성능을 높여보자!
 layout: post
-categories : [kaggle,XGBoost]
+categories : [python-study,Kaggle,XGBoost]
 image : /assets/img/Intermediate%20ML(jongho)/Jongho_ML.png
 description: 다양한 전처리 방법을 통해 머신러닝 모델의 성능을 높여보자!
 customexcerpt: kaggle의 Intermediate Machine Learning를 수료한 후 정리한 글! 
@@ -225,140 +225,140 @@ head() 메서드를 통해 학습데이터를 살펴보자
 X_train.head()
 ~~~
 
+
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-0pky"></th>
-    <th class="tg-0pky"></th>
-    <th class="tg-0pky">Type</th>
-    <th class="tg-0pky">Method</th>
-    <th class="tg-0pky">Regionname</th>
-    <th class="tg-0pky">Rooms</th>
-    <th class="tg-0pky">Distance</th>
-    <th class="tg-0pky">Postcode</th>
-    <th class="tg-0pky">Bedroom2</th>
-    <th class="tg-0pky">Bathroom</th>
-    <th class="tg-0pky">Landsize</th>
-    <th class="tg-0pky">Lattitude</th>
-    <th class="tg-0pky">Longtitude</th>
-    <th class="tg-0pky">Propertycount</th>
-    <th class="tg-0pky"></th>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax">Type</th>
+    <th class="tg-0lax">Method</th>
+    <th class="tg-0lax">Regionname</th>
+    <th class="tg-0lax">Rooms</th>
+    <th class="tg-0lax">Distance</th>
+    <th class="tg-0lax">Postcode</th>
+    <th class="tg-0lax">Bedroom2</th>
+    <th class="tg-0lax">Bathroom</th>
+    <th class="tg-0lax">Landsize</th>
+    <th class="tg-0lax">Lattitude</th>
+    <th class="tg-0lax">Longtitude</th>
+    <th class="tg-0lax">Propertycount</th>
+    <th class="tg-0lax"></th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky">-------</td>
-    <td class="tg-0pky">------</td>
-    <td class="tg-0pky">--------</td>
-    <td class="tg-0pky">-----------------------</td>
-    <td class="tg-0pky">-------</td>
-    <td class="tg-0pky">----------</td>
-    <td class="tg-0pky">----------</td>
-    <td class="tg-0pky">----------</td>
-    <td class="tg-0pky">----------</td>
-    <td class="tg-0pky">----------</td>
-    <td class="tg-0pky">-----------</td>
-    <td class="tg-0pky">------------</td>
-    <td class="tg-0pky">---------------</td>
-    <td class="tg-0pky"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">-------</td>
+    <td class="tg-0lax">------</td>
+    <td class="tg-0lax">--------</td>
+    <td class="tg-0lax">-----------------------</td>
+    <td class="tg-0lax">-------</td>
+    <td class="tg-0lax">----------</td>
+    <td class="tg-0lax">----------</td>
+    <td class="tg-0lax">----------</td>
+    <td class="tg-0lax">----------</td>
+    <td class="tg-0lax">----------</td>
+    <td class="tg-0lax">-----------</td>
+    <td class="tg-0lax">------------</td>
+    <td class="tg-0lax">---------------</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky">12167</td>
-    <td class="tg-0pky">u</td>
-    <td class="tg-0pky">S</td>
-    <td class="tg-0pky">Southern Metropolitan</td>
-    <td class="tg-0pky">1</td>
-    <td class="tg-0pky">5.0</td>
-    <td class="tg-0pky">3182.0</td>
-    <td class="tg-0pky">1.0</td>
-    <td class="tg-0pky">1.0</td>
-    <td class="tg-0pky">0.0</td>
-    <td class="tg-0pky">-37.85984</td>
-    <td class="tg-0pky">144.9867</td>
-    <td class="tg-0pky">13240.0</td>
-    <td class="tg-0pky"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">12167</td>
+    <td class="tg-0lax">u</td>
+    <td class="tg-0lax">S</td>
+    <td class="tg-0lax">Southern Metropolitan</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">5.0</td>
+    <td class="tg-0lax">3182.0</td>
+    <td class="tg-0lax">1.0</td>
+    <td class="tg-0lax">1.0</td>
+    <td class="tg-0lax">0.0</td>
+    <td class="tg-0lax">-37.85984</td>
+    <td class="tg-0lax">144.9867</td>
+    <td class="tg-0lax">13240.0</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky">6524</td>
-    <td class="tg-0pky">h</td>
-    <td class="tg-0pky">SA</td>
-    <td class="tg-0pky">Western Metropolitan</td>
-    <td class="tg-0pky">2</td>
-    <td class="tg-0pky">8.0</td>
-    <td class="tg-0pky">3016.0</td>
-    <td class="tg-0pky">2.0</td>
-    <td class="tg-0pky">2.0</td>
-    <td class="tg-0pky">193.0</td>
-    <td class="tg-0pky">-37.85800</td>
-    <td class="tg-0pky">144.9005</td>
-    <td class="tg-0pky">6380.0</td>
-    <td class="tg-0pky"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">6524</td>
+    <td class="tg-0lax">h</td>
+    <td class="tg-0lax">SA</td>
+    <td class="tg-0lax">Western Metropolitan</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">8.0</td>
+    <td class="tg-0lax">3016.0</td>
+    <td class="tg-0lax">2.0</td>
+    <td class="tg-0lax">2.0</td>
+    <td class="tg-0lax">193.0</td>
+    <td class="tg-0lax">-37.85800</td>
+    <td class="tg-0lax">144.9005</td>
+    <td class="tg-0lax">6380.0</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky">8413</td>
-    <td class="tg-0pky">h</td>
-    <td class="tg-0pky">S</td>
-    <td class="tg-0pky">Western Metropolitan</td>
-    <td class="tg-0pky">3</td>
-    <td class="tg-0pky">12.6</td>
-    <td class="tg-0pky">3020.0</td>
-    <td class="tg-0pky">3.0</td>
-    <td class="tg-0pky">1.0</td>
-    <td class="tg-0pky">555.0</td>
-    <td class="tg-0pky">-37.79880</td>
-    <td class="tg-0pky">144.8220</td>
-    <td class="tg-0pky">3755.0</td>
-    <td class="tg-0pky"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">8413</td>
+    <td class="tg-0lax">h</td>
+    <td class="tg-0lax">S</td>
+    <td class="tg-0lax">Western Metropolitan</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">12.6</td>
+    <td class="tg-0lax">3020.0</td>
+    <td class="tg-0lax">3.0</td>
+    <td class="tg-0lax">1.0</td>
+    <td class="tg-0lax">555.0</td>
+    <td class="tg-0lax">-37.79880</td>
+    <td class="tg-0lax">144.8220</td>
+    <td class="tg-0lax">3755.0</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky">2919</td>
-    <td class="tg-0pky">u</td>
-    <td class="tg-0pky">SP</td>
-    <td class="tg-0pky">Northern Metropolitan</td>
-    <td class="tg-0pky">3</td>
-    <td class="tg-0pky">13.0</td>
-    <td class="tg-0pky">3046.0</td>
-    <td class="tg-0pky">3.0</td>
-    <td class="tg-0pky">1.0</td>
-    <td class="tg-0pky">265.0</td>
-    <td class="tg-0pky">-37.70830</td>
-    <td class="tg-0pky">144.9158</td>
-    <td class="tg-0pky">8870.0</td>
-    <td class="tg-0pky"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">2919</td>
+    <td class="tg-0lax">u</td>
+    <td class="tg-0lax">SP</td>
+    <td class="tg-0lax">Northern Metropolitan</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">13.0</td>
+    <td class="tg-0lax">3046.0</td>
+    <td class="tg-0lax">3.0</td>
+    <td class="tg-0lax">1.0</td>
+    <td class="tg-0lax">265.0</td>
+    <td class="tg-0lax">-37.70830</td>
+    <td class="tg-0lax">144.9158</td>
+    <td class="tg-0lax">8870.0</td>
+    <td class="tg-0lax"></td>
   </tr>
   <tr>
-    <td class="tg-0pky"></td>
-    <td class="tg-0pky">6043</td>
-    <td class="tg-0pky">h</td>
-    <td class="tg-0pky">S</td>
-    <td class="tg-0pky">Western Metropolitan</td>
-    <td class="tg-0pky">3</td>
-    <td class="tg-0pky">13.3</td>
-    <td class="tg-0pky">3020.0</td>
-    <td class="tg-0pky">3.0</td>
-    <td class="tg-0pky">1.0</td>
-    <td class="tg-0pky">673.0</td>
-    <td class="tg-0pky">-37.76230</td>
-    <td class="tg-0pky">144.8272</td>
-    <td class="tg-0pky">4217.0</td>
-    <td class="tg-0pky"></td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">6043</td>
+    <td class="tg-0lax">h</td>
+    <td class="tg-0lax">S</td>
+    <td class="tg-0lax">Western Metropolitan</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">13.3</td>
+    <td class="tg-0lax">3020.0</td>
+    <td class="tg-0lax">3.0</td>
+    <td class="tg-0lax">1.0</td>
+    <td class="tg-0lax">673.0</td>
+    <td class="tg-0lax">-37.76230</td>
+    <td class="tg-0lax">144.8272</td>
+    <td class="tg-0lax">4217.0</td>
+    <td class="tg-0lax"></td>
   </tr>
 </tbody>
 </table>
-
 
 데이터타입(dtype)을 통해 범주형 변수인지 아닌지를 확인할 수 있다. 주로 데이터타입이 object인 것은 범주형 변수임을 의미한다.(아닌 경우도 종종 있다)
 ~~~ py
@@ -469,13 +469,13 @@ Pipelines은 다음과 같은 장점이 있다.
 ~~~ py
 X_train.head()
 ~~~
-|       | Type | Method | Regionname            | Rooms | Distance | Postcode | Bedroom2 | Bathroom | Car | Landsize | BuildingArea |
-|-------|------|--------|-----------------------|-------|----------|----------|----------|----------|-----|----------|--------------|
-| 12167 | u    | S      | Southern Metropolitan | 1     | 5.0      | 3182.0   | 1.0      | 1.0      | 1.0 | 0.0      | NaN          |
-| 6524  | h    | SA     | Western Metropolitan  | 2     | 8.0      | 3016.0   | 2.0      | 2.0      | 1.0 | 193.0    | NaN          |
-| 8413  | h    | S      | Western Metropolitan  | 3     | 12.6     | 3020.0   | 3.0      | 1.0      | 1.0 | 555.0    | NaN          |
-| 2919  | u    | SP     | Northern Metropolitan | 3     | 13.0     | 3046.0   | 3.0      | 1.0      | 1.0 | 265.0    | NaN          |
-| 6043  | h    | S      | Western Metropolitan  | 3     | 13.3     | 3020.0   | 3.0      | 1.0      | 2.0 | 673.0    | 673.0        |
+| Type  | Method | Regionname | Rooms                 | Distance | Postcode | Bedroom2 | Bathroom | Car | Landsize | BuildingArea | YearBuilt | Lattitude | Longtitude | Propertycount |         |
+|-------|--------|------------|-----------------------|----------|----------|----------|----------|-----|----------|--------------|-----------|-----------|------------|---------------|---------|
+| 12167 | u      | S          | Southern Metropolitan | 1        | 5.0      | 3182.0   | 1.0      | 1.0 | 1.0      | 0.0          | NaN       | 1940.0    | -37.85984  | 144.9867      | 13240.0 |
+| 6524  | h      | SA         | Western Metropolitan  | 2        | 8.0      | 3016.0   | 2.0      | 2.0 | 1.0      | 193.0        | NaN       | NaN       | -37.85800  | 144.9005      | 6380.0  |
+| 8413  | h      | S          | Western Metropolitan  | 3        | 12.6     | 3020.0   | 3.0      | 1.0 | 1.0      | 555.0        | NaN       | NaN       | -37.79880  | 144.8220      | 3755.0  |
+| 2919  | u      | SP         | Northern Metropolitan | 3        | 13.0     | 3046.0   | 3.0      | 1.0 | 1.0      | 265.0        | NaN       | 1995.0    | -37.70830  | 144.9158      | 8870.0  |
+| 6043  | h      | S          | Western Metropolitan  | 3        | 13.3     | 3020.0   | 3.0      | 1.0 | 2.0      | 673.0        | 673.0     | 1970.0    | -37.76230  | 144.8272      | 4217.0  |
 
 head() 메서드로 학습데이터를 살펴본 결과, 범주형 데이터와 결측값이 있다는 것을 알 수 있다. 파이프라인을 이용한다면 두 가지 경우를 간단하게 처리할 수 있다.
 3단계로 나눠 파이프라인을 설계한다.<br>
