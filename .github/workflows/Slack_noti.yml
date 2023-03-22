@@ -1,44 +1,44 @@
-name: Slack Notification on Post Update
+# name: Slack Notification on Post Update
 
-on:
-  push:
-    paths:
-      - '_posts/**'
-  workflow_run:
-    workflows: ["Deploy to Firebase Hosting"]
-    types:
-      - completed
+# on:
+#   push:
+#     paths:
+#       - '_posts/**'
+#   workflow_run:
+#     workflows: ["Deploy to Firebase Hosting"]
+#     types:
+#       - completed
 
-jobs:
-  notify_slack:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.workflow_id == 'YOUR_WORKFLOW_ID_HERE' && github.event.workflow_run.workflow_name == 'Deploy to Firebase Hosting' && github.event.workflow_run.conclusion != 'success' }}
-    steps:
-      - name: Wait for Deploy to Firebase Hosting to complete
-        run: |
-          while :
-          do
-            sleep 30s
-            status=$(curl --silent --show-error --fail -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" ${github.event.workflow_run.url} | jq -r .conclusion)
-            [[ "${status}" != "null" ]] && break
-          done
-          
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # 히스토리 비교를 위해 0으로 설정
+# jobs:
+#   notify_slack:
+#     runs-on: ubuntu-latest
+#     if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.workflow_id == 'YOUR_WORKFLOW_ID_HERE' && github.event.workflow_run.workflow_name == 'Deploy to Firebase Hosting' && github.event.workflow_run.conclusion != 'success' }}
+#     steps:
+#       - name: Wait for Deploy to Firebase Hosting to complete
+#         run: |
+#           while :
+#           do
+#             sleep 30s
+#             status=$(curl --silent --show-error --fail -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" ${github.event.workflow_run.url} | jq -r .conclusion)
+#             [[ "${status}" != "null" ]] && break
+#           done
 
-      # 추가된 파일이 있을 때 알림 보냄
-      - name: Check Git diff for added files
-        id: diff_check
-        if: github.event_name == 'push' # only run for push event
-        run: |
-          git diff --name-status --diff-filter=A HEAD~1 HEAD _posts/ | grep -q "." && has_changes="yes" || has_changes="no"
-          echo "has_changes=$has_changes" >> $GITHUB_ENV
+#       - name: Checkout repository
+#         uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0 # 히스토리 비교를 위해 0으로 설정
 
-      - name: Send Slack notification
-        if: github.event_name == 'push' && env.has_changes == 'yes' && github.event.workflow_run.conclusion == 'success'
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"새로운 포스트가 작성되었습니다. 모두 댓글로 응원해주세요~😊\n<https://datadecetive.net/|새로운 글 바로 구경하기!>\n만약 새로운 포스트가 안보이면 잠시후 새로고침 해주세요~\n서버 환경에 따라 1~2분 뒤에 나타날 수 있습니다."}' $SLACK_WEBHOOK_URL
+#       # 추가된 파일이 있을 때 알림 보냄
+#       - name: Check Git diff for added files
+#         id: diff_check
+#         if: github.event_name == 'push' # only run for push event
+#         run: |
+#           git diff --name-status --diff-filter=A HEAD~1 HEAD _posts/ | grep -q "." && has_changes="yes" || has_changes="no"
+#           echo "has_changes=$has_changes" >> $GITHUB_ENV
+
+#       - name: Send Slack notification
+#         if: github.event_name == 'push' && env.has_changes == 'yes' && github.event.workflow_run.conclusion == 'success'
+#         env:
+#           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#         run: |
+#           curl -X POST -H 'Content-type: application/json' --data '{"text":"새로운 포스트가 작성되었습니다. 모두 댓글로 응원해주세요~😊\n<https://datadecetive.net/|새로운 글 바로 구경하기!>\n만약 새로운 포스트가 안보이면 잠시후 새로고침 해주세요~\n서버 환경에 따라 1~2분 뒤에 나타날 수 있습니다."}' $SLACK_WEBHOOK_URL
