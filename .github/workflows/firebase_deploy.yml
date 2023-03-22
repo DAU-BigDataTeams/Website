@@ -1,19 +1,19 @@
-name : Deploy to Firebase Hosting 
+name: Deploy to Firebase Hosting
 
-on :
-  push :
-    branches :
+on:
+  push:
+    branches:
       - main
 
-jobs :
-  deploy : 
+jobs:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           fetch-depth: 0 # 히스토리 비교를 위해 0으로 설정
-        
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -39,7 +39,7 @@ jobs :
       - name: Deploy to Firebase
         run: firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
 
-       # 추가된 파일이 있을 때 알림 보냄
+      # 추가된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added files
         id: diff_check
         if: github.event_name == 'push' # only run for push event
@@ -47,7 +47,7 @@ jobs :
           git diff --name-status --diff-filter=A HEAD~1 HEAD _posts/ | grep -q "." && has_changes="yes" || has_changes="no"
           echo "has_changes=$has_changes" >> $GITHUB_ENV
 
-       - name: Send Slack notification
+      - name: Send Slack notification
         if: github.event_name == 'push' && env.has_changes == 'yes' && github.event.workflow_run.conclusion == 'success'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
