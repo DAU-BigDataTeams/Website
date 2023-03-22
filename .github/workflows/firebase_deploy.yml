@@ -9,8 +9,10 @@ jobs :
   deploy : 
     runs-on: ubuntu-latest
     steps:
-      - name : Checkout repository
-        uses : actions/Checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 히스토리 비교를 위해 0으로 설정
         
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -36,11 +38,6 @@ jobs :
 
       - name: Deploy to Firebase
         run: firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
-
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0 # 히스토리 비교를 위해 0으로 설정
 
        # 추가된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added files
