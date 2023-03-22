@@ -12,7 +12,17 @@ on:
 jobs:
   notify_slack:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.workflow_id == 'YOUR_WORKFLOW_ID_HERE' && github.event.workflow_run.workflow_name == 'Deploy to Firebase Hosting' && github.event.workflow_run.conclusion != 'success' }}
     steps:
+      - name: Wait for Deploy to Firebase Hosting to complete
+        run: |
+          while :
+          do
+            sleep 30s
+            status=$(curl --silent --show-error --fail -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" ${github.event.workflow_run.url} | jq -r .conclusion)
+            [[ "${status}" != "null" ]] && break
+          done
+          
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
@@ -27,7 +37,7 @@ jobs:
           echo "has_changes=$has_changes" >> $GITHUB_ENV
 
       - name: Send Slack notification
-        if: github.event_name == 'push' && env.has_changes == 'yes'
+        if: github.event_name == 'push' && env.has_changes == 'yes' && github.event.workflow_run.conclusion == 'success'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
