@@ -48,7 +48,7 @@ jobs:
           echo "has_changes=$has_changes" >> $GITHUB_ENV
 
       - name: Send Slack notification
-        if: github.event_name == 'push' && env.has_changes == 'yes' && github.event.workflow_run.conclusion == 'success'
+        if: github.event_name == 'push' && env.has_changes == 'yes'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
