@@ -52,4 +52,4 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"새로운 포스트가 작성되었습니다. 모두 댓글로 응원해주세요~😊\n<https://datadecetive.net/|새로운 글 바로 구경하기!>\n만약 새로운 포스트가 안보이면 잠시후 새로고침 해주세요~\n서버 환경에 따라 1~2분 뒤에 나타날 수 있습니다."}' $SLACK_WEBHOOK_URL
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"새로운 포스트가 작성되었습니다. 모두 댓글로 응원해주세요~😊\n<https://datadecetive.net/|새로운 글 바로 구경하기!>\n만약 새로운 포스트가 안보이면 잠시후 새로고침 해주세요~"}' $SLACK_WEBHOOK_URL
