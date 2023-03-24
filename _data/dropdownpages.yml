@@ -15,10 +15,13 @@ Study:
 # 딥러닝 스터디 관련 포스트
   - name: 'AI' 
     url: 'artificial-intelligence.html'
+# Etc
+  - name: "Etc"
+    url: 'etc.html'
 Award:
 # 수상 관련 포스트
   - name: 'Awards' 
-    url: 'awards.html'  
+    url: 'awards.html' 
 Seminar:
 # 세미나 관련 포스트
   - name: 'Seminar'
