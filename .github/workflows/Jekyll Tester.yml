@@ -12,12 +12,18 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.82.0
         with:
-          ruby-version: 3.0
+          ruby-version: 2.7.7
 
       - name: Install Node 16
         uses: actions/setup-node@v2
         with:
           node-version: 16
+          
+      - name: Install bundler
+        run: gem install bundler:2.2.34
+
+      - name: Install dependencies
+        run: bundle _2.2.34_ install
 
       - name: Test Jekyll
         uses: epstechtheatre/Jekyll-Tester@v1.2.0
