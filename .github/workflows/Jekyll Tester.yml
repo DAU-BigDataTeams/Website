@@ -12,7 +12,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.82.0
         with:
-          ruby-version: 2.7.7
+          ruby-version: 3.0
 
       - name: Install Node 16
         uses: actions/setup-node@v2
