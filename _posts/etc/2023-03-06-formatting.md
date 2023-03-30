@@ -1,7 +1,7 @@
 ---
 title: Formatting
 layout: post
-categories: [Tips, Markdown, Typography]
+categories: [Tips, Markdown, Typography, etc]
 customexcerpt: "더 심화적인 블로그 포스트를 작성하는 방법을 소개합니다!"
 ---
 In this post I will showcase some of the "special" features of YAMT.  

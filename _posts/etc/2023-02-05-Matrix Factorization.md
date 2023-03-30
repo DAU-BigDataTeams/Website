@@ -1,7 +1,7 @@
 ---
 title: 추천 알고리즘 - Matrix Factorization 후벼보기
 layout: post   
-categories : [analysis, Data, Recommendation-System]
+categories : [analysis, Data, Recommendation-System, etc]
 image : /assets/img/Matrix%20Factorization/1.png
 description: 추천 알고리즘 - Matrix Factorization
 customexcerpt: Collaborative Filtering 방법론 중 하나인 Matrix Factorization에 대해 소개를 해보려한다.  
