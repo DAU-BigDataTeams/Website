@@ -207,7 +207,7 @@ relu 활성화 함수를 사용하는 Dense Layer : 아핀 변환에 ReLU 함수
 
 ## 그레이디언트(gradient)
 
-텐서의 도함수(미분함수)를 그레디언트라고 한다. y = w^2 + 3 같은 식에서 gradient는 곡선의 기울기 였다면, 다차원 텐서 함수의 gradient는 다차원 표면의 곡률을 의미한다.
+텐서의 도함수(미분함수)를 그레디언트라고 한다. y = w^2 + 3 같은 식에서 gradient는 곡선의 기울기 였다면, 다차원 텐서 함수의 **gradient는 다차원 표면의 곡률을 의미**한다.
 
     y = x * w + b
 w에 대한 편미분을 통해, w변화에 따른 y(loss value) 증감을 알 수 있게된다. 
@@ -215,6 +215,8 @@ w에 대한 편미분을 통해, w변화에 따른 y(loss value) 증감을 알 �
 <br/>
 
 ## 확률적 경사하강법(Stochastic Gradient Discent, SGD)
+
+**Mini-batch단위로 weight를 업데이트하면서 학습**
 
 **경사 하강법**은 다음과 같은 과정을 거친다.
 1. 훈련 샘플 x와 이에 상응하는 타깃 y_true의 배치를 추출한다. 
@@ -246,17 +248,32 @@ Optimizer에는 SGD, Momentum, Adagrad(Adaptive Gradient Algorithm), RMSProp 등
 
 SDG : learning_rate가 일정해서 매우 느리지만 안정적임.
 
-Momentum : learing_rate에 관성의 개념이 추가되어 경사에 따라 학습률이 달라진다. 
+Momentum : learing_rate에 관성의 개념이 추가되어 학습속도를 달라지게 함. 현재 gradient와 이전 단계에서의 가속도 값을 함께 고려하여 학습 속도를 조정한다. 
+    velecity = momentum * past_velocity - learning_rate * gradient
+    w += momentum * velocity - learning_rate * gradient
+SDG이후에 나온 Optimizer들은 이러한 Momentum 개념을 사용한다.
 
 Adagrad : 각각의 파라미터에 개별적으로 업데이트. 지속적으로 변화하던 파라미터는 최적값에 가까워 졌을 것이라고 간주하고, 한 번도 변하지 않은 파라미터에 더 큰 learing_rate을 부여함.
 
-RMSProp : Adagrad의 문제점을 개선하기 위해 최소 학습률을 유지하여 학습속도가 0에 수렴하는 것을 방지한다.
+RMSProp : AdaGrad는 복잡한 다차원 곡면 함수에서는 local minimum에 빠지기 쉽다.
+Adagrad의 문제점을 개선하기 위해 최소 학습률을 유지하여 학습속도가 0에 수렴하는 것을 방지한다.
 
-이외에도 여러 Optimizer가 있으니까 찾아보도록
+이외에도 여러 Optimizer가 있으니까 찾아보도록 하셈 ^^
 
 ![image](../assets/img/compare_optimizer.gif)
 
 <br/>
+
+## **역전파 알고리즘(backpropagation algorithm)**
+
+역전파란 덧셈, 렐루, 텐서 곱셈 같이 간단한 연산의 도함수를 사용해서 복잡한 연산의 gradient를 쉽게 계산하는 방법
+
+쉽게 말해 각 Layer의 도함수를 구한뒤에 **연쇄법칙을 통해 gradient를 쉽게 계산하는 방법**
+
+**연쇄법칙(chain rule)**
+미분 가능한 함수 f, g가 있을 때, F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
+이때 g(x) = t로 치환하면, dy/dx = dt/dx * dy/dt이다.
+따라서 각 레이어에 대한 gradient
 
 # **2.5 첫 번째 예제 다시 살펴보기**
 
