@@ -3,5 +3,5 @@ layout: default
 title: About
 ---
 
-# [DAU BigDataTema](https://dau-bigdatateams.github.io/)
+# [DAU BigDataTema](https://bigdatateam.net/)
 See [Github](https://github.com/DAU-BigDataTeams).
