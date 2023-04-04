@@ -294,9 +294,20 @@ Adagrad의 문제점을 개선하기 위해 최소 학습률을 유지하여 학
 
 ![image](../assets/img/backpropagation_exam6.PNG)
 
+![image](../assets/img/backpropagation_exam7.PNG)
 
+위에서 learing_rate는 0.5이다.
+
+w(1)의 가중치는 Backpropagation을 통해 이렇게 갱신 할 수 있었다.
+
+그렇다면 w(0)의 가중치는 어떻게 계산되어야 할까?
+
+![image](../assets/img/backpropagation_exam8.PNG)
+
+w(0)의 가중치는 y1과 y2에 둘다 
 
 # **2.5 첫 번째 예제 다시 살펴보기**
+
 
 
 # **2.6 요약**
