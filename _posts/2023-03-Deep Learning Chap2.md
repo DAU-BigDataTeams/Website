@@ -14,15 +14,18 @@ customexcerpt: "Deep Learning Study"
 
 Traing Data로는 아래와 같은 **MNIST**(손글씨 데이터셋)를 사용한다. 
 
-10개의 범주를 분류(0~9) (28x28 pixcels) <br/><br/>
+<br/>
+
+10개의 Class를 분류(0~9) (28x28 pixcels) 
+
 
 ![MNIST](/assets/img/MNIST.PNG)
 
-머신러닝에서는 범주를 class라고 부른다. <br/>즉, MNIST 데이터셋은 0부터 9까지 10개의 class가 있는 셈
+머신러닝에서는 범주를 class라고 부른다. 
 
+<br/>
 
-
-
+즉, MNIST 데이터셋은 0부터 9까지 10개의 class가 있는 셈
 
 
 
@@ -178,13 +181,19 @@ relu 활성화 함수를 사용하는 Dense Layer : 아핀 변환에 ReLU 함수
 
 ![image](../assets/img/relu.PNG)
 
-    activation function(활성화 함수)을 사용하는 이유가 여기 있다.
+activation function(활성화 함수)을 사용하는 이유가 여기 있다.
 
-    dense layer에 activation function이 없다면, 오로지 아핀 변환만 이루어 지게 된다. 
-    
-    아무리 여러 층으로 아핀변환을 해봤자 결국 한번의 아핀변환과 같다. 
-    
-    따라서 활성화 함수를 통해 비선형적이고 기하학적인 변형을 가하여 풍부한 가설공간을  만들어 내야한다.
+dense layer에 activation function이 없다면, 오로지 아핀 변환만 이루어 지게 된다. 
+
+아무리 여러 층으로 아핀변환을 해봤자 결국 한번의 아핀변환과 같다. 
+
+<br/>
+
+**따라서 활성화 함수를 통해 비선형적이고 기하학적인 변형을 가하여 풍부한 가설공간을 만들어 내야한다.**
+
+-> 무슨말인가? 파라미터 W, b는 feature를 어떻게 변환하냐를 결정하기 때문에 최대한 많은 변형을 만들어보고 정답을 가장 잘 나타내는 변형을 찾아가야 하기 때문.  
+
+<br/>
 
 # **2.4 신경망의 엔진 : 그레디언트 기반 최적화**
 
@@ -214,9 +223,13 @@ w에 대한 편미분을 통해, w변화에 따른 y(loss value) 증감을 알 �
 
 <br/>
 
-## 확률적 경사하강법(Stochastic Gradient Discent, SGD)
+## 경사하강법(Stochastic Gradient Discent, SGD)
 
-**Mini-batch단위로 weight를 업데이트하면서 학습**
+![image](../assets/img/SGD.PNG)
+
+그림처럼 learning_rate 값을 적절하게 선택하는 것이 중요하다. 
+값이 너무 작으면 곡선을 따라 내려가는 데 많은 반복이 필요하고 local minimum에 갇힐 수 있다. 
+값이 너무 크면 손실 함수 global minimum에서 완전히 벗어난 위치로 이동할 수 있다.
 
 **경사 하강법**은 다음과 같은 과정을 거친다.
 1. 훈련 샘플 x와 이에 상응하는 타깃 y_true의 배치를 추출한다. 
@@ -226,31 +239,55 @@ w에 대한 편미분을 통해, w변화에 따른 y(loss value) 증감을 알 �
 5. 미분을 통해 모델의 파라미터에 대한 손실 함수의 gradient를 계산한다. (backward pass)
 6. gradient의 반대 방향으로 파라미터를 W -= learing_rate * gradient만큼 이동시킨다.
 
-여기서 확률적이라는 단어는 각 batch 데이터가 무작위로 샘플링 되는 것을 의미한다.
+<br/>
 
-![imgage](../assets/img/SGD.PNG)
+## 확률적 경사하강법(Stochastic Gradient Discent, SGD)
 
-그림처럼 learning_rate 값을 적절하게 선택하는 것이 중요하다. 
-값이 너무 작으면 곡선을 따라 내려가는 데 많은 반복이 필요하고 local minimum에 갇힐 수 있다. 
-값이 너무 크면 손실 함수 global minimum에서 완전히 벗어난 위치로 이동할 수 있다.
+여기서 확률적이라는 단어는 하나의 데이터를 무작위로 샘플링하여 학습하는 것을 의미한다.
 
-(local minimum, global minimum은 뒤에서 설명)
+![image](../assets/img/compare_GD_SGD.PNG)
 
-**배치 경사 하강법(BGD)**
+SGD는 1개의 데이터만 사용하기 때문에 학습이 불안정하다.
+
+<br/>
+
+## Batch 경사 하강법(BGD)
 배치 경사 하강법은 **전체 데이터 셋**에 대한 에러를 구하여 Gradient를 한번만 계산하여 모델의 파라미터를 업데이트하는 방법을 의미한다. 학습이 안정적이지만 느리다.
+
+## Mini-batch 경사 하강법 
+Mini-batch로 학습한다. 일반적으로 BGD, SGD의 장점을 섞은 미니 배치 경사하강법을 많이 사용함.
+
+
+
+
+<br/>
+
+# 옵티마이저(Optimizer)
+
+<br/>
+
+이렇게 손실을 최소화하는 방법들을 **최적화 방법(Optimization method) 또는 옵티마이저(Optimizer)라고 부른다.**
+
+<br/>
 
 ![image](../assets/img/3dim_SGD.PNG)
 
-이렇게 손실을 최소화하는 방법들을 **최적화 방법(Optimization method) 또는 옵티마이저(Optimizer)**라고 부른다.
+<br/>
+
+**옵티마이저는 경사를 내려가는 방식이라고 생각하면 이해하기 쉽다.**
 
 Optimizer에는 SGD, Momentum, Adagrad(Adaptive Gradient Algorithm), RMSProp 등을 포함하여 여러 변형들이 있다.
 이들의 특징 간략하게 소개하겠다.
 
+![image](../assets/img/compare_optimizer.gif)
+
 SDG : learning_rate가 일정해서 매우 느리지만 안정적임.
 
 Momentum : learing_rate에 관성의 개념이 추가되어 학습속도를 달라지게 함. 현재 gradient와 이전 단계에서의 가속도 값을 함께 고려하여 학습 속도를 조정한다. 
+
     velecity = momentum * past_velocity - learning_rate * gradient
     w += momentum * velocity - learning_rate * gradient
+
 SDG이후에 나온 Optimizer들은 이러한 Momentum 개념을 사용한다.
 
 Adagrad : 각각의 파라미터에 개별적으로 업데이트. 지속적으로 변화하던 파라미터는 최적값에 가까워 졌을 것이라고 간주하고, 한 번도 변하지 않은 파라미터에 더 큰 learing_rate을 부여함.
@@ -260,59 +297,111 @@ Adagrad의 문제점을 개선하기 위해 최소 학습률을 유지하여 학
 
 이외에도 여러 Optimizer가 있으니까 찾아보도록 하셈 ^^
 
-![image](../assets/img/compare_optimizer.gif)
-
 <br/>
 
-## **역전파 알고리즘(backpropagation algorithm)**
+# **역전파 알고리즘(backpropagation algorithm)**
 
 역전파란 덧셈, 렐루, 텐서 곱셈 같이 간단한 연산의 도함수를 사용해서 복잡한 연산의 gradient를 쉽게 계산하는 방법
 
-쉽게 말해 각 Layer의 도함수를 구한뒤에 **연쇄법칙을 통해 gradient를 쉽게 계산하는 방법**
+쉽게 말해 각 Layer의 도함수를 구한뒤에 **연쇄법칙을 통해 gradient를 쉽게 계산하는 방법이다.**
 
 <br/>
 
-**연쇄법칙(chain rule)**
-미분 가능한 함수 f, g가 있을 때, F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
-이때 g(x) = t로 치환하면, dy/dx = dt/dx * dy/dt이다.
+## **연쇄법칙(chain rule) : 역전파의 핵심!!**
 
-따라서, 각 레이어에 대한 gradient를 미리 구해서 놓으면, 입력 변수에 대한 loss의 gradient를 chain rule로 쉽게 계산할 수 있다.
+<br/>
 
-예시를 통해 자세히 알아보자!!
+미분 가능한 함수 f, g가 있을 때
+
+F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
+
+이때 g(x) = t로 치환하면, $\frac{dy}{dx} = \frac{dt}{dx} * \frac{dy}{dt}$ 이다.
+
+<br>
+
+따라서, 각각의 레이어에서 입력에 대한 출력함수의 gradient를 미리 구해서 놓으면, 
+
+입력 변수에 대한 loss의 gradient를 chain rule로 쉽게 계산할 수 있다.
+
+<br/>
+
+## 역전파 예시를 통해 자세히 알아보자!
+
+<br/>
 
 ![image](../assets/img/backpropagation_exam1.PNG)
 
-그림에서 초록색 값은 input value 파란색값은 input value와 할당된 파라미터로 계산되어 layer로 전달되는 계산값이다. (계산상의 편의를 위해 bias는 없다고 가정함)
+그림에서 초록색 값은 input value 파란색값은 input value와 할당된 파라미터로 계산되어 layer로 전달되는 계산값이다. (계산상의 편의를 위해 bias는 없다고 가정)
 
-최종 Loss 값은 MSE 방식으로 끝에 Loss function이 있다고 생각하고 보자
+노란색 layer는 활성화함수 a20에서 출력된 결과와 target(정답)값으로 오차가 구해지는 layer이다. 
+
+<br/><br/>
+
+비교적 계산하기 쉬운 $w_{10}^{(1)}$의 gradient부터 계산하면서 익혀보자.
+
+<br/>
 
 ![image](../assets/img/backpropagation_exam2.PNG)
 
-![image](../assets/img/backpropagation_exam3.PNG)
+위와 같이 Chain Rule을 적용하기 위해 뒤쪽에서부터 각 레이어 마다 미분을 진행한다.
 
-![image](../assets/img/backpropagation_exam4.PNG)
+<br/>
 
-![image](../assets/img/backpropagation_exam5.PNG)
+예제에서는 손실함수 $E_{tot}$로 MSE(Mean Squared Error)를 사용한다.
+
+<br/>
+
+<img src="../assets/img/backpropagation_exam3.PNG" height="100px" width="300px">
+
+<br/>
+
+우선 $a_{20}$에 대한 $E_{tot}$을 미분하면 이러한 식을 얻을 수 있다.
+
+<br/>
+
+|<img src="../assets/img/backpropagation_exam4.PNG" height="100px" width="300px">|<img src="../assets/img/backpropagation_exam5.PNG" height="100px" width="300px">
+
+<br/>
+
+마찬가지로 $z_{20}$에 대한 $a_{20}$의 gradient, $w_{10}^{1}$에 대한 $z_{20}$의 gradient
+를 계산한다.
+
+<br/>
 
 ![image](../assets/img/backpropagation_exam6.PNG)
 
+<br/>
+
+계산한 미분값들을 모두 대입하면 $w_{10}^{1}$에 대한 손실함수의 gradient를 알 수 있다.
+
+gradient가 양수면 Loss가 증가하니까 가중치를 낮추도록 학습해야하고, 음수면 높이도록 학습해야 한다. 
+
+따라서 다음 Gradient Discent 방식으로 가중치를 업데이트 한다.
+
+<br/>
+
 ![image](../assets/img/backpropagation_exam7.PNG)
 
-위에서 learing_rate는 0.5이다.
+예제에서 $\eta$(learning_rate)는 0.5
 
 w(1)의 가중치는 Backpropagation을 통해 이렇게 갱신 할 수 있었다.
 
 그렇다면 w(0)의 가중치는 어떻게 계산되어야 할까?
 
+<br/>
+
 ![image](../assets/img/backpropagation_exam8.PNG)
 
-w(0)의 가중치는 y1과 y2 값에 둘다 영향을 주기 때문에, y1와 y2에서 오는 역전파를 모두 고려해서 계산해야 한다.
+$w_{10}^{(0)}$의 가중치는 $y_1$과 $y_2$ 값에 둘다 영향을 주기 때문에, $y_1$과 $y_2$에서 오는 역전파를 모두 고려해서 계산해야 한다.
 
-MSE 오차 함수의 E_tot 값을 줄여서 E_y1, E_y2로 표기한다.
-    E_y1 = 1/2 * (target_y1 - a_20)^2
-    E_y2 = 1/2 * (target_y2 - a_21)^2
+MSE 오차 함수의 $E_{tot}$ 값을 줄여서 $E_{y1}, E_{y2}$로 표기한다.
 
-따라서 전체 Loss값은 E_1과 E_2에 대한 편미분으로 나누어 계산할 수 있다.
+$$E_{y1} = \frac{1}{2} * (target_{y1}-a_{20})^2$$
+$$E_y2 = \frac{1}{2} * (target_{y2} - a_{21})^2$$
+
+따라서 전체 Loss값은 위 그림의 보라색처럼 $E_1$과 $E_2$에 대한 편미분으로 나누어 계산할 수 있다.
+
+<br/>
 
 ![image](../assets/img/backpropagation_exam9.PNG)
 
@@ -324,36 +413,70 @@ MSE 오차 함수의 E_tot 값을 줄여서 E_y1, E_y2로 표기한다.
 
 ![image](../assets/img/backpropagation_exam12.PNG)
 
+<br/>
+
 위와 같은 과정을 W마다 계산하여 업데이트하면 1회 학습이 완료되며 결과는 다음과 같다.
+
+<br/>
 
 ![image](../assets/img/backpropagation_exam13.PNG)
 
-Tensorflow 같은 프레임워크에서 자동 미분 기능을 사용하여 신경망을 구현할 수 있다.
+<br/>
+
+### 실제로 모델을 구현할 때는 Tensorflow 같은 프레임워크에서 자동 미분 기능을 사용하여 신경망을 구현할 수 있다.
+
+<br/>
 
 ![image](../assets/img/tensorflow_code.PNG)
 
 tensorflow.Variable() 객체를 생성하며 입력 변수를 설정
+
 tensorflow.GradientTape().gradient(y,x)를 통해 x에 대한 y의 gradient를 계산한다.
+
 물론 행렬을 포함해서 고차원 텐서도 입력변수로 설정할 수 있다.
-아핀 함수의 매개 변수를 W, b에 대한 편미분도 가능하며, 매개변수의 편미분 값은 리스트로 반환된다. 
+
+아핀 함수의 매개 변수 W, b에 대한 gradient 계산도 가능하며, 매개변수의 gradient 값은 리스트로 반환된다. 
 
 <br/>
 
 # **2.5 첫 번째 예제 다시 살펴보기**
 
-이번장은 Dense Layer로 이루어진 모델을 구현해보는 실습파트다. 이 부분은 궁금하면 각자 공부해보도록 ㅎ
+이번장은 Dense Layer로 이루어진 모델을 간단하게 구현해보는 실습파트.
+
+그래서 굳이 코드를 설명하기 보다는 모델이 학습되는 원리에 대한 설명을 하려고 한다.
+
+<br/>
 
 앞에서는 대부분 하나의 데이터, 즉 벡터가 입력 데이터로 들어왔을 때에 대한 학습을 설명했다.
 
 만약 mini-batch행태로 여러개의 데이터가 함께 들어온다면 어떻게 학습이 이루어질까?
 
+<br/>
+
 ![image](../assets/img/learning_flow.PNG)
 
-1. 여러개의 입력 데이터와 그 데이터들의 feature가 입력으로 들어간다. 하나의 입력 데이터 vector형태라면, 여러개의 데이터가 한번에 들어가기 때문에 행렬형태로 들어간다.
+1. 여러개의 입력 데이터와 그 데이터들의 feature가 입력으로 들어간다. 
 
-2. 무작위 난수를 가중치로 할당. 이때 입력데이터의 차원에 알맞게 가중치가 할당되야한다. (W는 행렬, b는 벡터)
+    하나의 입력 데이터 vector형태라면, 여러 개의 데이터가 한번에 들어가기 때문에 행렬형태로 들어간다.
+
+2. 무작위 난수를 초기 가중치로 할당. 이때 입력데이터의 차원에 알맞게 가중치가 할당되야한다. (W는 행렬, b는 벡터)
+
+<br/>
 
 ![image](../assets/img/matrix_mul.PNG)
 
-3. 각 요소가
+<br/>
+
+3. forward pass로 계산해서 예측값을 구해서 손실값을 얻는다.
+
+4. 각 feature마다 계산된 손실값의 평균을 구한다.
+
+5. 역전파를 통해 파라미터의 gradient를 계산한다.
+
+6. Optimizer(가중치 업데이트 방법)을 사용하여 파라미터를 업데이트 한다.
+
+
+
+<br/>
+
 # **2.6 요약**
