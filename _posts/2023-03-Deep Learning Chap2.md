@@ -270,6 +270,8 @@ Adagrad의 문제점을 개선하기 위해 최소 학습률을 유지하여 학
 
 쉽게 말해 각 Layer의 도함수를 구한뒤에 **연쇄법칙을 통해 gradient를 쉽게 계산하는 방법**
 
+<br/>
+
 **연쇄법칙(chain rule)**
 미분 가능한 함수 f, g가 있을 때, F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 이때 g(x) = t로 치환하면, dy/dx = dt/dx * dy/dt이다.
@@ -326,8 +328,32 @@ MSE 오차 함수의 E_tot 값을 줄여서 E_y1, E_y2로 표기한다.
 
 ![image](../assets/img/backpropagation_exam13.PNG)
 
+Tensorflow 같은 프레임워크에서 자동 미분 기능을 사용하여 신경망을 구현할 수 있다.
+
+![image](../assets/img/tensorflow_code.PNG)
+
+tensorflow.Variable() 객체를 생성하며 입력 변수를 설정
+tensorflow.GradientTape().gradient(y,x)를 통해 x에 대한 y의 gradient를 계산한다.
+물론 행렬을 포함해서 고차원 텐서도 입력변수로 설정할 수 있다.
+아핀 함수의 매개 변수를 W, b에 대한 편미분도 가능하며, 매개변수의 편미분 값은 리스트로 반환된다. 
+
+<br/>
+
 # **2.5 첫 번째 예제 다시 살펴보기**
 
+이번장은 Dense Layer로 이루어진 모델을 구현해보는 실습파트다. 이 부분은 궁금하면 각자 공부해보도록 ㅎ
 
+앞에서는 대부분 하나의 데이터, 즉 벡터가 입력 데이터로 들어왔을 때에 대한 학습을 설명했다.
 
+만약 mini-batch행태로 여러개의 데이터가 함께 들어온다면 어떻게 학습이 이루어질까?
+
+![image](../assets/img/learning_flow.PNG)
+
+1. 여러개의 입력 데이터와 그 데이터들의 feature가 입력으로 들어간다. 하나의 입력 데이터 vector형태라면, 여러개의 데이터가 한번에 들어가기 때문에 행렬형태로 들어간다.
+
+2. 무작위 난수를 가중치로 할당. 이때 입력데이터의 차원에 알맞게 가중치가 할당되야한다. (W는 행렬, b는 벡터)
+
+![image](../assets/img/matrix_mul.PNG)
+
+3. 각 요소가
 # **2.6 요약**
