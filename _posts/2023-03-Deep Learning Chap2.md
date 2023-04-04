@@ -273,7 +273,28 @@ Adagrad의 문제점을 개선하기 위해 최소 학습률을 유지하여 학
 **연쇄법칙(chain rule)**
 미분 가능한 함수 f, g가 있을 때, F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 이때 g(x) = t로 치환하면, dy/dx = dt/dx * dy/dt이다.
-따라서 각 레이어에 대한 gradient
+
+따라서, 각 레이어에 대한 gradient를 미리 구해서 놓으면, 입력 변수에 대한 loss의 gradient를 chain rule로 쉽게 계산할 수 있다.
+
+예시를 통해 자세히 알아보자!!
+
+![image](../assets/img/backpropagation_exam1.PNG)
+
+그림에서 초록색 값은 input value 파란색값은 input value와 할당된 파라미터로 계산되어 layer로 전달되는 계산값이다. (계산상의 편의를 위해 bias는 없다고 가정함)
+
+최종 Loss 값은 MSE 방식으로 끝에 Loss function이 있다고 생각하고 보자
+
+![image](../assets/img/backpropagation_exam2.PNG)
+
+![image](../assets/img/backpropagation_exam3.PNG)
+
+![image](../assets/img/backpropagation_exam4.PNG)
+
+![image](../assets/img/backpropagation_exam5.PNG)
+
+![image](../assets/img/backpropagation_exam6.PNG)
+
+
 
 # **2.5 첫 번째 예제 다시 살펴보기**
 
