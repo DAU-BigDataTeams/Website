@@ -1,10 +1,10 @@
 ---
 title: 케라스 창시자에게 배우는 딥러닝 개정 2판 Chapter.2 
 layout: post
-categories : Machine Learning, Deep Learning
-image : /assets/img/Daero Kim - Feature Engineering.PNG
-description: Chapter.2 신경망의 예제를 풀어보고, 텐서 연산과 역전파 및 경사 하강법을 학습한다.
-customexcerpt: "Deep Learning Study"
+categories : [Machine Learning-Deep Learning]
+image : /assets/img/study/deep/ch02/learning_flow.PNG
+description: 케라스 창시자에게 배우는 딥러닝 개정 2판 Chapter.2 
+customexcerpt: 신경망의 개념과 구조, 그리고 여러 최적화 방법론들을 학습하고 실습하는 시간을 가진다.
 ---
 
 # **2장. 신경망의 수학적 구성 요소**
@@ -19,7 +19,7 @@ Traing Data로는 아래와 같은 **MNIST**(손글씨 데이터셋)를 사용�
 10개의 Class를 분류(0~9) (28x28 pixcels) 
 
 
-![MNIST](../assets/img/MNIST.PNG)
+![MNIST](/assets/img/study/deep/ch02/MNIST.PNG)
 
 머신러닝에서는 분류하려는 범주를 **class**라고 부른다. 
 
@@ -37,7 +37,7 @@ colab : https://colab.research.google.com/drive/13KmNPs5NasT_YFvw0Ds1fYmqyf_-xAE
 
 <br/>
 
-![image](../assets/img/load_dataset.PNG)
+![image](/assets/img/study/deep/ch02/load_dataset.PNG)
 
 <br/>
 
@@ -47,7 +47,7 @@ colab : https://colab.research.google.com/drive/13KmNPs5NasT_YFvw0Ds1fYmqyf_-xAE
 
 <br/>
 
-![image](../assets/img/Sequential.PNG)
+![image](/assets/img/study/deep/ch02/Sequential.PNG)
 
 <br/>
 
@@ -66,7 +66,7 @@ default는 linear(결과 값이 그대로 나옴.)
 
 <br/>
 
-![image](../assets/img/activation_func.PNG)
+![image](/assets/img/study/deep/ch02/activation_func.PNG)
 
 <br/>
 
@@ -74,7 +74,7 @@ default는 linear(결과 값이 그대로 나옴.)
 
 <br/>
 
-![image](../assets/img/model_compile.PNG)
+![image](/assets/img/study/deep/ch02/model_compile.PNG)
 
 Optimizer란 학습한 파라미터 기반으로 모델을 업데이트 방식을 의미한다. (나중에 뒤에서 설명)
 
@@ -84,7 +84,7 @@ metrics는 학습된 **모델을 평가하는 지표**다. 훈련과정에서 �
 
 <br/>
 
-![image](../assets/img/MNIST_normalization.PNG)
+![image](/assets/img/study/deep/ch02/MNIST_normalization.PNG)
 
 <br/>
 
@@ -98,7 +98,7 @@ metrics는 학습된 **모델을 평가하는 지표**다. 훈련과정에서 �
 
 <br/>
 
-![image](../assets/img/fit_method.PNG)
+![image](/assets/img/study/deep/ch02/fit_method.PNG)
 
 <br/>
 
@@ -112,7 +112,7 @@ fit() 메서드는 학습을 진행하면서 계산된 손실과 정확도 값�
 
 ## Test 데이터 분류 해보기
 
-![image](../assets/img/model_test.PNG)
+![image](/assets/img/study/deep/ch02/model_test.PNG)
 
 
 <br/>
@@ -266,13 +266,13 @@ Martix 형태로 표현된 이미지가 Vector 형태로 표현되게 됨.
 
 <br/>
 
-![image](../assets/img/geometry_space.PNG)
+![image](/assets/img/study/deep/ch02/geometry_space.PNG)
 
 <br/>
 
 **이동** : 벡터의 덧셈 
 
-![image](../assets/img/vector_add.PNG)
+![image](/assets/img/study/deep/ch02/vector_add.PNG)
 
 <br/>
 
@@ -280,7 +280,7 @@ Martix 형태로 표현된 이미지가 Vector 형태로 표현되게 됨.
 
  R = [[cos(theta), -sin(theta)], [sin(theta), cos(theta)]]와 벡터의 내적.
  
-![image](../assets/img/vector_spin.PNG)
+![image](/assets/img/study/deep/ch02/vector_spin.PNG)
 
 <br/>
 
@@ -288,7 +288,7 @@ Martix 형태로 표현된 이미지가 Vector 형태로 표현되게 됨.
 
 S = [[horizontal, 0], [0, vertical]]와 벡터를 내적하여 얻는다. 
 
-![image](../assets/img/vector_size.PNG)
+![image](/assets/img/study/deep/ch02/vector_size.PNG)
 
 <br/>
 
@@ -302,7 +302,7 @@ S = [[horizontal, 0], [0, vertical]]와 벡터를 내적하여 얻는다.
 
 선형 변환과 이동의 조합이다. Dense층에서 수행되는 y = W * x + b의 경우가 이에 해당함. 
 
-![image](../assets/img/affine.PNG)
+![image](/assets/img/study/deep/ch02/affine.PNG)
 
 <br/>
 
@@ -310,7 +310,7 @@ S = [[horizontal, 0], [0, vertical]]와 벡터를 내적하여 얻는다.
 
 아핀 변환에 ReLU 함수 적용. 
 
-![image](../assets/img/relu.PNG)
+![image](/assets/img/study/deep/ch02/relu.PNG)
 
 <br/>
 
@@ -362,7 +362,7 @@ w에 대한 편미분을 통해, w변화에 따른 y(loss value) 증감을 알 �
 
 <br/>
 
-![image](../assets/img/SGD.PNG)
+![image](/assets/img/study/deep/ch02/SGD.PNG)
 
 <br/>
 
@@ -387,7 +387,7 @@ w에 대한 편미분을 통해, w변화에 따른 y(loss value) 증감을 알 �
 여기서 확률적이라는 단어는 **하나의 데이터**를 무작위로 샘플링하여 학습하는 것을 의미한다.
 하나의 데이터로 학습하기 때문에 불안정하다는 특징이 있다.
 
-![image](../assets/img/compare_GD_SGD.PNG)
+![image](/assets/img/study/deep/ch02/compare_GD_SGD.PNG)
 
 
 <br/>
@@ -411,7 +411,7 @@ Mini-batch로 학습한다. 일반적으로 BGD, SGD의 장점을 섞은 미니 
 
 <br/>
 
-![image](../assets/img/3dim_SGD.PNG)
+![image](/assets/img/study/deep/ch02/3dim_SGD.PNG)
 
 <br/>
 
@@ -420,7 +420,7 @@ Mini-batch로 학습한다. 일반적으로 BGD, SGD의 장점을 섞은 미니 
 Optimizer에는 SGD, Momentum, Adagrad(Adaptive Gradient Algorithm), RMSProp 등을 포함하여 여러 변형들이 있다.
 이들의 특징 간략하게 소개하겠다.
 
-![image](../assets/img/compare_optimizer.gif)
+![image](/assets/img/study/deep/ch02/compare_optimizer.gif)
 
 SDG : learning_rate가 일정해서 매우 느리지만 안정적임.
 
@@ -470,7 +470,7 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/>
 
-![image](../assets/img/backpropagation_exam1.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam1.PNG)
 
 그림에서 초록색 값은 input value 파란색값은 input value와 할당된 파라미터로 계산되어 layer로 전달되는 계산값이다. (계산상의 편의를 위해 bias는 없다고 가정)
 
@@ -482,7 +482,7 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/>
 
-![image](../assets/img/backpropagation_exam2.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam2.PNG)
 
 위와 같이 Chain Rule을 적용하기 위해 뒤쪽에서부터 각 레이어 마다 미분을 진행한다.
 
@@ -492,7 +492,7 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/>
 
-<img src="../assets/img/backpropagation_exam3.PNG" height="100px" width="300px">
+<img src="/assets/img/study/deep/ch02/backpropagation_exam3.PNG" height="100px" width="300px">
 
 <br/>
 
@@ -500,7 +500,7 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/>
 
-|<img src="../assets/img/backpropagation_exam4.PNG" height="100px" width="300px">|<img src="../assets/img/backpropagation_exam5.PNG" height="100px" width="300px">
+|<img src="/assets/img/study/deep/ch02/backpropagation_exam4.PNG" height="100px" width="300px">|<img src="/assets/img/study/deep/ch02/backpropagation_exam5.PNG" height="100px" width="300px">
 
 <br/>
 
@@ -509,7 +509,7 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/>
 
-![image](../assets/img/backpropagation_exam6.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam6.PNG)
 
 <br/>
 
@@ -521,7 +521,7 @@ gradient가 양수면 Loss가 증가하니까 가중치를 낮추도록 학습�
 
 <br/>
 
-![image](../assets/img/backpropagation_exam7.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam7.PNG)
 
 예제에서 $\eta$(learning_rate)는 0.5
 
@@ -531,7 +531,7 @@ w(1)의 가중치는 Backpropagation을 통해 이렇게 갱신 할 수 있었�
 
 <br/>
 
-![image](../assets/img/backpropagation_exam8.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam8.PNG)
 
 $w_{10}^{(0)}$의 가중치는 $y_1$과 $y_2$ 값에 둘다 영향을 주기 때문에, $y_1$과 $y_2$에서 오는 역전파를 모두 고려해서 계산해야 한다.
 
@@ -544,15 +544,15 @@ $$E_y2 = \frac{1}{2} * (target_{y2} - a_{21})^2$$
 
 <br/>
 
-![image](../assets/img/backpropagation_exam9.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam9.PNG)
 
-![image](../assets/img/backpropagation_exam10.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam10.PNG)
 
 이렇게 y1과 y2에서 오는 오차값에 대한 편미분을 구했다면 남은 첫번째 layer의 편미분을 진행하면 된다.
 
-![image](../assets/img/backpropagation_exam11.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam11.PNG)
 
-![image](../assets/img/backpropagation_exam12.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam12.PNG)
 
 <br/>
 
@@ -560,7 +560,7 @@ $$E_y2 = \frac{1}{2} * (target_{y2} - a_{21})^2$$
 
 <br/>
 
-![image](../assets/img/backpropagation_exam13.PNG)
+![image](/assets/img/study/deep/ch02/backpropagation_exam13.PNG)
 
 <br/>
 
@@ -568,7 +568,7 @@ $$E_y2 = \frac{1}{2} * (target_{y2} - a_{21})^2$$
 
 <br/>
 
-![image](../assets/img/tensorflow_code.PNG)
+![image](/assets/img/study/deep/ch02/tensorflow_code.PNG)
 
 tensorflow.Variable() 객체를 생성하며 입력 변수를 설정
 
@@ -594,7 +594,7 @@ tensorflow.GradientTape().gradient(y,x)를 통해 x에 대한 y의 gradient를 �
 
 <br/>
 
-![image](../assets/img/learning_flow.PNG)
+![image](/assets/img/study/deep/ch02/learning_flow.PNG)
 
 1. 여러개의 입력 데이터와 그 데이터들의 feature가 입력으로 들어간다. 
 
@@ -604,7 +604,7 @@ tensorflow.GradientTape().gradient(y,x)를 통해 x에 대한 y의 gradient를 �
 
 <br/>
 
-![image](../assets/img/matrix_mul.PNG)
+![image](/assets/img/study/deep/ch02/matrix_mul.PNG)
 
 <br/>
 
@@ -617,7 +617,4 @@ tensorflow.GradientTape().gradient(y,x)를 통해 x에 대한 y의 gradient를 �
 6. Optimizer(가중치 업데이트 방법)을 사용하여 파라미터를 업데이트 한다.
 
 
-
-<br/>
-
-# **2.6 요약**
+# 2장 끝
