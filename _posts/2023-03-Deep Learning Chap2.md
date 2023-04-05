@@ -19,17 +19,70 @@ Traing Data로는 아래와 같은 **MNIST**(손글씨 데이터셋)를 사용�
 10개의 Class를 분류(0~9) (28x28 pixcels) 
 
 
-![MNIST](/assets/img/MNIST.PNG)
+![MNIST](../assets/img/MNIST.PNG)
 
-머신러닝에서는 범주를 class라고 부른다. 
+머신러닝에서는 분류를 하려는 범주를 class라고 부른다. 
 
 <br/>
 
 즉, MNIST 데이터셋은 0부터 9까지 10개의 class가 있는 셈
 
+## 간단하게 손글씨 분류 모델을 살펴보자
 
+![image](../assets/img/load_dataset.PNG)
 
+<br/>
 
+학습데이터는 6만개의 손글씨 이미지(28*28)와 
+
+그 이미지가 어떤 숫자가 어떤 숫자인지에 대한 정답을 불러온다. 
+
+<br/>
+
+![image](../assets/img/Sequential.PNG)
+
+<br/>
+
+keras의 Sequential함수는 layer 입력 순서대로 layer층을 쌓아주어서 순차모델이라고도 불린다.
+
+첫번째 인자(512)는 출력 뉴런의 수를 결정한다.
+input_dim 옵션을 통해 입력 뉴런의 수도 설정 가능하다.
+
+kernel_initializer 옵션을 통해 가중치 초기화 방법을 설정할 수도 있다. 
+(default는 uniform:균등분배, 값은 입/출력 유닛의 수에 의해 결정됨. normal:가우시안분포, 사전지식이 있는 경우(높은 중요도를 가지는 노드를 아는 경우))
+
+activation 옵션의 사용할 활성화 함수를 지정한다.
+default는 linear(결과 값이 그대로 나옴.) 
+
+그외에 sigmoid, softmax, relu, tanh 등이 있으며, ReLu를 가장 많이 사용함.
+
+![image](../assets/img/activation_func.PNG)
+
+<br/>
+
+컴파일을 통해 모델의 학습 순서를 지정해보자.
+
+<br/>
+
+![image](../assets/img/model_compile.PNG)
+
+Optimizer란 학습한 파라미터 기반으로 모델을 업데이트 방식을 의미한다. (나중에 뒤에서 설명)
+
+loss는 오차를 계산할 손실함수를 의미하며, 모델에 학습에 직접적인 영향을 준다.
+
+metrics는 학습된 **모델을 평가하는 지표**다. 훈련과정에서 손실함수의 추이와 평가지표의 추이를 비교하면서 overfitting 또는 underfitting 되는지 확인할 수 있다.
+
+<br/>
+
+![image](../assets/img/)
+
+<br/>
+
+여기서 주목할 점은 0~255의 정수값을 0~1로 정규화 해준다는 것이다.
+
+딥러닝에서는 feature 값의 크기 자체가 다르면 크기가 큰 feature가 더 중요하다고 판단하기 쉽다. 
+
+따라서 딥러닝에서는 입력데이터를 정규화해서 넣어야 더 학습속도가 빠르고 안정적이다.
 
 <br/><br/>
 
@@ -37,7 +90,10 @@ Traing Data로는 아래와 같은 **MNIST**(손글씨 데이터셋)를 사용�
 - Tensor란 **tensor는 값의 배열의 집합을 의미한다.** 
 
 - 보통은 3차원 부터 tensor라고 불리는데 scalar, vector, matrix도 값의 배열이기 때문에 tensor이다.
+
 - 머신러닝에서 tensor의 차원(축) 수는 **Rank**라고 부른다. numpy.ndim()으로 확인, shape()으로 차원의 크기를 확인
+
+<br/>
 
 ## Rank
 
@@ -85,7 +141,8 @@ Traing Data로는 아래와 같은 **MNIST**(손글씨 데이터셋)를 사용�
 - 동영상 : (samples, frames, height, width, channels)또는 (samples, frames, channels, height, width) 랭크-5 텐서. 하나의 이미지가 하나의 frame이라고 생각하면 됨.
 
 <br/><br/>
-# **2.3 신경망의 톱니바퀴 : 텐서 연산**
+
+# 2.3 신경망의 톱니바퀴 : 텐서 연산
 텐서 연산(operation) : 전치, 인덱싱, 슬라이싱, 선형 대수, 샘플링 등의 텐서를 다루는 연산을 모두 텐서 연산 또는 텐서 함수라고 한다.
 
 Dense Layer : 입력 층과 출력 층을 모두 fully connected(fc)하게 연결된 형태를 Dense Layer라고 한다. 
@@ -191,7 +248,9 @@ dense layer에 activation function이 없다면, 오로지 아핀 변환만 이�
 
 **따라서 활성화 함수를 통해 비선형적이고 기하학적인 변형을 가하여 풍부한 가설공간을 만들어 내야한다.**
 
--> 무슨말인가? 파라미터 W, b는 feature를 어떻게 변환하냐를 결정하기 때문에 최대한 많은 변형을 만들어보고 정답을 가장 잘 나타내는 변형을 찾아가야 하기 때문.  
+-> 무슨말인가? 
+    
+파라미터 W, b는 feature를 어떻게 변환하냐를 결정하기 때문에 최대한 많은 변형을 만들어보고 훈련데이터셋의 정답을 가장 잘 대표하는 변형을 찾아가야 하기 때문이다.  
 
 <br/>
 
