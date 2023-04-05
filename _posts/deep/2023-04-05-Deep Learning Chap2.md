@@ -67,7 +67,7 @@ keras의 Sequential함수는 layer 입력 순서대로 layer층을 쌓아주어�
 input_dim 옵션을 통해 입력 뉴런의 수도 설정 가능하다.
 
 kernel_initializer 옵션을 통해 가중치 초기화 방법을 설정할 수도 있다. 
-(default는 uniform:균등분배, 값은 입/출력 유닛의 수에 의해 결정됨. normal:가우시안분포, 사전지식이 있는 경우(높은 중요도를 가지는 노드를 아는 경우))
+(default는 uniform:균등분배, 값은 입/출력 유닛의 수에 의해 결정됨. normal:가우시안분포, 사전지식이 있는 경우(높은 중요도를 가지는 노드를 아는 경우)
 
 activation 옵션의 사용할 활성화 함수를 지정한다.
 default는 linear(결과 값이 그대로 나옴.) 
@@ -202,12 +202,12 @@ overfitting은 다음과 같은 방법으로 해결할 수 있다.
 
 데이터셋의 첫 번째 축(차원)을 **batch axis** 또는 **batch dimension**이라고 한다.
 
-## 데이터셋
+## **데이터셋 유형**
 
 - 벡터 데이터 : (samples, features)로 구성된 랭크-2 텐서
+  
 - 시계열 데이터 또는 시퀀스 데이터 : (samples, timesteps, features) 크기의 랭크-3 텐서
 - 이미지 : (samples, height, width, channels) 또는 (samples, channels, height, width)의 랭크-4 텐서. 이미지 픽셀들을 행렬로 보면 height가 행, width가 열이고 channels은 픽셀을 표현하는 정보들(색상,명암 등).
-- 
 - 동영상 : (samples, frames, height, width, channels)또는 (samples, frames, channels, height, width) 랭크-5 텐서. 하나의 이미지가 하나의 frame이라고 생각하면 됨.
 
 <br/><br/>
@@ -359,11 +359,14 @@ dense layer에 activation function이 없다면, 오로지 아핀 변환만 이�
 
 <br/>
 
-## 그레이디언트(gradient)
+## **그레이디언트(gradient)**
 
-텐서의 도함수(미분함수)를 그레디언트라고 한다. y = w^2 + 3 같은 식에서 gradient는 곡선의 기울기 였다면, 다차원 텐서 함수의 **gradient는 다차원 표면의 곡률을 의미**한다.
+텐서의 **도함수(미분함수)를 그레디언트**라고 한다. 
+
+y = w^2 + 3 같은 식에서 gradient는 곡선의 기울기 였다면, 다차원 텐서 함수의 **gradient는 다차원 표면의 곡률을 의미**한다.
 
     y = x * w + b
+
 w에 대한 편미분을 통해, w변화에 따른 y(loss value) 증감을 알 수 있게된다. 
 
 <br/>
@@ -466,7 +469,7 @@ Adagrad의 문제점을 개선하기 위해 최소 학습률을 유지하여 학
 
 F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
-이때 g(x) = t로 치환하면, $\frac{dy}{dx} = \frac{dt}{dx} * \frac{dy}{dt}$ 이다.
+이때 g(x) = t로 치환하면,   $$\frac{dy}{dx} = \frac{dt}{dx} \frac{dy}{dt}$$
 
 <br>
 
@@ -476,7 +479,7 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/>
 
-## 역전파 예시를 통해 자세히 알아보자!
+## **역전파 예시를 통해 자세히 알아보자!**
 
 <br/>
 
@@ -488,7 +491,7 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/><br/>
 
-비교적 계산하기 쉬운 $w_{10}^{(1)}$의 gradient부터 계산하면서 익혀보자.
+비교적 계산하기 쉬운    $$w_{10}^{(1)}$$    의 gradient부터 계산하면서 익혀보자.
 
 <br/>
 
@@ -498,7 +501,7 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/>
 
-예제에서는 손실함수 $E_{tot}$로 MSE(Mean Squared Error)를 사용한다.
+예제에서는 손실함수 $$E_{tot}$$ 로 MSE(Mean Squared Error)를 사용한다.
 
 <br/>
 
@@ -506,15 +509,15 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/>
 
-우선 $a_{20}$에 대한 $E_{tot}$을 미분하면 이러한 식을 얻을 수 있다.
+우선    $$a_{20}$$  에 대한  $$E_{tot}$$  을 미분하면 이러한 식을 얻을 수 있다.
 
 <br/>
 
-|<img src="/assets/img/study/deep/ch02/backpropagation_exam4.PNG" height="100px" width="300px">|<img src="/assets/img/study/deep/ch02/backpropagation_exam5.PNG" height="100px" width="300px">
+<img src="/assets/img/study/deep/ch02/backpropagation_exam4.PNG" height="100px" width="300px">|<img src="/assets/img/study/deep/ch02/backpropagation_exam5.PNG" height="100px" width="300px">
 
 <br/>
 
-마찬가지로 $z_{20}$에 대한 $a_{20}$의 gradient, $w_{10}^{1}$에 대한 $z_{20}$의 gradient
+마찬가지로 $$z_{20}$$ 에 대한 $$a_{20}$$ 의 gradient, $$w_{10}^{1}$$ 에 대한 $$z_{20}$$ 의 gradient
 를 계산한다.
 
 <br/>
@@ -523,7 +526,7 @@ F = f(g(x))의 도함수는 F'(x) = f'(g(x))*g'(x)이다
 
 <br/>
 
-계산한 미분값들을 모두 대입하면 $w_{10}^{1}$에 대한 손실함수의 gradient를 알 수 있다.
+계산한 미분값들을 모두 대입하면 $$w_{10}^{1}$$ 에 대한 손실함수의 gradient를 알 수 있다.
 
 gradient가 양수면 Loss가 증가하니까 가중치를 낮추도록 학습해야하고, 음수면 높이도록 학습해야 한다. 
 
@@ -533,7 +536,7 @@ gradient가 양수면 Loss가 증가하니까 가중치를 낮추도록 학습�
 
 ![image](/assets/img/study/deep/ch02/backpropagation_exam7.PNG)
 
-예제에서 $\eta$(learning_rate)는 0.5
+예제에서 $$\eta$$ (learning_rate)는 0.5
 
 w(1)의 가중치는 Backpropagation을 통해 이렇게 갱신 할 수 있었다.
 
@@ -543,14 +546,14 @@ w(1)의 가중치는 Backpropagation을 통해 이렇게 갱신 할 수 있었�
 
 ![image](/assets/img/study/deep/ch02/backpropagation_exam8.PNG)
 
-$w_{10}^{(0)}$의 가중치는 $y_1$과 $y_2$ 값에 둘다 영향을 주기 때문에, $y_1$과 $y_2$에서 오는 역전파를 모두 고려해서 계산해야 한다.
+$$w_{10}^{(0)}$$ 의 가중치는 $$y_{1}$$ 과 $$y_{2}$$ 값에 둘다 영향을 주기 때문에, $$y_{1}$$ 과 $$y_{2}$$ 에서 오는 역전파를 모두 고려해서 계산해야 한다.
 
-MSE 오차 함수의 $E_{tot}$ 값을 줄여서 $E_{y1}, E_{y2}$로 표기한다.
+MSE 오차 함수의 $$E_{tot}$$ 값을 줄여서 $$E_{y1}, E_{y2}$$로 표기한다.
 
-$$E_{y1} = \frac{1}{2} * (target_{y1}-a_{20})^2$$
-$$E_y2 = \frac{1}{2} * (target_{y2} - a_{21})^2$$
+$$E_{y1} = \frac{1}{2} * (target_{y_{1}}-a_{20})^2$$
+$$E_{y2} = \frac{1}{2} * (target_{y_{2}} - a_{21})^2$$
 
-따라서 전체 Loss값은 위 그림의 보라색처럼 $E_1$과 $E_2$에 대한 편미분으로 나누어 계산할 수 있다.
+따라서 전체 Loss값은 위 그림의 보라색처럼 $$E_1$$ 과 $$E_2$$ 에 대한 편미분으로 나누어 계산할 수 있다.
 
 <br/>
 
