@@ -1,7 +1,7 @@
 ---
 title: [딥러닝] - 신경망의 수학적 구성 요소
 layout: post
-categories : [Machine Learning,Deep Learning]
+categories : [ai]
 image : /assets/img/study/deep/ch02/learning_flow.PNG
 description: 케라스 창시자에게 배우는 딥러닝 개정 2판 Chapter.2 
 customexcerpt: 신경망의 개념과 구조, 그리고 여러 최적화 방법론들을 학습하고 실습하는 시간을 가진다.
