@@ -21,13 +21,21 @@ Traing Data로는 아래와 같은 **MNIST**(손글씨 데이터셋)를 사용�
 
 ![MNIST](../assets/img/MNIST.PNG)
 
-머신러닝에서는 분류를 하려는 범주를 class라고 부른다. 
+머신러닝에서는 분류하려는 범주를 **class**라고 부른다. 
 
 <br/>
 
 즉, MNIST 데이터셋은 0부터 9까지 10개의 class가 있는 셈
 
+<br/>
+
 ## 간단하게 손글씨 분류 모델을 살펴보자
+
+<br/>
+
+colab : https://colab.research.google.com/drive/13KmNPs5NasT_YFvw0Ds1fYmqyf_-xAEC?usp=sharing
+
+<br/>
 
 ![image](../assets/img/load_dataset.PNG)
 
@@ -56,6 +64,8 @@ default는 linear(결과 값이 그대로 나옴.)
 
 그외에 sigmoid, softmax, relu, tanh 등이 있으며, ReLu를 가장 많이 사용함.
 
+<br/>
+
 ![image](../assets/img/activation_func.PNG)
 
 <br/>
@@ -74,7 +84,7 @@ metrics는 학습된 **모델을 평가하는 지표**다. 훈련과정에서 �
 
 <br/>
 
-![image](../assets/img/)
+![image](../assets/img/MNIST_normalization.PNG)
 
 <br/>
 
@@ -83,6 +93,56 @@ metrics는 학습된 **모델을 평가하는 지표**다. 훈련과정에서 �
 딥러닝에서는 feature 값의 크기 자체가 다르면 크기가 큰 feature가 더 중요하다고 판단하기 쉽다. 
 
 따라서 딥러닝에서는 입력데이터를 정규화해서 넣어야 더 학습속도가 빠르고 안정적이다.
+
+실제로 비교를 해봤는데 정규화를 한 학습이 정확도가 근소하게 더 높았다.
+
+<br/>
+
+![image](../assets/img/fit_method.PNG)
+
+<br/>
+
+fit() 메서드를 실행하면 앞에서 정의한 모델의 학습구조를 따라 학습이 진행되고, 진행상황을 출력해준다. 
+
+Epoch을 거듭할수록 손실값이 감소하고 정확도가 증가하는 것을 볼 수 있다.
+
+fit() 메서드는 학습을 진행하면서 계산된 손실과 정확도 값을 History로 반환해준다.
+
+<br/>
+
+## Test 데이터 분류 해보기
+
+![image](../assets/img/model_test.PNG)
+
+
+<br/>
+
+predict()는 입력받은 test 데이터가 어느 class에 속할 확률을 각 class마다 계산
+
+np.argmax() 메서드를 사용해서 가장 확률이 높은 class의 인덱스 알 수 있다.
+
+테스트 셋의 예측 정확도(97.7%)는 트레이닝 세트의 예측 정확도(98.9%)보다 낮은 이유는 당연하게도 모델이 트레이닝 세트로 학습되었기 때문에 overfitting 되었기 때문이다.
+
+<br/>
+
+## Overfitting, Underfitting
+
+**overfitting**은 훈련 데이터보다 새로운 데이터에서 성능이 낮아지는 것을 의미한다.
+
+모델이 너무 과하게 복잡(deep)해서 발생한다. 
+
+overfitting은 다음과 같은 방법으로 해결할 수 있다.
+
+1. hidden layer의 크기를 줄이거나 layer 개수를 줄여서 모델을 간단하게 만든다.
+2. Dropout:학습을 할 때 일부 신경망을 끊고 학습한다.
+3. 정규화(regularization): 특정 feature의 가중치에 너무 큰 값이 쏠리지 않도록 규제한다.
+4. 학습 데이터를 늘린다.
+
+<br/>
+
+**underfitting**은 이미 보유한 Train 데이터셋도 제대로 학습시키지 못하는 것을 의미한다. 
+
+학습 반복 횟수가 너무 적거나, 데이터의 특성에 비해 모델이 너무 간단한 경우, 그리고 데이터의 양이 부족한 경우 발생한다.
 
 <br/><br/>
 
@@ -204,19 +264,25 @@ Martix 형태로 표현된 이미지가 Vector 형태로 표현되게 됨.
 
 텐서 형태의 값은 기하학적 공간에 있는 좌표로 해석 가능하다.
 
+<br/>
+
 ![image](../assets/img/geometry_space.PNG)
 
-**이동** : 
+<br/>
 
-벡터의 덧셈 
+**이동** : 벡터의 덧셈 
 
 ![image](../assets/img/vector_add.PNG)
 
+<br/>
+
 **회전** :
 
- R = [[cos(theta), -sin(theta)], [sin(theta), cos(theta)]]와 벡터의 내적. !
+ R = [[cos(theta), -sin(theta)], [sin(theta), cos(theta)]]와 벡터의 내적.
  
- [image](../assets/img/vector_spin.PNG)
+![image](../assets/img/vector_spin.PNG)
+
+<br/>
 
 **크기 변경** : 
 
@@ -224,9 +290,13 @@ S = [[horizontal, 0], [0, vertical]]와 벡터를 내적하여 얻는다.
 
 ![image](../assets/img/vector_size.PNG)
 
+<br/>
+
 **선형 변환** : 
 
 임의의 행렬과 내적하면 선형 변환이 수행됨. 회전과 크기변경이 선형변환에 해당함.
+
+<br/>
 
 **아핀(affine) 변환** : 
 
@@ -234,9 +304,15 @@ S = [[horizontal, 0], [0, vertical]]와 벡터를 내적하여 얻는다.
 
 ![image](../assets/img/affine.PNG)
 
-relu 활성화 함수를 사용하는 Dense Layer : 아핀 변환에 ReLU 함수 적용. 
+<br/>
+
+**relu 활성화 함수를 사용하는 Dense Layer** : 
+
+아핀 변환에 ReLU 함수 적용. 
 
 ![image](../assets/img/relu.PNG)
+
+<br/>
 
 activation function(활성화 함수)을 사용하는 이유가 여기 있다.
 
@@ -282,13 +358,19 @@ w에 대한 편미분을 통해, w변화에 따른 y(loss value) 증감을 알 �
 
 <br/>
 
-## 경사하강법(Stochastic Gradient Discent, SGD)
+## **경사하강법(Stochastic Gradient Discent, SGD)**
+
+<br/>
 
 ![image](../assets/img/SGD.PNG)
+
+<br/>
 
 그림처럼 learning_rate 값을 적절하게 선택하는 것이 중요하다. 
 값이 너무 작으면 곡선을 따라 내려가는 데 많은 반복이 필요하고 local minimum에 갇힐 수 있다. 
 값이 너무 크면 손실 함수 global minimum에서 완전히 벗어난 위치로 이동할 수 있다.
+
+<br/>
 
 **경사 하강법**은 다음과 같은 과정을 거친다.
 1. 훈련 샘플 x와 이에 상응하는 타깃 y_true의 배치를 추출한다. 
@@ -300,20 +382,20 @@ w에 대한 편미분을 통해, w변화에 따른 y(loss value) 증감을 알 �
 
 <br/>
 
-## 확률적 경사하강법(Stochastic Gradient Discent, SGD)
+## **확률적 경사하강법(Stochastic Gradient Discent, SGD)**
 
-여기서 확률적이라는 단어는 하나의 데이터를 무작위로 샘플링하여 학습하는 것을 의미한다.
+여기서 확률적이라는 단어는 **하나의 데이터**를 무작위로 샘플링하여 학습하는 것을 의미한다.
+하나의 데이터로 학습하기 때문에 불안정하다는 특징이 있다.
 
 ![image](../assets/img/compare_GD_SGD.PNG)
 
-SGD는 1개의 데이터만 사용하기 때문에 학습이 불안정하다.
 
 <br/>
 
-## Batch 경사 하강법(BGD)
+## **Batch 경사 하강법(BGD)**
 배치 경사 하강법은 **전체 데이터 셋**에 대한 에러를 구하여 Gradient를 한번만 계산하여 모델의 파라미터를 업데이트하는 방법을 의미한다. 학습이 안정적이지만 느리다.
 
-## Mini-batch 경사 하강법 
+## **Mini-batch 경사 하강법**
 Mini-batch로 학습한다. 일반적으로 BGD, SGD의 장점을 섞은 미니 배치 경사하강법을 많이 사용함.
 
 
