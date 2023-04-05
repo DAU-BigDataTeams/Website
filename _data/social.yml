@@ -4,6 +4,9 @@
 
 social:
   - {icon: 'github', type: "brand", link: 'https://github.com/DAU-BigDataTeams'}
+  - {icon: 'github', type: "ai-stduy", link: 'https://github.com/DAU-BigDataTeams/Deep-Learning'}
+  - {icon: 'github', type: "python-stduy", link: 'https://github.com/DAU-BigDataTeams/Python-Advanced-Study'}
+  - {icon: 'github', type: "pandas-stduy", link: 'https://github.com/DAU-BigDataTeams/Data-analysis-study'}
   # - {icon: 'twitter', type: "brand", link: 'https://twitter.com/PandaSekh'}
   #- {icon: 'linkedin', type: "brand", link: 'https://www.linkedin.com/in/alessio-franceschi/'}
   #- {icon: 'envelope', type: "solid", link: 'jhparkinglot@gmail.com'}

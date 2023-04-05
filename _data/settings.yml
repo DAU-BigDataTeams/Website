@@ -1,5 +1,5 @@
 #Google Analytics
-analytics-id: #leave blank to not use Analytics
+analytics-id: G-Z438CCPYGJ #leave blank to not use Analytics
 
 #Subtitle
 subtitle:
@@ -12,7 +12,9 @@ nav:
     active: true
   social:
     active: true
-
+  dropdown:
+    active: true
+    
 #Featured images in homepage
 featured-img:
   active: true
@@ -32,7 +34,7 @@ mathjax:
 #Show related posts based on categories
 related-posts:
   active: true
-  title: 
+  title: "비슷한 주제의 다양한 Post도 있어요!"
 
 #Comments
 comments: true

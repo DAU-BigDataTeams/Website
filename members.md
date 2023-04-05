@@ -1,4 +1,0 @@
----
-layout: members
-title: Members
----

@@ -4,24 +4,26 @@ $light-grey: #ebebeb;
 
 * {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-html{
-  scroll-behavior: smooth;
-}
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 700px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.task-list{
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+}
+
+.task-list {
   list-style: none;
 }
 
 //Alerts
-.alert{
+.alert {
   padding: 20px;
   border-radius: 0 4px 4px 0;
   color: #fff;
@@ -29,20 +31,21 @@ html{
   font-size: larger;
 }
 
-.y{
+.y {
   background-color: #f3b244;
   border-left: 7px solid #dc900e;
 }
 
-.g{
+.g {
   background-color: #60c17d;
   border-left: 7px solid #55ab6f;
 }
 
-.r{
+.r {
   background-color: #e45454;
   border-left: 7px solid #cb2020;
 }
+
 //End Alerts
 
 //Blockquote
@@ -50,63 +53,78 @@ blockquote {
   border-left: .25em solid #dfe2e5;
   color: #6a737d;
   padding: 0 1em;
-  cite{
+
+  cite {
     display: inline-block;
     margin-top: 50px;
-    cite::before{
+
+    cite::before {
       content: "- ";
       margin-left: 10px;
     }
   }
 }
+
 //End Blockquote
 
 //MathJAX
-.MathJax_Display{
+.MathJax_Display {
   .MathJax {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 }
+
 //End MathJAX
 
 //ToC
 #markdown-toc::before {
   content: "Contents";
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
 #markdown-toc {
-  border: 1px solid #aaa;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 10px;
-  padding: 1.5em;
   list-style: disc;
   display: inline-block;
   background-color: $light-grey;
   line-height: 25px;
-  li{
-    a{
+
+  li {
+    a {
       text-decoration: none;
+      color: rgb(0, 0, 0);
+      font-size: 1rem;
+      display: block;
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      transition: all 0.2s ease;
     }
-    a:hover{
-      font-style: italic;
+
+    a:hover {
+      color: #fff;
+      background-color: #71dbff;
     }
   }
-  ul{
+
+  ul {
     list-style: disc;
   }
 }
 //End ToC
 
+
 //Archive
-.archive-link{
+.archive-link {
   text-decoration: none;
   color: black;
   font-style: italic;
   font-size: 1.5rem;
 }
 
-.archive-link:hover{
+.archive-link:hover {
   text-decoration: underline;
 }
+
 //End Archive

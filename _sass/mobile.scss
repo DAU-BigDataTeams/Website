@@ -1,6 +1,6 @@
 @media (max-width: 768px){
     html{
-        overflow-y: auto;
+        overflow-y: visible;
     }
     .container {
         width: 88vw;
@@ -24,7 +24,8 @@
                 i{
                     font-size: 1.3rem;
                 }
-            }
+            } 
+              
         }
     }
     #post-title{
@@ -49,3 +50,4 @@
         padding-right: 0px;
     }
 }
+  

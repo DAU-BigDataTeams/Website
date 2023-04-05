@@ -11,93 +11,211 @@ $youtube: #ff0000;
 $whatsapp: #25d366;
 $reddit: #ff4500;
 
-header{
+header {
     margin-left: auto;
     margin-right: auto;
     width: 550px;
-    overflow: hidden;
-  
-    #site_title{
+
+    #site_title {
         text-align: center;
         color: black;
-        a{
+
+        a {
             text-decoration: none;
         }
-        h1{
+
+        h1 {
             margin-bottom: 0px;
         }
-        h2{
+
+        h2 {
             margin-top: 0px;
             font-style: oblique;
             font-size: 1.2rem;
         }
     }
-    #subheader{
+
+    #subheader {
         display: block;
         margin-top: 15px;
-            .pages{
-                display: block;
-                float: left;
-                a:hover{
-                    color: black;
-                }
-                a{
-                    text-decoration: none;
-                    color: $base; 
-                    margin-right: 3px;
-                    font-size: 1.05rem;
-                }
+
+        .pages {
+            display: block;
+            float: left;
+
+            a:hover {
+                color: black;
             }
-            .social{
-                display: block;
-                float: right;
-                i{
-                    margin-right: 3px;
-                    -o-transition: .5s;
-                    -ms-transition: .5s;
-                    -moz-transition: .5s;
-                    -webkit-transition: .5s;
-                    transition: .5s;
-                }
-                a{
-                    color: $base;
-                }
-                i{
-                    font-size: 1.1rem;
-                }
-                #github:hover{
-                    color: $github;
-                }
-                #twitter:hover{
-                    color: $twitter;
-                }
-                #linkedin:hover{
-                    color: $linkedin;
-                }
-                #rss:hover{
-                    color: $rss;
-                }
-                #envelope:hover{
-                    color: $mail;
-                }
-                #instagram:hover{
-                    color: $instagram;
-                }
-                #facebook:hover{
-                    color: $facebook;
-                }
-                #messenger:hover{
-                    color: $messenger;
-                }
-                #youtube:hover{
-                    color: $youtube;
-                }
-                #whatsapp:hover{
-                    color: $whatsapp;
-                }
-                #reddit:hover{
-                    color: $reddit;
-                }
+
+            a {
+                text-decoration: none;
+                color: $base;
+                margin-right: 3px;
+                font-size: 1.05rem;
             }
         }
+
+        .submenu {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 8px;
+
+        }
+
+        .social {
+            display: block;
+            float: right;
+
+            i {
+                margin-right: 3px;
+                -o-transition: .5s;
+                -ms-transition: .5s;
+                -moz-transition: .5s;
+                -webkit-transition: .5s;
+                transition: .5s;
+            }
+
+            a {
+                color: $base;
+            }
+
+            i {
+                font-size: 1.1rem;
+            }
+
+            #github:hover {
+                color: $github;
+            }
+
+            #twitter:hover {
+                color: $twitter;
+            }
+
+            #linkedin:hover {
+                color: $linkedin;
+            }
+
+            #rss:hover {
+                color: $rss;
+            }
+
+            #envelope:hover {
+                color: $mail;
+            }
+
+            #instagram:hover {
+                color: $instagram;
+            }
+
+            #facebook:hover {
+                color: $facebook;
+            }
+
+            #messenger:hover {
+                color: $messenger;
+            }
+
+            #youtube:hover {
+                color: $youtube;
+            }
+
+            #whatsapp:hover {
+                color: $whatsapp;
+            }
+
+            #reddit:hover {
+                color: $reddit;
+            }
+        }
+
+
+        // 드롭다운 
+        .dropdown {
+            position: relative;
+            flex-grow: 1;
+            /* submenu의 비율에 맞춰서 배치되도록 flex 속성 추가 */
+        }
+
+        .dropbtn {
+            background-color: white;
+            color: black;
+            font-size: 1.05rem;
+            font-style: oblique;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 80%;
+            left: 0;
+            width: auto; /* 화면 사이즈 다른 경우 문자 짤리는 현상 생김 */
+            min-width: 100%; /* 최소 사이즈 보정 */
+            transform: translateY(5px);
+            z-index: 1;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+            /* 텍스트 줄바꿈 방지 */
+            overflow: hidden;
+            /* 텍스트 오버플로우 숨김 */
+            text-align: center;
+        }
+
+        .dropdown-content a {
+            color: #0077cc;
+            padding: 12px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+        }
+
+        // .dropdown:hover > .dropdown-content {
+        //     display: block;
+        // }
+        .dropdown:hover .dropbtn {
+            background-color: rgb(134, 217, 255);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: inline-block;
+            animation: fade-in 0.3s;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.05rem;
+            font-style: oblique;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+    }
+
 }

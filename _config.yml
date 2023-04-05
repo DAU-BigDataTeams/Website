@@ -1,7 +1,7 @@
 # Site settings
-title: DAU-BigDataTeam
+title: DAU-BigDataTeam(Data Detective)
 description: "Donga Univ Computer AI Engineering BigDataTeam"
-url:  "https://dau-bigdatateams.github.io" # Actual base url of the website
+url: "https://bigdatateam.net" # Actual base url of the website
 baseurl: "/"           # url of the jekyll blog. e.g. if you set url to "mysite.com" and baseurl to "blog", the jekyll website will work on "mysite.com/blog"
 author:
   name: "Jeonghyeon Park"
@@ -13,12 +13,12 @@ permalink: /:year/:month/:day/:title:output_ext
 plugins: [jekyll-paginate, jekyll-feed, jekyll-seo-tag, jekyll-sitemap]
 
 #Pagination
-paginate: 5
+paginate: 12
 paginate_path: "/page:num/"
 
 #SEO
 twitter:
-  username: pandasekh
+  username: 
   card: summary
 facebook:
   app_id: # Facebook app ID for Facebook insights
@@ -27,9 +27,10 @@ facebook:
 logo: /assets/img/logo.jpg
 social:
   links: #List your social links here
-    - https://twitter.com/PandaSekh
-    - https://www.github.com/pandasekh
-    - https://www.linkedin.com/in/alessio-franceschi/
+    - https://twitter.com/uesername
+    - htt ps://www.github.com/uesername
+    - https://www.linkedin.com/in/uesername/
+
 webmaster_verifications:
   google: 
   bing: 
@@ -41,17 +42,27 @@ lang: en_US
 #Highlighter
 kramdown:
   input:          GFM
-  syntax_highlighter: rouge
+  syntax_highlighter: rouge 
 
   syntax_highlighter_opts:
     css_class: 'highlight'
     span:
       line_numbers: False
     block:
-      line_numbers: True
+      line_numbers: False
       start_line: 1
 
 #Sass
 sass:
   style: compressed
   sourcemap: never
+
+# Analytics
+analytics:
+  provider               : "google-gtag" 
+                          # false (default), "google", "google-universal", "google-gtag", "custom"
+  google:
+    tracking_id          : "G-Z438CCPYGJ "
+    anonymize_ip         : false 
+
+
