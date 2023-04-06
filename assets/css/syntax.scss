@@ -341,3 +341,15 @@ div.highlight pre code[data-lang]::before {
   background-color: #49483e;
 }
 
+.language-plaintext {
+  font-family: monospace;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #D6B97D;
+  font-weight: bold;
+  /* 기타 필요한 스타일 규칙 추가 */
+}
