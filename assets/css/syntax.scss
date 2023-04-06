@@ -341,7 +341,9 @@ div.highlight pre code[data-lang]::before {
   background-color: #49483e;
 }
 
-.language-plaintext {
+figure.highlight pre code[plaintext]::before,
+div.highlight pre code[plaintext]::before {
+  content: attr(plaintext);
   background-color: #ffffff;
   border: 1px solid #ffffff;
   border-top-left-radius: 5px;
@@ -351,3 +353,4 @@ div.highlight pre code[data-lang]::before {
   color: #D6B97D;
   font-weight: bold;
 }
+
