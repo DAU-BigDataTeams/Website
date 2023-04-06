@@ -321,6 +321,16 @@ figure.highlight {
   position: relative;
 }
 
+code {
+  padding: 0.25rem;
+  background-color: #49483e;
+  border: 1px solid #49483e;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+}
+
 figure.highlight pre code[data-lang]::before,
 div.highlight pre code[data-lang]::before {
   content: attr(data-lang);
@@ -341,24 +351,3 @@ div.highlight pre code[data-lang]::before {
   background-color: #49483e;
 }
 
-// .language-plaintext {
-//   background-color: #ffffff;
-//   border: 1px solid #ffffff;
-//   border-top-left-radius: 5px;
-//   border-top-right-radius: 5px;
-//   border-bottom-left-radius: 5px;
-//   border-bottom-right-radius: 5px;
-//   color: #D6B97D;
-//   font-weight: bold;
-// }
-
-code {
-  padding: 0.25rem;
-  background-color: #f0f0f0;
-  border: 1px solid #dadada;
-  color: #d07d7d;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  line-height: 1.1rem;
-  margin: 0 5px;
-}
