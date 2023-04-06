@@ -354,3 +354,13 @@ div.highlight pre code[plaintext]::before {
   font-weight: bold;
 }
 
+.language-plaintext {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #D6B97D;
+  font-weight: bold;
+}
