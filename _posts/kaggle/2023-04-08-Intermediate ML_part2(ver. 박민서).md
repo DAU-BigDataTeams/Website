@@ -99,13 +99,61 @@ X_valid = X_valid_full[my_cols].copy()
  ~~~py
  X_train.head()
  ~~~
-|       | Type | Method | Method                | Rooms | Distance | ... |
-|-------|------|--------|-----------------------|-------|----------|-----|
-| 12167 | u    | S      | Southern Metropolitan | 1     | 5.0      |     |
-| 6524  | h    | SA     | Western Metropolitan  | 2     | 8.0      |     |
-| 8413  | h    | S      | Western Metropolitan  | 3     | 12.6     |     |
-| 2919  | u    | SP     | Northern Metropolitan | 3     | 13.0     |     |
-| 6043  | h    | S      | Western Metropolitan  | 3     | 13.3     |     |
+
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>Type</th>
+    <th>Method</th>
+    <th>Method</th>
+    <th>Rooms</th>
+    <th>Distance</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>12167</td>
+    <td>u</td>
+    <td>S</td>
+    <td>Southern Metropolitan</td>
+    <td>1</td>
+    <td>5.0</td>
+  </tr>
+  <tr>
+    <td>6524</td>
+    <td>h</td>
+    <td>SA</td>
+    <td>Western Metropolitan</td>
+    <td>2</td>
+    <td>8.0</td>
+  </tr>
+  <tr>
+    <td>8413</td>
+    <td>h</td>
+    <td>S</td>
+    <td>Western Metropolitan</td>
+    <td>3</td>
+    <td>12.6</td>
+  </tr>
+  <tr>
+    <td>2919</td>
+    <td>u</td>
+    <td>SP</td>
+    <td>Northern Metropolitan</td>
+    <td>3</td>
+    <td>13.0</td>
+  </tr>
+  <tr>
+    <td>6043</td>
+    <td>h</td>
+    <td>S</td>
+    <td>Western Metropolitan</td>
+    <td>3</td>
+    <td>13.3</td>
+  </tr>
+</tbody>
+</table>
 
 다음으로 training data로부터 모든 범주형 변수의 목록을 얻어보자.  
 각 열의 데이터 유형(dtype)을 확인해보자, object dtype은 열에 텍스트가 있음을 나타낸다.  
@@ -247,13 +295,60 @@ Pipeline을 사용하여 모델링 코드를 정리해보자.
  ~~~py
  X_train.head()
  ~~~
-|       | Type | Method | Method                | Rooms | Distance | ... |
-|-------|------|--------|-----------------------|-------|----------|-----|
-| 12167 | u    | S      | Southern Metropolitan | 1     | 5.0      |     |
-| 6524  | h    | SA     | Western Metropolitan  | 2     | 8.0      |     |
-| 8413  | h    | S      | Western Metropolitan  | 3     | 12.6     |     |
-| 2919  | u    | SP     | Northern Metropolitan | 3     | 13.0     |     |
-| 6043  | h    | S      | Western Metropolitan  | 3     | 13.3     |     |
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>Type</th>
+    <th>Method</th>
+    <th>Method</th>
+    <th>Rooms</th>
+    <th>Distance</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>12167</td>
+    <td>u</td>
+    <td>S</td>
+    <td>Southern Metropolitan</td>
+    <td>1</td>
+    <td>5.0</td>
+  </tr>
+  <tr>
+    <td>6524</td>
+    <td>h</td>
+    <td>SA</td>
+    <td>Western Metropolitan</td>
+    <td>2</td>
+    <td>8.0</td>
+  </tr>
+  <tr>
+    <td>8413</td>
+    <td>h</td>
+    <td>S</td>
+    <td>Western Metropolitan</td>
+    <td>3</td>
+    <td>12.6</td>
+  </tr>
+  <tr>
+    <td>2919</td>
+    <td>u</td>
+    <td>SP</td>
+    <td>Northern Metropolitan</td>
+    <td>3</td>
+    <td>13.0</td>
+  </tr>
+  <tr>
+    <td>6043</td>
+    <td>h</td>
+    <td>S</td>
+    <td>Western Metropolitan</td>
+    <td>3</td>
+    <td>13.3</td>
+  </tr>
+</tbody>
+</table>
 
 전체 파이프라인을 세 단계로 구성한다.  
 
