@@ -40,7 +40,7 @@ Intermediate Machine Learning 1 포스팅에 이어서, 계속하여 Machine Lea
  순서형 인코딩은 각 고유 값을 다른 정수에 할당한다.  
  이 접근 방식은 범주의 순서를 가정한다.    
 
- ![approach_2](/assets/img/Itm_ML_part2_01_approach2.JPG)
+ ![approach_2](/assets/img/Intermediate%20ML/Itm_ML_part2_01_approach2.JPG)
 
  "절대" (0) < "거의" (1) < "대부분의 날" (2) < "매일"(3)
  
@@ -49,7 +49,7 @@ Intermediate Machine Learning 1 포스팅에 이어서, 계속하여 Machine Lea
 ### 3) One-Hot Encoding
  단일 핫 인코딩은 원래 데이터에서 가능한 각 값의 존재(또는 존재하지 않음)를 나타내는 새로운 열을 만든다. 이렇게만 보면 무슨 말인지 잘 모르겠으니 예시를 통해 이해해보자!  
 
- ![approach_3](/assets/img/Itm_ML_part2_02_approach3.JPG)
+ ![approach_3](/assets/img/Intermediate%20ML/Itm_ML_part2_02_approach3.JPG)
 
  원래 데이터 집합에서 "색상"은 "빨강", "노랑", "초록"의 세 가지 범주를 가진 범주형 변수이다. 단일 핫 인코딩에는 가능한 각 값에 대해 하나의 열과 원래의 데이터 집합의 각 행에 대해 하나의 행이 포함된다. (원래 데이터셋에서 가로로 늘리는 느낌!) 원래 값이 "빨강"이었다면 "빨강" 열에 1을 넣고, 원래 값이 "노랑"이었다면 "노랑"열에 1을 넣는 식이다.    
  
