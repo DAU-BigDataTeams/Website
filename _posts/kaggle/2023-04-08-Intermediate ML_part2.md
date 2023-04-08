@@ -2,12 +2,17 @@
 title: Intermediate_ML_2 범주형 변수를 처리하는 방법과 파이프라인에 대해 알아보자!
 layout: post   
 categories : [ML, kaggle, Categorical variable, Pipeline]
-image : assets/img/수료증/shshuu-Intermediate_ML.png
+image : /assets/img/수료증/박민서-Intermediate_ML.png
 description: kaggle의 Intermediate Machine Learning 코스 3,4 챕터 정리
 customexcerpt: Categorical Variables(범주형 변수)을 처리하는 방법에는 범주형 변수 삭제, 순서형 인코딩, 단일 핫 인코딩이 있다.
 ---
+<span class = "alert g">작성자 : 박민서</span>
 
 # Intermediate Machine Learning 2
+
+<!-- 아래 2줄은 목차를 나타내기 위한 심볼이니 건들지 말아 주세요 -->
+* random line to make it work. This will be removed.
+{:toc}
 
 Intermediate Machine Learning 1 포스팅에 이어서, 계속하여 Machine Learning 전문 지식을 쌓아보자
 
@@ -35,7 +40,7 @@ Intermediate Machine Learning 1 포스팅에 이어서, 계속하여 Machine Lea
  순서형 인코딩은 각 고유 값을 다른 정수에 할당한다.  
  이 접근 방식은 범주의 순서를 가정한다.    
 
- ![approach_2](assets/img/Itm_ML_part2_01_approach2.JPG)
+ ![approach_2](/assets/img/Itm_ML_part2_01_approach2.JPG)
 
  "절대" (0) < "거의" (1) < "대부분의 날" (2) < "매일"(3)
  
@@ -44,7 +49,7 @@ Intermediate Machine Learning 1 포스팅에 이어서, 계속하여 Machine Lea
 ### 3) One-Hot Encoding
  단일 핫 인코딩은 원래 데이터에서 가능한 각 값의 존재(또는 존재하지 않음)를 나타내는 새로운 열을 만든다. 이렇게만 보면 무슨 말인지 잘 모르겠으니 예시를 통해 이해해보자!  
 
- ![approach_3](assets/img/Itm_ML_part2_02_approach3.JPG)
+ ![approach_3](/assets/img/Itm_ML_part2_02_approach3.JPG)
 
  원래 데이터 집합에서 "색상"은 "빨강", "노랑", "초록"의 세 가지 범주를 가진 범주형 변수이다. 단일 핫 인코딩에는 가능한 각 값에 대해 하나의 열과 원래의 데이터 집합의 각 행에 대해 하나의 행이 포함된다. (원래 데이터셋에서 가로로 늘리는 느낌!) 원래 값이 "빨강"이었다면 "빨강" 열에 1을 넣고, 원래 값이 "노랑"이었다면 "노랑"열에 1을 넣는 식이다.    
  
@@ -322,4 +327,4 @@ MAE: 160679.18917034855
 파이프라인은 머신러닝 코드를 정리하고 오류를 방지하는 데 유용하며, 특히 정교한 데이터 전처리가 있는 워크플로우에 유용하다.
 
 
-![intermediate_ML](/assets/img/수료증/shshuu-Intermediate_ML.png)
+![intermediate_ML](/assets/img/수료증/박민서-Intermediate_ML.png)
