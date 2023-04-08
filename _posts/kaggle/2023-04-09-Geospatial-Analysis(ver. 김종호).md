@@ -154,15 +154,15 @@ Name: geometry, dtype: geometry
 wild_lands의 geometry 데이터는 POLYGON(다각형)인 것을 확인할 수 있다.
 
 ~~~ py
-# 캠핑장 위치 (점) 
+# 캠핑장 위치 
 POI_data = gpd.read_file("../input/geospatial-learn-course-data/DEC_pointsinterest/DEC_pointsinterest/Decptsofinterest.shp")
 campsites = POI_data.loc[POI_data.ASSET=='PRIMITIVE CAMPSITE'].copy()
 
-# 하이킹 코스 (직선)
+# 하이킹 코스 
 roads_trails = gpd.read_file("../input/geospatial-learn-course-data/DEC_roadstrails/DEC_roadstrails/Decroadstrails.shp")
 trails = roads_trails.loc[roads_trails.ASSET=='FOOT TRAIL'].copy()
 
-# 뉴욕 주 경계 (다각형)
+# 뉴욕 주 경계 
 counties = gpd.read_file("../input/geospatial-learn-course-data/NY_county_boundaries/NY_county_boundaries/NY_county_boundaries.shp")
 ~~~
 
@@ -184,3 +184,121 @@ trails.plot(color='black', markersize=1, ax=ax)
 ![post3](/assets/img/Geospatial/Geospatial_Analysis_3.png)
 
 
+## 2. Coordinate Reference Systems
+---
+### 2.1 Introduction
+---
+
+지구의 표면을 2차원으로 묘사해서 지도에 나타내지만, 실제 지구는 3차원 구체이다. 그래서 <strong> map projection </strong> 방법을 사용하여 평면 표면으로 렌더링해야한다. 한 마디로 3차원 지구타원체를 2차원 평면의 네모난 지도에 펼쳐 넣은 것이라고 생각하면 된다.
+
+
+각각의 Map projection 방법은 지구 표면을 어떤 방식으로 왜곡하지만, 동시에 유용한 속성을 유지한다. 예를 들면
+- 면적 보존 투영(the equal-area projection) : 면적을 보존한다. 국가나 도시의 면적을 계산하려는 경우에 효과적이다.
+- 등거리 투영(the equidistant projection) : 거리를 보존하다. 비행 거리를 계산하는데 쓸모가 있다. 
+
+<!-- 사진4 -->
+![post4](/assets/img/Geospatial/Geospatial_Analysis_4.png)
+
+좌표 참조 시스템(CRS)을 사용하여 투영된 점들이 지구상의 실제 위치와 어떻게 부합하는지 볼 것이다. 그리고 GeoPandas에서 좌표 참조 시스템을 사용하는 방법에 대해서 알아보자.
+
+### 2.2 Setting the CRS
+---
+
+shapefile에서 GeoDataFrame을 생성하면, 좌표 참조 시스템이 import된다.
+
+~~~ py
+# Load a GeoDataFrame containing regions in Ghana
+regions = gpd.read_file("../input/geospatial-learn-course-data/ghana/ghana/Regions/Map_of_Regions_in_Ghana.shp")
+print(regions.crs)
+~~~
+
+<pre>
+epsg:32630
+</pre>
+
+EPSG는  European Petroleum Survey Group의 약자로, 지리 정보 시스템(GIS)에서 사용되는 좌표 참조 시스템(CRS)을 식별하기 위한 코드 체계이다. 이 체계는 전 세계적으로 사용되며, 각 CRS에는 고유한 EPSG 코드가 할당된다. 네이버지도는 'EPSG:5179' 이며, 카카오맵은 'EPSG:5181'이다. 코드별로 원점도 다르고 특성도 다르다. 위의 epsg:32630는 각도를 보존해 해상 항법에 유용하지만 면적을 약간 왜곡시킨다는 단점이 있다.
+
+만약 shp파일이 아닌 csv파일로 GeoDataFrame을 생성할 때는 CRS를 설정해야 한다.
+
+아래 코드의 EPSG:4326은 지구의 위도와 경도를 사용한다. GPS 데이터와 같은 위치 데이터를 처리하는데 효과적이다.
+
+~~~ py
+# 데이터 로딩
+facilities_df = pd.read_csv("../input/geospatial-learn-course-data/ghana/ghana/health_facilities.csv")
+
+# DataFrame 에서 GeoDataFrame로 변환
+facilities = gpd.GeoDataFrame(facilities_df, geometry=gpd.points_from_xy(facilities_df.Longitude, facilities_df.Latitude))
+
+# CRS -> EPSG 4326
+facilities.crs = {'init': 'epsg:4326'}
+
+# 상위 5개 행 출력
+facilities.head()
+~~~
+
+|   | Region  | District         | FacilityName            | Type          | Town         | Ownership  | Latitude | Longitude | geometry                 |
+|---|---------|------------------|-------------------------|---------------|--------------|------------|----------|-----------|--------------------------|
+| 0 | Ashanti | Offinso North    | A.M.E Zion Clinic       | Clinic        | Afrancho     | CHAG       | 7.40801  | -1.96317  | POINT (-1.96317 7.40801) |
+| 1 | Ashanti | Bekwai Municipal | Abenkyiman Clinic       | Clinic        | Anwiankwanta | Private    | 6.46312  | -1.58592  | POINT (-1.58592 6.46312) |
+| 2 | Ashanti | Adansi North     | Aboabo Health Centre    | Health Centre | Aboabo No 2  | Government | 6.22393  | -1.34982  | POINT (-1.34982 6.22393) |
+| 3 | Ashanti | Afigya-Kwabre    | Aboabogya Health Centre | Health Centre | Aboabogya    | Government | 6.84177  | -1.61098  | POINT (-1.61098 6.84177) |
+| 4 | Ashanti | Kwabre           | Aboaso Health Centre    | Health Centre | Aboaso       | Government | 6.84177  | -1.61098  | POINT (-1.61098 6.84177) |
+
+코드 셀을 해석해보자.
+
+- 먼저 cvs파일을 로딩 후  DataFrame에서 GeoDataFrame 으로 변환했다. 
+- csv파일로 GeoDataFrame을 생성했기에 CRS를 설정해주었다. 
+- gdp.points_from_xy()은 위도와 경도 열에서 Point를 생성한다. 
+
+### 2.3 Re-projecting
+---
+
+재투영(Re-projecting)은 좌표 참조 시스템을 변경하는 과정을 말한다. GeoPandas에서는 to_crs() 메소드를 사용하여 수행한다. to_crs() 메소드는 "geometry" 열의 좌표값만 변경시키고, 다른 열의 값은 그대로 유지가 된다. 
+
+두 개 이상의 GeoDataFrame을 그릴 때, 모든 GeoDataFrame이 같은 CRS를 사용하는 것이 중요하다. 다른 좌표를 가진 GeoDataFrame를 지도 위에 표시할 경우, 데이터가 지도 상에 잘못된 위치에 표시될 수도 있기 때문이다.
+
+아래 코드는 CRS를 변경하고 지도에 나타내는 작업을 수행한다.
+
+~~~ py
+# Create a map
+ax = regions.plot(figsize=(8,8), color='whitesmoke', linestyle=':', edgecolor='black')
+facilities.to_crs(epsg=32630).plot(markersize=1, ax=ax)
+~~~
+
+<!-- 사진5 -->
+![post5](/assets/img/Geospatial/Geospatial_Analysis_5.png)
+
+to_crs() 메소드는 "geometry" 열의 좌표값만 변경시키고, 다른 열의 값은 그대로 유지가 된다. 
+
+~~~ py
+# The "Latitude" and "Longitude" columns are unchanged
+facilities.to_crs(epsg=32630).head()
+~~~
+
+|   | Region  | District         | FacilityName            | Type          | Town         | Ownership  | Latitude | Longitude | geometry                      |
+|---|---------|------------------|-------------------------|---------------|--------------|------------|----------|-----------|-------------------------------|
+| 0 | Ashanti | Offinso North    | A.M.E Zion Clinic       | Clinic        | Afrancho     | CHAG       | 7.40801  | -1.96317  | POINT (614422.662 818986.851) |
+| 1 | Ashanti | Bekwai Municipal | Abenkyiman Clinic       | Clinic        | Anwiankwanta | Private    | 6.46312  | -1.58592  | POINT (656373.863 714616.547) |
+| 2 | Ashanti | Adansi North     | Aboabo Health Centre    | Health Centre | Aboabo No 2  | Government | 6.22393  | -1.34982  | POINT (682573.395 688243.477) |
+| 3 | Ashanti | Afigya-Kwabre    | Aboabogya Health Centre | Health Centre | Aboabogya    | Government | 6.84177  | -1.61098  | POINT (653484.490 756478.812) |
+| 4 | Ashanti | Kwabre           | Aboaso Health Centre    | Health Centre | Aboaso       | Government | 6.84177  | -1.61098  | POINT (653484.490 756478.812) |
+
+
+EPSG 코드가 GeoPandas에 없을 경우에는, 좌표 참조 시스템의 "pro4 string"을 사용하여 CRS를 변경하면 된다. 예를 들어 epsg:4362을 변환하는 proj4 문자열은 다음과 같다.
+
+~~~py
+# Change the CRS to EPSG 4326
+# epsg4326 : +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+regions.to_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs").head()
+~~~
+
+|   | Region        | geometry                                          |
+|---|---------------|---------------------------------------------------|
+| 0 | Ashanti       | POLYGON ((-1.30985 7.62302, -1.30786 7.62198, ... |
+| 1 | Brong Ahafo   | POLYGON ((-2.54567 8.76089, -2.54473 8.76071, ... |
+| 2 | Central       | POLYGON ((-2.06723 6.29473, -2.06658 6.29420, ... |
+| 3 | Eastern       | POLYGON ((-0.21751 7.21009, -0.21747 7.20993, ... |
+| 4 | Greater Accra | POLYGON ((0.23456 6.10986, 0.23484 6.10974, 0.... |
+
+### 2.4 Attributes of geometric objects
+---
