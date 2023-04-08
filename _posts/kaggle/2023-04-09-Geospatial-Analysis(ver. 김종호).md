@@ -68,8 +68,9 @@ full_data.head()
 
 ### 1.3 Prerequisites
 ---
-GeoPandas는 파이썬에서 지리정보 데이터 처리의 기하학적 연산과 시각화 등을 돕는 패키지이다. GeoPandas에는 두 가지의 자료형 GeoSeries와 GeoDataFrame이 있다.GeoPandas는 이름에서 알 수 있듯이, Pandas와 비슷하며 다루는 방법에도 큰 차이가 없다. 
+GeoPandas는 파이썬에서 지리정보 데이터 처리의 기하학적 연산과 시각화 등을 돕는 패키지이다. GeoPandas에는 두 가지의 자료형 GeoSeries와 GeoDataFrame이 있다. GeoPandas는 이름에서 알 수 있듯이, Pandas와 비슷하며 다루는 방법에도 큰 차이가 없다. 
 
+- 타입확인
 ~~~ py
 type(full_data)
 ~~~
@@ -78,13 +79,13 @@ type(full_data)
 geopandas.geodataframe.GeoDataFrame
 </pre>
 
-판다스와 같이 일부 열만 추출하는 것도 가능하다.
+- 일부 열 추출
 
 ~~~ py
 data = full_data.loc[:, ["CLASS", "COUNTY", "geometry"]].copy()
 ~~~
 
-value_counts() 메서드를 사용해서 다양한 토지 유형의 목록과 데이터 셋에 나타나는 횟수도 파악할 수 있다.
+- 토지 유형의 목록 및 데이터 셋에 나타나는 횟수 파악
 
 ~~~ py
 data.CLASS.value_counts()
@@ -103,7 +104,7 @@ CANOE AREA                      1
 Name: CLASS, dtype: int64
 </pre>
 
-loc, iloc, isin 도 사용가능하다.
+- loc(iloc),  isin 
 
 ~~~ py
 wild_lands = data.loc[data.CLASS.isin(['WILD FOREST', 'WILDERNESS'])].copy()
