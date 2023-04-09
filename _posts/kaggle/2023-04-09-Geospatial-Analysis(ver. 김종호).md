@@ -428,7 +428,7 @@ facilities.head()
     <td>CHAG</td>
     <td>7.40801</td>
     <td>-1.96317</td>
-    <td>POINT (614422.662 818986.851)</td>
+    <td>POINT (-1.96317 7.40801)</td>
   </tr>
   <tr>
     <td>1</td>
@@ -440,7 +440,7 @@ facilities.head()
     <td>Private</td>
     <td>6.46312</td>
     <td>-1.58592</td>
-    <td>POINT (656373.863 714616.547)</td>
+    <td>POINT (-1.58592 6.46312)</td>
   </tr>
   <tr>
     <td>2</td>
@@ -452,7 +452,7 @@ facilities.head()
     <td>Government</td>
     <td>6.22393</td>
     <td>-1.34982</td>
-    <td>POINT (682573.395 688243.477)</td>
+    <td>POINT (-1.34982 6.22393)</td>
   </tr>
   <tr>
     <td>3</td>
@@ -464,7 +464,7 @@ facilities.head()
     <td>Government</td>
     <td>6.84177</td>
     <td>-1.61098</td>
-    <td>POINT (653484.490 756478.812)</td>
+    <td>POINT (-1.61098 6.84177)</td>
   </tr>
   <tr>
     <td>4</td>
@@ -476,7 +476,7 @@ facilities.head()
     <td>Government</td>
     <td>6.84177</td>
     <td>-1.61098</td>
-    <td>POINT (653484.490 756478.812)</td>
+    <td>POINT (-1.61098 6.84177)</td>
   </tr>
 </tbody>
 </table>
