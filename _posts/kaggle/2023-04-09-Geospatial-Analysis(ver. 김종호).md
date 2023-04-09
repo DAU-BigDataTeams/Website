@@ -1,20 +1,19 @@
----  
-title: 포스트 제목을 작성해주세요(이왕이면 흥미있는 제목 선택)  
-layout: post  (건들지 말아주세요)   
-categories : [python-study, ] (포스트에 대한 키워드입니다 HashTag라고 생각하면 좋아요 띄어쓰기는 불가하니 '-'를 통해 이어주세요. 단, python-study는 지우지 말아주세요 ex. big-data 또한 대소문자 구별이 필요합니다.)  
-image : 건들지 말아주세요
-description:  (글 설명인데 제목과 동일하게 하면 됩니다.)  
-customexcerpt: (포스트 썸네일 아래 짧게 적히는 글입니다. 흥미롭게 작성하거나 글 첫 서론 1~2문장을 적어주면 됩니다.)  
+---
+title: Geospatial Analysis_1 지도를 시각화하는 방법에 대해서 학습해보자!
+layout: post
+categories : [kaggle,Geospatial-Analysis]
+image : /assets/img/Geospatial/Certificate_Geo_analysis(jongho).png
+description:  지도를 시각화하는 방법에 대해서 학습해보자!
+customexcerpt:  GeoPandas을 활용하면 데이터를 지도에 쉽게 시각화할 수 있다.
 ---
 
 <span class = "alert g">작성자 : 김종호</span>
 
+# Geospatial Analysis
 
 <!-- 아래 2줄은 목차를 나타내기 위한 심볼이니 건들지 말아 주세요 -->
 * random line to make it work. This will be removed.
 {:toc} 
-
-# Geospatial Analysis
 
 ## 1. Your First Map
 ---
@@ -23,16 +22,16 @@ customexcerpt: (포스트 썸네일 아래 짧게 적히는 글입니다. 흥미
 
 ![post0](/assets/img/Geospatial/Geospatial_Analysis_0.png)
 
-다음과 같은 문제를  <strong> Geospatial Analysis </strong>을 통해 해결책을 제시할 수 있다.
+다음과 같은 문제들은 <strong> Geospatial Analysis </strong>을 통해 해결책을 제시할 수 있다.
 
 - 세계적인 비영리 단체가 필리핀에 진출하지 않은 곳은 어디인가?
-- 멸종위기종 보라색 마틴의 북미와 남미 간 이동 경로를 파악하고 새들이 자연보호구역으로 오가는가?
+- 멸종위기종 보라색 마틴의 북미와 남미 간 이동 경로는 자연보호구역 안에 속해있는가?
 - 캘리포니아 주의 스타벅스 중 다음 리저브 로스터리 매장으로 유력한 후보지는 어디인가?
 - 일본에서 추가적인 지진 보강으로 얻을 수 있는 잠재적 이익이 가장 큰 지역은 어디인가?
 - 뉴욕시는 차량 사고에 대처할 수 있는 충분한 병원이 있는가? 도시의 어떤 지역이 차량 사고 대응에 취약한가?
 - 부산시 어르신 놀이터 최적 입지는 어디인가?
 
-또한 보스턴시의 범죄 현황을 시각화하고, 유럽의 우수 대학을 탐색할 수 있다.
+등등 ..
 
 ### 1.2 Reading data
 ---
@@ -44,14 +43,13 @@ import geopandas as gpd
 
 다양한 지리공간 파일 형식이 존재한다. 예를 들면 shapefile, GeoJSON, KML, GPKG 등이 있다. 이 과정에서는 이들 파일 형식의 차이점에 대해서는 다루지 않는다. 가장 일반적으로 사용되는 지리공간 파일 형식은 Shaplefile이라는 점만 알아두자.
 
-모든 지리공간 파일 형식은 <strong> gpd.read_file() </strong> 함수를 사용하여 
+모든 지리공간 파일 형식은 <strong> `gpd.read_file()` </strong> 함수를 사용하여 
 이용할 수 있다.
 
 다음 코드는 뉴욕 주에서 환경 보호국이 관리하는 산림, 야생 지역 등에 대한 정보가 들어있는 shapefile를 로드한다.
 
 ~~~ py
 full_data = gpd.read_file("../input/geospatial-learn-course-data/DEC_lands/DEC_lands/DEC_lands.shp")
-
 # 불러온 데이터의 상위 5개 행 출력
 full_data.head()
 ~~~
@@ -112,7 +110,7 @@ wild_lands = data.loc[data.CLASS.isin(['WILD FOREST', 'WILDERNESS'])].copy()
 wild_lands.head()
 ~~~
 
-| CLASS | COUNTY      | geometry |                                                   |
+|       | CLASS       | COUNTY   | geometry                                          |
 |-------|-------------|----------|---------------------------------------------------|
 | 0     | WILD FOREST | DELAWARE | POLYGON ((486093.245 4635308.586, 486787.235 4... |
 | 1     | WILD FOREST | DELAWARE | POLYGON ((491931.514 4637416.256, 491305.424 4... |
@@ -124,17 +122,16 @@ wild_lands.head()
 ### 1.4 Create your first map!
 ---
 
-plot() 메서드를 이용해서 데이터를 시각화 해보자
+`plot()` 메서드를 이용해서 데이터를 시각화 해보자
 
 ~~~ py
-
 wild_lands.plot()
 ~~~
 
 <!-- 사진1자리-->
 ![post1](/assets/img/Geospatial/Geospatial_Analysis_1.png)
 
-GeoDataFrame은 <strong> "geometry" </strong> 이라는 특수한 열을 가지고 있다. plot() 메서드를 이용하면, GeoPandas 내부의 geometry 데이터를 손쉽게 시각화 할 수 있다. geometry 데이터는 지리정보를 표현하는 점, 선, 도형을 의미하는데 GeoPandas는 내부적으로 점, 선, 도형을 Shapely 패키지를 사용하여 처리한다.
+GeoDataFrame은 <strong> `"geometry"` </strong> 이라는 특수한 열을 가지고 있다. `plot()` 메서드를 이용하면, GeoPandas 내부의 `geometry` 데이터를 손쉽게 시각화 할 수 있다. `geometry` 데이터는 지리정보를 표현하는 점, 선, 도형을 의미하는데 GeoPandas는 내부적으로 점, 선, 도형을 Shapely 패키지를 사용하여 처리한다.
 
 <!-- 사진2자리-->
 ![post2](/assets/img/Geospatial/Geospatial_Analysis_2.png)
@@ -152,7 +149,7 @@ wild_lands.geometry.head()
 Name: geometry, dtype: geometry
 </pre>
 
-wild_lands의 geometry 데이터는 POLYGON(다각형)인 것을 확인할 수 있다.
+wild_lands의 `geometry` 데이터는 POLYGON(다각형)인 것을 확인할 수 있다.
 
 ~~~ py
 # 캠핑장 위치 
@@ -179,7 +176,7 @@ campsites.plot(color='maroon', markersize=2, ax=ax)
 trails.plot(color='black', markersize=1, ax=ax)
 ~~~
 
-<strong> 중요한점은 ax에 값을 설정해야 모든 정보를 동일한 지도 위에 표시할 수 있다는 점이다!<strong> 
+<strong> 중요한점은 `ax`에 값을 설정해야 모든 정보를 동일한 지도 위에 표시할 수 있다는 점이다!</strong> 
 
 <!-- 사진3 -->
 ![post3](/assets/img/Geospatial/Geospatial_Analysis_3.png)
@@ -190,10 +187,11 @@ trails.plot(color='black', markersize=1, ax=ax)
 ### 2.1 Introduction
 ---
 
-지구의 표면을 2차원으로 묘사해서 지도에 나타내지만, 실제 지구는 3차원 구체이다. 그래서 <strong> map projection </strong> 방법을 사용하여 평면 표면으로 렌더링해야한다. 한 마디로 3차원 지구타원체를 2차원 평면의 네모난 지도에 펼쳐 넣은 것이라고 생각하면 된다.
+지구의 표면을 2차원으로 묘사해서 지도에 나타내지만, 실제 지구는 3차원 구체이다. 그래서 <strong> map projection </strong> 방법을 사용하여 평면 표면으로 렌더링 해야한다. 한 마디로 3차원 지구타원체를 2차원 평면의 네모난 지도에 펼쳐야 한다!
 
+> 렌더링이란? 3차원 공간에 객체(Object)를 2차원 화면의 하나의 장면(scene)에 바꾸어 표현하는 것을 의미한다.
 
-각각의 Map projection 방법은 지구 표면을 어떤 방식으로 왜곡하지만, 동시에 유용한 속성을 유지한다. 예를 들면
+각각의 Map projection 방법은 지구 표면을 알 수 없는(?) 방식으로 왜곡하지만, 동시에 유용한 속성을 유지한다. 예를 들면
 - 면적 보존 투영(the equal-area projection) : 면적을 보존한다. 국가나 도시의 면적을 계산하려는 경우에 효과적이다.
 - 등거리 투영(the equidistant projection) : 거리를 보존하다. 비행 거리를 계산하는데 쓸모가 있다. 
 
@@ -217,8 +215,10 @@ print(regions.crs)
 epsg:32630
 </pre>
 
-EPSG는  European Petroleum Survey Group의 약자로, 지리 정보 시스템(GIS)에서 사용되는 좌표 참조 시스템(CRS)을 식별하기 위한 코드 체계이다. 이 체계는 전 세계적으로 사용되며, 각 CRS에는 고유한 EPSG 코드가 할당된다. 네이버지도는 'EPSG:5179' 이며, 카카오맵은 'EPSG:5181'이다. 코드별로 원점도 다르고 특성도 다르다. 위의 epsg:32630는 각도를 보존해 해상 항법에 유용하지만 면적을 약간 왜곡시킨다는 단점이 있다.
+위의 epsg:32630는 각도를 보존해 해상 항법에 유용하지만 면적을 약간 왜곡시킨다는 단점이 있다.
 
+> EPSG는  European Petroleum Survey Group의 약자로, 지리 정보 시스템(GIS)에서 사용되는 좌표 참조 시스템(CRS)을 식별하기 위한 코드 체계이다. 이 체계는 전 세계적으로 사용되며, 각 CRS에는 고유한 EPSG 코드가 할당된다. 네이버지도는 'EPSG:5179' 이며, 카카오맵은 'EPSG:5181'이다. 코드별로 원점도 다르고 특성도 다르다.
+ 
 만약 shp파일이 아닌 csv파일로 GeoDataFrame을 생성할 때는 CRS를 설정해야 한다.
 
 아래 코드의 EPSG:4326은 지구의 위도와 경도를 사용한다. GPS 데이터와 같은 위치 데이터를 처리하는데 효과적이다.
@@ -245,16 +245,17 @@ facilities.head()
 | 3 | Ashanti | Afigya-Kwabre    | Aboabogya Health Centre | Health Centre | Aboabogya    | Government | 6.84177  | -1.61098  | POINT (-1.61098 6.84177) |
 | 4 | Ashanti | Kwabre           | Aboaso Health Centre    | Health Centre | Aboaso       | Government | 6.84177  | -1.61098  | POINT (-1.61098 6.84177) |
 
+
 코드 셀을 해석해보자.
 
-- 먼저 cvs파일을 로딩 후  DataFrame에서 GeoDataFrame 으로 변환했다. 
+- 먼저 cvs파일을 로딩 후  DataFrame에서 GeoDataFrame으로 변환했다. 
 - csv파일로 GeoDataFrame을 생성했기에 CRS를 설정해주었다. 
 - gdp.points_from_xy()은 위도와 경도 열에서 Point를 생성한다. 
 
 ### 2.3 Re-projecting
 ---
 
-재투영(Re-projecting)은 좌표 참조 시스템을 변경하는 과정을 말한다. GeoPandas에서는 to_crs() 메소드를 사용하여 수행한다. to_crs() 메소드는 "geometry" 열의 좌표값만 변경시키고, 다른 열의 값은 그대로 유지가 된다. 
+<strong>재투영(Re-projecting)</strong> 은 좌표 참조 시스템을 변경하는 과정을 말한다. GeoPandas에서는 `to_crs()` 메소드를 사용하여 수행한다. 
 
 두 개 이상의 GeoDataFrame을 그릴 때, 모든 GeoDataFrame이 같은 CRS를 사용하는 것이 중요하다. 다른 좌표를 가진 GeoDataFrame를 지도 위에 표시할 경우, 데이터가 지도 상에 잘못된 위치에 표시될 수도 있기 때문이다.
 
@@ -269,7 +270,7 @@ facilities.to_crs(epsg=32630).plot(markersize=1, ax=ax)
 <!-- 사진5 -->
 ![post5](/assets/img/Geospatial/Geospatial_Analysis_5.png)
 
-to_crs() 메소드는 "geometry" 열의 좌표값만 변경시키고, 다른 열의 값은 그대로 유지가 된다. 
+`to_crs()` 메소드는 `geometry` 열의 좌표값만 변경시킬 뿐, 다른 열의 값에는 영향을 미치지 않는다.
 
 ~~~ py
 # The "Latitude" and "Longitude" columns are unchanged
@@ -303,3 +304,58 @@ regions.to_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs").head()
 
 ### 2.4 Attributes of geometric objects
 ---
+
+`geometry` 열의 유형에 따라 해당 데이터를 나타내는 방식 또한 달라지게 된다. 예를 들어
+- 지진의 진앙 지점을 나타내는 경우는 Point
+- 도로를 나타내는 경우는 LineString
+- 국가 경계를 나타내는 경우는 Polygon 
+
+이 사용된다.
+
+이러한 지리 객체 유형에는 내장된 속성이 있어 빠르게 데이터를 분석할 수 있다. 
+
+~~~ py
+# Get the x-coordinate of each point
+facilities.geometry.head().x
+~~~
+
+<pre>
+0   -1.96317
+1   -1.58592
+2   -1.34982
+3   -1.61098
+4   -1.61098
+dtype: float64
+</pre>
+
+이렇게 x속성을 가져와 x좌표로 사용할 수 있다.
+
+LineString의 길이는 `length` 속성에서 가져오거나 Polygon의 면적은 `area` 속성에서 가져올 수 있다. 
+
+~~~ py
+# Calculate the area (in square meters) of each polygon in the GeoDataFrame 
+regions.loc[:, "AREA"] = regions.geometry.area / 10**6
+
+print("Area of Ghana: {} square kilometers".format(regions.AREA.sum()))
+print("CRS:", regions.crs)
+regions.head()
+~~~
+
+<pre>
+Area of Ghana: 239584.5760055668 square kilometers
+CRS: epsg:32630
+</pre>
+
+|   | Region        | geometry                                          | AREA         |
+|---|---------------|---------------------------------------------------|--------------|
+| 0 | Ashanti       | POLYGON ((686446.075 842986.894, 686666.193 84... | 24379.017777 |
+| 1 | Brong Ahafo   | POLYGON ((549970.457 968447.094, 550073.003 96... | 40098.168231 |
+| 2 | Central       | POLYGON ((603176.584 695877.238, 603248.424 69... | 9665.626760  |
+| 3 | Eastern       | POLYGON ((807307.254 797910.553, 807311.908 79... | 18987.625847 |
+| 4 | Greater Accra | POLYGON ((858081.638 676424.913, 858113.115 67... | 3706.511145  |
+
+등면적 투영법이 아니라 면적 계산에 약간의 오차는 있지만 실제 면적과 크게 차이나지 않아 충분히 분석에 활용가능하다.
+
+
+<!-- 사진6 -->
+![post6](/assets/img//Geospatial/Certificate_Geo_analysis(jongho).png)
