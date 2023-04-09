@@ -2,7 +2,7 @@
 title: Geospatial Analysis_1 지도를 시각화하는 방법에 대해서 학습해보자!
 layout: post
 categories : [kaggle,Geospatial-Analysis]
-image : /assets/img/Geospatial/Certificate_Geo_analysis(jongho).png
+image : /assets/img/수료증/Certificate_Geo_analysis(jongho).png
 description:  지도를 시각화하는 방법에 대해서 학습해보자!
 customexcerpt:  GeoPandas을 활용하면 데이터를 지도에 쉽게 시각화할 수 있다.
 ---
@@ -728,4 +728,4 @@ CRS: epsg:32630
 
 
 <!-- 사진6 -->
-![post6](/assets/img//Geospatial/Certificate_Geo_analysis(jongho).png)
+![post6](/assets/img/수료증/Certificate_Geo_analysis(jongho).png)
