@@ -54,14 +54,144 @@ full_data = gpd.read_file("../input/geospatial-learn-course-data/DEC_lands/DEC_l
 full_data.head()
 ~~~
 
-| OBJECTID | OBJECTID | CATEGORY         | UNIT | FACILITY                         | CLASS       | UMP           | DESCRIPTIO                      | REGION | COUNTY   | URL                                    | SOURCE           | UPDATE_ | OFFICE    | ACRES      | LANDS_UID | GREENCERT | SHAPE_AREA   | SHAPE_LEN   | geometry                                          |
-|----------|----------|------------------|------|----------------------------------|-------------|---------------|---------------------------------|--------|----------|----------------------------------------|------------------|---------|-----------|------------|-----------|-----------|--------------|-------------|---------------------------------------------------|
-| 0        | 1        | FOR PRES DET PAR | CFP  | HANCOCK FP DETACHED PARCEL       | WILD FOREST | None          | DELAWARE COUNTY DETACHED PARCEL | 4      | DELAWARE | http://www.dec.ny.gov/                 | DELAWARE RPP     | 5/12    | STAMFORD  | 738.620192 | 103       | N         | 2.990365e+06 | 7927.662385 | POLYGON ((486093.245 4635308.586, 486787.235 4... |
-| 1        | 2        | FOR PRES DET PAR | CFP  | HANCOCK FP DETACHED PARCEL       | WILD FOREST | None          | DELAWARE COUNTY DETACHED PARCEL | 4      | DELAWARE | http://www.dec.ny.gov/                 | DELAWARE RPP     | 5/12    | STAMFORD  | 282.553140 | 1218      | N         | 1.143940e+06 | 4776.375600 | POLYGON ((491931.514 4637416.256, 491305.424 4... |
-| 2        | 3        | FOR PRES DET PAR | CFP  | HANCOCK FP DETACHED PARCEL       | WILD FOREST | None          | DELAWARE COUNTY DETACHED PARCEL | 4      | DELAWARE | http://www.dec.ny.gov/                 | DELAWARE RPP     | 5/12    | STAMFORD  | 234.291262 | 1780      | N         | 9.485476e+05 | 5783.070364 | POLYGON ((486000.287 4635834.453, 485007.550 4... |
-| 3        | 4        | FOR PRES DET PAR | CFP  | GREENE COUNTY FP DETACHED PARCEL | WILD FOREST | None          | None                            | 4      | GREENE   | http://www.dec.ny.gov/                 | GREENE RPP       | 5/12    | STAMFORD  | 450.106464 | 2060      | N         | 1.822293e+06 | 7021.644833 | POLYGON ((541716.775 4675243.268, 541217.579 4... |
-| 4        | 6        | FOREST PRESERVE  | AFP  | SARANAC LAKES WILD FOREST        | WILD FOREST | SARANAC LAKES | None                            | 5      | ESSEX    | http://www.dec.ny.gov/lands/22593.html | DECRP, ESSEX RPP | 12/96   | RAY BROOK | 69.702387  | 1517      | N         | 2.821959e+05 | 2663.909932 | POLYGON ((583896.043 4909643.187, 583891.200 4... |
-
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>OBJECTID</th>
+    <th>CATEGORY</th>
+    <th>UNIT</th>
+    <th>FACILITY</th>
+    <th>CLASS</th>
+    <th>UMP</th>
+    <th>DESCRIPTIO</th>
+    <th>REGION</th>
+    <th>COUNTY</th>
+    <th>URL</th>
+    <th>SOURCE</th>
+    <th>UPDATE_</th>
+    <th>OFFICE</th>
+    <th>ACRES</th>
+    <th>LANDS_UID</th>
+    <th>GREENCERT</th>
+    <th>SHAPE_AREA</th>
+    <th>SHAPE_LEN</th>
+    <th>geometry</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>FOR PRES DET PAR</td>
+    <td>CFP</td>
+    <td>HANCOCK FP DETACHED PARCEL</td>
+    <td>WILD FOREST</td>
+    <td>None</td>
+    <td>DELAWARE COUNTY DETACHED PARCEL</td>
+    <td>4</td>
+    <td>DELAWARE</td>
+    <td>http://www.dec.ny.gov/</td>
+    <td>DELAWARE RPP</td>
+    <td>5/12</td>
+    <td>STAMFORD</td>
+    <td>738.620192</td>
+    <td>103</td>
+    <td>N</td>
+    <td>2.990365e+06</td>
+    <td>7927.662385</td>
+    <td>POLYGON ((486093.245 4635308.586, 486787.235 4...</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>FOR PRES DET PAR</td>
+    <td>CFP</td>
+    <td>HANCOCK FP DETACHED PARCEL</td>
+    <td>WILD FOREST</td>
+    <td>None</td>
+    <td>DELAWARE COUNTY DETACHED PARCEL</td>
+    <td>4</td>
+    <td>DELAWARE</td>
+    <td>http://www.dec.ny.gov/</td>
+    <td>DELAWARE RPP</td>
+    <td>5/12</td>
+    <td>STAMFORD</td>
+    <td>282.553140</td>
+    <td>1218</td>
+    <td>N</td>
+    <td>1.143940e+06</td>
+    <td>4776.375600</td>
+    <td>POLYGON ((491931.514 4637416.256, 491305.424 4...</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>3</td>
+    <td>FOR PRES DET PAR</td>
+    <td>CFP</td>
+    <td>HANCOCK FP DETACHED PARCEL</td>
+    <td>WILD FOREST</td>
+    <td>None</td>
+    <td>DELAWARE COUNTY DETACHED PARCEL</td>
+    <td>4</td>
+    <td>DELAWARE</td>
+    <td>http://www.dec.ny.gov/</td>
+    <td>DELAWARE RPP</td>
+    <td>5/12</td>
+    <td>STAMFORD</td>
+    <td>234.291262</td>
+    <td>1780</td>
+    <td>N</td>
+    <td>9.485476e+05</td>
+    <td>5783.070364</td>
+    <td>POLYGON ((486000.287 4635834.453, 485007.550 4...</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>4</td>
+    <td>FOR PRES DET PAR</td>
+    <td>CFP</td>
+    <td>GREENE COUNTY FP DETACHED PARCEL</td>
+    <td>WILD FOREST</td>
+    <td>None</td>
+    <td>None</td>
+    <td>4</td>
+    <td>GREENE</td>
+    <td>http://www.dec.ny.gov/</td>
+    <td>GREENE RPP</td>
+    <td>5/12</td>
+    <td>STAMFORD</td>
+    <td>450.106464</td>
+    <td>2060</td>
+    <td>N</td>
+    <td>1.822293e+06</td>
+    <td>7021.644833</td>
+    <td>POLYGON ((541716.775 4675243.268, 541217.579 4...</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>6</td>
+    <td>FOREST PRESERVE</td>
+    <td>AFP</td>
+    <td>SARANAC LAKES WILD FOREST</td>
+    <td>WILD FOREST</td>
+    <td>SARANAC LAKES</td>
+    <td>None</td>
+    <td>5</td>
+    <td>ESSEX</td>
+    <td>http://www.dec.ny.gov/lands/22593.html</td>
+    <td>DECRP, ESSEX RPP</td>
+    <td>12/96</td>
+    <td>RAY BROOK</td>
+    <td>69.702387</td>
+    <td>1517</td>
+    <td>N</td>
+    <td>2.821959e+05</td>
+    <td>2663.909932</td>
+    <td>POLYGON ((583896.043 4909643.187, 583891.200 4...</td>
+  </tr>
+</tbody>
+</table>
 
 
 ### 1.3 Prerequisites
@@ -110,13 +240,48 @@ wild_lands = data.loc[data.CLASS.isin(['WILD FOREST', 'WILDERNESS'])].copy()
 wild_lands.head()
 ~~~
 
-|       | CLASS       | COUNTY   | geometry                                          |
-|-------|-------------|----------|---------------------------------------------------|
-| 0     | WILD FOREST | DELAWARE | POLYGON ((486093.245 4635308.586, 486787.235 4... |
-| 1     | WILD FOREST | DELAWARE | POLYGON ((491931.514 4637416.256, 491305.424 4... |
-| 2     | WILD FOREST | DELAWARE | POLYGON ((486000.287 4635834.453, 485007.550 4... |
-| 3     | WILD FOREST | GREENE   | POLYGON ((541716.775 4675243.268, 541217.579 4... |
-| 4     | WILD FOREST | ESSEX    | POLYGON ((583896.043 4909643.187, 583891.200 4... |
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>CLASS</th>
+    <th>COUNTY</th>
+    <th>geometry</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>0</td>
+    <td>WILD FOREST</td>
+    <td>DELAWARE</td>
+    <td>POLYGON ((486093.245 4635308.586, 486787.235 4...</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>WILD FOREST</td>
+    <td>DELAWARE</td>
+    <td>POLYGON ((491931.514 4637416.256, 491305.424 4...</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>WILD FOREST</td>
+    <td>DELAWARE</td>
+    <td>POLYGON ((486000.287 4635834.453, 485007.550 4...</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>WILD FOREST</td>
+    <td>GREENE</td>
+    <td>POLYGON ((541716.775 4675243.268, 541217.579 4...</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>WILD FOREST</td>
+    <td>ESSEX</td>
+    <td>POLYGON ((583896.043 4909643.187, 583891.200 4...</td>
+  </tr>
+</tbody>
+</table>
 
 
 ### 1.4 Create your first map!
@@ -237,14 +402,84 @@ facilities.crs = {'init': 'epsg:4326'}
 facilities.head()
 ~~~
 
-|   | Region  | District         | FacilityName            | Type          | Town         | Ownership  | Latitude | Longitude | geometry                 |
-|---|---------|------------------|-------------------------|---------------|--------------|------------|----------|-----------|--------------------------|
-| 0 | Ashanti | Offinso North    | A.M.E Zion Clinic       | Clinic        | Afrancho     | CHAG       | 7.40801  | -1.96317  | POINT (-1.96317 7.40801) |
-| 1 | Ashanti | Bekwai Municipal | Abenkyiman Clinic       | Clinic        | Anwiankwanta | Private    | 6.46312  | -1.58592  | POINT (-1.58592 6.46312) |
-| 2 | Ashanti | Adansi North     | Aboabo Health Centre    | Health Centre | Aboabo No 2  | Government | 6.22393  | -1.34982  | POINT (-1.34982 6.22393) |
-| 3 | Ashanti | Afigya-Kwabre    | Aboabogya Health Centre | Health Centre | Aboabogya    | Government | 6.84177  | -1.61098  | POINT (-1.61098 6.84177) |
-| 4 | Ashanti | Kwabre           | Aboaso Health Centre    | Health Centre | Aboaso       | Government | 6.84177  | -1.61098  | POINT (-1.61098 6.84177) |
-
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>Region</th>
+    <th>District</th>
+    <th>FacilityName</th>
+    <th>Type</th>
+    <th>Town</th>
+    <th>Ownership</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>geometry</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>0</td>
+    <td>Ashanti</td>
+    <td>Offinso North</td>
+    <td>A.M.E Zion Clinic</td>
+    <td>Clinic</td>
+    <td>Afrancho</td>
+    <td>CHAG</td>
+    <td>7.40801</td>
+    <td>-1.96317</td>
+    <td>POINT (614422.662 818986.851)</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Ashanti</td>
+    <td>Bekwai Municipal</td>
+    <td>Abenkyiman Clinic</td>
+    <td>Clinic</td>
+    <td>Anwiankwanta</td>
+    <td>Private</td>
+    <td>6.46312</td>
+    <td>-1.58592</td>
+    <td>POINT (656373.863 714616.547)</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Ashanti</td>
+    <td>Adansi North</td>
+    <td>Aboabo Health Centre</td>
+    <td>Health Centre</td>
+    <td>Aboabo No 2</td>
+    <td>Government</td>
+    <td>6.22393</td>
+    <td>-1.34982</td>
+    <td>POINT (682573.395 688243.477)</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Ashanti</td>
+    <td>Afigya-Kwabre</td>
+    <td>Aboabogya Health Centre</td>
+    <td>Health Centre</td>
+    <td>Aboabogya</td>
+    <td>Government</td>
+    <td>6.84177</td>
+    <td>-1.61098</td>
+    <td>POINT (653484.490 756478.812)</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Ashanti</td>
+    <td>Kwabre</td>
+    <td>Aboaso Health Centre</td>
+    <td>Health Centre</td>
+    <td>Aboaso</td>
+    <td>Government</td>
+    <td>6.84177</td>
+    <td>-1.61098</td>
+    <td>POINT (653484.490 756478.812)</td>
+  </tr>
+</tbody>
+</table>
 
 코드 셀을 해석해보자.
 
@@ -277,14 +512,84 @@ facilities.to_crs(epsg=32630).plot(markersize=1, ax=ax)
 facilities.to_crs(epsg=32630).head()
 ~~~
 
-|   | Region  | District         | FacilityName            | Type          | Town         | Ownership  | Latitude | Longitude | geometry                      |
-|---|---------|------------------|-------------------------|---------------|--------------|------------|----------|-----------|-------------------------------|
-| 0 | Ashanti | Offinso North    | A.M.E Zion Clinic       | Clinic        | Afrancho     | CHAG       | 7.40801  | -1.96317  | POINT (614422.662 818986.851) |
-| 1 | Ashanti | Bekwai Municipal | Abenkyiman Clinic       | Clinic        | Anwiankwanta | Private    | 6.46312  | -1.58592  | POINT (656373.863 714616.547) |
-| 2 | Ashanti | Adansi North     | Aboabo Health Centre    | Health Centre | Aboabo No 2  | Government | 6.22393  | -1.34982  | POINT (682573.395 688243.477) |
-| 3 | Ashanti | Afigya-Kwabre    | Aboabogya Health Centre | Health Centre | Aboabogya    | Government | 6.84177  | -1.61098  | POINT (653484.490 756478.812) |
-| 4 | Ashanti | Kwabre           | Aboaso Health Centre    | Health Centre | Aboaso       | Government | 6.84177  | -1.61098  | POINT (653484.490 756478.812) |
-
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>Region</th>
+    <th>District</th>
+    <th>FacilityName</th>
+    <th>Type</th>
+    <th>Town</th>
+    <th>Ownership</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>geometry</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>0</td>
+    <td>Ashanti</td>
+    <td>Offinso North</td>
+    <td>A.M.E Zion Clinic</td>
+    <td>Clinic</td>
+    <td>Afrancho</td>
+    <td>CHAG</td>
+    <td>7.40801</td>
+    <td>-1.96317</td>
+    <td>POINT (614422.662 818986.851)</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Ashanti</td>
+    <td>Bekwai Municipal</td>
+    <td>Abenkyiman Clinic</td>
+    <td>Clinic</td>
+    <td>Anwiankwanta</td>
+    <td>Private</td>
+    <td>6.46312</td>
+    <td>-1.58592</td>
+    <td>POINT (656373.863 714616.547)</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Ashanti</td>
+    <td>Adansi North</td>
+    <td>Aboabo Health Centre</td>
+    <td>Health Centre</td>
+    <td>Aboabo No 2</td>
+    <td>Government</td>
+    <td>6.22393</td>
+    <td>-1.34982</td>
+    <td>POINT (682573.395 688243.477)</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Ashanti</td>
+    <td>Afigya-Kwabre</td>
+    <td>Aboabogya Health Centre</td>
+    <td>Health Centre</td>
+    <td>Aboabogya</td>
+    <td>Government</td>
+    <td>6.84177</td>
+    <td>-1.61098</td>
+    <td>POINT (653484.490 756478.812)</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Ashanti</td>
+    <td>Kwabre</td>
+    <td>Aboaso Health Centre</td>
+    <td>Health Centre</td>
+    <td>Aboaso</td>
+    <td>Government</td>
+    <td>6.84177</td>
+    <td>-1.61098</td>
+    <td>POINT (653484.490 756478.812)</td>
+  </tr>
+</tbody>
+</table>
 
 EPSG 코드가 GeoPandas에 없을 경우에는, 좌표 참조 시스템의 "pro4 string"을 사용하여 CRS를 변경하면 된다. 예를 들어 epsg:4362을 변환하는 proj4 문자열은 다음과 같다.
 
@@ -294,13 +599,43 @@ EPSG 코드가 GeoPandas에 없을 경우에는, 좌표 참조 시스템의 "pro
 regions.to_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs").head()
 ~~~
 
-|   | Region        | geometry                                          |
-|---|---------------|---------------------------------------------------|
-| 0 | Ashanti       | POLYGON ((-1.30985 7.62302, -1.30786 7.62198, ... |
-| 1 | Brong Ahafo   | POLYGON ((-2.54567 8.76089, -2.54473 8.76071, ... |
-| 2 | Central       | POLYGON ((-2.06723 6.29473, -2.06658 6.29420, ... |
-| 3 | Eastern       | POLYGON ((-0.21751 7.21009, -0.21747 7.20993, ... |
-| 4 | Greater Accra | POLYGON ((0.23456 6.10986, 0.23484 6.10974, 0.... |
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>Region</th>
+    <th>geometry</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>0</td>
+    <td>Ashanti</td>
+    <td>POLYGON ((-1.30985 7.62302, -1.30786 7.62198, ...</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Brong Ahafo</td>
+    <td>POLYGON ((-2.54567 8.76089, -2.54473 8.76071, ...</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Central</td>
+    <td>POLYGON ((-2.06723 6.29473, -2.06658 6.29420, ...</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Eastern</td>
+    <td>POLYGON ((-0.21751 7.21009, -0.21747 7.20993, ...</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Greater Accra</td>
+    <td>POLYGON ((0.23456 6.10986, 0.23484 6.10974, 0....</td>
+  </tr>
+</tbody>
+</table>
+
 
 ### 2.4 Attributes of geometric objects
 ---
@@ -346,13 +681,48 @@ Area of Ghana: 239584.5760055668 square kilometers
 CRS: epsg:32630
 </pre>
 
-|   | Region        | geometry                                          | AREA         |
-|---|---------------|---------------------------------------------------|--------------|
-| 0 | Ashanti       | POLYGON ((686446.075 842986.894, 686666.193 84... | 24379.017777 |
-| 1 | Brong Ahafo   | POLYGON ((549970.457 968447.094, 550073.003 96... | 40098.168231 |
-| 2 | Central       | POLYGON ((603176.584 695877.238, 603248.424 69... | 9665.626760  |
-| 3 | Eastern       | POLYGON ((807307.254 797910.553, 807311.908 79... | 18987.625847 |
-| 4 | Greater Accra | POLYGON ((858081.638 676424.913, 858113.115 67... | 3706.511145  |
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>Region</th>
+    <th>geometry</th>
+    <th>AREA</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>0</td>
+    <td>Ashanti</td>
+    <td>POLYGON ((686446.075 842986.894, 686666.193 84...</td>
+    <td>24379.017777</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Brong Ahafo</td>
+    <td>POLYGON ((549970.457 968447.094, 550073.003 96...</td>
+    <td>40098.168231</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Central</td>
+    <td>POLYGON ((603176.584 695877.238, 603248.424 69...</td>
+    <td>9665.626760</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Eastern</td>
+    <td>POLYGON ((807307.254 797910.553, 807311.908 79...</td>
+    <td>18987.625847</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Greater Accra</td>
+    <td>POLYGON ((858081.638 676424.913, 858113.115 67...</td>
+    <td>3706.511145</td>
+  </tr>
+</tbody>
+</table>
 
 등면적 투영법이 아니라 면적 계산에 약간의 오차는 있지만 실제 면적과 크게 차이나지 않아 충분히 분석에 활용가능하다.
 
