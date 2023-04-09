@@ -68,7 +68,7 @@ full_data.head()
 ---
 GeoPandas는 파이썬에서 지리정보 데이터 처리의 기하학적 연산과 시각화 등을 돕는 패키지이다. GeoPandas에는 두 가지의 자료형 GeoSeries와 GeoDataFrame이 있다. GeoPandas는 이름에서 알 수 있듯이, Pandas와 비슷하며 다루는 방법에도 큰 차이가 없다. 
 
-- 타입확인
+- 타입 확인
 
 ~~~ py
 type(full_data)
