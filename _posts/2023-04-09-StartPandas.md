@@ -1,8 +1,8 @@
 ---  
 title: 판다스와 데이터분석 시작해보기!
-layout: post  (건들지 말아주세요)   
+layout: post 
 categories : [python-study, big-data, pandas ]
-image : 건들지 말아주세요
+image :
 description: 판다스와 데이터분석 시작해보기! 
 customexcerpt: 파이썬의 판다스 라이브러리를 통해 데이터 조작 및 분석을 효율적으로 처리하기 위한 첫 걸음을 내딛어보쟈!  
 ---
@@ -13,12 +13,6 @@ customexcerpt: 파이썬의 판다스 라이브러리를 통해 데이터 조작
 <!-- 아래 2줄은 목차를 나타내기 위한 심볼이니 건들지 말아 주세요 -->
 * random line to make it work. This will be removed.
 {:toc} 
-
-목차
-1. 왜 판다스인가
-2. 판다스의 자료형
-3. 데이터집합 불러오기
-4. 데이터확인하기 실습
 
 # 1. 왜 ‘판다스’인가?
 
@@ -143,7 +137,6 @@ df = pandas.read_csv('./fav_animal.csv')
 
 ## 데이터 확인하기 실습
 
-[fav_animal.csv](assets\img\pandas\filepath\fav_animal.csv)
 
 쟈! 그러면 이제 df 식탁에 어떤 재료들이 놓여져있는지 살펴보자!
 
@@ -361,8 +354,7 @@ None
         print("\n"*2)
         ```
         
-        [for_ggobong.xlsx](assets\img\pandas\filepath\for_ggobong.xlsx)
-        
+               
         ```
         <class 'pandas.core.frame.DataFrame'>
         RangeIndex: 4 entries, 0 to 3
