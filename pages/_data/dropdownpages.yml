@@ -1,0 +1,29 @@
+Member:
+# 멤버 명단 적기
+- name: 'Members'
+  url: 'memberhome.html'
+Study:
+# kaggle 관련 포스트
+  - name: 'Kaggle'
+    url: 'pages/kaggle.html'
+# 파이썬 스터디 관련 포스트
+  - name: 'Python'
+    url: 'pages/Python.html'
+# 판다스 스터디 관련 포스트
+  - name: 'Pandas'
+    url: 'pages/Pandas.html'
+# 딥러닝 스터디 관련 포스트
+  - name: 'AI' 
+    url: 'pages/artificial-intelligence.html'
+# Etc
+  - name: "Etc"
+    url: 'pages/etc.html'
+Award:
+# 수상 관련 포스트
+  - name: 'Awards' 
+    url: 'awards.html' 
+Seminar:
+# 세미나 관련 포스트
+  - name: 'Seminar'
+    url: 'seminar.html' 
+

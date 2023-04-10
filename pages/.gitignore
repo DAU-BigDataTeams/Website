@@ -1,0 +1,23 @@
+*.gem
+.bundle
+.jekyll-cache
+.sass-cache
+_site
+/_site
+Gemfile.lock
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+jump2python.pdf
+.idel
+.vscode
+# Firebase
+.firebaserc
+.firebase/
+# /.firebase/
+# firebase-debug.log
+
+# temporary
+temporary.md
+*.log
