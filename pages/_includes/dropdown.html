@@ -1,5 +1,0 @@
-{% assign type = include.type %}
-  {% for item in site.data.dropdownpages[type] %}
-  <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
-  {% endfor %}
-
