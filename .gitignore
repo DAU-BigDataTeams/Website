@@ -10,12 +10,14 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 jump2python.pdf
-
+.idel
+.vscode
 # Firebase
 .firebaserc
-# .firebase/
+.firebase/
 # /.firebase/
 # firebase-debug.log
 
 # temporary
 temporary.md
+*.log

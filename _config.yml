@@ -1,7 +1,7 @@
 # Site settings
-title: DAU-BigDataTeam(Data Decetive)
+title: DAU-BigDataTeam(Data Detective)
 description: "Donga Univ Computer AI Engineering BigDataTeam"
-url: "https://datadecetive.net" # Actual base url of the website
+url: "https://bigdatateam.net" # Actual base url of the website
 baseurl: "/"           # url of the jekyll blog. e.g. if you set url to "mysite.com" and baseurl to "blog", the jekyll website will work on "mysite.com/blog"
 author:
   name: "Jeonghyeon Park"
@@ -13,7 +13,7 @@ permalink: /:year/:month/:day/:title:output_ext
 plugins: [jekyll-paginate, jekyll-feed, jekyll-seo-tag, jekyll-sitemap]
 
 #Pagination
-paginate: 7
+paginate: 12
 paginate_path: "/page:num/"
 
 #SEO

@@ -1,9 +1,11 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- 네이버 웹어드바이저 -->
+    <meta name="naver-site-verification" content="6d73d5e856155578732584529003c48924c24299" />
+    
     <title>
         {% if page.title == "Home" %}
-            {{ site.title }} | {{ site.description }}
+            {{ site.title }}
         {% else %}
             {{ page.title }} | {{ site.title }}
       {% endif %}
@@ -15,6 +17,7 @@
 
     <!-- LINK TO ATOM FEED FOR SEO -->
     <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
 
     <!-- FAVICON -->
     <link rel="icon" href="{{"assets/favicon/favicon.ico" | relative_url }}" type="image/x-icon">
@@ -38,8 +41,8 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/syntax.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css?after" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/syntax.css?after" | relative_url }}">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
