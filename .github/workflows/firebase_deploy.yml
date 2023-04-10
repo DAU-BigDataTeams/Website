@@ -44,7 +44,7 @@ jobs:
         id: diff_check
         if: github.event_name == 'push' # only run for push event
         run: |
-          git diff --name-status --diff-filter=A HEAD~1 HEAD _posts/  /assets/img/ | grep -q "." && has_changes="yes" || has_changes="no"
+          git diff --name-status --diff-filter=A HEAD~1 HEAD _posts/ | grep -q "." && has_changes="yes" || has_changes="no"
           echo "has_changes=$has_changes" >> $GITHUB_ENV
 
       - name: Send Slack notification
