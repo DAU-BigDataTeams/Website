@@ -1,0 +1,40 @@
+#Google Analytics
+analytics-id: G-Z438CCPYGJ #leave blank to not use Analytics
+
+#Subtitle
+subtitle:
+  active: true
+  text: Donga Univ Computer AI Engineering BigDataTeam
+
+#Nav 
+nav:
+  pages:
+    active: true
+  social:
+    active: true
+  dropdown:
+    active: true
+    
+#Featured images in homepage
+featured-img:
+  active: true
+
+#Show categories at the end of posts
+categories:
+  active: true
+
+#Show date and read time under the post title
+date-under-post:
+  active: true
+
+#Use MathJAX
+mathjax:
+  active: true
+
+#Show related posts based on categories
+related-posts:
+  active: true
+  title: "비슷한 주제의 다양한 Post도 있어요!"
+
+#Comments
+comments: true
