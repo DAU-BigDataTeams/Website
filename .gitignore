@@ -14,7 +14,7 @@ jump2python.pdf
 .vscode
 # Firebase
 .firebaserc
-# .firebase/
+.firebase/
 # /.firebase/
 # firebase-debug.log
 
