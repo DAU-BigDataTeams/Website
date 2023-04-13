@@ -17,7 +17,7 @@ jump2python.pdf
 .firebase/
 # /.firebase/
 # firebase-debug.log
-
+cache/
 # temporary
 temporary.md
 *.log
