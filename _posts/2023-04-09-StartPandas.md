@@ -2,7 +2,7 @@
 title: 판다스와 데이터분석 시작해보기!
 layout: post 
 categories : [python-study, big-data, pandas ]
-image :
+image : /assets/img/pandas/img/Untitled.png
 description: 판다스와 데이터분석 시작해보기! 
 customexcerpt: 파이썬의 판다스 라이브러리를 통해 데이터 조작 및 분석을 효율적으로 처리하기 위한 첫 걸음을 내딛어보쟈!  
 ---
@@ -172,7 +172,7 @@ None
     
     ~~(사실 글로 설명해도 되지만 내가 그림을 그리고 싶기 때문!)~~
     
-    ![info_method_print](assets\img\pandas\img\Untitled.png)
+    ![info_method_print](/assets/img/pandas/img/Untitled.png)
     
     이와 같이 행과 열의 개수에 대한 정보와 null값이 있는지 없는지도 알 수 있고, 그 레코드에 입력된 데이터들의 종류에 대해서도 알 수 있다!
     
@@ -296,7 +296,7 @@ None
         ```
         ~~(근데 옛날에도 단백질, 식이섬유, 나트륨, 이런 개념이 있었을까?)~~
         
-        ![dataset_explain_drawing](assets\img\pandas\img\Untitled%1.png)
+        ![dataset_explain_drawing](/assets/img/pandas/img/Untitled 1.png)
         
         이런 상황이라고 칠 때,
         
@@ -455,11 +455,11 @@ None
         
         다만, 해당 시리즈자료에 대한 정보를 반환하는 형식이 조금 다르다.
         
-        ![메소드를 사용하지 않은 방식의 결과창](assets\img\pandas\img\Untitled%2.png)
+        ![메소드를 사용하지 않은 방식의 결과창](/assets/img/pandas/img/Untitled 2.png)
         
         메소드를 사용하지 않은 방식의 결과창
         
-        ![loc메소드를 사용한 방식의 결과창](assets\img\pandas\img\Untitled%3.png)
+        ![loc메소드를 사용한 방식의 결과창](/assets/img/pandas/img/Untitled 3.png)
         
         loc메소드를 사용한 방식의 결과창
         
@@ -560,7 +560,7 @@ None
                 
                 또한 iloc는 index를 기준으로 작동하기 때문에 추출할 때 columns 데이터의 슬라이싱란에는 ‘문자열’이 아닌 ‘정수index값’이 들어가야 정상적으로 작동한다!
                 
-                ![iloc vs. loc](assets\img\pandas\img\Untitled%4.png)
+                ![iloc vs. loc](/assets/img/pandas/img/Untitled 4.png)
                 
                 iloc vs. loc
                 
