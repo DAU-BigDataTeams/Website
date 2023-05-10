@@ -1,7 +1,7 @@
 ---  
 title: 판다스와 데이터분석 시작해보기!
 layout: post 
-categories : [python-study, big-data, pandas ]
+categories : [pandas-study, big-data, pandas ]
 image : /assets/img/pandas/img/Untitled.png
 description: 판다스와 데이터분석 시작해보기! 
 customexcerpt: 파이썬의 판다스 라이브러리를 통해 데이터 조작 및 분석을 효율적으로 처리하기 위한 첫 걸음을 내딛어보쟈!  
