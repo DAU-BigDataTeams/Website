@@ -2,7 +2,7 @@
 title: 데이터 시각화하기! 
 layout: post  
 categories : [pandas-study, matplotlib] 
-image : /assets/img/study/pandas/pandas0.png
+image : /assets/img/study/pandas/pandas0.jpg
 description:  데이터 시각화하기!
 customexcerpt: matplotlib를 통한 간단한 데이터 시각화를 통해 내 데이터를 눈으로 보고, 꾸며보자!
 ---
