@@ -56,7 +56,7 @@ for idx, row in daytime_robberies.iterrows():
 m_2                            
 ~~~
 
-`folium.Marker()를 사용하여 지도에 마커를 추가한다. 각 마커에는 주간 강도 범죄가 발생한 위치데이터가 들어있다. 
+`folium.Marker()`를 사용하여 지도에 마커를 추가한다. 각 마커에는 주간 강도 범죄가 발생한 위치데이터가 들어있다. 
 
 <!-- 사진7자리-->
 ![post7](/assets/img/Geospatial/Geospatial_Analysis_7.png)
@@ -113,7 +113,6 @@ for i in range(0,len(daytime_robberies)):
         radius=20,
         color=color_producer(daytime_robberies.iloc[i]['HOUR'])).add_to(m_4)
 
-# 
 m_4
 ~~~
 
@@ -207,7 +206,7 @@ B3     1421
 Name: DISTRICT, dtype: int64
 </pre>
 
-<strong>`plot_dict`가 districts와 동일한 인덱스를 가져야하는 것 </strong> 이 매우 중요하다. 이를 통해 코드가 지리적 경계와 적절한 색상을 매치시키기 때문이다. 
+<strong>`plot_dict`가 districts와 동일한 인덱스를 가져야하는 것 </strong> 이 매우 중요하다. 이를 통해 코드가 지리적 경계와 적절한 색상을 매칭시키기 때문이다. 
 
 ~~~ py
 # 지도 생성
@@ -270,7 +269,7 @@ print(location.address)
 
 여러 주소를 지오코딩해야 할 경우에는 람다함수와 반복문을 이용해서 주소 목록을 순차적으로 지오코딩하면 된다.
 
-이 때 주의해야 할 점은 지오코딩이 실패하는 경우를 대비해 try/expect 문을 사용해 예외처리를 꼭 해줘야한다!
+이 때 <strong>주의해야 할 점</strong>은 지오코딩이 실패하는 경우를 대비해 try/expect 문을 사용해 예외처리를 꼭 해줘야한다!
 
 ~~~ py
 
@@ -361,7 +360,7 @@ m
 ### 2.2 Table joins
 ---
 
-서로 다른 소스에서 데이터를 결합하는 방법에 대해 학습해보자. GeoDataFrame과 속성 조인을 수행할 떄는 `gpd.GeoDataFrame.merge()를 사용한다. 이를 설명하기 위해 유럽의 각 국가에 대한 경계를 포함하는 GeoDataFrame인 europe_boundaries와 함께 작업한다.
+서로 다른 소스에서 데이터를 결합하는 방법에 대해 학습해보자. GeoDataFrame과 속성 조인을 수행할 떄는 `gpd.GeoDataFrame.merge()`를 사용한다. 이를 설명하기 위해 유럽의 각 국가에 대한 경계를 포함하는 GeoDataFrame인 europe_boundaries와 함께 작업한다.
 
 > europe_boundaries : 각 국가의 경계 포함
 
@@ -517,7 +516,7 @@ europe.head()
 </tbody>
 </table>
 
-다른 유형의 조인으로는 Spatial join(공간 조인)이 있다. 공간 조인을 사용하면 `geometry` 열에 있는 객체들 간의 공간적 관계를 기반으로 GeoDataFrame을 결합한다. 예를 들어, 유럽 대학교의 지오코딩된 주소를 포함하는 universities 데이터프레임이 있다. 공간 조인(gpd.sjoin())을 사용하면 각 대학을 해당 국가와 매칭할 수 있다
+다른 유형의 조인으로는 Spatial join(공간 조인)이 있다. 공간 조인을 사용하면 `geometry` 열에 있는 객체들 간의 공간적 관계를 기반으로 GeoDataFrame을 결합한다. 예를 들어, 유럽 대학교의 지오코딩된 주소를 포함하는 universities 데이터프레임이 있다. 공간 조인(`gpd.sjoin()`)을 사용하면 각 대학을 해당 국가와 매칭할 수 있다
 
 ~~~ py
 # 유럽의 국가와 대학을 공간 조인
@@ -674,7 +673,7 @@ Name: 9, dtype: object
 ### 3.2 Creating a buffer
 ----
 
-특정 지점으로부터 일정 반경 내의 지도상의 모든 지점을 이해하고 싶다면, 가장 간단한 방법은 버퍼를 생성하는 것이다. 아래 코드는 12개의 다른 다각형 객체를 포함하는 GeoSeries인 two_mile_buffer를 생성한다.
+특정 지점으로부터 일정 반경 내의 지도상의 모든 지점을 이해하고 싶다면, 가장 간단한 방법은 버퍼를 생성하는 것이다. 아래 코드는 12개의 다른 다각형 객체를 포함하는 `GeoSeries`인 two_mile_buffer를 생성한다.
 
 ~~~ py
 two_mile_buffer = stations.geometry.buffer(2*5280)
@@ -697,7 +696,7 @@ dtype: geometry
 m = folium.Map(location=[39.9526,-75.1652], zoom_start=11)
 # 히트맵 지도에 추가
 HeatMap(data=releases[['LATITUDE', 'LONGITUDE']], radius=15).add_to(m)
-#각 역의 위도와 경도를 사용하여 Marker 생성 후 추가
+# 각 역의 위도와 경도를 사용하여 Marker 생성 후 추가
 for idx, row in stations.iterrows():
     Marker([row['LATITUDE'], row['LONGITUDE']]).add_to(m)
 # 좌표계 변환한 후 GeoJson형식으로 생성
@@ -719,5 +718,7 @@ print('Type:', type(my_union))
 my_union
 ~~~
 
-<!-- 사진165자리-->
+<!-- 사진16자리-->
 ![post16](/assets/img/Geospatial/Geospatial_Analysis_16.png)
+
+끝!
