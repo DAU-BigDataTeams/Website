@@ -4,7 +4,7 @@ layout: post
 categories : [kaggle,Geospatial-Analysis]
 image : /assets/img/수료증/Certificate_Geo_analysis(jongho).png
 description:  지도를 시각화하는 방법에 대해서 학습해보자!
-customexcerpt:  지오코딩, 테이블 조인, 근접성 분석과 함께 상호작용적인 지도를 활용하여 지리공간 데이터에서 유의미한 정보를 추출해보자!
+customexcerpt:  지오코딩, 테이블 조인, 근접성 분석과 상호작용적인 지도를 활용하여 지리공간 데이터에서 유의미한 정보를 추출해보자!
 ---
 
 <span class = "alert g">작성자 : 김종호</span>
@@ -15,9 +15,6 @@ customexcerpt:  지오코딩, 테이블 조인, 근접성 분석과 함께 상�
 {:toc} 
 
 ## 1. Interactive Maps
----
-
-### 1.1 Introduction
 ---
 
 이 튜토리얼에서는 `folium` 패키지를 사용하여 대화형 지도를 만드는 방법에 대해 배우게 된다. 대화형 지도란 사용자가 지도 위의 요소를 클릭하거나 드래그하거나 특정 위치를 클릭할 경우 해당 위치를 확인할 수 있는 지도이다. 보스턴 지역의 범죄 데이터를 시각화함으로써 `folium`에 대해 학습해보자
@@ -40,11 +37,10 @@ m_1
 - `tiles` : 타일의 뜻은 작은 이미지 조각으로 나누어진 지도의 부분을 나타낸다. 위에서는 기본 타일인 OpenStreetMap을 사용했다. Mapbox Bright, Stamen Terrian, CartoDB posiron 등이 있다.
 - `zoom_start` : 지도의 확대/축소를 설정한다. 값이 높을수록 지도가 더 가까이 확대된다.
 
-
-### 1.2 Plotting points
+### 1.1 Plotting points
 ---
 
-이제 지도에 범죄 데이터를 추가해보자. 데이터 로딩 단계는 앞서 많이 봤기 때문에 스킵하고 데이터가 로드되었다고 가정하고 진행하겠다.
+이제 지도에 범죄 데이터를 추가해보자. 데이터 로딩 단계는 앞서 많이 봤기 때문에 스킵하고 데이터가 로드되었다고 가정하고 진행~
 
 ~~~ py
 daytime_robberies = crimes[((crimes.OFFENSE_CODE_GROUP == 'Robbery') & \
@@ -57,7 +53,6 @@ m_2 = folium.Map(location=[42.32,-71.0589], tiles='cartodbpositron', zoom_start=
 for idx, row in daytime_robberies.iterrows():
     Marker([row['Lat'], row['Long']]).add_to(m_2)
 
-# 
 m_2                            
 ~~~
 
@@ -67,7 +62,7 @@ m_2
 ![post7](/assets/img/Geospatial/Geospatial_Analysis_7.png)
 
 
-많은 수의 마커를 추가할 때 `folium.plugins.MarkerCluser()를 사용하면 지도를 깔끔하게 유지하는데 도움이 된다. 각 마커는 MarkerCluster 객체에 추가된다.
+많은 수의 마커를 추가할 때 `folium.plugins.MarkerCluser()`를 사용하면 지도를 깔끔하게 유지하는데 도움이 된다. 각 마커는 MarkerCluster 객체에 추가된다.
 
 ~~~ py
 # 지도 생성
@@ -93,9 +88,7 @@ m_3
 ![post9](/assets/img/Geospatial/Geospatial_Analysis_9.png)
 
 
-
-
-### 1.3 Bubble maps
+### 1.2 Bubble maps
 ---
 
 Bubble maps은 마커 대신 원을 사용한다. 각 원의 크기와 색상을 다르게 함으로써 위치와 두 가지 다른 변수 간의 관계를 나타낼 수 있다.
@@ -127,14 +120,12 @@ m_4
 <!-- 사진10자리-->
 ![post10](/assets/img/Geospatial/Geospatial_Analysis_10.png)
 
-
-
-`folium.Circle()에 매개변수로는
+`folium.Circle()`에 매개변수로는
 - `location` : 지도의 초기 중심 위치 설정(위도, 경도)
 - `radius` : 원의 반지름 설정
 - `color` : 각 원의 색상을 설정
 
-### 1.4 Heatmaps
+### 1.3 Heatmaps
 ---
 
 `folium.plugins.HeatMap()`을 사용하여 Heatmap을 생성한다. 히트맵을 통해 도시에 범죄밀도를 시각화할 수 있으며, 빨간색 지역은 비교적 범죄 사건이 더 많은 지역을 나타낸다. 
@@ -154,7 +145,7 @@ m_5
 
 대부분의 범죄는 도시 중심가에서 발생한 것을 볼 수 있다.
 
-### 1.5 Choropleth maps
+### 1.4 Choropleth maps
 ---
 
 범죄가 경찰 관할구에 따라 어떻게 다른지 이해하기 위해 Choropleth map을 생성한다. Choropleth map이란 지리적 영역에 따라 데이터 값을 시각화하는 방법 중 하나이다. 이 맵은 지리적 영역의 다양한 영역에 대해 다른 색상 또는 색조로 구분된 데이터를 표현한다.
@@ -201,22 +192,22 @@ districts.head()
 </tbody>
 </table>
 
-또한 `plot_dict`
+
 ~~~ py
 #plot_dict : 각 구역별 범죄 발생 건수를 보여주는 Pandas Series
 plot_dict = crimes.DISTRICT.value_counts()
 plot_dict.head()
 ~~~
-
-D4     2885 <br>
-B2     2231 <br>
-A1     2130 <br>
-C11    1899 <br>
-B3     1421 <br>
+<pre>
+D4     2885 
+B2     2231 
+A1     2130 
+C11    1899 
+B3     1421 
 Name: DISTRICT, dtype: int64
+</pre>
 
 <strong>`plot_dict`가 districts와 동일한 인덱스를 가져야하는 것 </strong> 이 매우 중요하다. 이를 통해 코드가 지리적 경계와 적절한 색상을 매치시키기 때문이다. 
-
 
 ~~~ py
 # 지도 생성
@@ -232,11 +223,8 @@ Choropleth(geo_data=districts.__geo_interface__,
 m_6
 ~~~
 
-
 <!-- 사진12자리-->
 ![post12](/assets/img/Geospatial/Geospatial_Analysis_12.png)
-
-
 
 `Choropleth()`에 매개변수로는
 - `geo_data` : 각 지리적 영역의 경계를 포함하는 GeoJSON
@@ -282,7 +270,7 @@ print(location.address)
 
 여러 주소를 지오코딩해야 할 경우에는 람다함수와 반복문을 이용해서 주소 목록을 순차적으로 지오코딩하면 된다.
 
-이 때 주의해야 할 점은 지오코딩이 실패하는 경우를 대비해서 try/expect 문을 사용해 예외처리를 꼭 해줘야한다!
+이 때 주의해야 할 점은 지오코딩이 실패하는 경우를 대비해 try/expect 문을 사용해 예외처리를 꼭 해줘야한다!
 
 ~~~ py
 
@@ -370,14 +358,13 @@ m
 <!-- 사진14자리-->
 ![post14](/assets/img/Geospatial/Geospatial_Analysis_14.png)
 
-
-
 ### 2.2 Table joins
 ---
 
 서로 다른 소스에서 데이터를 결합하는 방법에 대해 학습해보자. GeoDataFrame과 속성 조인을 수행할 떄는 `gpd.GeoDataFrame.merge()를 사용한다. 이를 설명하기 위해 유럽의 각 국가에 대한 경계를 포함하는 GeoDataFrame인 europe_boundaries와 함께 작업한다.
+
 > europe_boundaries : 각 국가의 경계 포함
-> 
+
 <table>
 <thead>
   <tr>
@@ -420,8 +407,9 @@ m
   </tr>
 </tbody>
 </table>
+
 > europe_stats : 각 국가의 예상 인구 및 국내 총생산(GDP)포함
-> 
+ 
 <table>
 <thead>
   <tr>
@@ -621,15 +609,12 @@ Only 87 of the universities were located in Europe (in 14 different countries).
 
 위의 공간 조인은 GeoDataFrame인 `universities`와 `europe`의 "geometry"열을 비교한다. 만약 `universities`의 Point객체가 `europe`의 Polygon 객체와 교차한다면, 해당하는 행은 결합된다. 
 
-`gpd.sjoin()` 메서드는 hop 또는 op 인자를 통해 다양하게 정의할 수 있따. 예를 들어 how ='left'로 설정하면 SQL의 왼쪽조인과 동등한 조인을 수행한다. 
-
+`gpd.sjoin()` 메서드는 hop 또는 op 인자를 통해 다양하게 정의할 수 있다. 예를 들어 how ='left'로 설정하면 SQL의 왼쪽조인과 동등한 조인을 수행한다. 
 
 ## 3. Proximity Analysis
 ---
 
 이 튜토리얼에서는 근접 분석 기법 중 지도 상의 점들 사이의 거리 측정, 특정 피처로부터 일정 반경 내의 모든 점들 선택하는 방법을 배울 것이다.
-
-
 
 ### 3.1 Measuring distance
 ---
@@ -686,7 +671,6 @@ LONGITUDE                 -75.185448
 Name: 9, dtype: object
 </pre>
 
-
 ### 3.2 Creating a buffer
 ----
 
@@ -719,7 +703,6 @@ for idx, row in stations.iterrows():
 # 좌표계 변환한 후 GeoJson형식으로 생성
 GeoJson(two_mile_buffer.to_crs(epsg=4326)).add_to(m)
 
-# Show the map
 m
 ~~~
 
