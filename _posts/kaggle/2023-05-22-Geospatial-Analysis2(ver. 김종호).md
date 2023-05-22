@@ -4,14 +4,13 @@ layout: post
 categories : [kaggle,Geospatial-Analysis]
 image : /assets/img/수료증/Certificate_Geo_analysis(jongho).png
 description:  지도를 시각화하는 방법에 대해서 학습해보자!
-customexcerpt:  GeoPandas을 활용하면 데이터를 지도에 쉽게 시각화할 수 있다.
+customexcerpt:  지오코딩, 테이블 조인, 근접성 분석과 함께 상호작용적인 지도를 활용하여 지리공간 데이터에서 유의미한 정보를 추출해보자!
 ---
 
 <span class = "alert g">작성자 : 김종호</span>
 
 # Geospatial Analysis
 
-<!-- 아래 2줄은 목차를 나타내기 위한 심볼이니 건들지 말아 주세요 -->
 * random line to make it work. This will be removed.
 {:toc} 
 
