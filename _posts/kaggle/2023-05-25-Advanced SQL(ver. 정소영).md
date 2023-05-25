@@ -3,7 +3,7 @@ title: Kaggle로 SQL에 대해 더 깊이 배워보자!
 layout: post
 description: Kaggle로 SQL에 대해 더 깊이 배워보자!
 categories: [kaggle]
-image: /assets/img/수료증/정소영-Advanced SQL수료증.png
+image: /assets/img/수료증/정소영-Advanced-SQL수료증.png
 customexcerpt: SQL에 대해 복잡하고 고급 기능을 활용하여 데이터를 쿼리하고 조작하는 것에 대해 학습합니다.
 ---
 
@@ -26,7 +26,7 @@ pets table (ID, Name, Age, Animal)
 
 
 ## JOINs
-~~~python
+~~~py
 query = """
         SELECT o.Name AS Owner_Name, p.Name AS Pet_Name
         FROM `bigquery-public-data.pet_records.owners` AS o
@@ -48,7 +48,7 @@ owners 테이블의 모든 행을 포함하는 테이블을 만들경우 : LEFT 
 왼쪽은 쿼리에서 JOIN 앞에 나타나는 테이블을 말합니다.  
 (오른쪽은 JOIN 뒤에 있는 테이블을 말합니다.)
 
-~~~python
+~~~py
 `bigquery-public-data.pet_records.owners`AS o INNER JOIN `biggquery-public-data.pet_records.pets` AS p
 
 #INNER JOIN을 LEFT JOIN으로 바꾸면 두 테이블에 일치하는 항목이 있는 모든 행과 왼쪽 테이블의 모든 행(일치 여부에 관계없이)이 반환됩니다. 
@@ -64,7 +64,7 @@ FULL JOIN은 두 테이블의 모든 행을 반환합니다.
 JOIN은 서로 다른 테이블의 결과를 수평적으로 결합합니다.  
 대신 열을 수직으로 연결하려는 경우 UNIX를 사용하여 연결할 수 있습니다.
 
-~~~python
+~~~py
 query = """
         SELECT Age FROM `bigquery-public-data.pet_recods.pets`
         UNION ALL
@@ -91,7 +91,7 @@ Intro to SQL에서는 행 집합을 기반으로 계산을 수행하는 집계 �
 
 ## Syntax
 
-~~~python
+~~~py
 query = """
         SELECT *,
            AVG(time) OVER(
@@ -170,7 +170,7 @@ BigQuery 데이터셋에서 찾을 수 있는 가장 복잡한 데이터 유형�
 
 ![pets_and_toys table schema](/assets/img/Advanced-SQL/sql8.png) 
 
- ~~~python
+ ~~~py
  query = """
         SELECT Name AS Pet_Name,
             Toy.Name AS Toy_Name,
@@ -199,7 +199,7 @@ BigQuery 데이터셋에서 찾을 수 있는 가장 복잡한 데이터 유형�
 
 반복되는 필드의 각 항목은 데이터 유형이 동일한 (0개 이상) 값의 정렬된 목록 또는 배열입니다.  
 
-~~~python
+~~~py
 query = """
         SELEC Name As Pet_NAme,
                 Toy_Type
@@ -225,7 +225,7 @@ more_pets_and_toys 테이블의 경우 "Name"과 "Type"은 모두 "Toy"에 포�
 
 ![more_pets_and_toys table schema](/assets/img/Advanced-SQL/sql14.png)  
 
-~~~python
+~~~py
 query = """
         SELECT Name AS Pet_Name,
                 t.Name AS Toy_Name,
@@ -263,7 +263,7 @@ query = """
 
 Kaggle의 공개 데이터 세트 BigQuery 통합 사용합니다.
 
-~~~python
+~~~py
 from google.cloud import bigquery
 from time import time
 
@@ -292,7 +292,7 @@ def show_time_to_run(query):
     어떤 칼럼이 필요한지 고민할 필요가 없어 편리하지만 매우 비효율적일 수 있습니다.  
     텍스트 필드가 다른 필드보다 큰 경향이 있기 때문에 필요하지 않은 텍스트 필드가 있는 경우 특히 중요합니다.  
 
-~~~python
+~~~py
 star_query = "SELECT * FROM `bigquery-public-data.github_repos.contents`"
 show_amount_of_data_scanned(star_query)
 
@@ -308,7 +308,7 @@ Data processed: 2.466 GB
 
 2. Read less data.  
    
-~~~python
+~~~py
 more_data_query = """
                   SELECT MIN(start_station_name) AS start_station_name,
                       MIN(end_station_name) AS end_station_name,
@@ -354,7 +354,7 @@ Data processed: 0.06 GB
 
     여러 GitHub 저장소에 있는 고유한 커밋 수와 파일 수를 계산합니다.
 
-~~~python
+~~~ py
 big_join_query = """
                  SELECT repo,
                      COUNT(DISTINCT c.committer.name) as num_committers,
