@@ -237,6 +237,7 @@ query = """
 #"Toy" 열이 반복되므로 UNNEST() 기능으로 평평하게 합니다.  
 #평평한 열에 t의 별칭을 부여하므로 "Toys" 열에 있는 "Name" 및 "Type" 필드를 t로 참조할 수 있습니다.(t.Name, t.Type)
 ~~~
+
 ![UNNEST](/assets/img/Advanced-SQL/sql15.png) 
 
 
@@ -255,11 +256,13 @@ query = """
 여러 가지 전략을 사용해서  비용을 크게 절감할 수 있는 방법도 있습니다.  
 
 ## Some useful funtions
+
 두 가지 기능을 사용하여 서로 다른 쿼리의 효율성을 비교합니다.  
 - show_mount_of_data_message는 쿼리에서 사용하는 데이터의 양을 표시합니다.  
 - show_time_to_run()은 쿼리가 실행되는 데 걸리는 시간을 출력합니다.  
 
 Kaggle의 공개 데이터 세트 BigQuery 통합 사용합니다.
+
 ~~~python
 from google.cloud import bigquery
 from time import time
@@ -281,11 +284,13 @@ def show_time_to_run(query):
     print('Time to run: {} seconds'.format(round(end-start, 3)))
 
 ~~~
+
 ## Strategies
+
 1. Only select the columns you want.(원하는 열만 선택합니다.)  
-SELECT * FROM ...을 사용하여 쿼리를 시작하는 것이 좋습니다.  
-어떤 칼럼이 필요한지 고민할 필요가 없어 편리하지만 매우 비효율적일 수 있습니다.  
-텍스트 필드가 다른 필드보다 큰 경향이 있기 때문에 필요하지 않은 텍스트 필드가 있는 경우 특히 중요합니다.  
+    SELECT * FROM ...을 사용하여 쿼리를 시작하는 것이 좋습니다.  
+    어떤 칼럼이 필요한지 고민할 필요가 없어 편리하지만 매우 비효율적일 수 있습니다.  
+    텍스트 필드가 다른 필드보다 큰 경향이 있기 때문에 필요하지 않은 텍스트 필드가 있는 경우 특히 중요합니다.  
 
 ~~~python
 star_query = "SELECT * FROM `bigquery-public-data.github_repos.contents`"
@@ -302,6 +307,7 @@ Data processed: 2.466 GB
 ~~~
 
 2. Read less data.  
+   
 ~~~python
 more_data_query = """
                   SELECT MIN(start_station_name) AS start_station_name,
@@ -334,19 +340,20 @@ Data processed: 0.06 GB
 ~~~
 
 3. Avoid N:N JOINs.  
-이 과정에서 실행한 대부분의 JOIN은 1:1 JOIN이었습니다.  
-이 경우 각 테이블의 각 행에는 다른 테이블의 일치 항목이 하나만 있습니다.  
-![1:1 JOIN](/assets/img/Advanced-SQL/sql16.png)  
-  
-다른 유형의 JOIN은 N:1 JOIN입니다.  
-여기서 한 테이블의 각 행은 다른 테이블의 여러 행과 일치할 수 있습니다.  
-![N:1 JOIN](/assets/img/Advanced-SQL/sql17.png)  
+    이 과정에서 실행한 대부분의 JOIN은 1:1 JOIN이었습니다.  
+    이 경우 각 테이블의 각 행에는 다른 테이블의 일치 항목이 하나만 있습니다.  
+    ![1:1 JOIN](/assets/img/Advanced-SQL/sql16.png)  
 
-마지막으로, 한 테이블의 행 그룹이 다른 테이블의 행 그룹과 일치할 수 있는 N:N JOIN입니다.  
-일반적으로 다른 모든 것이 동일한 경우, 이 유형의 JOIN은 조인 중인 두 개의 (원래) 테이블보다 더 많은 행을 포함하는 테이블을 생성합니다.  
-![N:N JOIN](/assets/img/Advanced-SQL/sql18.png) 
-  
-여러 GitHub 저장소에 있는 고유한 커밋 수와 파일 수를 계산합니다.
+    다른 유형의 JOIN은 N:1 JOIN입니다.  
+    여기서 한 테이블의 각 행은 다른 테이블의 여러 행과 일치할 수 있습니다.  
+    ![N:1 JOIN](/assets/img/Advanced-SQL/sql17.png)  
+
+    마지막으로, 한 테이블의 행 그룹이 다른 테이블의 행 그룹과 일치할 수 있는 N:N JOIN입니다.  
+    일반적으로 다른 모든 것이 동일한 경우, 이 유형의 JOIN은 조인 중인 두 개의 (원래) 테이블보다 더 많은 행을 포함하는 테이블을 생성합니다.  
+    ![N:N JOIN](/assets/img/Advanced-SQL/sql18.png) 
+
+    여러 GitHub 저장소에 있는 고유한 커밋 수와 파일 수를 계산합니다.
+
 ~~~python
 big_join_query = """
                  SELECT repo,
