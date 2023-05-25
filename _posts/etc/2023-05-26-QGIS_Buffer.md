@@ -20,14 +20,12 @@ customexcerpt:  파이썬과 QGIS를 활용해 버퍼 분석을 해보자!
 
 > QGIS는 Quantum GIS의 약자로, 오픈 소스 기반의 지리 정보 시스템(GIS) 소프트웨어이다. 다양한 데이터 형식을 지원하며, 벡터 데이터(점, 선, 다각형 등)와 래스터 데이터(지도, 공간, 영상 등)를 처리할 수 있다.
 
-QGIS 설치방법이나 개념 등은 이미 다른 많은 블로그에서 소개하고 있으니, 생략하고
-간단한 것부터 포스팅 할 예정이다. 
+QGIS 설치방법이나 개념 등은 이미 다른 많은 블로그에서 소개하고 있으니, 생략하고 포스팅 할 예정이다. 
 
 오늘 소개할 내용은 다음과 같다.
 
 - QGIS + 파이썬 사용가이드
 - Buffer QGIS 코드 실습
-- CLIP QGIS 코드 실습
 - 간단한 실습 : 부산 공공 와이파이 소외지역 찾기
 
 ## 2. QGIS + 파이썬 사용가이드
@@ -66,7 +64,7 @@ Buffer에서 주로 쓰는 파라미터로는
 - INPUT : 버퍼를 적용한 SHP파일
 > SHP파일이란? 벡터방식으로 공간정보를 저장하는 파일, 점(Point), 선(Line), 면(Polygon) 중 한 속성을 가진다.
 - DISTANCE : 버퍼 적용거리
-- SEGMENTS : 버퍼 중심의 반경을 이루는 점의 개수 (많을수록 원에 가까워짐.BUT 용량이 크다.)
+- SEGMENTS : 버퍼 중심의 반경을 이루는 점의 개수 (많을수록 원에 가까워짐.BUT 용량이 크다. 성능과 정확성 사이의 트레이드오프 관계..)
 - DISSOLVE : 버퍼 경계 병합(0 : 디졸브 미적용 1 : 디졸브 적용)
 - OUTPUT : 결과물 (임시 결과물, 혹은 SHP파일로 저장)
 있다.
@@ -139,12 +137,67 @@ for dis in buffer_distance:
 
 ### 3.2 SEGMENTS 변경
 ---
+
+위의 실습 사진에서는 원이 각져있는 것이 보인다. 이러한 현상은 SEGMENTS 옵션을 조절하여 해결할 수 있다. SEGMENTS 옵션을 높여서 원의 외부 경계를 더 많은 세그먼트로 근사화하면 더 부드러운 곡선 형태를 얻을 수 있다.
+
+SEGMENTS 값을 높이면 처리 시간이 더 오래 걸릴 수 있으므로 작업에 따라서 적절한 세그먼트 수를 선택하는 것이 중요하다!
+
+~~~py
+import os
+import processing
+import time 
+# Input file path
+senior_cheong_gu = 'C:/Users/admin/Desktop/senior_park/cheong_gu_senior_5181.shp'
+
+start = time.time()
+# Output file path
+# memory:senior = 임시메모리에 저장, 이름은 senior로 하겠다. // 내 컴퓨터에 저장하고 싶을 시, 파일 경로를 지정해주면 됨
+
+# buffer distance
+buffer_distance=500
+number = "세크먼트 수 지정"
+# buffer_parameter
+bufferParams = { 'INPUT' : senior_cheong_gu  ,'DISTANCE' : buffer_distance,'SEGMENTS':number,'OUTPUT':output_temp_buffer}
+output_temp_buffer = 'memory:senior'
+# buffer start
+buffer = processing.run('native:buffer' , bufferParams)
+
+# QGIS 레이어에 추가할 때, buffer['OUTPUT']을 추가
+QgsProject.instance().addMapLayer(buffer['OUTPUT'])
+
+end=time.time()
+print(f"{end-start:5f} sec")
+~~~
+
+1) SEGMENTS : 10 , time : 0.031084 sec
+
+![post8](/assets/img/QGIS/QGIS_buffer8.png)
+
+언뜻 보면 원처럼 보이지만 확대시
+
+![post9](/assets/img/QGIS/QGIS_buffer9.png)
+
+아직 각져있는 것을 볼 수 있다.
+
+2) SEGMENTS : 100 , time : 0.043099 sec
+
+![post10](/assets/img/QGIS/QGIS_buffer10.png)
+
+SEGMENTS 10과 100의 미세한 차이점
+
+![post11](/assets/img/QGIS/QGIS_buffer11.png)
+
+(버퍼 크기가 작아 시간 차이가 별로 나지 않네유,,암튼) SEGMENTS 수를 늘리면 늘릴수록 분석에 원의 정확성을 높일 수 있지만 시간이 오래걸리니 각 상황에서 맞춰서 SEGMENTS 값을 조절하자~
+
 ### 3.3 DISSOLVE ON & OFF
 ---
 
-## 4. CLIP QGIS 코드 
----
+1) DISSOLVE OFF
 
-## 5. 간단한 실습 : 부산 공공 와이파이 소외지역 찾기
+
+2) DISSOLVE ON
+
+
+## 4. 간단한 실습 : 부산 공공 와이파이 소외지역 찾기
 ---
 
