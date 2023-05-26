@@ -6,6 +6,14 @@ image : /assets/img/Feature Engineering/extended-model.png
 description: Kaggle의 Feature-Engineering과정 정리  
 customexcerpt: "Kaggle의 Feature-Engineering 과정에 대해 알아보자 !!"
 ---
+​
+<span class = "alert g">작성자 : 김아영</span>
+​
+​
+<!-- 아래 2줄은 목차를 나타내기 위한 심볼이니 건들지 말아 주세요 -->
+* random line to make it work. This will be removed.
+{:toc} 
+
 # Feature Engineering
 ## What is Feature Engineering
 훌륭한 머신러닝 모댈을 구축하는 과정에서 가장 중요한 단계 중 하나인 Feature Engineering(기능 엔지니어링)에 대해 배움
@@ -27,7 +35,7 @@ Feature Engineering을 통해 다음을 수행함
 ex) 선형모델은 선형관계만 학습할수 있기에 선형 모형을 사용할 때 목표값과의 관계를 선형으로 만들기 위해 변환하는것을 목표로한다.  
 
 핵심 아이디어- 기능에 적용하는 변환이 본질적으로 모델 자체의 일부가 된다는 것  
-피쳐를 제곱하면 선형 모형에 형상 제곱을 적합시킬수있음(Squaring a feature gave the linear model the ability to fit squared features)
+피쳐를 제곱하면 선형 모형에 형상 제곱을 적합시킬수있음(Squaring a feature gave the linear model the ability to fit squared features)  
 ![extended model](/assets/img/Feature Engineering/extended-model.png)  
 --> 피쳐엔지니어링에 투자된 시간 대비 수익률이 높은 이유를 알수 있음.  
 나의 모델이 학습할수없는 관계일지라도, 변형을통해 학습할수있다. 너의 feature set를 개발할때, 모델이 최상의 성능ㅇ르 달성하기 위해 어떤 정보를 사용할 수있는지 생각해보자.  
@@ -42,7 +50,7 @@ from sklearn.model_selection import cross_val_score
 df = pd.read_csv("../input/fe-course-data/concrete.csv")
 df.head()
 ~~~
-<pre>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -121,7 +129,6 @@ df.head()
     </tr>
   </tbody>
 </table>
-</pre>
 
 증강되지 않은 데이터셋에 대한 모델을 교육하여 기준선 설정. 이를 통해 새로운 기능이 실제로 유용한지 여부 확인. 기준선을 설정하는것은 피쳐 엔지니어링 프로세스를 시작할 때 좋은 방법. 기준 점수를 사용해 새 기능을 유지할 가치가 있는지 또는 기능을 삭제하고 다른 기능을 시도해야 하는지 여부 결정가능  
 ~~~ py
@@ -191,7 +198,7 @@ plt.style.use("seaborn-whitegrid")
 df = pd.read_csv("../input/fe-course-data/autos.csv")
 df.head()
 ~~~
-<pre>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -342,7 +349,7 @@ df.head()
     </tr>
   </tbody>
 </table>
-</pre>
+
 
 * 데이터 시각화는 기능 엔지니어링 toolbox에 크게 추가됨. 상호 정보와 같은 유틸리티 메트릭과 함께 이러한 시각화를 통해 데이터에서 중요한 관계를 발견할 수 있음. 더 자세한건 Data Visualization 정리에서 ~~!  
 
@@ -369,7 +376,7 @@ customer[["Type", "Level"]] = (  # Create two new features
 
 customer[["Policy", "Type", "Level"]].head(10)
 ~~~
-<pre>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -442,12 +449,10 @@ customer[["Policy", "Type", "Level"]].head(10)
     </tr>
   </tbody>
 </table>
-</pre>
 ~~~py
 autos["make_and_style"] = autos["make"] + "_" + autos["body_style"]
 autos[["make", "body_style", "make_and_style"]].head()
 ~~~
-<pre>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -490,7 +495,7 @@ autos[["make", "body_style", "make_and_style"]].head()
     </tr>
   </tbody>
 </table>
-</pre>
+
 ### Group Transforms
 그룹 변환을 사용해 특정 범주별로 그룹화된 여러 행에 걸쳐 정보를 집계함. 그룹 변환을 사용하여 다음과 같은 기능을 만들 수 있음. "거주 상태의 평균 소득" 또는 장르별로 평일에 개봉하는 영화의 비율"과 같은 기능을 만들 수 있습니다. 범주 교호작용을 발견한 경우 해당 범주에 대한 그룹 변환을 조사하는 것이 좋음. 집계 함수를 사용해 그룹 변환은 그룹화를 제공하는 범주형피쳐와 값을 집계하려는 다 피쳐의 두 가지 피쳐를 결합함. 
 ~~~py
@@ -502,7 +507,7 @@ customer["AverageIncome"] = (
 
 customer[["State", "Income", "AverageIncome"]].head(10)
 ~~~
-<pre>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -575,7 +580,7 @@ customer[["State", "Income", "AverageIncome"]].head(10)
     </tr>
   </tbody>
 </table>
-</pre>
+
 
 ~~~py
 customer["StateFreq"] = (
@@ -587,7 +592,7 @@ customer["StateFreq"] = (
 
 customer[["State", "StateFreq"]].head(10)
 ~~~
-<pre>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -649,7 +654,7 @@ customer[["State", "StateFreq"]].head(10)
     </tr>
   </tbody>
 </table>
-</pre>
+
 
 Tips on Crating Features
 * 선형 모델은 합과 차이를 자연스럽게 학습하지만 이보다 더 복잡한 것은 학습할 수 없음
