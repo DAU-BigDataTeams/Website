@@ -36,6 +36,7 @@ ex) 선형모델은 선형관계만 학습할수 있기에 선형 모형을 사�
 
 핵심 아이디어- 기능에 적용하는 변환이 본질적으로 모델 자체의 일부가 된다는 것  
 피쳐를 제곱하면 선형 모형에 형상 제곱을 적합시킬수있음(Squaring a feature gave the linear model the ability to fit squared features)  
+
 ![extended model](/assets/img/Feature Engineering/extended-model.png)  
 --> 피쳐엔지니어링에 투자된 시간 대비 수익률이 높은 이유를 알수 있음.  
 나의 모델이 학습할수없는 관계일지라도, 변형을통해 학습할수있다. 너의 feature set를 개발할때, 모델이 최상의 성능ㅇ르 달성하기 위해 어떤 정보를 사용할 수있는지 생각해보자.  
