@@ -25,8 +25,7 @@ QGIS 설치방법이나 개념 등은 이미 다른 많은 블로그에서 소�
 오늘 소개할 내용은 다음과 같다.
 
 - QGIS + 파이썬 사용가이드
-- Buffer QGIS 코드 실습
-- 간단한 실습 : 부산 공공 와이파이 소외지역 찾기
+- QGIS Buffer 다루기
 
 ## 2. QGIS + 파이썬 사용가이드
 ---
@@ -151,18 +150,21 @@ senior_cheong_gu = 'C:/Users/admin/Desktop/senior_park/cheong_gu_senior_5181.shp
 
 start = time.time()
 # Output file path
-# memory:senior = 임시메모리에 저장, 이름은 senior로 하겠다. // 내 컴퓨터에 저장하고 싶을 시, 파일 경로를 지정해주면 됨
+output_temp_buffer = 'memory:senior'
 
 # buffer distance
 buffer_distance=500
+
+#segments number
 number = "세크먼트 수 지정"
+
 # buffer_parameter
 bufferParams = { 'INPUT' : senior_cheong_gu  ,'DISTANCE' : buffer_distance,'SEGMENTS':number,'OUTPUT':output_temp_buffer}
-output_temp_buffer = 'memory:senior'
+
 # buffer start
 buffer = processing.run('native:buffer' , bufferParams)
 
-# QGIS 레이어에 추가할 때, buffer['OUTPUT']을 추가
+# QGIS 레이어에 추가
 QgsProject.instance().addMapLayer(buffer['OUTPUT'])
 
 end=time.time()
@@ -192,12 +194,29 @@ SEGMENTS 10과 100의 미세한 차이점
 ### 3.3 DISSOLVE ON & OFF
 ---
 
+디졸브(Dissolve)는 버퍼 영역을 생성한 후, 겹치거나 인접한 영역을 하나로 병합하여 단일 영역으로 만드는 작업이다.
+- 면 레이어의 경우, 인접한 폴리곤의 공통 경계가 지워진다.
+
+부산광역시 종합병원 데이터로 병세권(?)을 구해보자. 
+
 1) DISSOLVE OFF
+
+~~~ py
+# buffer_parameter
+bufferParams = { 'INPUT' : senior_cheong_gu  ,'DISSOLVE':0,'DISTANCE' : buffer_distance,'SEGMENTS':number,'OUTPUT':output_temp_buffer}
+~~~
+
+![post12](/assets/img/QGIS/QGIS_buffer12.png)
 
 
 2) DISSOLVE ON
 
+~~~ py
+# buffer_parameter
+bufferParams = { 'INPUT' : senior_cheong_gu  ,'DISSOLVE':1,'DISTANCE' : buffer_distance,'SEGMENTS':number,'OUTPUT':output_temp_buffer}
+~~~
 
-## 4. 간단한 실습 : 부산 공공 와이파이 소외지역 찾기
----
+![post13](/assets/img/QGIS/QGIS_buffer13.png)
+
+
 
