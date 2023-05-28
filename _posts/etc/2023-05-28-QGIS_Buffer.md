@@ -2,7 +2,7 @@
 title: QGIS 파이썬 콘솔(PyQGIS)에서 버퍼 생성
 layout: post
 categories : [GIS,QGIS,Python,etc]
-image : 
+image : /assets/img/QGIS/QGIS_buffer13.png
 description:  QGIS 파이썬 콘솔(PyQGIS)에서 버퍼 생성
 customexcerpt:  파이썬과 QGIS를 활용해 버퍼 분석을 해보자! 
 ---
@@ -46,7 +46,7 @@ QGIS를 키고 저 아이콘을 누르면
 - import processing : QGIS에서 파이썬을 사용해 지오프로세싱 작업을 수행할 수 있게 해준다.
 - import os : OS에서 자연스럽게 하던 작업들(파일 복사, 폴더 생성, 경로 지정)을 코드에서도 활용할 수 있게 해준다.
 
-사용하고자 하는 QGIS의 기능을 알고 싶을 때는 `processing.algorithmHelp(**알고리즘ID**)` 코드를 이용하면 된다.
+사용하고자 하는 QGIS의 기능을 알고 싶을 때는 `processing.algorithmHelp(알고리즘ID)` 코드를 이용하면 된다.
 > processing.algorithmHelp(**알고리즘ID**) : 알고리즘ID의 메뉴얼을 알려준다.
 
 ex) native:buffer
@@ -57,7 +57,7 @@ ex) native:buffer
 
 위 사진에서 볼 수 있듯이 알고리즘 소개부터 Input parameters, Output등을 확인할 수 있다.
 
-## 3. Buffer QGIS
+## 3. QGIS Buffer
 ---
 
 버퍼(Buffer)의 사용 사례로는
@@ -74,7 +74,7 @@ ex) native:buffer
 - `INPUT` : 버퍼를 적용한 SHP파일
 > SHP파일이란? 벡터방식으로 공간정보를 저장하는 파일, 점(Point), 선(Line), 면(Polygon) 중 한 속성을 가진다.
 - `DISTANCE` : 버퍼 적용거리 (단위 : m)
-- `SEGMENTS` : 버퍼 중심의 반경을 이루는 점의 개수 (많을수록 원에 가까워짐.BUT 용량이 크다. 성능과 정확성 사이의 트레이드오프 관계..)
+- `SEGMENTS` : 버퍼 중심의 반경을 이루는 점의 개수 (많을수록 원에 가까워짐. BUT 용량이 크다. 성능과 정확성 사이의 트레이드오프 관계..)
 - `DISSOLVE` : 버퍼 경계 병합(0 : 디졸브 미적용 1 : 디졸브 적용)
 - `OUTPUT` : 결과물 (임시 결과물, 혹은 SHP파일로 저장)
 
@@ -182,17 +182,17 @@ end=time.time()
 print(f"{end-start:5f} sec")
 ~~~
 
-1) SEGMENTS : 10 , time : 0.031084 sec
+1) `SEGMENTS` : 10 , time : 0.031084 sec
 
 ![post8](/assets/img/QGIS/QGIS_buffer8.png)
 
-언뜻 보면 원처럼 보이지만 확대시
+언뜻 보면 원처럼 보이지만 확대 시
 
 ![post9](/assets/img/QGIS/QGIS_buffer9.png)
 
 아직 각져있는 것을 볼 수 있다.
 
-2) SEGMENTS : 100 , time : 0.043099 sec
+2) `SEGMENTS` : 100 , time : 0.043099 sec
 
 ![post10](/assets/img/QGIS/QGIS_buffer10.png)
 
@@ -230,4 +230,5 @@ bufferParams = { 'INPUT' : busan_hospital  ,'DISSOLVE':1,'DISTANCE' : buffer_dis
 
 ![post13](/assets/img/QGIS/QGIS_buffer13.png)
 
-이상 끝!
+
+이렇게 QGIS 버퍼에 대해서 간단히 알아보았다...! 끝~
