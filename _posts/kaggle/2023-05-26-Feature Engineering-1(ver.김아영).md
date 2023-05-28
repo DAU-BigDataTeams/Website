@@ -42,6 +42,7 @@ ex) 선형모델은 선형관계만 학습할수 있기에 선형 모형을 사�
 
 EX.Concrete Formulations  
 아이디어 설명을 위해 데이터 세트에 몇가지 합성 기능을 추가해 랜덤 포레스트 모델의 예측 성능 향상 방법을 알아보자.
+
 ~~~py
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
@@ -144,9 +145,11 @@ baseline_score = -1 * baseline_score.mean()
 
 print(f"MAE Baseline Score: {baseline_score:.4}")
 ~~~
+
 <pre>
 MAE Baseline Score: 8.232
 </pre>
+
 ~~~py
 X = df.copy()
 y = X.pop("CompressiveStrength")
@@ -165,9 +168,11 @@ score = -1 * score.mean()
 
 print(f"MAE Score with Ratio Features: {score:.4}")
 ~~~
+
 <pre>
 MAE Score with Ratio Features: 7.948
 </pre>
+
 세가지 새로운 비율 피쳐를 추가하였더니 성능이 향상 되었다. -> 새로운 비율 기능이 이전에는 감지되지 않았던 중요한 정보를 모델에 노출시켰다는 증거  
 ## Mutual Information
 새로운 데이터세을 처음 접하는 것은 때떄로 부담스러울수있음. 설명조차 없이 수백 또는 수천 개의 기능이 제공 될수 있음.  
@@ -187,6 +192,7 @@ MAE Score with Ratio Features: 7.948
 3. 기능의 실제 유용성은 해당 기능을 사용하는 모델에 따라 달라짐. 피쳐는 대상과의 관계가 모형이 학습할 수 있는 경우에만 유용. 피쳐에 높은 MI 점수가 있다고 해서 모델이 해당 정보로 어떤 작업도 수행할 수 있는 것은 아님. 연결을 표시하려면 먼저 피쳐를 변환해야 할 수 있음.  
 
 Ex.1985 Automobiles  
+
 ~~~py
 import matplotlib.pyplot as plt
 import numpy as np
@@ -449,10 +455,14 @@ customer[["Policy", "Type", "Level"]].head(10)
     </tr>
   </tbody>
 </table>
+
+
 ~~~py
 autos["make_and_style"] = autos["make"] + "_" + autos["body_style"]
 autos[["make", "body_style", "make_and_style"]].head()
 ~~~
+
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
