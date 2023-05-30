@@ -51,8 +51,10 @@ Intermediate Machine Learning 1,2 포스팅에 이어서, 계속하여 Machine L
 
  - 모든 fold를 holdout 세트로 사용하여 이 프로세스를 반복한다. 이를 종합하면, **데이터의 100%가 어느 시점에서 holdout으로 사용**되며, 데이터셋의 **모든 행을 기반으로 하는 모델 품질 측정값이 생성**된다. (모든 행을 동시에 사용하지 않더라도 모든 행을 기반으로 할 수 있게 됨!!)    
 
- ## When should you use cross-validation?
- ----
+
+## When should you use cross-validation?
+ ---
+
  교차 검증을 사용하면 모델 품질을 보다 정확하게 측정할 수 있으며, 이는 모델을 많이 결정하는 경우 특히나 중요하다. 그러나 여러 모델(각 fold마다 하나씩)을 추정하기 때문에 실행 시간이 오래 걸릴 수 있다.    
 
  그렇다면 이러한 단점을 감안할 때, 각 접근 방식을 언제 사용해야할까?  
@@ -368,7 +370,7 @@ XGBoost는 표준 표 형식의 데이터(이미지 및 비디오와 같은 유�
  **Data Leakage** 가 무엇이고, 이를 방지하는 방법에 대해 알아보자.  
  Data Leakage(데이터 누출)을 예방하지 못해서 자주 발생하게 되면, 이는 모델을 망칠 수 있다.  
 
- ## Introduction
+## Introduction
  ----
  **Data Leakage** (또는 Leakage)은 train dataset에 대상에 대한 정보가 포함된 경우에 발생하지만, 모델이 예측에 사용되는 경우에는 유사한 데이터를 사용할 수 없다.  
  이로 인해 train dataset(심지어는 test dataset까지)에서 높은 성능을 보이지만, 모델은 성능이 저하될 수도 있다.    
@@ -377,18 +379,70 @@ XGBoost는 표준 표 형식의 데이터(이미지 및 비디오와 같은 유�
 
  Leakage(누출)에는 **target leakage** 와 **train-test contamination** 의 두 가지 종류가 있다.    
 
- ### *Target Leakage*
+### *Target Leakage*
 
  예측 변수에 **예측 시점에 사용할 수 없는 데이터가 포함된 경우** 에 Target Leakage가 발생한다.  
  Target Leakage에 대해서는 기능이 적절한 예측에 도움이 되는지 여부가 아니라 **데이터를 사용할 수 있게 되는 시기나 시간 순서의 측면** 에서 생각하는 것이 중요하다.    
 
  예를 통해 이해해보자. 누가 폐렴에 걸릴 것인지 예측하고 싶다고 하자.  
  원시 데이터는 아래와 같다.
- | got_pneumonia | age | weight | male  | took_antibiotic_medicine | ... |
-|---------------|-----|--------|-------|--------------------------|-----|
-| False         | 65  | 100    | False | False                    | ... |
-| False         | 72  | 130    | True  | False                    | ... |
-| True          | 58  | 100    | False | True                     | ... |
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax">got_pneumonia</th>
+    <th class="tg-0lax">age</th>
+    <th class="tg-0lax">weight</th>
+    <th class="tg-0lax">male</th>
+    <th class="tg-0lax">took_antibiotic_medicine</th>
+    <th class="tg-0lax">...</th>
+    <th class="tg-0lax"></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">---------------</td>
+    <td class="tg-0lax">-----</td>
+    <td class="tg-0lax">--------</td>
+    <td class="tg-0lax">-------</td>
+    <td class="tg-0lax">--------------------------</td>
+    <td class="tg-0lax">-----</td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">False</td>
+    <td class="tg-0lax">65</td>
+    <td class="tg-0lax">100</td>
+    <td class="tg-0lax">False</td>
+    <td class="tg-0lax">False</td>
+    <td class="tg-0lax">...</td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">False</td>
+    <td class="tg-0lax">72</td>
+    <td class="tg-0lax">130</td>
+    <td class="tg-0lax">True</td>
+    <td class="tg-0lax">False</td>
+    <td class="tg-0lax">...</td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">True</td>
+    <td class="tg-0lax">58</td>
+    <td class="tg-0lax">100</td>
+    <td class="tg-0lax">False</td>
+    <td class="tg-0lax">True</td>
+    <td class="tg-0lax">...</td>
+    <td class="tg-0lax"></td>
+  </tr>
+</tbody>
+</table>
 
 사람들은 회복하기 위해 폐렴에 걸린 후에 항생제를 투약한다. 원시데이터는 이러한 열 간의 강력한 관계를 보여주지만, *took_antibiotic_medicine* 은 *got_pneumonia* 의 값이 결정됨에 따라 자주 변경된다.  
 이것이 바로 target leakage의 예이다.    
@@ -444,6 +498,7 @@ X.head()
 <pre>
 Number of rows in the dataset: 1319
 </pre>
+
 |   | reports | age      | income | share    | expenditure | owner | selfemp | dependents | months | majorcards | active |
 |---|---------|----------|--------|----------|-------------|-------|---------|------------|--------|------------|--------|
 | 0 | 0       | 37.66667 | 4.5200 | 0.033270 | 124.983300  | True  | False   | 3          | 54     | 1          | 12     |
