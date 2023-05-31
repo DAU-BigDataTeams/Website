@@ -1,4 +1,0 @@
----
-layout: seminar
-title: seminar
----

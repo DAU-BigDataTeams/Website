@@ -1,4 +1,0 @@
----
-layout: kaggle
-title: kaggle
----

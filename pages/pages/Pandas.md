@@ -1,4 +1,0 @@
----
-layout: Pandas
-title: Pandas
----
