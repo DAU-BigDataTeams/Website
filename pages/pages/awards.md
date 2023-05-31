@@ -1,4 +1,0 @@
----
-layout: awards
-title: Awards
----

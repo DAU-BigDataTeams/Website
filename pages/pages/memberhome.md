@@ -1,4 +1,0 @@
----
-layout: memberhome
-title: MemberInfo
----
