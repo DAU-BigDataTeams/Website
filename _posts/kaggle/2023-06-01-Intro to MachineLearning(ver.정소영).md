@@ -59,16 +59,18 @@ training data : 모델에 적합시키는데 사용되는 데이터
 ## Basic Data Exploration
 ### Using Pandas to Get Familiar With Your Data
   
-모든 머신러닝 프로젝트의 첫 번째 단계는 데이터에 익숙해지는 것입니다.  
-Pandas 라이브러리를 이용하면 됩니다.  
-Pandas는 데이터사이언티스트들이 데이터를 탐색하고 조작하는데 사용하는 주요 도구입니다.  
-Pandas 코드를 pd로 줄여서 사용합니다.  
+모든 머신러닝 프로젝트의 첫 번째 단계는 데이터에 익숙해지는 것입니다.    
+Pandas 라이브러리를 이용하면 됩니다.    
+Pandas는 데이터사이언티스트들이 데이터를 탐색하고 조작하는데 사용하는 주요 도구입니다.    
+Pandas 코드를 pd로 줄여서 사용합니다.   
+  
 ~~~python
 import pandas as pd
 ~~~
-Pandas 라이브러리의 가장 중요한 부분은 데이터 프레임입니다.  
-데이터 프레임의 테이블로 생각할 수 있는 유형의 데이터가 저장됩니다.  
-이는 Excel 시트, SQL 데이터베이스의 표와 유사합니다.  
+
+Pandas 라이브러리의 가장 중요한 부분은 데이터 프레임입니다 .    
+데이터 프레임의 테이블로 생각할 수 있는 유형의 데이터가 저장됩니다.    
+이는 Excel 시트, SQL 데이터베이스의 표와 유사합니다.    
 
 ~~~python
 melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv'
@@ -80,12 +82,13 @@ melbourne_data = pd.read_csv(melbourne_file_path)
 melbourne_data.describe()
 #멜버른 데이터에 데이터 요약을 출력합니다.
 ~~~
-
+        
 <결과>
 
 ![Table](/assets/img/IntroML/introtoML/table1.png)  
 
-### Interpretng Data Description
+### Interpretng Data Description    
+
 결과는 원래 데이터 집합의 각 열에 대해 8개의 숫자를 보여줍니다.  
 첫 번째 숫자인 카운트는 비결측값을 가진 행의 수를 나타냅니다.  
   
@@ -105,6 +108,7 @@ melbourne_data.describe()
 데이터셋에 많은 데이터들이 존재하는 경우에는 먼저 직관을 사용하여 값들을 선택하는 것으로 시작합니다.  
 값/열을 선택하려면 데이터셋의 모든 열 목록을 확인해야합니다.    
 이 작업은 데이터 프레임의 열속성을 사용합니다.  
+
 ~~~python
 import pandas as pd
 
@@ -112,6 +116,7 @@ melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv'
 melbourne_data = pd.read_csv(melbourne_file_path) 
 melbourne_data.columns
 ~~~
+
 <pre>
 결과
 Index(['Suburb', 'Address', 'Rooms', 'Type', 'Price', 'Method', 'SellerG',
@@ -120,6 +125,7 @@ Index(['Suburb', 'Address', 'Rooms', 'Type', 'Price', 'Method', 'SellerG',
        'Longtitude', 'Regionname', 'Propertycount'],
       dtype='object')
 </pre>
+
 ~~~python
 df.columns
 
@@ -139,13 +145,16 @@ df.dropna(axis=1)
 점 표기법을 사용하여 변수 추출할 수 있습니다.   
 이 단일 열은 시리즈에 저장됩니다.  
 점 표기법을 사용하여 예측할 열을 선택합니다.  
-(이 열을 예측 대상이라고 합니다. 일반적으로 예측 대상을 y라고 합니다.)
+(이 열을 예측 대상이라고 합니다. 일반적으로 예측 대상을 y라고 합니다.)  
+
+
 ~~~python
 y = melbourne_data.Price
 #멜버른 데이터에 집값을 저장하기 위한 코드입니다.
 ~~~
 
-### Choosing "Features"
+### Choosing "Features"  
+
 모델에 입력되고 나중에 예측하는데 사용되는 열을 'feature'라고 합니다.  
 대상을 제외한 모든 열을 feature로 사용할 수도 있습니다.  
   
@@ -160,6 +169,7 @@ X = melbourne_data[melbourne_features]
 X.describe()
 #다양한 통계량을 요약해줍니다.
 ~~~
+
 결과  
 ![Describe Table](/assets/img/IntroML/introtoML/table2.png)  
   
@@ -167,6 +177,7 @@ X.describe()
 X.head()
 #처음 5개줄의 데이터를 출력합니다.
 ~~~
+
 결과  
 ![head Table](/assets/img/IntroML/introtoML/table3.png)  
   
@@ -199,7 +210,9 @@ print(X.head())
 print("The predictions are")
 print(melbourne_model.predict(X.head()))
 ~~~
+
 결과  
+
 ![result](/assets/img/IntroML/introtoML/table4.png)  
   
 
@@ -217,13 +230,15 @@ print(melbourne_model.predict(X.head()))
     각 오류의 절대값을 구한다.
     절대 오차의 평균을 구한다.
 
-평균 절대 오차를 계산하는 방법
+평균 절대 오차를 계산하는 방법  
+
 ~~~python
 from sklearn.metrics import mean_absolute_error
 
 predicted_test_prices = test_model.predict(X)
 mean_absolute_error(y, predicted_test_prices)
 ~~~
+
 <pre>
 결과
 434.71594577146544
@@ -238,7 +253,8 @@ mean_absolute_error(y, predicted_test_prices)
 
 ### Coding It
 sikit-learn 라이브러리는 데이터를 두 조각으로 나누는 train_test_split 함수를 가지고 있습니다.  
-해당 데이터 중 일부를 모델에 적합한 교육 데이터로 사용하고, 다른 데이터를 검증 데이터로 사용하여 mean_absolute_error를 계산합니다.
+해당 데이터 중 일부를 모델에 적합한 교육 데이터로 사용하고, 다른 데이터를 검증 데이터로 사용하여 mean_absolute_error를 계산합니다.  
+
 ~~~python
 from sklearn.model_selection import train_test_split
 
@@ -256,13 +272,16 @@ test_model.fit(train_X, train_y)
 val_predictions = test_model.predict(val_X)
 print(mean_absolute_error(val_y, val_predictions))
 ~~~
+
 <pre>
 결과
 265806.91478373145
 </pre>
 
 ## Underfitting and Overfitting
-### Experimenting With Different Models
+
+**Experimenting With Different Models**
+
 의사결정 트리 모델에는 많은 옵션이 있습니다.  
 가장 중요한 옵션이 트리의 깊이를 결정합니다.  
 트리의 깊이는 예측에 도달하기 전에 얼마나 많이 분할하는지 측정하는 것입니다.
@@ -289,6 +308,7 @@ print(mean_absolute_error(val_y, val_predictions))
 ![owners-table, pets-table](/assets/img/IntroML/introtoML/ml5.png)
 
 ### Example
+
 max_leaf_nodes 인수는 과적합 대 과소적합을 제어하는 매우 합리적인 방법을 제공합니다.  
 함수를 사용하여 max_leaf_nodes에 대한 다른 값의 MAE 점수를 비교할 수 있습니다.  
 ~~~python
@@ -343,6 +363,7 @@ forest_test.fit(train_X, train_y)
 test_preds = forest_test.predict(val_X)
 print(mean_absolute_error(val_y, test_preds))
 ~~~
+
 <pre>
 결과
 191669.7536453626
