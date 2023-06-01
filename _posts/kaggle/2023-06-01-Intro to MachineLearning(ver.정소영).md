@@ -83,7 +83,7 @@ melbourne_data.describe()
 #멜버른 데이터에 데이터 요약을 출력합니다.
 ~~~
         
-<결과>
+결과
 
 ![Table](/assets/img/IntroML/introtoML/table1.png)  
 
