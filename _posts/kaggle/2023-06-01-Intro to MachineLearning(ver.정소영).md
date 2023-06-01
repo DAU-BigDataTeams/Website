@@ -23,7 +23,7 @@ Decision Tree(의사 결정 트리)라고 불리는 모델을 먼저 배워볼 �
 더 정확한 예층을 제공하는 다른 모델들도 있지만,  
 의사결정 트리는 이해하기 쉽고 데이터 과학 분야의 모델 중 기본 구성 요소이기 때문입니다.  
   
-![Sample Decision Tree](/assets/img/introML/ml1.png)
+![Sample Decision Tree](/assets/img/introtoML/ml1.png)
   
 - 집을 두개의 범주로 나눕니다.  
 
@@ -37,7 +37,7 @@ training data : 모델에 적합시키는데 사용되는 데이터
 ### Improving the Decision Tree 
 두가지의 의사 결정 트리를 비교해보겠습니다.  
   
-![1st Decision Tree, 2nd Decision Tree](/assets/img/introML/ml2.png)  
+![1st Decision Tree, 2nd Decision Tree](/assets/img/introtoML/ml2.png)  
   
 - 결정트리 1이 침실이 더 많은 집이 침실이 적은 집보다 더 높은 가격에 판매되는 경향이 있는 현실을 포착하기 때문에 말이 될것입니다.  
 
@@ -48,7 +48,7 @@ training data : 모델에 적합시키는데 사용되는 데이터
   
 각 주택의 총 부지 크기도 고려하는 의사 결정 트리  
   
-![Decision Tree](/assets/img/introML/ml3.png)  
+![Decision Tree](/assets/img/introtoML/ml3.png)  
   
 의사 결정 트리를 추적하여 주택 가격을 예측하고, 항상 해당 주택의 특성에 맞는 경로를 선택합니다.  
   
@@ -305,7 +305,7 @@ print(mean_absolute_error(val_y, val_predictions))
 각각을 다시 나누면 8개의 그룹이 만들어집니다.  
 각 레벨에서 분할을 더 추가하여 그룹 수를 계속 두 배로 늘리면 210개가 됩니다.  
 
-![owners-table, pets-table](/assets/img/introML/ml4.png)
+![owners-table, pets-table](/assets/img/introtoML/ml4.png)
   
 우리가 10층에 도착할 때까지 집들의 무리들. 1024장의 잎사귀입니다.  
 트리는 잎들로 나눌때, 각각의 잎들에 더 적은 집들을 가지고 있습니다.  
@@ -319,7 +319,7 @@ print(mean_absolute_error(val_y, val_predictions))
   
 검증 데이터에서 추정하는 새 데이터에 대한 정확성에 관심이 있으므로, Over와 Under 사이의 최적 지점을 찾고자 합니다.  
 
-![owners-table, pets-table](/assets/img/introML/ml5.png)
+![owners-table, pets-table](/assets/img/introtoML/ml5.png)
 
 ### Example
 max_leaf_nodes 인수는 과적합 대 과소적합을 제어하는 매우 합리적인 방법을 제공합니다.  
