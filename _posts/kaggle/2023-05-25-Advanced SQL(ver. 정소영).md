@@ -3,7 +3,7 @@ title: Kaggle로 SQL에 대해 더 깊이 배워보자!
 layout: post
 description: Kaggle로 SQL에 대해 더 깊이 배워보자!
 categories: [kaggle]
-image: /assets/img/수료증/정소영-AdvancedSQL수료증.png
+image: /assets/img/수료증/정소영-AdvancedSQL.png
 customexcerpt: SQL에 대해 복잡하고 고급 기능을 활용하여 데이터를 쿼리하고 조작하는 것에 대해 학습합니다.
 ---
 
