@@ -2,7 +2,7 @@
 title: 동아스터디 3팀 합격🎉🎉
 layout: post   
 categories : [etc]
-image : /assets/img/etc/동아스터디.png
+image : /assets/img/study/etc/동아스터디.png
 description: 
 customexcerpt: 총 485명이 지원한 이번 동아스터디에서 우리 빅데이터팀 12명이 합격했어여~
 ---

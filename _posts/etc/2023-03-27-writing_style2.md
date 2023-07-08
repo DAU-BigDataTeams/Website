@@ -2,7 +2,7 @@
 title: 글쓰기에 가장 기초적인 이야기
 layout: post   
 categories : [etc, writing]
-image : /assets/img/etc/글쓰기정석.jpg
+image : /assets/img/study/etc/글쓰기정석.jpg
 description: 글쓰기에 가장 기초적인 이야기
 customexcerpt: 좋은 글은 목적과 읽는 대상을 분명하게 하는 것과 올바른 범위의 주제를 선정하는 것이다.    
 ---

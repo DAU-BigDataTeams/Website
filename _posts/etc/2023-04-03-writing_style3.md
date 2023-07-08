@@ -2,7 +2,7 @@
 title: 틀을 잘 설계해야 알맹이가 있다!
 layout: post   
 categories : [etc, writing]
-image : /assets/img/etc/글쓰기정석.jpg
+image : /assets/img/study/etc/글쓰기정석.jpg
 description: 글쓰기에 가장 기초적인 이야기
 customexcerpt: 쓰는 목적과 대상, 그리고 주제를 정했다고 해서 글이 쉽게 나오는 것은 아니다.
 ---

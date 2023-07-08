@@ -1,7 +1,7 @@
 dropdowncategories:
 # 소문자로
   - name : "Study"
-    count : 5
+    count : 6
   - name : "Seminar"
     count : 1
     url: 'seminar.html' 

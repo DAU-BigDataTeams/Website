@@ -6,12 +6,15 @@ Study:
 # kaggle 관련 포스트
   - name: 'Kaggle'
     url: 'pages/kaggle.html'
-# 파이썬 스터디 관련 포스트
-  - name: 'Python'
-    url: 'pages/Python.html'
+# Docker 스터디 관련 포스트
+  - name: 'Docker'
+    url: 'pages/Docker.html'
+# Spark 스터디 관련 포스트
+  - name: 'Spark'
+    url: 'pages/Spark.html'    
 # 판다스 스터디 관련 포스트
-  - name: 'Pandas'
-    url: 'pages/Pandas.html'
+  - name: 'Analytics'
+    url: 'pages/Analytics.html'
 # 딥러닝 스터디 관련 포스트
   - name: 'AI' 
     url: 'pages/artificial-intelligence.html'

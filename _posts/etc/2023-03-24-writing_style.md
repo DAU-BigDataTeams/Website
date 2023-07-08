@@ -2,7 +2,7 @@
 title: 공대생들아 보고서, 제안서, 기획서 글쓰기 어렵지 않을거야!
 layout: post   
 categories : [etc, writing]
-image : /assets/img/etc/글쓰기정석.jpg
+image : /assets/img/study/etc/글쓰기정석.jpg
 description: kaggle의 Intermediate Machine Learning 코스 1,2 챕터 정리
 customexcerpt: 막상 글을 쓰려고 하면 잘 되지 않는 것은 실제적으로 글을 써 나가는 방식, 즉 글쓰기의 정석을 제대로 익히지 못했기 때문이다. 그 정석이란 바로 글쓰기의 요령이다. 어렵게 생각해서 그렇지 실상은 몇 가지 요령을 터득하는 것만으로도 일상생활에서 필요한 글쓰기는 충분히 해결할 수 있다.    
 ---
@@ -29,7 +29,7 @@ customexcerpt: 막상 글을 쓰려고 하면 잘 되지 않는 것은 실제적
 나는 교수님의 추천으로 **글쓰기 정석** 이라는 책을 21년에 소개받았지만, 게으름으로 이제서야 부랴부랴 읽어보려한다. ㅋㅋ  
 교수님도 해당 책을 읽으며 글쓰기 요령을 익혔다고 하더라..    
 
-![1](/assets/img/etc/글쓰기정석.jpg)
+![1](/assets/img/study/etc/글쓰기정석.jpg)
 
 <div align="center"> 배상복 지음, 이케이북 출판 </div>
 

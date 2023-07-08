@@ -1,10 +1,18 @@
 ---
 layout: default
-title: Etc
+title: Archive
 ---
-<h2>알아두면 쓸데있는 신비한 잡학모음</h2>
+
 {% for category in site.categories %}
-  {% if category[0] == "etc" or category[0] == "python-study"  %}
+{% if category[0] == "spark" %}
+<div>
+    <h2>DAU-BigDataTeam Pandas Study📖 {% for item in site.data.social.social %}
+        {% if item.type == "pandas-stduy"%}
+        <a href="{{ item.link }}" target="_blank" id="{{item.icon}}"><i class="fab fa-{{item.icon}}"
+                aria-hidden="true"></i></a>
+        {% endif %}
+        {% endfor %}</h2>
+</div>
     <ul>
     {% for post in category[1] %}
       <div class="post">

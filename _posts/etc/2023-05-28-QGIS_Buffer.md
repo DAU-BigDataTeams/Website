@@ -2,7 +2,7 @@
 title: QGIS 파이썬 콘솔(PyQGIS)에서 버퍼 생성
 layout: post
 categories : [etc,GIS,QGIS,Python]
-image : /assets/img/QGIS/QGIS_buffer13.png
+image : /assets/img/study/etc/study/etc/QGIS/QGIS_buffer13.png
 description:  QGIS 파이썬 콘솔(PyQGIS)에서 버퍼 생성
 customexcerpt:  파이썬과 QGIS를 활용해 버퍼 분석을 해보자! 
 ---
@@ -33,14 +33,14 @@ QGIS 설치방법이나 개념 등은 이미 다른 많은 블로그에서 다�
 
 QGIS를 키고 저 아이콘을 누르면
 <!-- 사진1 -->
-![post1](/assets/img/QGIS/QGIS_buffer1.png)
+![post1](/assets/img/study/etc/QGIS/QGIS_buffer1.png)
 
 > 단축키는 Ctrl + AIT + P
  
 파이썬 콘솔창이 나오며, QGIS상에서 파이썬 코드를 작성할 수 있다.
 
 <!-- 사진2 -->
-![post2](/assets/img/QGIS/QGIS_buffer2.png)
+![post2](/assets/img/study/etc/QGIS/QGIS_buffer2.png)
 
 필수적으로 **import** 해야하는 것은
 - import processing : QGIS에서 파이썬을 사용해 지오프로세싱 작업을 수행할 수 있게 해준다.
@@ -52,8 +52,8 @@ QGIS를 키고 저 아이콘을 누르면
 ex) native:buffer
 
 <!-- 사진3 -->
-![post3](/assets/img/QGIS/QGIS_buffer3.png)
-![post3](/assets/img/QGIS/QGIS_buffer3_1.png)
+![post3](/assets/img/study/etc/QGIS/QGIS_buffer3.png)
+![post3](/assets/img/study/etc/QGIS/QGIS_buffer3_1.png)
 
 위 사진에서 볼 수 있듯이 알고리즘 소개부터 Input parameters, Output등을 확인할 수 있다.
 
@@ -68,7 +68,7 @@ ex) native:buffer
 
 등등이 있다.
 
-![post0](/assets/img/QGIS/QGIS_buffer0.png)
+![post0](/assets/img/study/etc/QGIS/QGIS_buffer0.png)
 
 버퍼에서 주로 쓰는 파라미터로는
 - `INPUT` : 버퍼를 적용한 SHP파일
@@ -93,7 +93,7 @@ import os
 import processing
 
 # Input file path
-senior_cheong_gu = 'C:/Users/admin/Desktop/senior_park/cheong_gu_senior_5181.shp'
+senior_cheong_gu = 'C:/..../cheong_gu_senior_5181.shp'
 
 # buffer distance
 buffer_distance= "버퍼 거리 지정"
@@ -116,15 +116,15 @@ QgsProject.instance().addMapLayer(buffer['OUTPUT'])
 
 1) `DISTANCE` : 100
 
-![post4](/assets/img/QGIS/QGIS_buffer4.png)
+![post4](/assets/img/study/etc/QGIS/QGIS_buffer4.png)
 
 2) `DISTANCE` : 200
 
-![post5](/assets/img/QGIS/QGIS_buffer5.png)
+![post5](/assets/img/study/etc/QGIS/QGIS_buffer5.png)
 
 3) `DISTANCE` : 500
 
-![post6](/assets/img/QGIS/QGIS_buffer6.png)
+![post6](/assets/img/study/etc/QGIS/QGIS_buffer6.png)
 
 4) 반복문 사용해서 여러 개 버퍼 생성
 
@@ -143,7 +143,7 @@ for dis in buffer_distance:
     QgsProject.instance().addMapLayer(buffer['OUTPUT'])
 ~~~
 
-![post7](/assets/img/QGIS/QGIS_buffer7.png)
+![post7](/assets/img/study/etc/QGIS/QGIS_buffer7.png)
 
 ### 3.2 SEGMENTS 변경
 ---
@@ -157,7 +157,7 @@ import os
 import processing
 import time 
 # Input file path
-senior_cheong_gu = 'C:/Users/admin/Desktop/senior_park/cheong_gu_senior_5181.shp'
+senior_cheong_gu = 'C:/..../cheong_gu_senior_5181.shp'
 
 start = time.time()
 # Output file path
@@ -184,21 +184,21 @@ print(f"{end-start:5f} sec")
 
 1) `SEGMENTS` : 10 , time : 0.031084 sec
 
-![post8](/assets/img/QGIS/QGIS_buffer8.png)
+![post8](/assets/img/study/etc/QGIS/QGIS_buffer8.png)
 
 언뜻 보면 원처럼 보이지만 확대 시
 
-![post9](/assets/img/QGIS/QGIS_buffer9.png)
+![post9](/assets/img/study/etc/QGIS/QGIS_buffer9.png)
 
 아직 각져있는 것을 볼 수 있다.
 
 2) `SEGMENTS` : 100 , time : 0.043099 sec
 
-![post10](/assets/img/QGIS/QGIS_buffer10.png)
+![post10](/assets/img/study/etc/QGIS/QGIS_buffer10.png)
 
 - `SEGMENTS` 10과 100의 미세한 차이점
 
-![post11](/assets/img/QGIS/QGIS_buffer11.png)
+![post11](/assets/img/study/etc/QGIS/QGIS_buffer11.png)
 
 (버퍼 크기가 작아 시간 차이가 별로 나지 않네유,,암튼) `SEGMENTS` 수를 늘리면 늘릴수록 분석에 원의 정확성을 높일 수 있지만 시간이 오래걸리니 각 상황에서 맞춰서 `SEGMENTS` 값을 조절하자~
 
@@ -217,7 +217,7 @@ print(f"{end-start:5f} sec")
 bufferParams = { 'INPUT' : busan_hospital  ,'DISSOLVE':0,'DISTANCE' : buffer_distance,'SEGMENTS':number,'OUTPUT':output_temp_buffer}
 ~~~
 
-![post12](/assets/img/QGIS/QGIS_buffer12.png)
+![post12](/assets/img/study/etc/QGIS/QGIS_buffer12.png)
 
 사하구에는 종합병원이 하나도 없네요...?
 
@@ -228,7 +228,7 @@ bufferParams = { 'INPUT' : busan_hospital  ,'DISSOLVE':0,'DISTANCE' : buffer_dis
 bufferParams = { 'INPUT' : busan_hospital  ,'DISSOLVE':1,'DISTANCE' : buffer_distance,'SEGMENTS':number,'OUTPUT':output_temp_buffer}
 ~~~
 
-![post13](/assets/img/QGIS/QGIS_buffer13.png)
+![post13](/assets/img/study/etc/QGIS/QGIS_buffer13.png)
 
 
 이렇게 QGIS 버퍼에 대해서 간단히 알아보았다...! 끝~

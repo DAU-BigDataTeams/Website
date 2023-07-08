@@ -1,4 +1,0 @@
----
-layout: Python
-title: Python
----
