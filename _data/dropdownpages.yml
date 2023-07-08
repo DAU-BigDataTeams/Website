@@ -16,7 +16,7 @@ Study:
   - name: 'Analytics'
     url: 'pages/Analytics.html'
 # 딥러닝 스터디 관련 포스트
-  - name: 'AI' 
+  - name: 'deep-learning' 
     url: 'pages/artificial-intelligence.html'
 # Etc
   - name: "Etc"
