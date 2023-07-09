@@ -1,8 +1,8 @@
 ---
-title: Start Analytics study.md
+title: Start Analytics study
 layout: post
 image : /assets/img/study/pandas/book-logo.jpg
-categories : [analytics]
+categories : [Analytics]
 customexcerpt: 그동안 pandas 스터디를 수강했던 학생들이 드디어 실습하게 되었습니다❗
 ---
 

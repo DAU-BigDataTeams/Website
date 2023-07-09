@@ -1,5 +1,5 @@
 ---
-title: Start Spark study.md
+title: Start Spark study
 layout: post
 image : /assets/img/study/spark/book-logo.jpg
 categories : [spark]

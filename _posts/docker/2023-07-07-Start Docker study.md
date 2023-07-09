@@ -1,5 +1,5 @@
 ---
-title: Start Docker study.md
+title: Start Docker study
 layout: post
 image : /assets/img/study/docker/book-logo.jpg
 categories : [docker]

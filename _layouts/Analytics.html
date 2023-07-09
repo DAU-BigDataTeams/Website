@@ -4,15 +4,8 @@ title: Archive
 ---
 
 {% for category in site.categories %}
-{% if category[0] == "Analytics" %}
-<div>
-    <h2>DAU-BigDataTeam Pandas Study📖 {% for item in site.data.social.social %}
-        {% if item.type == "pandas-stduy"%}
-        <a href="{{ item.link }}" target="_blank" id="{{item.icon}}"><i class="fab fa-{{item.icon}}"
-                aria-hidden="true"></i></a>
-        {% endif %}
-        {% endfor %}</h2>
-</div>
+{% if category[0] == "Analytics"%}
+    <h2>DAU-BigDataTeam Analytics Study📖</h2>
     <ul>
     {% for post in category[1] %}
       <div class="post">
