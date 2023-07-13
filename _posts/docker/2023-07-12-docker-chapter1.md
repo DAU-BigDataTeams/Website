@@ -1,5 +1,5 @@
 ---
-title: Docker chapter 1
+title: 도커 컨테이너란 무엇이며 왜 컨테이너라 부를까?
 layout: post
 image : /assets/img/study/docker/docker-1장-남윤서.png
 categories : [docker]
