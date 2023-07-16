@@ -5,7 +5,7 @@ dropdowncategories:
   - name : "Seminar"
     count : 1
     url: 'seminar.html' 
-  - name : "Member"
+  - name : "Members"
     count : 1
     url: 'memberhome.html'
   - name : "Award"
