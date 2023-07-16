@@ -101,9 +101,9 @@ corr=kbo2019[cols].corr(method='pearson')
 corr
 ~~~
 
-<pre>  
+
 ![사진2](/assets/img/study/analytics/사진2.png) 
-</pre>  
+ 
 4개의 컬럼 모두 양의 상관관계에 있습니다.
 특히 '타석수'와 '출루율' 간에 강하게 비례합니다.
 '타율'과 '장타율'도 강하게 비례합니다.
@@ -138,6 +138,7 @@ plt.tight_layout()
 # 히트맵 출력
 plt.show()
 ~~~
+
 ![사진3](/assets/img/study/analytics/사진3.png)
 
 ## pairplot 시각화
@@ -152,6 +153,7 @@ sns.pairplot(kbo2019[['타석수','타율','출루율','장타율']],height=2.5)
 plt.show()
 
 ~~~
+
 ![사진4](/assets/img/study/analytics/사진4.png)
 
 ----------------------------------------
@@ -186,6 +188,7 @@ plt.title('35-39 players')
 # 그래프 출력
 plt.show()
 ~~~
+
 ![사진6](/assets/img/study/analytics/사진6.png)
 
 --------------------------------------------
