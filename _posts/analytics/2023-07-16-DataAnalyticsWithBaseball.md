@@ -59,6 +59,7 @@ info() 통해 알 수 있는 정보
 ~~~py
 kbo2019.info()
 ~~~
+
 <pre>  
 <class 'pandas.core.frame.DataFrame'>
 Index: 263 entries, 6 to 2634
@@ -99,6 +100,7 @@ cols=['타석수','타율','출루율','장타율']
 corr=kbo2019[cols].corr(method='pearson')
 corr
 ~~~
+
 <pre>  
 ![사진2](/assets/img/study/analytics/사진2.png) 
 </pre>  
@@ -202,6 +204,7 @@ describe() 함수는 데이터프레임 또는 시리즈에 대한 간단한 통
 #'타율'의 통계정보
 kbo2019['타율'].describe()
 ~~~
+
 <pre>  
 count    258.000000
 mean       0.219128
@@ -226,6 +229,7 @@ hit_over_mean=hit_mean[hit_mean>=total_mean]
 print(hit_mean)
 print(hit_over_mean)
 ~~~
+
 <pre>  
 나이대
 20-24    0.198320
@@ -290,10 +294,12 @@ tTestResultDiffVar=stats.ttest_ind(more70['안타'],less70['안타'],equal_var=F
 print("The t-statistic and p-value assuming equal variances is %.3f and %.3f." % tTestResult)
 print("The t-statistic and p-value not assuming equal variances is  %.3f and %.3f." % tTestResultDiffVar)
 ~~~
+
 <pre>  
 The t-statistic and p-value assuming equal variances is 24.429 and 0.000.
 The t-statistic and p-value not assuming equal variances is  20.920 and 0.000.
 </pre>  
+
 실행 결과에 나오는 t-statistic은 t-test의 검정 통계량을 의미합니다. p-value는 가설이 얼마나 믿을만한 것인지를 나타내는 지표로 데이터를 새로 샘플링했을 때 귀무 가설이 맞다는 전제 하에 현재 나온 통계값 이상이 나올 확률이라 정의할 수 있습니다.
 
 위 실행결과에서는 첫번째 등분산을 가정한 경우의 t-statistic은 24.429로 두 그룹의 안타 수 평균 차이가 표준 오차보다 매우 크다는 것을 의미합니다.
@@ -320,6 +326,7 @@ for age_group in age_groups:
     age_group_ranks[age_group] = average_obp
     age_group_ranks
 ~~~
+
 <pre>  
 {'25-29': inf,
  '20-24': 0.05207610850721675,
