@@ -2,7 +2,7 @@
 title: QGIS 파이썬 콘솔(PyQGIS)에서 버퍼 생성
 layout: post
 categories : [etc,GIS,QGIS,Python]
-image : /assets/img/study/etc/study/etc/QGIS/QGIS_buffer13.png
+image : /assets/img/study/etc/QGIS/QGIS_buffer13.png
 description:  QGIS 파이썬 콘솔(PyQGIS)에서 버퍼 생성
 customexcerpt:  파이썬과 QGIS를 활용해 버퍼 분석을 해보자! 
 ---
