@@ -1,8 +1,8 @@
 ---  
 title: 관심있는 데이터를 선정하여 분석해보자!
 layout: post  
-categories : [Analytics ]
-image : 건들지 말아주세요
+categories : [Analytics]
+image : /assets/img/study/analytics/사진4.png
 description:  관심있는 데이터를 선정하여 분석해보자!
 customexcerpt: 데이터분석 첫 포스트입니다! 지난 스터디 시간에 '국가별 음주 데이터'를 통해 데이터 실습을 진행했는데요. 복습할 때 관심있는 데이터로 실습해보면 기억에 잘 남지 않을까하는 취지로 글을 쓰게 되었습니다. 저는 2019 국내프로야구리그 타자기록 csv파일로 진행했습니다. 각자 흥미로운 데이터를 선정해서 따라해보아요.
 ---
