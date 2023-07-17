@@ -23,6 +23,9 @@ customexcerpt: DAU-BigDataTeam에서 좋은 소식이 있어요❗ 바로 비전
 이번 계기를 통해 앞으로 더 넓은 데이터 지식을 습득했으면 좋겠습니다.
 
 
-<img src="/assets/img/study/etc/배지혜.jpg" width="480", height="360">  
-<img src="/assets/img/study/etc/전다혜.png" width="480", height="360">  
-<img src="/assets/img/study/etc/박지연.jpg" width="480", height="360">
+![1](/assets/img/study/etc/배지혜.jpg) 
+
+![1](/assets/img/study/etc/전다혜.png)
+
+
+![1](/assets/img/study/etc/박지연.jpg)
