@@ -2,7 +2,7 @@
 title: 전국 대학 등록금 데이터 분석
 layout: post   
 categories : [Analytics] 
-image : /assets/img/study/analytics/tuition/사진5.png
+image : /assets/img/study/analytics/Tuition/사진5.png
 description:  전국 대학 등록금 데이터 분석 
 customexcerpt: 전국 대학 등록금을 이용해서 다양한 인사이트를 발굴해보자!
 ---
