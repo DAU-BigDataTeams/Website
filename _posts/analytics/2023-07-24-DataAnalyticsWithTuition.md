@@ -22,7 +22,7 @@ customexcerpt: 전국 대학 등록금을 이용해서 다양한 인사이트를
 일단 깃허브에 Raw버튼을 누른 후에 나온 링크를 
 
 <!-- 사진1 자리 -->
-![사진1](/assets/img/study/analytics/tuition/사진1.png)
+![사진1](/assets/img/study/analytics/Tuition/사진1.png)
 
 read_csv()에 넣으면 데이터를 불러올 수 있습니다.
 
@@ -50,7 +50,7 @@ tuition = pd.read_csv('여기~')
 tuition.head()
 ~~~
 
-![사진2](/assets/img/study/analytics/tuition/사진2.png)
+![사진2](/assets/img/study/analytics/Tuition/사진2.png)
 
 ## columns
 
@@ -112,7 +112,7 @@ corr = tuition[cols].corr(method='pearson')
 corr
 ~~~
 
-![사진3](/assets/img/study/analytics/tuition/사진2.png)
+![사진3](/assets/img/study/analytics/Tuition/사진2.png)
 
 위 변수들 간의 연관성은 매우 낮아 관련성이 ***'거의 없음'***을 확인할 수 있다.
 
@@ -124,13 +124,13 @@ sns.pairplot(tuition[['average_tuition_fee','number_of_students','average_admiss
 plt.show()
 ~~~
 
-![사진4](/assets/img/study/analytics/tuition/사진4.png)
+![사진4](/assets/img/study/analytics/Tuition/사진4.png)
 
 ## 탐색1. 평균 등록금이 가장 높은 지역('도')는?
 
 `region`열을 `groupby`함수를 이용하여 지역별 평균등록금을 구한 후 평균을 구한다. 이 후 정렬을 한 후 `list`로 변환해서 시각화해주었다. 
 
-![사진5](/assets/img/study/analytics/tuition/사진5.png)
+![사진5](/assets/img/study/analytics/Tuition/사진5.png)
 
 경기도가 평균 등록금이 가장 높은 지역임을 볼 수 있고 부산은 전국 평균 아래인 것도 확인할 수 있다.
 
@@ -142,7 +142,7 @@ private_universities = tuition[tuition['establish_type']=='사립']
 private_universities.head()
 ~~~
 
-![사진6](/assets/img/study/analytics/tuition/사진6.png)
+![사진6](/assets/img/study/analytics/Tuition/사진6.png)
 
 ~~~py
 # 전국 사립대학 중 동아대 등록금
@@ -179,7 +179,7 @@ plt.pie(fracs1, labels=labels,autopct='%1.1f%%',shadow=True)
 plt.show()
 ~~~
 
-![사진7](/assets/img/study/analytics/tuition/사진7.png)
+![사진7](/assets/img/study/analytics/Tuition/사진7.png)
 
 서울과 경기 지역에 대학교가 몰려있고 세종, 제주, 울산 지역에 대학교의 비율이 가장 적다.
 
@@ -210,6 +210,8 @@ y_pos = [public_mean,private_mean]
 plt.bar(x_pos,y_pos)
 plt.show()
 ~~~
+
+![사진8](/assets/img/study/analytics/Tuition/사진8.png)
 
 # 통계적 분석 : 분석 대상 간의 통계적 차이 검정하기
 
