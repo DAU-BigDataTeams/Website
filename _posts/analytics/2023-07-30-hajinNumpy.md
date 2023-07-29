@@ -84,17 +84,17 @@ bools = np.array([False, False, True, False])
 
 - 배열.any() : 하나 이상의 값이 true이면 true 반환, 아니면 false 반환
 
-```python
-bools.any()
-True
-```
+  ```python
+  bools.any()
+  True
+  ```
 
 - 배열.all() : 전부 true이면 true 반환, 아니면 false 반환
 
-```python
-bools.all()
-False
-```
+  ```python
+  bools.all()
+  False
+  ```
 
 ## 1.4 집합 관련 함수
 
@@ -102,23 +102,23 @@ NumPy는 1차원 ndarray를 위한 몇 가지 기본적인 집합 연산을 제�
 
 - np.unique() : 배열 내에서 중복된 원소를 제거하고 남은 원소를 정렬된 형태로 반환하는 것이다.
 
-예시 1
+  예시 1
 
-```python
-names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
-np.unique(names)
-```
+  ```python
+  names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+  np.unique(names)
+  ```
 
-<pre>array(['Bob', 'Joe', 'Will'], dtype='<U4')</pre>
-<br/>
-예시 2
+    <pre>array(['Bob', 'Joe', 'Will'], dtype='<U4')</pre>
+    <br/>
+    예시 2
 
-```python
-ints = np.array([3, 3, 3, 2, 2, 1, 1, 4, 4])
-np.unique(ints)
-```
+  ```python
+  ints = np.array([3, 3, 3, 2, 2, 1, 1, 4, 4])
+  np.unique(ints)
+  ```
 
-<pre>array([1, 2, 3, 4])</pre>
+    <pre>array([1, 2, 3, 4])</pre>
 
 # 2. 배열 데이터의 파일 입출력
 
