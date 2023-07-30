@@ -1,9 +1,9 @@
 ---  
-title: (Chapter 2)Docker를 설치해봐유~ 
+title: Docker 설치해봐유~
 layout: post   
 image : /assets/img/study/docker/book-logo.jpg
 categories : [docker]
-customexcerpt: docker installing step-by-step 
+customexcerpt: 도커 설치를 차근차근 알아가봐유~
 ---
 
 <span class = "alert g">작성자 : 김대로</span>
@@ -28,7 +28,7 @@ Linux에 도커를 설치하는 가장 좋은 방법은 도커에서 제공하�
 
 http://get.docker.com 에서 제공하는 docker 자동 설치 script를 활용할 수 있다. script 사용법은 다음 사진과 같다.    
 
-![docker_install_script](/assets/img/study/docker/chap2/script.PNG)
+![docker-install-script](/assets/img/study/docker/chap2/script.PNG)
 
 위와 같은 절차를 따라 install-docker.sh를 서버에서 받아서 실행하게 되면 도커 설치가 진행된다.
 
