@@ -35,11 +35,11 @@ http://get.docker.com 에서 제공하는 docker 자동 설치 script를 활용�
 installer를 사용하기 싫거나, 다른 버전의 도커를 사용하고 싶다면, 도커 웹사이트에서 바이너리(https://docs.docker.com/installation)를 다운로드 하면된다.
 
 (해당 서적은 도커의 1.8 버전 사용)  
-</br>
+
 
 ### **허용(Permissive) 모드에서 SELinux 실행하기**
 
-</br>
+
 
 RHEL, CentOS, Fedora를 포함한 레드햇 기반의 배포판을 실행하고 있다면, SELinux 보안 모듈이 설치되어 있다.
 
@@ -52,11 +52,11 @@ RHEL, CentOS, Fedora를 포함한 레드햇 기반의 배포판을 실행하고 
   
 sestatus 명령어를 통해 SELinux 모드를 확인할 수 있다. enforcing 모드인 경우 sudo sentenforce 0 명령어를 실행.
 
-</br>
+
 
 
 ### **sudo 없이 실행하기**
-</br>
+
 
 도커는 기본적으로 권한을 가지는 바이너리이기 때문에 실행을 하려면 명령 뒤에 sudo를 명시해 주어야 한다.      
 
@@ -73,13 +73,13 @@ $ sudo service docker restart
 
 ## Mac OS 또는 Windows에 도커 설치하기
 
-</br>
+
 
 Windows 도는 Mac OS를 사용한다면, 도커를 실행하기 위한 가상화 환경이 필요하다.      
 
 가상화 환경 생성을 위해서 완전한 형태의 VM(Virtual Machine) 솔루션을 다운로드하거나, 도커 Toolbox(boot2docker VM 및 도커 도구 포함)를 설치하는 방식을 이용할 수 있다.   
 
-</br>
+
 
 Toolbox의 quickstart 터미널을 열어서 도커로 접속한다. 또한, 아래와 같은 명령어를 통해 기존 터미널에서 접속하도록 설정하는 것도 가능하다.
 ~~~ py
@@ -95,11 +95,11 @@ $ curl $(docker-machine ip default):5000
 ~~~
 docker-machine ip default는 VM의 IP 주소에 해당한다.
 
-</br>
+
 
 ## 점검하기
 
-</br>
+
 
 ※ 아래에서 다룰 docker version 확인에 관련된 명령어들은 리눅스 호스트에서만 동작하니 이점을 유의!
 
