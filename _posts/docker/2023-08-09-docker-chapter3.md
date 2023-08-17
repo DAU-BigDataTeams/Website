@@ -89,11 +89,11 @@ customexcerpt: 도커로 실행 및 기본 명령어에 대하여 알아보기
 
 (3) **grep 명령, --format 인수** : 관심 있는 정보를 필터링
 
-```$ docker inspect stupefied_turing | grep IPAdress```
-```$ docker inspect --format {{.NetworkSettings.IPAddress}} stupefied_turing```
-
-```$ docker inspect --format {{.NetworkSettings.IPAddress}} stupefied_turing```
-
+~~~shell
+$ docker inspect stupefied_turing | grep IPAdress
+$ docker inspect --format {{.NetworkSettings.IPAddress}} stupefied_turing
+$ docker inspect --format {{.NetworkSettings.IPAddress}} stupefied_turing
+~~~
 
 
 ![5_docker_grep](/assets/img/study/docker/chap3/5_docker_grep.png) 
