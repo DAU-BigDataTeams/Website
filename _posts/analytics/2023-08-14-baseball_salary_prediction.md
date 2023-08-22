@@ -66,17 +66,21 @@ batter = pd.read_csv(batter_file_path)
 
 **데이터 확인**  
 데이터 셋의 컬럼은 어떤 것들이 있는지 확인한다.
+
 ~~~py
 picher.columns
 ~~~
+
 <pre>
 Index(['선수명', '팀명', '승', '패', '세', '홀드', '블론', '경기', '선발', '이닝', '삼진/9', '볼넷/9', '홈런/9', 'BABIP', 'LOB%', 'ERA', 'RA9-WAR', 'FIP', 'kFIP', 'WAR', '연봉(2018)', '연봉(2017)'], dtype='object')
 </pre>  
 
 대략적인 데이터 셋 구성 확인
+
 ~~~py
 picher.head()
 ~~~
+
 <pre>
 
 선수명	팀명	승	패	세	홀드	블론	경기	선발	이닝	...	홈런/9	BABIP	LOB%	ERA	RA9-WAR	FIP	kFIP	WAR	연봉(2018)	연봉(2017)
@@ -89,17 +93,21 @@ picher.head()
 </pre>
 
 데이터셋 크기 확인
+
 ~~~py
 print(picher.shape)
 ~~~
+
 <pre>
 (152, 22)
 </pre>
 
 이제 예측할 대상인 '연봉' 컬럼에 대해 살펴보자
+
 ~~~py
 picher['연봉(2018)'].describe()
 ~~~
+
 <pre>
 count       152.000000
 mean      18932.236842
@@ -115,6 +123,7 @@ Name: 연봉(2018), dtype: float64
 ~~~py
 picher['연봉(2018)'].hist(bins=100) # 2018년 연봉 분포를 출력합니다.
 ~~~
+
 ![연봉 분포 그래프](/assets/img/study/analytics/연봉분포그래프.png)  
 연봉 분포도를 확인한 결과 대부분의 선수들의 연봉이 2억 5천만원 이하에 몰려있는 것을 확인할 수 있다. 이를 통해 대략적으로 5억 이상의 연봉 데이터는 이상치로 예상해 볼 수 있다.  
 추가로 만약 데이터의 분포 형태가 정규 분포가 아니라면, [Box-Cox 변환](https://zephyrus1111.tistory.com/190)과 같은 방법으로 정규분포 꼴로 전처리해주어야 한다.
@@ -122,9 +131,11 @@ picher['연봉(2018)'].hist(bins=100) # 2018년 연봉 분포를 출력합니다
 ~~~py
 picher.boxplot(column=['연봉(2018)']) # 연봉의 Boxplot을 출력합니다.
 ~~~
+
 ![연봉 Boxplot](/assets/img/study/analytics/연봉Boxplot.png)
 
 * boxplot 해석  
+
 ![boxplot](/assets/img/study/analytics/Boxplot.png)  
     - 울타리 바깥의 값은 이상치(Outlier)에 해당된다.
     - Q1, Q3 : 각각 25%, 75%에 해당된다.
@@ -132,6 +143,7 @@ picher.boxplot(column=['연봉(2018)']) # 연봉의 Boxplot을 출력합니다.
 
 **회귀 분석에 사용할 피쳐 확인**  
 이제 실질적으로 연봉 예측에 필요한 피쳐만을 뽑아보자. 
+
 ~~~py
 picher_features_df = picher[['승', '패', '세', '홀드', '블론', '경기', '선발', '이닝', '삼진/9', '볼넷/9', '홈런/9', 'BABIP', 'LOB%', 'ERA', 'RA9-WAR', 'FIP', 'kFIP', 'WAR', '연봉(2018)', '연봉(2017)']]
 ~~~
@@ -151,8 +163,10 @@ def plot_hist_each_column(df):
 
 plot_hist_each_column(picher_features_df)
 ~~~
+
 ![회귀 분석용 피쳐](/assets/img/study/analytics/회귀분석용피쳐.png)
 이 구간에서 중요하게 확인해야 하는 부분은 다음과 같다.  
+
 **1. 해당 컬럼이 정규 분포를 따르는지**  
 **2. 요소들의 단위는 어떻게 되는지(다르다면 정규화가 필요하다)**
 
@@ -161,6 +175,7 @@ plot_hist_each_column(picher_features_df)
 이제 본격적으로 예측에 들어가보자. 본 예제는 앞서 확인한 컬럼 값들이 정규분포를 따른다고 가정하고, 요소들의 단위를 맞춰주는 정규화(피쳐 스케일링) 작업을 진행한다.  
 
 다음 코드는 정규화 방법 중에 표준화 방법(z-score normalization)을 사용한다(또 다른 정규화 방법인 min-max 정규화는 이상치에 약하기 때문).
+
 > 표준화 공식 = (X) - (X의 평균) / X의 표준편차
 
 ~~~py
@@ -183,7 +198,9 @@ picher_df = standard_scaling(picher, scale_columns)
 picher_df = picher_df.rename(columns={'연봉(2018)': 'y'})
 picher_df.head(5)
 ~~~   
+
 표준 정규화 결과는 아래와 같다.
+
 <pre>
 
 선수명	팀명	승	패	세	홀드	블론	경기	선발	이닝	...	홈런/9	BABIP	LOB%	ERA	RA9-WAR	FIP	kFIP	WAR	y	연봉(2017)
@@ -205,6 +222,7 @@ picher_df.head(5)
 
 
 pandas에서는 get_dummies() 함수로 간단하게 원-핫 인코딩 적용이 가능하다.
+
 ~~~py
 # 팀명 피처를 one-hot encoding으로 변환합니다.
 team_encoding = pd.get_dummies(picher_df['팀명'])
@@ -213,6 +231,7 @@ picher_df = picher_df.join(team_encoding)
 
 team_encoding.head(5)
 ~~~
+
 <pre>
 
         KIA	KT	LG	NC	SK	두산	롯데	삼성	한화
@@ -256,6 +275,7 @@ print(lr.coef_)
 ~~~
 
 학습된 계수(모델 상태, model parameter)는 다음과 같다. 
+
 <pre>
 [ -1481.01733901   -416.68736601 -94136.23649209  -1560.86205158
    1572.00472193   -747.04952389  -1375.53830289   -523.54687556
@@ -283,6 +303,7 @@ X_train = sm.add_constant(X_train)
 model = sm.OLS(y_train, X_train).fit()
 model.summary()
 ~~~
+
 ![statsmodel](/assets/img/study/analytics/statsmodel.png)
 
 위의 실행 결과의 우측 상단에 있는 **R-squared(결정 계수)** 와 **Adj. R-squared(수정 결정 계수)** 두 가지의 점수가 곧 회귀 분석 정확도를 평가하는 지표가 된다. 이 점수가 1에 가까울수록 데이터를 잘 설명하는 모델이라 할 수 있다.
@@ -292,6 +313,7 @@ model.summary()
 또한 표의 **P>|t|** 컬럼 값은 각 피처의 검정 통계량(t-statistics)이 얼마나 유의미한지에 대한 p-value 값이다. 
 
 **유의미한 피쳐 판별**
+
 ~~~py
 # 한글 출력을 위한 사전 설정 단계입니다.
 plt.rc('font', family='NanumGothic')
@@ -311,6 +333,7 @@ ax.set_xlabel('x_features')
 ax.set_ylabel('coef')
 ax.set_xticklabels(x_labels)
 ~~~
+
 ![피쳐영향력](/assets/img/study/analytics/피쳐영향력.png)
 
 시각화 결과 FIP, WAR, 홈런, 작년 연봉 피처가 가장 영향력이 큰 것을 확인할 수 있다.
@@ -332,6 +355,7 @@ model = lr.fit(X_train, y_train)
 print(model.score(X_train, y_train)) # train R2 score를 출력(비유하면 모의고사 점수)
 print(model.score(X_test, y_test)) # test R2 score를 출력(수능 점수)
 ~~~
+
 <pre>
 0.9276949405576705 
 0.8860171644977817
@@ -342,6 +366,7 @@ print(model.score(X_test, y_test)) # test R2 score를 출력(수능 점수)
 과적합 발생 여부는 그래프를 그려보아야 정확히 알 수 있지만 앞자리 수가 다르면 대부분 과적합인 경우가 많다고 한다.  
 
 **피처들의 상관관계 분석**
+
 ~~~py
 import seaborn as sns
 
@@ -366,6 +391,7 @@ hm = sns.heatmap(corr.values,
 plt.tight_layout()
 plt.show()
 ~~~
+
 ![heatmap](/assets/img/study/analytics/heatmap.png)
 히트맵에서 두 피처의 상관도가 1에 가까운 승-이닝, kFIP-FIP, RA9_WAR-WAR 등의 쌍이 연관성이 높다는 것을 확인할 수 있다.  
 
@@ -377,6 +403,7 @@ plt.show()
 
 ## 4. 시각화 : 분석 결과 시각화
 **예측 연봉과 실제 연봉 비교**  
+
 ~~~py
 # 2018년 연봉을 예측하여 데이터프레임의 column으로 생성합니다.
 X = picher_df[['FIP', 'WAR', '볼넷/9', '삼진/9', '연봉(2017)']] # 주성분 분석(PCA)을 통해 선별한 피처라고 가정
@@ -400,6 +427,7 @@ result_df = result_df.reset_index()
 result_df = result_df.iloc[:10, :]
 result_df.head(10)
 ~~~
+
 <pre>
 
 index   선수명	실제연봉(2018)	예측연봉(2018) 작년연봉(2017)
@@ -420,6 +448,7 @@ index   선수명	실제연봉(2018)	예측연봉(2018) 작년연봉(2017)
 plt.rc('font', family='NanumBarunGothic')
 result_df.plot(x='선수명', y=['작년연봉(2017)', '예측연봉(2018)', '실제연봉(2018)'], kind="bar")
 ~~~
+
 ![분석결과](/assets/img/study/analytics/분석결과.png)
 
 그래프를 보면 학습한 회귀모델이 연봉 상승과 감소 **추세**를 비교적 잘 맞추고 있음을 확인할 수 있다. 
