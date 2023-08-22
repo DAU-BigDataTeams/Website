@@ -8,6 +8,8 @@ title: Archive
     <h2>DAU-BigDataTeam Spark Study📖</h2>
     <ul>
     {% for post in category[1] %}
+    
+    <hr style="border: 2px solid black;">
       <div class="post">
         <h2 id="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
 
@@ -41,6 +43,8 @@ title: Archive
             <span class="continue-reading"><a href="{{ post.url | relative_url }}">Continue reading...</a></span>
         </p> 
     </div>  
+    
+    <hr style="border: 2px solid black;">    
     {% endfor %}
     </ul>
   {% endif %}
