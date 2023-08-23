@@ -54,6 +54,7 @@ jobs:
       # 만약 캐싱 누락의 경우              
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
+        if: steps.ruby-cache.outputs.cache-hit == ''
         with:
           ruby-version: 3.1.0
 
