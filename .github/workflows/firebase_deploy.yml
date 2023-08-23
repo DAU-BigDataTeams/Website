@@ -71,6 +71,7 @@ jobs:
 
       - name: Build Jekyll site
         run: |
+          bundle _2.2.34_ install  
           bundle exec jekyll build
       
       - name: Deploy to Firebase
