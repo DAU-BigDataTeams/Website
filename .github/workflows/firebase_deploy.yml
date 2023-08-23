@@ -15,26 +15,23 @@ jobs:
         with:
           fetch-depth: 0 # 히스토리 비교를 위해 0으로 설정
 
-      - name: Cache Ruby dependencies and installation
+      - name: Cache Ruby dependencies
         id: ruby-cache
         uses: actions/cache@v2
         with:
-          path: |
-            vendor/bundle
-            ~/.rvm # 또는 ~/.rbenv 등 루비 설치 경로
-          key: ${{ runner.os }}-ruby-${{ hashFiles('**/*.gemspec') }}
+          path: vendor/bundle
+          key: ${{ runner.os }}-ruby-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-ruby-
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Cache Node.js dependencies
+        id: node-cache
+        uses: actions/cache@v2
         with:
-          ruby-version: 3.1.0
-
-      - name: Install Jekyll and dependencies
-        run: |
-          gem install bundler:2.2.34
-          bundle _2.2.34_ install
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Cache Firebase CLI
         id: firebase-cache
@@ -44,6 +41,20 @@ jobs:
           key: ${{ runner.os }}-firebase
           restore-keys: |
             ${{ runner.os }}-firebase     
+
+      - name: Cache Jekyll dependencies
+        id: jekyll-cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.bundle
+          key: ${{ runner.os }}-jekyll-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-jekyll-
+
+      - name: Install Jekyll and dependencies
+        run: |
+          gem install bundler:2.2.34
+          bundle _2.2.34_ install   
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
