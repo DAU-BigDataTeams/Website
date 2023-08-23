@@ -33,6 +33,9 @@ jobs:
           gem install bundler:2.2.34
           bundle _2.2.34_ install
 
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+
       - name: Cache Node.js dependencies
         id: node-cache
         uses: actions/cache@v2
