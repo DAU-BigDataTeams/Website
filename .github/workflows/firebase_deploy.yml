@@ -54,15 +54,20 @@ jobs:
       # 만약 캐싱 누락의 경우              
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        if: steps.ruby-cache.outputs.cache-hit == ''
         with:
           ruby-version: 3.1.0
 
-      - name: Install Jekyll and dependencies
+      - name: Install Jekyll dependencies
         if: steps.jekyll-cache.outputs.cache-hit == ''
         run: |
           gem install bundler:2.2.34
+          echo 'export PATH="$HOME/.bundle/bin:$PATH"' >> $GITHUB_ENV
           bundle _2.2.34_ install  
+
+      - name: Install Bundler
+        run: |
+          gem install bundler:2.2.34
+          echo 'export PATH="$HOME/.bundle/bin:$PATH"' >> $GITHUB_ENV
 
       - name: Build Jekyll site
         run: |
