@@ -14,27 +14,51 @@ jobs:
         with:
           fetch-depth: 0 # 히스토리 비교를 위해 0으로 설정
 
+      - name: Cache Ruby dependencies
+        id: ruby-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-ruby-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-ruby-
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1.0
-
+          
       - name: Install Jekyll and dependencies
         run: |
           gem install bundler:2.2.34
           bundle _2.2.34_ install
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
+      - name: Cache Node.js dependencies
+        id: node-cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 16
-
+          
       - name: Setup Firebase CLI
         run: |
           curl -sL https://firebase.tools | bash
+
+      - name: Cache Firebase CLI
+        id: firebase-cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/firebase
+          key: ${{ runner.os }}-firebase
+          restore-keys: |
+            ${{ runner.os }}-firebase
 
       - name: Deploy to Firebase
         run: firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
