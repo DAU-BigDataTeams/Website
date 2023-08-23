@@ -42,26 +42,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-firebase     
 
-      - name: Cache Jekyll dependencies
-        id: jekyll-cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.bundle
-          key: ${{ runner.os }}-jekyll-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-jekyll-
-
       # 만약 캐싱 누락의 경우              
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1.0
 
-      - name: Install Jekyll Install
+      - name: Build
         run: |
           gem install bundler:2.2.34
           bundle _2.2.34_ install 
-      
+          bundle exec jekyll build
+          
       - name: Deploy to Firebase
         run: |
           curl -sL https://firebase.tools | bash
