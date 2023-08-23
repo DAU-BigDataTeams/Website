@@ -41,17 +41,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-firebase     
 
-      - name: List files in ~/.cache/firebase
-        run: |
-          ls -la ~/.cache/firebase
-          which firebase
-          
-
-      - name: Deploy to Firebase
-        run: |
-          chmod +x ~/.cache/firebase/firebase
-          export PATH="$PATH:/home/runner/.cache/firebase"
-          firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
+      - uses: pchmn/firebase-cli-github-action@main
+        with: 
+          token: ${{ secrets.FIREBASE_TOKEN }}
+          projectId: datadecetive
+          args: deploy --only hosting 
   
 
       # 추가된 파일이 있을 때 알림 보냄
