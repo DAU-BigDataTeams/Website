@@ -41,12 +41,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-firebase     
 
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+
       - uses: pchmn/firebase-cli-github-action@main
-        with: 
+        with:
           token: ${{ secrets.FIREBASE_TOKEN }}
           projectId: datadecetive
-          args: deploy --only hosting 
-  
+          args: deploy --only hosting
 
       # 추가된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added files
