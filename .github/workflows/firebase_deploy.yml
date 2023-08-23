@@ -31,7 +31,9 @@ jobs:
       - name: Install Jekyll and dependencies
         run: |
           gem install bundler:2.2.34
+          bundle _2.2.34_ config set path 'vendor/bundle'
           bundle _2.2.34_ install
+    
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
