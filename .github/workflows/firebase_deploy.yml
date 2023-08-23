@@ -39,29 +39,11 @@ jobs:
           path: ~/.cache/firebase
           key: ${{ runner.os }}-firebase
           restore-keys: |
-            ${{ runner.os }}-firebase        
-
-      # - name: Set up Ruby
-      #   uses: ruby/setup-ruby@v1
-      #   with:
-      #     ruby-version: 3.1.0
-          
-      # - name: Install Jekyll and dependencies
-      #   run: |
-      #     gem install bundler:2.2.34
-      #     bundle _2.2.34_ install
-
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: 16
-          
-      # - name: Setup Firebase CLI
-      #   run: |
-      #     curl -sL https://firebase.tools | bash
+            ${{ runner.os }}-firebase       
 
       - name: Deploy to Firebase
         run: |
+          echo $PATH
           export PATH="$PATH:~/.cache/firebase" 
           firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
 
