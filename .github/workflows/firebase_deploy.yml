@@ -8,29 +8,33 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           fetch-depth: 0 # 히스토리 비교를 위해 0으로 설정
 
-      - name: Cache Ruby dependencies
+      - name: Cache Ruby dependencies and installation
         id: ruby-cache
         uses: actions/cache@v2
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-ruby-${{ hashFiles('**/Gemfile.lock') }}
+          path: |
+            vendor/bundle
+            ~/.rvm # 또는 ~/.rbenv 등 루비 설치 경로
+          key: ${{ runner.os }}-ruby-${{ hashFiles('**/*.gemspec') }}
           restore-keys: |
             ${{ runner.os }}-ruby-
 
-      - name: Cache Node.js dependencies
-        id: node-cache
-        uses: actions/cache@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          ruby-version: 3.1.0
+
+      - name: Install Jekyll and dependencies
+        run: |
+          gem install bundler:2.2.34
+          bundle _2.2.34_ install
 
       - name: Cache Firebase CLI
         id: firebase-cache
@@ -44,16 +48,10 @@ jobs:
       - name: Build Jekyll site
         run: bundle exec jekyll build
       
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: npm
-
-      - uses: pchmn/firebase-cli-github-action@main
-        with:
-          token: ${{ secrets.FIREBASE_TOKEN }}
-          projectId: datadecetive
-          args: deploy --only hosting
+      - name: Deploy to Firebase
+        run: |
+          curl -sL https://firebase.tools | bash
+          firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
 
       # 추가된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added files
