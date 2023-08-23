@@ -41,6 +41,28 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-firebase        
 
+      # - name: Set up Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: 3.1.0
+          
+      # - name: Install Jekyll and dependencies
+      #   run: |
+      #     gem install bundler:2.2.34
+      #     bundle _2.2.34_ install
+
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: 16
+          
+      # - name: Setup Firebase CLI
+      #   run: |
+      #     curl -sL https://firebase.tools | bash
+
+      - name: Deploy to Firebase
+        run: firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
+
       # 추가된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added files
         id: diff_check
