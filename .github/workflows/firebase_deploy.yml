@@ -41,6 +41,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-firebase     
 
+      - name: List files in ~/.cache/firebase
+        run: |
+          ls -la ~/.cache/firebase
+          
+
       - name: Deploy to Firebase
         run: |
           chmod +x ~/.cache/firebase/firebase
