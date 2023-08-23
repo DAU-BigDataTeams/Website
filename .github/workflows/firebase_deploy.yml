@@ -39,13 +39,13 @@ jobs:
           path: ~/.cache/firebase
           key: ${{ runner.os }}-firebase
           restore-keys: |
-            ${{ runner.os }}-firebase       
+            ${{ runner.os }}-firebase     
 
       - name: Deploy to Firebase
         run: |
-          echo $PATH
-          export PATH="$PATH:~/.cache/firebase" 
+          export PATH="$PATH:/home/runner/.cache/firebase"
           firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
+  
 
       # 추가된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added files
