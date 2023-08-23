@@ -23,21 +23,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-ruby-
 
-      # - name: Set up Ruby
-      #   uses: ruby/setup-ruby@v1
-      #   with:
-      #     ruby-version: 3.1.0
-          
-      - name: Install Jekyll and dependencies
-        run: |
-          gem install bundler:2.2.34
-          bundle _2.2.34_ config set path 'vendor/bundle'
-          bundle _2.2.34_ install
-    
-
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
-
       - name: Cache Node.js dependencies
         id: node-cache
         uses: actions/cache@v2
@@ -47,15 +32,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: 16
-          
-      # - name: Setup Firebase CLI
-      #   run: |
-      #     curl -sL https://firebase.tools | bash
-
       - name: Cache Firebase CLI
         id: firebase-cache
         uses: actions/cache@v2
@@ -63,10 +39,7 @@ jobs:
           path: ~/.cache/firebase
           key: ${{ runner.os }}-firebase
           restore-keys: |
-            ${{ runner.os }}-firebase
-
-      - name: Deploy to Firebase
-        run: firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
+            ${{ runner.os }}-firebase        
 
       # 추가된 파일이 있을 때 알림 보냄
       - name: Check Git diff for added files
