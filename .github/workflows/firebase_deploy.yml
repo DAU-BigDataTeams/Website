@@ -63,7 +63,6 @@ jobs:
       - name: Deploy to Firebase
         run: |
           export PATH="$PATH:~/.cache/firebase" # Firebase CLI를 환경 변수 PATH에 추가
-          curl -sL https://firebase.tools | bash
           firebase deploy --only hosting --project datadecetive --token ${{ secrets.FIREBASE_TOKEN }}
 
       # 추가된 파일이 있을 때 알림 보냄
