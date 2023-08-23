@@ -61,11 +61,11 @@ jobs:
       - name: Install Jekyll and dependencies
         if: steps.jekyll-cache.outputs.cache-hit == ''
         run: |
+          gem install bundler:2.2.34
           bundle _2.2.34_ install  
 
       - name: Build Jekyll site
         run: |
-          gem install bundler:2.2.34
           bundle exec jekyll build
       
       - name: Deploy to Firebase
