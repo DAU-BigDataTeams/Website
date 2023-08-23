@@ -60,18 +60,7 @@ jobs:
       - name: Install Jekyll Install
         run: |
           gem install bundler:2.2.34
-          echo 'export PATH="$HOME/.bundle/bin:$PATH"' >> $GITHUB_ENV
-
-      - name: Jeklly dependencies
-        if: steps.jekyll-cache.outputs.cache-hit == ''
-        run:  
           bundle _2.2.34_ install 
-
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
-        env:
-          BUNDLE_PATH: "$HOME/.bundle"
-          PATH: "$BUNDLE_PATH/bin:$PATH"
       
       - name: Deploy to Firebase
         run: |
