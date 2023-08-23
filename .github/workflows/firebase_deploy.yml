@@ -29,9 +29,12 @@ jobs:
           ruby-version: 3.1.0
           
       - name: Install Jekyll and dependencies
+        id: jekyll-cache
         run: |
           gem install bundler:2.2.34
           bundle _2.2.34_ install
+        env:
+          BUNDLE_PATH: vendor/bundle
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
