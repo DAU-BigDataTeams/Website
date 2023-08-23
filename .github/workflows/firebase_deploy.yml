@@ -52,6 +52,7 @@ jobs:
             ${{ runner.os }}-jekyll-
 
       - name: Install Jekyll and dependencies
+        if: steps.jekyll-cache.outputs.cache-hit == ''
         run: |
           gem install bundler:2.2.34
           bundle _2.2.34_ install   
