@@ -16,7 +16,7 @@ customexcerpt: A Semantic Parsing Dataset for Converting Natural Language into C
 title : SpCQL: A Semantic Parsing Dataset for Converting Natural Language into Cypher  
 author = Guo, Aibo and Li, Xinyi and Xiao, Guanchen and Tan, Zhen and Zhao, Xiang  
 DOI : [https://dl.acm.org/doi/10.1145/3511808.3557703](https://dl.acm.org/doi/10.1145/3511808.3557703)   
-publisher : In Proceedings of the 31st ACM International Conference on Information & Knowledge Management (CIKM '22). Association for Computing Machinery
+publisher : In Proceedings of the 31st ACM International Conference on Information & Knowledge Management (CIKM '22). Association for Computing Machinery  
 keywords : graph database, cql, semantic parsing, cypher
 
 
