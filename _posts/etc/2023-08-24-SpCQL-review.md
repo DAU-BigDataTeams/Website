@@ -133,10 +133,10 @@ SpCQL은 쿼리-CQL 쌍을 분석해서 해당 데이터 셋이 실제 사용자
 ----
 Text-to-CQL 작업의 평가를 위해 Text-to-SQL 작업의 평가와 유사하게 두 가지 지표, 논리적 정확성과 실행 정확성을 채택함.
 
-1. 논리적 정확성: 모델이 생성한 CQL 쿼리와 GOLD CQL의 논리 형식을 비교함. WHERE 절의 조건부 순서의 영향이 제외되지 않아 조건부 순서로 인한 FP(False Positives)가 포함될 수 있음.
+1. 논리적 정확성: 모델이 생성한 CQL 쿼리와 GOLD CQL의 논리 형식을 비교함. WHERE 절의 조건부 순서의 영향이 제외되지 않아 조건부 순서로 인한 FP(False Positives)가 포함될 수 있음.  
 $$ACC_LX = \frac {number \ of \ CQL \ with \ correct \ logic \ form} {total \ number \ of \ CQL}$$
 
-2. 실행 정확성: 실행 정확성은 모델이 생성한 CQL 쿼리의 결과를 GOLD CQL 실행 결과와 비교함. WHERE 절의 조건과 같은 조건의 순서가 결과에 영향을 주지 않기 때문에 조건의 순서의 영향을 무시할 수 있음.
+2. 실행 정확성: 실행 정확성은 모델이 생성한 CQL 쿼리의 결과를 GOLD CQL 실행 결과와 비교함. WHERE 절의 조건과 같은 조건의 순서가 결과에 영향을 주지 않기 때문에 조건의 순서의 영향을 무시할 수 있음.  
 $$ACC_EX = \frac {number \ of \ CQL \ with \ correct \ execution \ result} {total \ number \ of \ CQL}$$
 
 ## 결과 분석
