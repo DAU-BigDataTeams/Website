@@ -23,7 +23,7 @@ customexcerpt: 실제 개발에 도커를 사용해보기
 
 "Hello World"라고 응답하는 웹서버를 만들어보자. identidock이라는 이름의 새로운 디렉터리를 만들고 다음과 같은 구조가 되도록 파일을 만든다.
 
-![1](/assets/img/study/docker/ch5/1.jpg) 
+![1](/assets/img/study/docker/ch5/1.JPG) 
 
 identidock.py엔 다음 파이썬 코드를 기입한다.
 
