@@ -3,9 +3,6 @@ Member:
 - name: 'Members'
   url: 'memberhome.html'
 Study:
-# kaggle 관련 포스트
-  - name: 'Kaggle'
-    url: 'pages/kaggle.html'
 # Docker 스터디 관련 포스트
   - name: 'Docker'
     url: 'pages/Docker.html'
