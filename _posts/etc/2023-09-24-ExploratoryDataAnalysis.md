@@ -2,9 +2,9 @@
 title: 데이터 과학 프로젝트의 첫 걸음, 탐색적 데이터 분석
 layout: post 
 categories : [Analytics,  data-science]
-image : 
+image : /assets/img/study/etc/PracticalStatistics_1/image-6.png
 description: 데이터 과학 프로젝트의 첫 걸음, 탐색적 데이터 분석
-customexcerpt: 위치와 변이 추정부터 이변량 관계까지 다양한 계측을 알아보자
+customexcerpt: 위치와 변이 추정부터 이변량 분석까지 다양한 계측을 알아보자
 ---
 
 <span class = "alert g">작성자 : 김종호</span>
@@ -30,7 +30,8 @@ customexcerpt: 위치와 변이 추정부터 이변량 관계까지 다양한 �
 이를 예시와 함께 그림으로 보자면
 
 <!-- 그림1 -->
-![Alt text](image-9.png)
+![post1](/assets/img/study/etc/PracticalStatistics_1/image-9.png)
+
 이렇습니다~ 
 
 간단히 요약하자면, 연속형 데이터는 연속적인 값을 가지며 주로 실수로 표현되고, 이산형 데이터는 개별적인 값을 가진다. 명목형은 순서 없이 범주를 표현하고, 순서형은 범주 간 상대적인 순위를 나타낸다.
@@ -51,7 +52,7 @@ customexcerpt: 위치와 변이 추정부터 이변량 관계까지 다양한 �
 
 위치 추정은 대부분의 값이 어디쯤에 위치하는지(중심 경향성)을 나타내는 추정값을 말한다. 이런 위치 추정을 하는 가장 기초적인 단계 중 하나는 각 특성(feature)의 대푯값을 계산하는 것이다.
 
-대부분의 사람들은 데이터를 추정하려면 평균을 구하면 될 것이라 생각한다. **but!** 평균은 이상치의 영향 또는 비대칭 분포와 같은 상황에서 데이터의 중심 경향성을 대표하는 가장 좋은 방법이 아니다! 이제 평균을 포함해서 다양한 위치 추정 방법에 대해 알아보자
+대부분의 사람들은 데이터를 추정하려면 평균을 구하면 될 것이라 생각한다. **but!** 평균은 이상치의 영향 또는 비대칭 분포와 같은 상황에서 데이터의 중심 경향성을 대표하는 좋은 방법이 아니다! 이제 평균을 포함해서 다양한 위치 추정 방법에 대해 알아보자
 
 > 이상치의 영향 : 데이터가 [1,2,3,4,1000]이 있을 때 평균은 약 252이지만, 중심은 데이터는 1~4사이에 모여있다. 이상치가 큰 값을 가지면 평균이 그 영향을 받아 중심 경향성을 왜곡할 수도 있다.
 
@@ -65,7 +66,7 @@ customexcerpt: 위치와 변이 추정부터 이변량 관계까지 다양한 �
   
 - 중앙값 : 데이터를 정렬했을 때  가운데 위치한 값
     - 평균과는 다르게 극단적으로 큰 값이나 작은 값의 영향을 크게 받지 않아, 평균에 비해 위치 추정이 더 유리하다.
-    - 짝수 개일 경우 가운데 있는 두값의 평균으로 대체
+    - 짝수 개일 경우 가운데 있는 두 값의 평균으로 대체
 
 
 ## 1.4 변이 추정
@@ -98,7 +99,7 @@ customexcerpt: 위치와 변이 추정부터 이변량 관계까지 다양한 �
 - 상자그림 : 백분위수를 이용해 데이터의 분산을 시각화한 것
   
 <!-- 그림2 -->
-![Alt text](image.png)
+![post2](/assets/img/study/etc/PracticalStatistics_1/image.png)
 
 > IQR(Inter Quatile Range) : 상위 25%값(Q1)과 상위 75값(Q3)의 차이   
 > pyplot의 boxplot() 함수
@@ -128,7 +129,7 @@ customexcerpt: 위치와 변이 추정부터 이변량 관계까지 다양한 �
   plt.show()
   ~~~
 
-  ![Alt text](image-2.png)
+  ![post2](/assets/img/study/etc/PracticalStatistics_1/image-2.png)
 
   - 밀도 그림 : 데이터의 분포를 연속된 선으로 나타낸다.
       - 부드러운 히스토그램
@@ -147,7 +148,7 @@ customexcerpt: 위치와 변이 추정부터 이변량 관계까지 다양한 �
   plt.show()
   ~~~
 
-  ![Alt text](image-3.png)
+  ![post2](/assets/img/study/etc/PracticalStatistics_1/image-3.png)
 
 
 ## 1.6 이진 데이터와 범주 데이터 탐색하기
@@ -172,7 +173,7 @@ customexcerpt: 위치와 변이 추정부터 이변량 관계까지 다양한 �
   plt.show()
   ~~~
 
-  ![Alt text](image-4.png)
+  ![post2](/assets/img/study/etc/PracticalStatistics_1/image-4.png)
 
   막대 도표와 히스토그램은 매우 유사한 모습을 가지고 있지만, **차이점**이 있다. 
 
@@ -198,7 +199,7 @@ df = pd.DataFrame(data)
 df.corr()
 ~~~
 
-![Alt text](image-5.png)
+![post2](/assets/img/study/etc/PracticalStatistics_1/image-5.png)
 
  
 상관관계가 있다고 해서 **인과관계가 있다는 것은 아니다!** 상관관계가 높다고 해서 두 변수에서 하나의 변수가 다른 변수의 원인을 설명할 수는 없다. 그냥 두 변수 간에 관련성이 높을 뿐이다.
@@ -219,7 +220,8 @@ df.corr()
     plt.tight_layout()
     plt.show()
     ~~~
-    ![Alt text](image-6.png)
+    
+    ![post2](/assets/img/study/etc/PracticalStatistics_1/image-6.png)
 
     시각화 결과를 통해 집의 크기와 과세 평가 금액 간에 양의 상관관계가 나타남을 확인할 수 있다. 뿐만 아니라 집들이 그룹으로 구분되어 있는데, 예를 들어 최하위 그룹의 집들과 비교하여 상위 그룹의 집들은 동일한 크기를 가지지만 더 높은 과세 평가 금액을 가지고 있음을 알 수 있다.
 
@@ -235,7 +237,7 @@ df.corr()
     plt.show()
     ~~~
     
-    ![Alt text](image-7.png)
+    ![post2](/assets/img/study/etc/PracticalStatistics_1/image-7.png)
     
     등고선은 이 두 변수로 이루어진 지형에서의 등고선을 나타낸다. 등고선 상의 점들은 밀도를 나타내며, '꼭대기' 방향으로 이동할수록 밀도가 높아진다.
 
