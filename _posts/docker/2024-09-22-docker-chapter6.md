@@ -200,7 +200,7 @@ CMD ["/cmd.sh"]
 ~~~
  
 
-**<주요 코드 설명>**
+**[주요 코드 설명]**
 ~~~bash
 RUN pip install Flask==0.10.1 uWSGI==2.0.8 requests==2.5.1  #1
 ~~~
@@ -276,7 +276,7 @@ dnmonster:  #2
 
  사용자의 입력을 해시로 변환을 통해 이메일 주소와 같은 민감한 값들을 가릴 수 있음
 
-**<전체 코드>**
+**[전체 코드]**
 ~~~py
 from flask import Flask,Response,request
 import requests
@@ -322,7 +322,7 @@ if __name__=='__main__':
 
 ~~~
 
-**<주요 코드 설명>**
+**[주요 코드 설명]**
 ~~~py
 import hashlib  #1
 ~~~
@@ -432,7 +432,7 @@ if __name__=='__main__':
 ~~~
 
 
-**<주요 코드 설명>**
+**[주요 코드 설명]**
 ~~~py
 import redis #1
 ~~~
@@ -508,7 +508,7 @@ identidock:
     redis:
         image:redis:3.0  #2
 ~~~
-**<주요 코드 설명>**
+**[주요 코드 설명]**
 ~~~yml
 - redis   #1
 ~~~
