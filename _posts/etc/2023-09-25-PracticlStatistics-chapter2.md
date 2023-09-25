@@ -1,8 +1,8 @@
 ---  
-title: 데이터와 표준분포 개념 단기 완성!
+title: 데이터와 표준분포에 대하여 알아보기
 layout: post  
 categories : [Etc] 
-image : /assets/img/study/etc/Chapter 2/1.png)
+image : /assets/img/study/etc/Chapter2/1.png)
 description:  데이터와 표준분포
 customexcerpt: 데이터와 표준분포에 대하여 알아보자!
 ---
@@ -74,62 +74,8 @@ customexcerpt: 데이터와 표준분포에 대하여 알아보자!
  ![6](/assets/img/study/etc/Chapter2/6.png) 
 
  개별 데이터 값의 히스토그램은 넓게 분산, 한쪽으로 기울어져 있음, 종모양임
-
- ~~~R
- samp_mean_05 <- data.frame(
-  income = tapply(sample(loans_income, 1000*5), 
-                  rep(1:1000, rep(5, 1000)), FUN=mean),
-  type = 'mean_of_5')
-
-# take a sample of means of 20 values
-samp_mean_20 <- data.frame(
-  income = tapply(sample(loans_income, 1000*20), 
-                  rep(1:1000, rep(20, 1000)), FUN=mean),
-  type = 'mean_of_20')
-
-# bind the data.frames and convert type to a factor
-income <- rbind(samp_data, samp_mean_05, samp_mean_20)
-income$type <- factor(income$type, 
-                     levels=c('data_dist', 'mean_of_5', 'mean_of_20'),
-                     labels=c('Data', 'Mean of 5', 'Mean of 20'))
-
-ggplot(income, aes(x=income)) +
-  geom_histogram(bins=40) +
-  facet_grid(type ~ .)
-~~~
-
-~~~py
- loans_income = pd.read_csv(LOANS_INCOME_CSV).squeeze('columns')
-
-sample_data = pd.DataFrame({
-    'income': loans_income.sample(1000),
-    'type': 'Data',
-})
-
-sample_mean_05 = pd.DataFrame({
-    'income': [loans_income.sample(5).mean() for _ in range(1000)],
-    'type': 'Mean of 5',
-})
-
-sample_mean_20 = pd.DataFrame({
-    'income': [loans_income.sample(20).mean() for _ in range(1000)],
-    'type': 'Mean of 20',
-})
-
-results = pd.concat([sample_data, sample_mean_05, sample_mean_20])
-print(results.head())
-
-g = sns.FacetGrid(results, col='type', col_wrap=1, 
-                  height=2, aspect=2)
-g.map(plt.hist, 'income', range=[0, 200000], bins=40)
-g.set_axis_labels('Income', 'Count')
-g.set_titles('{col_name}')
-
-plt.tight_layout()
-plt.show()
-~~~
-
- 중심극한정리
+ 
+중심극한정리
  표본크기가 충분하고 데이터가 정규성을 크게 이탈하지 않는 경우, 여러 표본에서 추출한 평균은 종 모양의 정규곡선을 따른다
 
  표분오차
@@ -161,24 +107,7 @@ plt.show()
 
  대출 신청자의 소득 데이터에 부트스트랩을 적용하는 코드
  stat_fun 함수는 인덱스 idx로 지정된 표본의 중앙값을 계산
-
-~~~R
- stat_fun <- function(x, idx) median(x[idx])
-boot_obj <- boot(loans_income, R=1000, statistic=stat_fun)
-~~~
-
-~~~py
- results = []
-for nrepeat in range(1000):
-    sample = resample(loans_income)
-    results.append(sample.median())
-results = pd.Series(results)
-print('Bootstrap Statistics:')
-print(f'original: {loans_income.median()}')
-print(f'bias: {results.mean() - loans_income.median()}')
-print(f'std. error: {results.std()}')
-~~~
-
+ 
  중간값의 원래 추정치는 62000달러 부트스트랩 분포는 추정치에서 약 -70달러만큼의 편향이 있고 약 209달러의 표준오차가 있는 것으로 나타낸다 이 알고리즘을 연속해서 여러번 실행할 경우 결과는 약간씩 달라짐
 
  부트스트랩은 다변량 데이터에도 적용될 수 있음
