@@ -1,7 +1,7 @@
 ---  
 title: 데이터 과학 프로젝트의 첫 걸음, 탐색적 데이터 분석
 layout: post 
-categories : [Analytics,  data-science]
+categories : [etc]
 image : /assets/img/study/etc/PracticalStatistics_1/image-6.png
 description: 데이터 과학 프로젝트의 첫 걸음, 탐색적 데이터 분석
 customexcerpt: 위치와 변이 추정부터 이변량 분석까지 다양한 계측을 알아보자
