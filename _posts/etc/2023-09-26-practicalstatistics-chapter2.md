@@ -1,6 +1,6 @@
 --- 
 title: 데이터와 표준분포 이해하기
-layout: post
+layout: post  
 categories : [Etc] 
 image : /assets/img/study/etc/chapter2/1.png
 description:  데이터와 표준분포
