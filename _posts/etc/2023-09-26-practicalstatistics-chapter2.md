@@ -48,6 +48,8 @@ customexcerpt: 데이터와 표준분포에 대하여 알아보자!
 
 
 ![3](/assets/img/study/etc/chapter2/3.jpg)
+
+
 편향, x방향과 y방향 모두에서 랜덤한 오차가 있음
 
 임의선택
@@ -73,6 +75,7 @@ customexcerpt: 데이터와 표준분포에 대하여 알아보자!
 
 예) 신인상 수상자의 2년차 슬럼프
 ![5](/assets/img/study/etc/chapter2/5.jpg)
+
 
 ## 2.3 통계학에서의 표본분포
 표본분포 : 하나의 동일한 모집단에서 얻은 여러 샘플에 대한 표본통계량의 분포
