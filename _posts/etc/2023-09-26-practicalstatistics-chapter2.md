@@ -48,8 +48,6 @@ customexcerpt: 데이터와 표준분포에 대하여 알아보자!
 
 
 ![3](/assets/img/study/etc/chapter2/3.jpg)
-
-
 편향, x방향과 y방향 모두에서 랜덤한 오차가 있음
 
 임의선택
